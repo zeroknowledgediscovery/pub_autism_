@@ -1,0 +1,48 @@
+	shapes,
+	calc,
+	shadows,
+	fadings,
+	arrows,
+	decorations.pathreplacing,
+	decorations.markings,
+	automata,
+	positioning
+}
+
+\tikzstyle{stateM} = [
+	circle, 
+	draw=black!60, 
+	fill=black!30, 
+	minimum size=15
+]
+\tikzstyle{stateF} = [
+	circle, 
+	draw=Orchid, 
+	fill=Orchid!60, 
+	minimum size=15
+]
+\tikzset{
+    edge/.style={
+        % decoration={
+        %     markings,
+        %     mark=at position #1 with {\arrow{>}}
+        % },
+		->,
+		>=latex,
+        postaction={decorate},
+        draw=DodgerBlue,
+		% font=\scriptsize,
+        text=MidnightBlue,
+        thick
+    }
+}
+
+% \documentclass{standalone}
+% \input{figure_preamble.tex}
+% \begin{document}
+% \begin{tikzpicture}
+% 	\path[edge] () to[out=, in=, looseness=] node[pos=,] {0()} ();
+% 	\path[edge] () to[out=, in=, looseness=] node[pos=,] {1()} ();
+% 	\path[edge] () to[out=, in=, looseness=] node[pos=,] {2()} ();
+% \end{tikzpicture}
+% \end{document}

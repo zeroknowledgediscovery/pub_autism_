@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\def\d{2.2}
+	\def\ls{8}
+	\def\a{35}
+	\node[stateM] (A) at (0, 0) {};
+	\node[stateM] (B) at (\d, 0) {};
+	\node[stateM] (C) at (2*\d, 0) {};
+
+	\path[edge] (A) to[out=180-\a, in=180+\a, looseness=\ls] node[pos=.2,above] {0(.85)} (A);
+	\path[edge] (A) to[out=\a, in=180-\a] node[pos=.5,above] {2(.15)} (B);
+
+	\path[edge] (B) to[out=180+\a, in=-\a] node[pos=.5,below] {0(.68)} (A);
+	\path[edge] (B) to[out=90-\a, in=90+\a, looseness=\ls] node[pos=.5,above] {1(.01)} (B);
+	\path[edge] (B) to[out=\a, in=180-\a] node[pos=.5,above] {2(.31)} (C);
+
+	\path[edge] (C) to[out=180+\a, in=-\a] node[pos=.5,below] {0(.38)} (B);
+	\path[edge] (C) to[out=\a, in=-\a, looseness=\ls] node[pos=.2,above] {2(.62)} (C);
+\end{tikzpicture}

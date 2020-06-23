@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%%% LaTeX Resume Template %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%  Ishanu Chattopadhyay  ixc128@psu.edu%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[10pt]{article}
+\documentclass[9pt,onecolumn,compsoc]{IEEEtran}
+\let\labelindent\relax
+\usepackage{enumitem}
+\usepackage[letterpaper, top=.5cm, left=2.5cm, right=3.0cm, bottom=2.0cm, includehead, includefoot]{geometry}
+%
+\input{curversion/preamble.tex} 
+%\usepackage[printwatermark]{xwatermark}
+\usepackage{wallpaper}
+\usepackage{wasysym}
+\usepackage[misc]{ifsym}
+%\usepackage{applicationN}
+\usepackage[normalem]{ulem}
+\usepackage{epigraph} 
+%\usepackage{pifont}
+%\usepackage{fancyhdr}
+\newcommand{\Space}{\vspace{10pt}}
+\newcommand{\SpaceS}{\vspace{4pt}}
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tikzexternalize[prefix=./Figures/ExtApp/]% activate externalization!
+\tikzexternaldisable
+\newcommand{\ColorA}{\color{black!70}}
+\newcommand{\ColorB}{\color{Red4!10!black}}
+\newcommand{\ColorD}{\color{darkgray}}
+\newcommand{\ColorBb}{\ColorB}
+\newcommand{\ColorE}{\color{darkgray}}
+\newcommand{\ColorX}{\color{Blue3}}
+\def\Me#1{\def\me{#1}}
+\Me{\sffamily\ColorA {\bf \fontsize{10}{10}\selectfont\color{IndianRed4}Ishanu Chattopadhyay}\\
+Assistant Professor\\
+ Section of Hospital Medicine\\
+Department of Medicine\\
+%Institute for Genomics \& Systems Biology\\
+%Computation Institute\\
+%University of Chicago\\
+900 E 57th Street\\
+KCBD 10152\\
+Chicago IL 60637\\
+\phone: 814 5315312\\
+\Letter: ishanu@uchicago.edu\\{\fontsize{7}{7}\selectfont\sffamily\color{Red3}
+\href{zed.uchicago.edu}{zed.uchicago.edu}}}
+
+\setlength{\headsep}{1.65in}
+\addtolength{\textheight}{-1.25in}
+\renewcommand{\baselinestretch}{1.1}
+\lhead{}
+\chead{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.1pt}
+\lhead{
+\includegraphics[width=3.1in]{/home/ishanu/Dropbox/Apps/ShareLaTeX/letterhead/Figures/RGBPNG/maroon}
+\vskip  1.95em
+%
+\bf \sffamily \fontsize{7}{8}\selectfont \ColorA
+Department of Medicine\\
+5841 South Maryland Avenue\\
+Chicago, IL 60637\\
+\phone: 773 7021234\\
+}
+\rhead{
+\ColorA
+  \footnotesize \me \\
+}
+\rfoot{\scriptsize\bf\sffamily\ColorA  \thepage}
+\cfoot{\scriptsize\bf\sffamily \ColorA Chattopadhyay}
+\lfoot{\scriptsize\bf\sffamily \ColorA \today}
+\CenterWallPaper{.5}{/home/ishanu/Dropbox/Apps/ShareLaTeX/letterhead/Figures/phoenix/lightgray}
+% #######################################################################
+\input{custom_defs}
+\def\EDITOR{Prof. James S. House}
+\def\BEDITOR{Prof. House\xspace}
+\def\JNAME{Proceedings of the National Academy of Sciences\xspace}
+\def\JADDR{500 Fifth Street NW\\
+NAS 338\\
+Washington, DC 20001 USA}
+% #######################################################################
+
+\begin{document}
+\parskip=12pt
+\parindent=0pt
+\Space
+\Space
+% #######################################################################
+% #######################################################################
+\fontsize{11}{12}\selectfont
+\Space
+\Space
+
+\EDITOR\\
+Member Editor, \JNAME\\
+\JADDR
+
+Dear \BEDITOR
+
+Please find enclosed the  manuscript entitled "\textbf{\TITLE}" for your consideration for publication in \JNAME as a research article. 
+
+Autism spectral disorder (ASD) is currently  screened for in toddlers using standard questionnaires, $.e.g.$ M-CHAT/F, completed by parents at doctors' visits. The M-CHAT/F produces a notoriously high number of false positives (85\%) and  a low sensitivity (38\%). This overwhelming number of false positives translates to long wait-times for confirmatory diagnosis ($\approx 1$ year). Children lose crucial time within which  interventions are the most effective.  Additionally, questionnaires are prone to interpretive biases leading to systematic under-diagnosis in diverse communities.  Finding genetic diagnostic bio-markers have been problematic due to  the highly heterogeneous presentation of ASD.
+
+Here we report an orthogonal methodology that requires \textbf{no questionnaires and no blood-work}. Using novel approaches to stochastic learning from  individual diagnostic codes already recorded during past doctor's visits, we design  a  risk estimator significantly out-performing the state-of-the-art. WIthout manually pre-selecting co-morbid disorders, we learn hidden patterns in medical histories to enable cutting down false positives by half without losing specificity.
+Additionally, we get new insights into co-morbid risk that might shed light into sex differences, and ASD pathobiology, and how we can exploit subtle footprints of complex disorders in seemingly unrelated
+medical encounters.
+%No blood work. New insights. Orthogonal methodology.
+
+% In this study, we  use  co-morbidity patterns  to design a questionnaire-free screening tool. Using individual diagnostic codes already recorded during regular doctor's visits, we engineer a  risk estimator based on  stochastic learning algorithms. With large cohort sizes in two independent databases ($\approx 5M$ and $\approx 70K$ respectively), we demonstrate high predictive performance (AUC $> 80\%$)  from shortly after 2 years of age, and better sensitivity/specificity trade-offs compared to M-CHAT/F. Also, in combined operation with M-CHAT/F,  we achieve  a 50\%  increase in sensitivity, or a doubling of the positive predictive value, while not losing specificity.
+
+We are led by a multi-disciplinary team  of machine learning experts (Chattopadhyay) and clinical practioners in pediatric developmental psychology and autism: 1) Peter J. Smith, Professor of Pediatrics and \textbf{Executive Committee Chair, American Academy of Pediatrics' Section on Developmental \& Behavioral
+Pediatrics}, and 2) Prof. Michael Msall, \textbf{Section Chief of Developmental \& Behavioral Pediatrics, UChicago, and Fellow of Joseph  P. Kennedy Research Center on Intellectual \& Neurodevelopmental Disabilities, UChicago}.
+
+We believe that  the importance  and  inter-disciplinary nature of our results, with non-trivial computational modeling,  merits consideration  for  publication in \JNAME.  We look forward to, and humbly hope for, your positive  response.
+\Space
+
+Sincerely,
+\vspace{-20pt}
+
+% 
+\begin{flushleft}
+\tikz{\node[]{    \includegraphics[scale=0.7]{/home/ishanu/Dropbox/Apps/ShareLaTeX/letterhead/Figures/sign2}};}
+\vspace{-30pt}
+
+\rule{2.5in}{1pt}\\
+{\fontsize{10}{10}\selectfont Ishanu Chattopadhyay}
+\hfill \today\\
+Chicago, IL
+\end{flushleft}
+
+% #######################################################################
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

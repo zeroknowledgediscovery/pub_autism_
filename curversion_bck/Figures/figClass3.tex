@@ -1,0 +1,298 @@
+
+
+\pgfplotsset{
+    discard if/.style 2 args={
+        x filter/.code={
+            \edef\tempa{\thisrow{#1}}
+            \edef\tempb{#2}
+            \ifx\tempa\tempb
+                \def\pgfmathresult{inf}
+            \fi
+        }
+    },
+    discard if not/.style 2 args={
+        x filter/.code={
+            \edef\tempa{\thisrow{#1}}
+            \edef\tempb{#2}
+            \ifx\tempa\tempb
+            \else
+                \def\pgfmathresult{inf}
+            \fi
+        }
+    }
+  }
+
+  \begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+  \def\TEXTCOL{gray}
+  \tikzset{
+    hatch distance/.store in=\hatchdistance,
+    hatch distance=20pt,
+    hatch thickness/.store in=\hatchthickness,
+    hatch thickness=2pt
+  }
+
+
+\pgfplotsset{
+    accommodate labels/.code 2 args={
+        \newlength{\myl}
+        \pgfplotstableread{#1}\data
+        \def\largestlength{0}
+        \pgfplotstableforeachcolumnelement{#2}\of\data\as\cell{
+            \settowidth{\myl}{\pgfinterruptpicture\cell\endpgfinterruptpicture}
+            \pgfmathsetmacro\largestlength{max(\the\myl,\largestlength)}
+        }
+        \pgfplotsset{
+            enlarge x limits={
+                upper,              value=1/(1-(\largestlength+4pt)/\pgfkeysvalueof{/pgfplots/width})-1
+            }
+        }
+    }
+}
+
+\def\COLDR{white}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{amber}{rgb}{1.0, 0.75, 0.0}
+\definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
+\definecolor{apricot}{rgb}{0.98, 0.81, 0.69}
+\definecolor{atomictangerine}{rgb}{1.0, 0.6, 0.4}
+\definecolor{awesome}{rgb}{1.0, 0.13, 0.32}
+\definecolor{azurec}{rgb}{0.0, 0.5, 1.0}
+\definecolor{ballblue}{rgb}{0.13, 0.67, 0.8}
+\definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
+\definecolor{bluem}{rgb}{0.0, 0.5, 0.69}
+\definecolor{brightturquoise}{rgb}{0.03, 0.91, 0.87}
+
+\def\COLBA{Red2}
+\def\COLBB{Red3}
+\def\COLBI{Red4}
+\def\COLBG{DarkOrange2}
+\def\COLBC{lightgray}
+\def\COLBD{ballblue}
+\def\COLBE{MidnightBlue}
+\def\COLBF{SeaGreen3}
+\def\COLBH{DarkSlateGray}
+\def\COLBJ{bittersweet}
+\def\COLBK{Orchid3}
+\def\COLBL{black}
+  
+  \makeatletter
+  \pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{flexible hatch}
+  {\pgfqpoint{0pt}{0pt}}
+  {\pgfqpoint{\hatchdistance}{\hatchdistance}}
+  {\pgfpoint{\hatchdistance-1pt}{\hatchdistance-1pt}}%
+  {
+    \pgfsetcolor{\tikz@pattern@color}
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfqpoint{\hatchdistance}{\hatchdistance}}
+    \pgfusepath{stroke}
+  }
+  \makeatother
+  \pgfdeclarepatternformonly{north east lines wide}%
+  {\pgfqpoint{-1pt}{-1pt}}%
+  {\pgfqpoint{10pt}{10pt}}%
+  {\pgfqpoint{9pt}{9pt}}%
+  {
+    \pgfsetlinewidth{0.4pt}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+    \pgfusepath{stroke}
+  }
+
+
+  % \def\COMPA{../data/figfiles/stat_patternInjury.csv}
+  % \def\COMPB{../data/figfiles/stat_patternongenital.csv}
+  \def\COMPA{../data/figfiles/logodds_patternInjury.csv}
+  \def\COMPB{../data/figfiles/logodds_patternongenital.csv}
+
+  \def\MTYP{MInjury}
+  \def\FTYP{FInjury}
+
+  
+  \def\WDTX{2.250in}
+  \def\HGTX{9in}
+  \def\HGTXB{9in}
+  \def\HGTXC{4in}
+  \def\OPC{.9}
+  \def\BWIDTH{7pt}
+
+  \clip (.75in,0.250in) rectangle (7.8in,-8.35in);
+
+  
+    \node [anchor=north west,align=left] (A) at (0,0) {
+        \begin{tikzpicture}[text=\TEXTCOL]
+%
+%   \def\basis{1}
+%   \pgfplotsset
+%   {
+%     x coord trafo/.code={\pgfmathparse{symlog(#1,\basis)}\pgfmathresult},
+%     x coord inv trafo/.code={\pgfmathparse{symexp(#1,\basis)}\pgfmathresult},
+%     xticklabel style={/pgf/number format/.cd,int detect,precision=2},
+% }
+
+
+          \begin{axis}[legend style={anchor=east,at={(0.5,1.05)},inner sep=3pt,draw=none,fill=white,fill opacity=.850,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont},axis line style={lightgray, opacity=0, thin},%
+        enlargelimits=false,
+        anchor=north west,
+        height=\HGTX,
+        width=\WDTX,
+        % xbar,
+        ytick=data,% crucial line for the xticklabels directive 
+        xmin=0,
+        ymax=50,
+        %accommodate labels={\DISX}{description},
+        yticklabels from table={\COMPA}{code},
+        yticklabel style
+        ={font=\bf\sffamily\fontsize{7}{7}\selectfont,
+          align=right,rotate=0, text width=1.1in,
+          anchor=east, yshift=0in,xshift=-.0450in,text=\TEXTCOL},
+        major tick length=0pt,,text opacity=1,
+        %xticklabel style=
+        %{font=\bf\sffamily\fontsize{7}{7}\selectfont,
+        %  text=\TEXTCOL},
+        %grid,
+        grid style={lightgray, dashed,opacity=.7},
+        axis on top=false, bar width=\BWIDTH,
+        xlabel={log odds ratio of normalized prevalence},
+        scaled x ticks=false,
+        xlabel style={yshift=0.3in,text=\TEXTCOL,text opacity=1},
+        ylabel style={xshift=-.25in,yshift=0.075in,text=\TEXTCOL,text opacity=1},
+        enlarge y limits=.05,
+         x tick label style={/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+           /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator
+           , yshift=0.25in,
+   },
+   nodes near coords ,visualization depends on={value \thisrow{negval}\as\rawx},
+    every node near coord/.append style={anchor=west,align=left, text width=2in,font=\sffamily\rm\fontsize{8}{8}\selectfont,text=darkgray,text opacity=1,
+        shift={(axis direction cs:-\rawx,0)}},
+   point meta=explicit symbolic,ylabel={},
+   , %xtick ={-0.03,0,0.03},
+  % xmax=0.03,xmin=-0.03,
+        ] 
+
+        \addplot[draw=none,fill=none,xbar,area legend,opacity=0,text opacity=\OPC] table [ 
+        y expr=\coordindex,
+        x=pn,meta=description
+        ] {\COMPA};
+
+        \addplot[draw=\MXCOL,fill=\MXCOL,xbar,area legend,,postaction={
+         pattern=flexible hatch,
+        hatch distance=5pt,
+        hatch thickness=1pt,
+        draw=none,
+        pattern color=gray, %ultra thick,
+     },opacity=\OPC,text opacity=1] table [ 
+        y expr=\coordindex,
+        x=pn, discard if not={typ}{\MTYP}
+        ] {\COMPA};
+        \addplot[draw=\FXCOL,fill=\FXCOL,xbar,area legend,opacity=\OPC,text opacity=1] table [ 
+        y expr=\coordindex,
+        x=pn, discard if not={typ}{\FTYP}
+        ] {\COMPA};
+
+        
+        % \addlegendentry{Female}
+      \end{axis}
+    \end{tikzpicture}};
+
+      \node [anchor=south west,align=left] (B) at ([xshift=-1.65in]A.south east) {
+        \begin{tikzpicture}[text=\TEXTCOL]
+%
+%   \def\basis{1}
+%   \pgfplotsset
+%   {
+%     x coord trafo/.code={\pgfmathparse{symlog(#1,\basis)}\pgfmathresult},
+%     x coord inv trafo/.code={\pgfmathparse{symexp(#1,\basis)}\pgfmathresult},
+%     xticklabel style={/pgf/number format/.cd,int detect,precision=2},
+% }
+
+
+          \begin{axis}[legend style={anchor=east,at={(0.5,1.05)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont},axis line style={lightgray, opacity=0, thin},%
+        enlargelimits=false,
+        anchor=north west,
+        height=\HGTXB,
+        width=\WDTX,
+        % xbar,
+        ytick=data,% crucial line for the xticklabels directive 
+        xmin=1,
+        ymax=50,
+        %accommodate labels={\DISX}{description},
+        yticklabels from table={\COMPB}{code},
+        yticklabel style
+        ={font=\bf\sffamily\fontsize{7}{7}\selectfont,
+          align=right,rotate=0, text width=1.1in,
+          anchor=east, yshift=0in,xshift=-.0450in,text=\TEXTCOL},
+        major tick length=0pt,,text opacity=1,
+        %xticklabel style=
+        %{font=\bf\sffamily\fontsize{7}{7}\selectfont,
+        %  text=\TEXTCOL},
+        %grid
+        grid style={lightgray, dashed,opacity=.7},
+        axis on top=false, bar width=\BWIDTH,
+        xlabel={log odds ratio of normalized prevalence},
+        scaled x ticks=false,
+        xlabel style={yshift=0.3in,text=\TEXTCOL,text opacity=1},
+        ylabel style={xshift=0in,yshift=0.1in,text=\TEXTCOL,text opacity=1},
+        enlarge y limits=.05,
+         x tick label style={/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+           /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator
+           , yshift=0.25in,
+   },
+   nodes near coords, ,visualization depends on={value \thisrow{negval}\as\rawx},
+    every node near coord/.append style={anchor=west,align=left, text width=2in,font=\sffamily\rm\fontsize{8}{8}\selectfont,text=darkgray,text opacity=1,
+        shift={(axis direction cs:-\rawx,0)}},
+   point meta=explicit symbolic,ylabel={ICD9 codes},
+   , %xtick ={-0.03,0,0.03},
+  % xmax=0.03,xmin=-0.03,
+        ] 
+
+        \addplot[draw=none,fill=none,xbar,area legend,opacity=0,text opacity=\OPC] table [ 
+        y expr=\coordindex,
+        x=pn, meta=description
+        ] {\COMPB};
+
+        \addplot[draw=\MXCOL,fill=\MXCOL,xbar,area legend,,postaction={
+         pattern=flexible hatch,
+        hatch distance=5pt,
+        hatch thickness=1pt,
+        draw=none,
+        pattern color=gray, %ultra thick,
+     },opacity=\OPC,text opacity=1] table [ 
+        y expr=\coordindex,
+        x=pn, discard if not={typ}{Mongenital}
+        ] {\COMPB};
+        \addplot[draw=\FXCOL,fill=\FXCOL,xbar,area legend,opacity=\OPC,text opacity=1] table [ 
+        y expr=\coordindex,
+        x=pn, discard if not={typ}{Fongenital}
+        ] {\COMPB};
+
+        
+        % \addlegendentry{Female}
+      \end{axis}
+    \end{tikzpicture}};
+
+
+    \node[] (T) at ([xshift=-1.35in,yshift=2.25in]A.east) {
+      \arrayrulecolor{white}
+      \setlength\arrayrulewidth{2pt}
+      \mnp{1in}{\fontsize{9}{8}\selectfont\color{\TEXTCOL}
+        {\large \color{black} Gender}
+        \vskip 1em
+        \begin{tabular}{L{.1in}L{.5in}}
+          \tikz[baseline=-0.5ex]{\node[text height=.075in,text width=.1in,fill=\MXCOL,,postaction={
+         pattern=flexible hatch,
+        hatch distance=5pt,
+        hatch thickness=1pt,
+        draw=none,
+        pattern color=gray, %ultra thick,
+     },label={[]0:Male}] {};} \\\hline  %0
+          \tikz[baseline=-0.5ex]{\node[text height=.075in,text width=.1in,fill=\FXCOL,,label={[]0:Female}] {};} 
+          \end{tabular}
+        }
+      };
+  \node[anchor=south west,align=left] (LA) at ([xshift=1in,yshift=0in]A.north west) {{\LARGE A.} Injury \& Poisoning };
+  \node[anchor=south west,align=left] (LB) at ([xshift=3.5in,yshift=0in]$(LA.north west)!(B.north)!(LA.south west)$) {{\LARGE B.} Congenital Disorders };
+  
+  %\node[anchor=south west,align=left] (LC) at ([xshift=1in,yshift=0.15in]R.north west) {{\LARGE C.} Codes with\\Maximum Mismatch Across Genders};
+\end{tikzpicture}
+

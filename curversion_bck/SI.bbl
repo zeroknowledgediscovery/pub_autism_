@@ -1,0 +1,269 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{pmid31562252}
+\bibinfo{author}{Guthrie, W.} \emph{et~al.}
+\newblock \bibinfo{title}{{{A}ccuracy of {A}utism {S}creening in a {L}arge
+  {P}ediatric {N}etwork}}.
+\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{144}}
+  (\bibinfo{year}{2019}).
+
+\bibitem{CL12g}
+\bibinfo{author}{Chattopadhyay, I.} \& \bibinfo{author}{Lipson, H.}
+\newblock \bibinfo{title}{{{A}bductive learning of quantized stochastic
+  processes with probabilistic finite automata}}.
+\newblock \emph{\bibinfo{journal}{Philos Trans A}}
+  \textbf{\bibinfo{volume}{371}}, \bibinfo{pages}{20110543}
+  (\bibinfo{year}{2013}).
+
+\bibitem{Breiman}
+\bibinfo{author}{Breiman, L.}
+\newblock \bibinfo{title}{Random forests}.
+\newblock \emph{\bibinfo{journal}{Mach. Learn.}} \textbf{\bibinfo{volume}{45}},
+  \bibinfo{pages}{5--32} (\bibinfo{year}{2001}).
+
+\bibitem{Friedman}
+\bibinfo{author}{Friedman, J.~H.}
+\newblock \bibinfo{title}{Stochastic gradient boosting}.
+\newblock \emph{\bibinfo{journal}{Comput. Stat. Data Anal.}}
+  \textbf{\bibinfo{volume}{38}}, \bibinfo{pages}{367--378}
+  (\bibinfo{year}{2002}).
+
+\bibitem{Hochreiter}
+\bibinfo{author}{Hochreiter, S.} \& \bibinfo{author}{Schmidhuber, J.}
+\newblock \bibinfo{title}{Long short-term memory}.
+\newblock \emph{\bibinfo{journal}{Neural Comput.}}
+  \textbf{\bibinfo{volume}{9}}, \bibinfo{pages}{1735--1780}
+  (\bibinfo{year}{1997}).
+
+\bibitem{gordon2016whittling}
+\bibinfo{author}{Gordon-Lipkin, E.}, \bibinfo{author}{Foster, J.} \&
+  \bibinfo{author}{Peacock, G.}
+\newblock \bibinfo{title}{Whittling down the wait time: exploring models to
+  minimize the delay from initial concern to diagnosis and treatment of autism
+  spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{Pediatric Clinics}}
+  \textbf{\bibinfo{volume}{63}}, \bibinfo{pages}{851--859}
+  (\bibinfo{year}{2016}).
+
+\bibitem{penner2018practice}
+\bibinfo{author}{Penner, M.}, \bibinfo{author}{Anagnostou, E.} \&
+  \bibinfo{author}{Ungar, W.~J.}
+\newblock \bibinfo{title}{Practice patterns and determinants of wait time for
+  autism spectrum disorder diagnosis in canada}.
+\newblock \emph{\bibinfo{journal}{Molecular autism}}
+  \textbf{\bibinfo{volume}{9}}, \bibinfo{pages}{16} (\bibinfo{year}{2018}).
+
+\bibitem{hyman2020identification}
+\bibinfo{author}{Hyman, S.~L.}, \bibinfo{author}{Levy, S.~E.},
+  \bibinfo{author}{Myers, S.~M.} \emph{et~al.}
+\newblock \bibinfo{title}{Identification, evaluation, and management of
+  children with autism spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{145}}
+  (\bibinfo{year}{2020}).
+
+\bibitem{johnson2007identification}
+\bibinfo{author}{Johnson, C.~P.}, \bibinfo{author}{Myers, S.~M.} \emph{et~al.}
+\newblock \bibinfo{title}{Identification and evaluation of children with autism
+  spectrum disorders}.
+\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{120}},
+  \bibinfo{pages}{1183--1215} (\bibinfo{year}{2007}).
+
+\bibitem{zwaigenbaum2015early}
+\bibinfo{author}{Zwaigenbaum, L.} \emph{et~al.}
+\newblock \bibinfo{title}{Early intervention for children with autism spectrum
+  disorder under 3 years of age: recommendations for practice and research}.
+\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{136}},
+  \bibinfo{pages}{S60--S81} (\bibinfo{year}{2015}).
+
+\bibitem{robins2014validation}
+\bibinfo{author}{Robins, D.~L.} \emph{et~al.}
+\newblock \bibinfo{title}{Validation of the modified checklist for autism in
+  toddlers, revised with follow-up (m-chat-r/f)}.
+\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{133}},
+  \bibinfo{pages}{37--45} (\bibinfo{year}{2014}).
+
+\bibitem{esler2015autism}
+\bibinfo{author}{Esler, A.~N.} \emph{et~al.}
+\newblock \bibinfo{title}{The autism diagnostic observation schedule, toddler
+  module: standardized severity scores}.
+\newblock \emph{\bibinfo{journal}{Journal of Autism and Developmental
+  Disorders}} \textbf{\bibinfo{volume}{45}}, \bibinfo{pages}{2704--2720}
+  (\bibinfo{year}{2015}).
+
+\bibitem{chlebowski2010using}
+\bibinfo{author}{Chlebowski, C.}, \bibinfo{author}{Green, J.~A.},
+  \bibinfo{author}{Barton, M.~L.} \& \bibinfo{author}{Fein, D.}
+\newblock \bibinfo{title}{Using the childhood autism rating scale to diagnose
+  autism spectrum disorders}.
+\newblock \emph{\bibinfo{journal}{Journal of autism and developmental
+  disorders}} \textbf{\bibinfo{volume}{40}}, \bibinfo{pages}{787--799}
+  (\bibinfo{year}{2010}).
+
+\bibitem{falkmer2013diagnostic}
+\bibinfo{author}{Falkmer, T.}, \bibinfo{author}{Anderson, K.},
+  \bibinfo{author}{Falkmer, M.} \& \bibinfo{author}{Horlin, C.}
+\newblock \bibinfo{title}{Diagnostic procedures in autism spectrum disorders: a
+  systematic literature review}.
+\newblock \emph{\bibinfo{journal}{European child \& adolescent psychiatry}}
+  \textbf{\bibinfo{volume}{22}}, \bibinfo{pages}{329--340}
+  (\bibinfo{year}{2013}).
+
+\bibitem{lord2006autism}
+\bibinfo{author}{Lord, C.} \emph{et~al.}
+\newblock \bibinfo{title}{Autism from 2 to 9 years of age}.
+\newblock \emph{\bibinfo{journal}{Archives of general psychiatry}}
+  \textbf{\bibinfo{volume}{63}}, \bibinfo{pages}{694--701}
+  (\bibinfo{year}{2006}).
+
+\bibitem{kleinman2008diagnostic}
+\bibinfo{author}{Kleinman, J.~M.} \emph{et~al.}
+\newblock \bibinfo{title}{Diagnostic stability in very young children with
+  autism spectrum disorders}.
+\newblock \emph{\bibinfo{journal}{Journal of autism and developmental
+  disorders}} \textbf{\bibinfo{volume}{38}}, \bibinfo{pages}{606--615}
+  (\bibinfo{year}{2008}).
+
+\bibitem{bolton2012autism}
+\bibinfo{author}{Bolton, P.~F.}, \bibinfo{author}{Golding, J.},
+  \bibinfo{author}{Emond, A.} \& \bibinfo{author}{Steer, C.~D.}
+\newblock \bibinfo{title}{Autism spectrum disorder and autistic traits in the
+  avon longitudinal study of parents and children: precursors and early signs}.
+\newblock \emph{\bibinfo{journal}{Journal of the American Academy of Child \&
+  Adolescent Psychiatry}} \textbf{\bibinfo{volume}{51}},
+  \bibinfo{pages}{249--260} (\bibinfo{year}{2012}).
+
+\bibitem{kozlowski2011parents}
+\bibinfo{author}{Kozlowski, A.~M.}, \bibinfo{author}{Matson, J.~L.},
+  \bibinfo{author}{Horovitz, M.}, \bibinfo{author}{Worley, J.~A.} \&
+  \bibinfo{author}{Neal, D.}
+\newblock \bibinfo{title}{Parents’ first concerns of their child's
+  development in toddlers with autism spectrum disorders}.
+\newblock \emph{\bibinfo{journal}{Developmental neurorehabilitation}}
+  \textbf{\bibinfo{volume}{14}}, \bibinfo{pages}{72--78}
+  (\bibinfo{year}{2011}).
+
+\bibitem{baio2014prevalence}
+\bibinfo{author}{Baio, J.}
+\newblock \bibinfo{title}{Prevalence of autism spectrum disorder among children
+  aged 8 years-autism and developmental disabilities monitoring network, 11
+  sites, united states, 2010}  (\bibinfo{year}{2014}).
+
+\bibitem{kalb2012determinants}
+\bibinfo{author}{Kalb, L.~G.} \emph{et~al.}
+\newblock \bibinfo{title}{Determinants of appointment absenteeism at an
+  outpatient pediatric autism clinic}.
+\newblock \emph{\bibinfo{journal}{Journal of Developmental \& Behavioral
+  Pediatrics}} \textbf{\bibinfo{volume}{33}}, \bibinfo{pages}{685--697}
+  (\bibinfo{year}{2012}).
+
+\bibitem{bisgaier2011access}
+\bibinfo{author}{Bisgaier, J.}, \bibinfo{author}{Levinson, D.},
+  \bibinfo{author}{Cutts, D.~B.} \& \bibinfo{author}{Rhodes, K.~V.}
+\newblock \bibinfo{title}{Access to autism evaluation appointments with
+  developmental-behavioral and neurodevelopmental subspecialists}.
+\newblock \emph{\bibinfo{journal}{Archives of pediatrics \& adolescent
+  medicine}} \textbf{\bibinfo{volume}{165}}, \bibinfo{pages}{673--674}
+  (\bibinfo{year}{2011}).
+
+\bibitem{fenikile2015barriers}
+\bibinfo{author}{Fenikil{\'e}, T.~S.}, \bibinfo{author}{Ellerbeck, K.},
+  \bibinfo{author}{Filippi, M.~K.} \& \bibinfo{author}{Daley, C.~M.}
+\newblock \bibinfo{title}{Barriers to autism screening in family medicine
+  practice: a qualitative study}.
+\newblock \emph{\bibinfo{journal}{Primary health care research \& development}}
+  \textbf{\bibinfo{volume}{16}}, \bibinfo{pages}{356--366}
+  (\bibinfo{year}{2015}).
+
+\bibitem{althouse2006pediatric}
+\bibinfo{author}{Althouse, L.~A.} \& \bibinfo{author}{Stockman, J.~A.}
+\newblock \bibinfo{title}{Pediatric workforce: A look at pediatric nephrology
+  data from the american board of pediatrics}.
+\newblock \emph{\bibinfo{journal}{The Journal of pediatrics}}
+  \textbf{\bibinfo{volume}{148}}, \bibinfo{pages}{575--576}
+  (\bibinfo{year}{2006}).
+
+\bibitem{hopcroft2008introduction}
+\bibinfo{author}{Hopcroft, J.~E.}
+\newblock \emph{\bibinfo{title}{Introduction to automata theory, languages, and
+  computation}} (\bibinfo{publisher}{Pearson Education India},
+  \bibinfo{year}{2008}).
+
+\bibitem{klenke2013probability}
+\bibinfo{author}{Klenke, A.}
+\newblock \emph{\bibinfo{title}{Probability theory: a comprehensive course}}
+  (\bibinfo{publisher}{Springer Science \& Business Media},
+  \bibinfo{year}{2013}).
+
+\bibitem{doob1990stochastic}
+\bibinfo{author}{Doob, J.}
+\newblock \emph{\bibinfo{title}{Stochastic processes}}.
+\newblock Wiley publications in statistics (\bibinfo{publisher}{Wiley},
+  \bibinfo{year}{1990}).
+\newblock \urlprefix\url{https://books.google.com/books?id=7Bu8jgEACAAJ}.
+
+\bibitem{chattopadhyay2008structural}
+\bibinfo{author}{Chattopadhyay, I.} \& \bibinfo{author}{Ray, A.}
+\newblock \bibinfo{title}{Structural transformations of probabilistic finite
+  state machines}.
+\newblock \emph{\bibinfo{journal}{International Journal of Control}}
+  \textbf{\bibinfo{volume}{81}}, \bibinfo{pages}{820--835}
+  (\bibinfo{year}{2008}).
+
+\bibitem{chattopadhyay2014data}
+\bibinfo{author}{Chattopadhyay, I.} \& \bibinfo{author}{Lipson, H.}
+\newblock \bibinfo{title}{Data smashing: uncovering lurking order in data}.
+\newblock \emph{\bibinfo{journal}{Journal of The Royal Society Interface}}
+  \textbf{\bibinfo{volume}{11}}, \bibinfo{pages}{20140826}
+  (\bibinfo{year}{2014}).
+
+\bibitem{bondy2008graph}
+\bibinfo{author}{Bondy, J.} \& \bibinfo{author}{Murty, U.}
+\newblock \bibinfo{title}{Graph theory (2008)}.
+\newblock \emph{\bibinfo{journal}{Grad. Texts in Math}}
+  (\bibinfo{year}{2008}).
+
+\bibitem{vidyasagar2014hidden}
+\bibinfo{author}{Vidyasagar, M.}
+\newblock \emph{\bibinfo{title}{Hidden markov processes: Theory and
+  applications to biology}}, vol.~\bibinfo{volume}{44}
+  (\bibinfo{publisher}{Princeton University Press}, \bibinfo{year}{2014}).
+
+\bibitem{kai1967markov_StDis}
+\bibinfo{author}{Kai, L.~C.}
+\newblock \emph{\bibinfo{title}{Markov Chains: With Stationary Transition
+  Probabilities}} (\bibinfo{publisher}{Springer-Verlag}, \bibinfo{year}{1967}).
+
+\bibitem{trahtman2008road}
+\bibinfo{author}{Trahtman, A.~N.}
+\newblock \bibinfo{title}{The road coloring and \u{C}ern\'{y} conjecture}.
+\newblock In \emph{\bibinfo{booktitle}{Proc. of Prague stringology
+  conference}}, vol.~\bibinfo{volume}{1}, \bibinfo{pages}{12}
+  (\bibinfo{organization}{Citeseer}, \bibinfo{year}{2008}).
+
+\bibitem{cover2012elements}
+\bibinfo{author}{Cover, T.~M.} \& \bibinfo{author}{Thomas, J.~A.}
+\newblock \emph{\bibinfo{title}{Elements of information theory}}
+  (\bibinfo{publisher}{John Wiley \& Sons}, \bibinfo{year}{2012}).
+
+\bibitem{matthews2016sparse}
+\bibinfo{author}{Matthews, A. G. d.~G.}, \bibinfo{author}{Hensman, J.},
+  \bibinfo{author}{Turner, R.} \& \bibinfo{author}{Ghahramani, Z.}
+\newblock \bibinfo{title}{On sparse variational methods and the
+  kullback-leibler divergence between stochastic processes}.
+\newblock \emph{\bibinfo{journal}{Journal of Machine Learning Research}}
+  \textbf{\bibinfo{volume}{51}}, \bibinfo{pages}{231--239}
+  (\bibinfo{year}{2016}).
+
+\bibitem{hardy1992divergent}
+\bibinfo{author}{Hardy, G.}
+\newblock \bibinfo{title}{Divergent series, with a preface by je littlewood and
+  a note by ls bosanquet, reprint of the revised (1963) edition}.
+\newblock \emph{\bibinfo{journal}{{\'E}ditions Jacques Gabay, Sceaux}}
+  (\bibinfo{year}{1992}).
+
+\end{thebibliography}

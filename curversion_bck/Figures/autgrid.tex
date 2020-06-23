@@ -1,0 +1,123 @@
+\tikzstyle{stateM} = [
+	circle, 
+	draw=black, 
+	fill=black, 
+	minimum size=8,very thick
+]
+\tikzstyle{stateF} = [
+	circle, 
+	draw=Orchid2, 
+	fill=Orchid!60, 
+	minimum size=8,very thick
+]
+\tikzset{
+    edge/.style={
+        % decoration={
+        %     markings,
+        %     mark=at position #1 with {\arrow{>}}
+        % },
+		->,
+		>=latex',
+        postaction={decorate},
+        draw=black,
+		% font=\scriptsize,
+        text=black,%MidnightBlue,
+        thick
+    }
+}
+
+\def\SCALE{.75}
+\begin{tikzpicture}[font=\sffamily\fontsize{9}{10}\selectfont,text=black]
+\def\FPATH{Figures/}
+\def\PHN{digestive}
+\def\XST{2.20in}
+\def\YST{-.52in}
+\def\Male{\bf\sffamily\large Male}
+\def\Female{\bf\sffamily\large Female}
+\node[scale=\SCALE,anchor=center] (xA) at (0,0) {\input{\FPATH/\PHN_female_c.tex}};
+\node[scale=\SCALE,anchor=west] (xB) at ([xshift=\XST]xA.east) {\input{\FPATH/\PHN_female_p.tex}};
+ \node[scale=\SCALE,anchor=north] (xC) at ([yshift=\YST]xA.south) {\input{\FPATH/\PHN_male_c.tex}};
+ \node[scale=\SCALE,anchor=west] (xD) at ([xshift=-0.05in]$(xC.east)!(xB.west)!(xC.west)$) {\input{\FPATH/\PHN_male_p.tex}};
+\draw[semithick,dashed,lightgray] ([xshift=-.75in]$(xA.west)!.6!(xC.west)$) -- ++(6.5in,0) node [rotate=90,fill=white,font=\bf\sffamily\LARGE] {\PHN};
+\draw[very thick,black] ([yshift=-.12in]$(current bounding box.north west)!(xC.south west)!(current bounding box.south west)$) -- ([yshift=-.12in]$(current bounding box.north east)!(xC.south west)!(current bounding box.south east)$);
+
+\node[anchor=south] (L1) at ([yshift=.45in]xA.north) {\Large \bf \sffamily Control};
+\node[anchor=south] (L2) at ($(L1.south east)!(xB.north)!(L1.south west)$) {\Large  \bf \sffamily Positive};
+
+\node[anchor=west] (L3) at ([xshift=.275in]xB.east) {\Female};
+\node[anchor=west] (L4) at ($(L3.north west)!(xD.east)!(L3.south west)$) {\Male};
+
+\draw[ultra thick,black] ([yshift=1.7in]$(current bounding box.north west)!(xC.south west)!(current bounding box.south west)$) -- ([yshift=1.7in]$(current bounding box.north east)!(xC.south west)!(current bounding box.south east)$);
+
+
+
+\def\PHN{infectious}
+\def\YST{-.15in}
+\def\XST{.85in}
+
+\node[scale=\SCALE,anchor=north] (xA) at ([xshift=.3in,yshift=\YST]xC.south) {\input{\FPATH/\PHN_female_c.tex}};
+\node[scale=\SCALE,anchor=west] (xB) at ([xshift=\XST]xA.east) {\input{\FPATH/\PHN_female_p.tex}};
+ \node[scale=\SCALE,anchor=north] (xC) at ([yshift=\YST]xA.south) {\input{\FPATH/\PHN_male_c.tex}};
+ \node[scale=\SCALE,anchor=west] (xD) at ([xshift=-.75in]$(xC.east)!(xB.west)!(xC.west)$) {\input{\FPATH/\PHN_male_p.tex}};
+\draw[semithick,dashed,lightgray] ([xshift=-.15in]$(xA.west)!.45!(xC.west)$) -- ++(6.5in,0) node [rotate=90,fill=white,font=\bf\sffamily\LARGE] {\PHN};
+\draw[very thick,black] ([yshift=-.11in]$(current bounding box.north west)!(xC.south west)!(current bounding box.south west)$) -- ([yshift=-.11in]$(current bounding box.north east)!(xC.south west)!(current bounding box.south east)$);
+
+\node[anchor=west] (L3) at ($(L3.north west)!(xB.east)!(L3.south west)$) {\Female};
+\node[anchor=west] (L4) at ($(L3.north west)!(xD.east)!(L3.south west)$) {\Male};
+
+
+\def\PHN{otic}
+\def\YST{-.1in}
+\def\XST{.85in}
+
+\node[scale=\SCALE,anchor=north] (xA) at ([xshift=0in,yshift=\YST]xC.south) {\input{\FPATH/\PHN_female_c.tex}};
+\node[scale=\SCALE,anchor=west] (xB) at ([xshift=\XST]xA.east) {\input{\FPATH/\PHN_female_p.tex}};
+ \node[scale=\SCALE,anchor=north] (xC) at ([yshift=\YST]xA.south) {\input{\FPATH/\PHN_male_c.tex}};
+ \node[scale=\SCALE,anchor=west] (xD) at ([xshift=-.75in]$(xC.east)!(xB.west)!(xC.west)$) {\input{\FPATH/\PHN_male_p.tex}};
+\draw[semithick,dashed,lightgray] ([xshift=-.15in]$(xA.west)!.45!(xC.west)$) -- ++(6.5in,0) node [rotate=90,fill=white,font=\bf\sffamily\LARGE] {\PHN};
+\draw[very thick,black] ([yshift=-.075in]$(current bounding box.north west)!(xC.south west)!(current bounding box.south west)$) -- ([yshift=-.075in]$(current bounding box.north east)!(xC.south west)!(current bounding box.south east)$);
+
+\node[anchor=west] (L3) at ($(L3.north west)!(xB.east)!(L3.south west)$) {\Female};
+\node[anchor=west] (L4) at ($(L3.north west)!(xD.east)!(L3.south west)$) {\Male};
+
+
+
+\def\PHN{integumentary}
+\def\YST{-.25in}
+\def\XST{.85in}
+
+\node[scale=\SCALE,anchor=north] (xA) at ([xshift=0in,yshift=\YST]xC.south) {\input{\FPATH/\PHN_female_c.tex}};
+\node[scale=\SCALE,anchor=west] (xB) at ([xshift=\XST]xA.east) {\input{\FPATH/\PHN_female_p.tex}};
+ \node[scale=\SCALE,anchor=north] (xC) at ([yshift=\YST]xA.south) {\input{\FPATH/\PHN_male_c.tex}};
+ \node[scale=\SCALE,anchor=west] (xD) at ([xshift=-.75in]$(xC.east)!(xB.west)!(xC.west)$) {\input{\FPATH/\PHN_male_p.tex}};
+\draw[semithick,dashed,lightgray] ([xshift=-.15in]$(xA.west)!.45!(xC.west)$) -- ++(6.5in,0) node [rotate=90,fill=white,font=\bf\sffamily\LARGE] {\PHN};
+\draw[very thick,black] ([yshift=-.075in]$(current bounding box.north west)!(xC.south west)!(current bounding box.south west)$) -- ([yshift=-.075in]$(current bounding box.north east)!(xC.south west)!(current bounding box.south east)$);
+
+
+\node[anchor=west] (L3) at ($(L3.north west)!(xB.east)!(L3.south west)$) {\Female};
+\node[anchor=west] (L4) at ($(L3.north west)!(xD.east)!(L3.south west)$) {\Male};
+
+% \def\PHN{integumentary}
+% \def\YST{-.15in}
+% \def\XST{.85in}
+
+% \node[scale=\SCALE,anchor=north] (xA) at ([xshift=0in,yshift=\YST]xC.south) {\input{\FPATH/\PHN_female_c.tex}};
+% \node[scale=\SCALE,anchor=west] (xB) at ([xshift=\XST]xA.east) {\input{\FPATH/\PHN_female_p.tex}};
+%  \node[scale=\SCALE,anchor=north] (xC) at ([yshift=\YST]xA.south) {\input{\FPATH/\PHN_male_c.tex}};
+%  \node[scale=\SCALE,anchor=west] (xD) at ([xshift=-.75in]$(xC.east)!(xB.west)!(xC.west)$) {\input{\FPATH/\PHN_male_p.tex}};
+% \draw[semithick,dashed,lightgray] ([xshift=-.15in]$(xA.west)!.45!(xC.west)$) -- ++(6.5in,0) node [rotate=90,fill=white,font=\bf\sffamily\LARGE] {\PHN};
+
+% \node[anchor=west] (L3) at ($(L3.north west)!(xB.east)!(L3.south west)$) {\Female};
+% \node[anchor=west] (L4) at ($(L3.north west)!(xD.east)!(L3.south west)$) {\Male};
+
+
+%\draw[very thick,black] ([yshift=-.15in]$(current bounding box.north west)!(xC.south west)!(current bounding box.south west)$) -- ([yshift=-.15in]$(current bounding box.north east)!(xC.south west)!(current bounding box.south east)$);
+
+
+
+
+\draw[ultra thick,gray!20] ($(xC.south east)!1.1!(xD.south east)$) -- ++(0,7.95in);
+\draw[ultra thick,gray!20] ($(xC.south east)!.5!(xD.south west)$) -- ++(0,7.95in);
+
+
+\end{tikzpicture}

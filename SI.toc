@@ -1,0 +1,24 @@
+\contentsline {section}{\numberline {1}Pipeline Optimization}{16}{section.1}
+\contentsline {subsection}{\numberline {1.1}Input Data Format}{16}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Algorithms}{16}{subsection.1.2}
+\contentsline {section}{\numberline {2}Example Run with Released Application}{19}{section.2}
+\contentsline {subsection}{\numberline {2.1}Prerequisites \& Installation}{19}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}EHR data format}{20}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Sample Python code risk estimation}{20}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Sample Python script risk estimation}{20}{subsection.2.4}
+\contentsline {section}{\numberline {3}Comparison With State of the Art Off-the-shelf ML Algorithms}{20}{section.3}
+\contentsline {section}{\numberline {4}Comparison With Pipeline Variations, Feature Subsets and Neural Net Post-processing}{21}{section.4}
+\contentsline {subsection}{\numberline {4.1}Feature Subset Evaluations \& Code Density As A Feature}{21}{subsection.4.1}
+\contentsline {section}{\numberline {5}Threshold Selection on ROC Curve}{21}{section.5}
+\contentsline {section}{\numberline {6}Note on Reciever Operating Characteristics (ROC) and Precision-recall Curves}{22}{section.6}
+\contentsline {section}{\numberline {7}Effect of Class Imbalance}{23}{section.7}
+\contentsline {section}{\numberline {8}Note on ASD Clinical Diagnosis \& Uncertainty of EHR Record}{23}{section.8}
+\contentsline {subsection}{\numberline {8.1}Diagnostic Evaluations}{23}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Change In Diagnostic Criteria for ASD, Inclusion of PDD, Asperger, and Disambiguation From Unrelated Psychiatric Phenotypes}{24}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Performance Comparison With M-CHAT/F}{24}{subsection.8.3}
+\contentsline {section}{\numberline {9}Improving Wait-times For Diagnostic Evaluations by Reducing False Positives in Routine Screening}{25}{section.9}
+\contentsline {subsection}{\numberline {9.1}4D Decision Optimization Using M-CHAT/F Population Stratification To Boost PPV}{25}{subsection.9.1}
+\contentsline {section}{\numberline {10}Generating PFSA Models From Set of Input Streams with Variable Input Lengths}{26}{section.10}
+\contentsline {section}{\numberline {11}Probabilsitic Finite State Automata Inference}{26}{section.11}
+\contentsline {subsection}{\numberline {11.1}Probabilistic Finite-State Automaton}{26}{subsection.11.1}
+\contentsline {section}{\numberline {12}Sequence Likelihood Defect}{28}{section.12}

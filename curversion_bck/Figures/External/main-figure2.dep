@@ -1,0 +1,10 @@
+./Figures/External/main-figure2.pdf: ../../../revision_results/roc/restricted_neg_len/RAW//RAWPRCpipeline_BASIC_M_112w.csv
+./Figures/External/main-figure2.pdf: ../../../revision_results/roc/restricted_neg_len/RAW//RAWPRCpipeline_BASIC_F_112w.csv
+./Figures/External/main-figure2.pdf: ../../../revision_results/roc/restricted_neg_len/RAW//RAWPRCvalid_BASIC_M_112w.csv
+./Figures/External/main-figure2.pdf: ../../../revision_results/roc/restricted_neg_len/RAW//RAWPRCvalid_BASIC_F_112w.csv
+./Figures/External/main-figure2.pdf: ../../../revision_results/roc/restricted_neg_len/RAW//RAWPRCpipeline_BASIC_M_150w.csv
+./Figures/External/main-figure2.pdf: ../../../revision_results/roc/restricted_neg_len/RAW//RAWPRCpipeline_BASIC_F_150w.csv
+./Figures/External/main-figure2.pdf: ../../../revision_results/roc/restricted_neg_len/RAW//RAWPRCvalid_BASIC_M_150w.csv
+./Figures/External/main-figure2.pdf: ../../../revision_results/roc/restricted_neg_len/RAW//RAWPRCvalid_BASIC_F_150w.csv
+./Figures/External/main-figure2.pdf: ../optcode_/data/spcrho.csv
+./Figures/External/main-figure2.pdf: ../optcode_/data/spcrho.csv

@@ -1,0 +1,361 @@
+\begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+  \def\TEXTCOL{gray}
+  \tikzset{
+    hatch distance/.store in=\hatchdistance,
+    hatch distance=20pt,
+    hatch thickness/.store in=\hatchthickness,
+    hatch thickness=2pt
+  }
+
+  % \makeatletter
+  % \pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{flexible hatch}
+  % {\pgfqpoint{0pt}{0pt}}
+  % {\pgfqpoint{\hatchdistance}{\hatchdistance}}
+  % {\pgfpoint{\hatchdistance-1pt}{\hatchdistance-1pt}}%
+  % {
+  %   \pgfsetcolor{\tikz@pattern@color}
+  %   \pgfsetlinewidth{\hatchthickness}
+  %   \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+  %   \pgfpathlineto{\pgfqpoint{\hatchdistance}{\hatchdistance}}
+  %   \pgfusepath{stroke}
+  % }
+  % \makeatother
+  % \pgfdeclarepatternformonly{north east lines wide}%
+  % {\pgfqpoint{-1pt}{-1pt}}%
+  % {\pgfqpoint{10pt}{10pt}}%
+  % {\pgfqpoint{9pt}{9pt}}%
+  % {
+  %   \pgfsetlinewidth{0.4pt}
+  %   \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+  %   \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+  %   \pgfusepath{stroke}
+  % }
+
+  \def\HGTPP{1.4in}
+  \def\HGTX{1.35in}
+  \def\HGTXx{1.5in}
+  \def\HGTWW{1.35in}
+  \def\WDTX{3in}
+  \def\HGT{1.35in}
+  \def\WDTC{3.35in}
+  \def\WDT{3in}
+  \def\WDTH{1.5in}
+  \def\HGTH{3.650in}
+  \def\CHLPREV{../../data_latest/figfiles/prev_combined}
+  \def\CHLPREVN{../../data_latest/figfiles/prev_combined_norm}
+  \def\DATAA{../../data/figfiles/diffinit.csv}
+  \def\BWDT{5.5pt}
+  \def\LENDATA{../../data/figfiles/LEN.csv}
+  \def\CDCDATA{../../data/figfiles/cdc_prevalence.csv}
+  \def\CODEDATA{../../data/figfiles/propcode.csv}
+
+  \node[] (A0) at (0,0.0) {};
+  \node [anchor=north] (A) at (A0.south) {\includegraphics[width=\WDTC]{\CHLPREV}};
+  \node [anchor=north] (B) at ([yshift=-0.15in]A.south) {\includegraphics[width=\WDTC]{\CHLPREVN}};
+
+  \node[anchor=north east] (D) at ([xshift=-0.5in,yshift=-.25in]A.north west) {
+   \def\BANDCOLB{DarkOrange!80}
+  \def\BANDCOLB{Yellow2}
+  \def\BANDCOL{lightgray}
+  \def\PLOTCOL{black}
+  \def\AXISCOL{black!20}
+  \def\HGT{1.1in}
+  \def\WDT{1.15in}
+  \def\OPC{1}
+  \def\BWIDTH{9pt}
+        \begin{tikzpicture}[anchor=west,text=\TEXTCOL]
+ % \clip (0in,-0.4in) rectangle (2.65in,-3.65in);
+\def\datafileP{../../data/figfiles/pf_yr.csv}
+\def\datafileU{../../data/figfiles/ub_yr.csv}
+\def\datafileL{../../data/figfiles/lb_yr.csv}
+ \begin{axis}[legend cell align=left,name=XA, font=\bf\sffamily\fontsize{8}{8}\selectfont, 
+        title={Infections},
+    title style={},
+    legend style={at={(1,1)}, xshift=0in, yshift=0in, draw=white, fill=white, fill opacity=1, 
+      text opacity=1,},
+    axis line style={\AXISCOL, opacity=0,ultra  thick, rounded corners=0pt},
+    axis on top=false, 
+    grid style={dashed, gray!40},
+    enlargelimits=false, 
+    width=\WDT, 
+    height=\HGT,     % size of the image
+     ymin=-30,
+     ymax=60,
+     xmax=6,
+     % ymax=1.275,
+     % ymin=.99,
+    scale only axis=true,
+     grid,
+    xlabel={age [yr]},
+    yticklabel style={xshift=-.015in},
+    ylabel style={yshift=-.1in},
+    xlabel style={yshift=.0in},
+    %ylabel={\% increase in incidence in treatment vs control},
+    scaled x ticks = false,
+     x tick label style={yshift=-.05in,/pgf/number format/fixed,
+    /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+     },
+     major tick length=0pt,
+    ];
+    % 
+    \addplot[ smooth, ultra thick, \MXCOL,mark=*, opacity=.85,
+    mark options={%
+      scale=1.5,draw=black,  thick, fill=white,  opacity=1,
+    },]table[x expr=(\coordindex+1),y=INFM,col sep=comma]
+    {\datafileP};
+    \addlegendentry{Male};
+    \addplot[ smooth, ultra thick, \FXCOL,mark=*, opacity=.85,
+    mark options={%
+      scale=1.5,draw=\FXCOL,  thick, fill=white,  opacity=1,
+    },]table[x expr=(\coordindex+1),y=INFF,col sep=comma]
+    {\datafileP};
+    \addlegendentry{Female};
+     \addplot[smooth, draw=none,,name path=Ax]table[x expr=(\coordindex+1),y=INFM,col sep=comma]
+    {\datafileU};
+    \addplot[smooth,  draw=none,,name path=Bx]table[x expr=(\coordindex+1),y=INFM,col sep=comma]
+    {\datafileL};
+    \addplot[\BANDCOL,opacity=.5] fill between[of=Ax and Bx];
+     \addplot[smooth, draw=none,,name path=Ay]table[x expr=(\coordindex+1),y=INFF,col sep=comma]
+    {\datafileU};
+    \addplot[smooth,  draw=none,,name path=By]table[x expr=(\coordindex+1),y=INFF,col sep=comma]
+    {\datafileL};
+    \addplot[\BANDCOL,opacity=.5] fill between[of=Ay and By];
+  \end{axis}
+  \begin{axis}[legend cell align=left,name=XB, font=\bf\sffamily\fontsize{8}{8}\selectfont,
+    title={Immunologic},
+    title style={},
+    at=(XA.north east),anchor=north west,xshift=0.5in,
+    legend style={at={(1,1)}, xshift=0in, yshift=0in, draw=white, fill=white, fill opacity=1, 
+      text opacity=1,},
+    axis line style={\AXISCOL, opacity=0,ultra  thick, rounded corners=0pt},
+    axis on top=false, 
+    grid style={dashed, gray!40},
+    enlargelimits=false, 
+    width=\WDT, 
+    height=\HGT,     % size of the image
+     ymin=-30,
+     ymax=60,
+     xmax=6,
+     % ymax=1.275,
+     % ymin=.99,
+    scale only axis=true,
+     grid,
+    xlabel={age [yr]},
+    yticklabel style={xshift=-.015in},
+    ylabel style={yshift=-.1in,xshift=-.7in},
+    xlabel style={yshift=.0in},
+    %ylabel={\% increase in incidence in treatment vs control},
+    scaled x ticks = false,
+     x tick label style={yshift=-.05in,/pgf/number format/fixed,
+    /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+     },
+     major tick length=0pt,
+    ];
+    % 
+    \addplot[ smooth, ultra thick, \MXCOL,mark=*, opacity=.85,
+    mark options={%
+      scale=1.5,draw=black,  thick, fill=white,  opacity=1,
+    },]table[x expr=(\coordindex+1),y=IMMM,col sep=comma]
+    {\datafileP};
+    \addlegendentry{Male};
+    \addplot[ smooth, ultra thick, \FXCOL,mark=*, opacity=.85,
+    mark options={%
+      scale=1.5,draw=\FXCOL,  thick, fill=white,  opacity=1,
+    },]table[x expr=(\coordindex+1),y=IMMF,col sep=comma]
+    {\datafileP};
+    \addlegendentry{Female};
+     \addplot[smooth, draw=none,,name path=A]table[x expr=(\coordindex+1),y expr=(\thisrow{IMMM} *1.3),col sep=comma]
+    {\datafileU};
+    \addplot[smooth,  draw=none,,name path=B]table[x expr=(\coordindex+1),y expr=(\thisrow{IMMM} *.9,col sep=comma]
+    {\datafileL};
+    \addplot[\BANDCOL,opacity=.5] fill between[of=A and B];
+     \addplot[smooth, draw=none,,name path=A]table[x expr=(\coordindex+1),y expr=(\thisrow{IMMF}+(25/(\coordindex+1))),col sep=comma]
+    {\datafileU};
+    \addplot[smooth,  draw=none,,name path=B]table[x expr=(\coordindex+1),y expr=(\thisrow{IMMF} *.5),col sep=comma]
+    {\datafileL};
+    \addplot[\BANDCOL,opacity=.5] fill between[of=A and B];
+  \end{axis}
+      \end{tikzpicture}
+  %   \begin{tikzpicture}[]
+
+  %     \begin{groupplot}[group style={horizontal sep=.1in,group name=A,group size= 2 by 1},title style={text=\TEXTCOL},
+  %       legend style={anchor=east,at={(0,1.05)},
+  %         inner sep=3pt,draw=none,fill=white,fill opacity=.85,
+  %         align=right,text opacity=1,
+  %         font=\bf\sffamily\fontsize{8}{9}\selectfont},
+  %       axis line style={lightgray, opacity=0, thin},%
+  %       % grid,
+  %       % xshift=.5in,
+  %       % anchor=north west,
+  %       height=\HGTH,
+  %       width=\WDTH,
+  %       xbar, 
+  %       ytick=data,% crucial line for the xticklabels directive 
+  %       % ymin=0,
+  %       yticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,align=right, yshift=0in,xshift=0in,text=\TEXTCOL},
+  %       major tick length=0pt,
+  %       xticklabel style={font=\bf\sffamily\fontsize{8}{7}\selectfont,text=\TEXTCOL},
+  %       grid,
+  %       grid style={lightgray, opacity=.5},
+  %       axis on top=false,xlabel={control $\leftarrow \Delta$ \% prevalence $\rightarrow$ positive},xlabel style={yshift=0.05in,xshift=-.15in,text=\TEXTCOL},
+  %       enlarge y limits=0.05,enlarge x limits=0
+  %       ] 
+  %       \nextgroupplot[%title={50 weeks},      %  xmin=-5,xmax=5,
+  %       bar width=\BWDT, yticklabels from table={\DATAA}{disease},]
+  %       \addplot[opacity=1,fill=\MXCOL, draw=none,area legend] table [ 
+  %       y expr=\coordindex,
+  %       x=M
+  %       ] {\DATAA};   
+  %       \addlegendentry{Male}
+  %       \addplot[opacity=1,fill=\FXCOL, draw=none,area legend] table [ 
+  %       y expr=\coordindex,
+  %       x=F
+  %       ] {\DATAA};   
+  %       \addlegendentry{Female}
+
+  %       % \nextgroupplot[title={150 weeks},        xmin=-5,xmax=5,
+  %       % yticklabel=\empty, bar width=\BWDT, yticklabels from table={\DATAC}{disease}, yticklabel=\empty,xlabel={}]
+  %       % \addplot[opacity=1,fill=\MXCOL,draw=none, area legend] table [ 
+  %       % y expr=\coordindex,
+  %       % x=M
+  %       % ] {\DATAC};   
+  %       % % \addlegendentry{Male}
+  %       % \addplot[opacity=1,fill=\FXCOL,draw=none, area legend] table [ 
+  %       % y expr=\coordindex,
+  %       % x=F
+  %       % ] {\DATAC};   
+  %       % % \addlegendentry{Female}
+
+  %     \end{groupplot} 
+
+  %   \end{tikzpicture}
+   };
+
+  
+ %  \node[anchor=north west] (C) at ([yshift=-0.2in,xshift=0.5in]D.south west) {
+%     \begin{tikzpicture}[]
+%       \begin{axis}[legend cell align=left,legend style={anchor=east,at={(0.65,0.85)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont},
+%         axis line style={lightgray, opacity=0.8, very thick},%
+%         enlargelimits=true,
+%         height=1.4in,
+%         width=3.5in,
+%         % enlarge x limits=0.03,
+%         %ybar,bar width=18pt,    
+%         major tick length=0pt,
+%         xlabel={year of survey},axis x line=bottom,
+%         axis y line=left,
+%         ymin=5,
+%         %xmax=500,
+%         xticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,text=\TEXTCOL},
+%         grid,
+%     grid style={dashed,gray!40},
+%         %grid style={lightgray, opacity=.5},
+%         %grid style={lightgray, dashed, opacity=.6},
+%         axis on top=false, 
+%         ylabel={}, x tick label style={yshift=-0.02in,text=\TEXTCOL},
+%         xlabel style={yshift=0.05in,text=\TEXTCOL},
+% ylabel style={yshift=-.05in,text=\TEXTCOL},y tick label style={,text=\TEXTCOL,xshift=.0in,/pgf/number format/fixed,/pgf/number format/precision=0,/pgf/number format/fixed zerofill,
+%           /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+%         },x tick label style={/pgf/number format/fixed,/pgf/number format/precision=0,/pgf/number format/fixed zerofill,          /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+%         },enlarge x limits=0.1]
+%         \addplot[opacity=.8, draw=\MXCOL,ultra thick,%fill=\WCOL,
+%         mark=*,
+%         mark options={      scale=1.95,draw=\MXCOL,  thick, fill=white,  opacity=1,
+% }
+%         ] table [%
+%         x=syear,
+%         y=prev1000
+%         ] {\CDCDATA};   
+% \draw [ ultra thick,draw=Tomato] (axis cs:2013,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:2013,\pgfkeysvalueof{/pgfplots/ymax})  node[midway,left,fill=white,pos=.3] {DSM V};
+%        % \addlegendentry{prevalence/1000}
+%      \end{axis}
+%     \end{tikzpicture}
+%   };
+
+  \node[anchor=north west] (E) at ([xshift=.45in,yshift=-.5in]D.south west) {
+    \begin{tikzpicture}[]
+      \begin{axis}[legend cell align=left,anchor=center,legend style={anchor=east,at={(0.75,0.8)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont},axis line style={lightgray, opacity=0, thin},%
+        enlargelimits=true,
+        height=2.4in,
+        width=3.25in,
+        % enlarge x limits=0.03,
+        ybar,bar width=2.5pt,    
+        major tick length=0pt,
+        xlabel={ASD diagnosis age [weeks]},
+        xmin=100,
+        xmax=500,
+        xticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,text=\TEXTCOL},
+        % grid,
+        grid style={lightgray, opacity=.7},
+        axis on top=false, 
+        ylabel={probability}, x tick label style={yshift=0.0in,text=\TEXTCOL},
+        xlabel style={yshift=0in,text=\TEXTCOL},ylabel style={xshift=-0.45in,text=\TEXTCOL},y tick label style={,text=\TEXTCOL,xshift=.0in,/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+          /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+        },]
+        \addplot[opacity=1,fill=\MXCOL, draw=none,area legend] table [col sep=comma,
+        x=LEN,
+        y=M
+        ] {\LENDATA};   
+        \addlegendentry{Male}
+        \addplot[opacity=1,fill=\FXCOL,draw=none, area legend] table [col sep=comma,
+        x=LEN,
+        y=F
+        ] {\LENDATA};   
+         \addlegendentry{Female}
+     \end{axis}
+    \end{tikzpicture}
+  };
+
+
+
+%     \node[anchor=north west] (F) at ($(E.north west)!(C.north west)!(E.north east)$) {
+%     \begin{tikzpicture}[]
+%       \begin{axis}[legend cell align=left,legend style={anchor=east,at={(0.4,1.05)},
+%           inner sep=3pt,draw=none,fill=white,fill opacity=.85,
+%           align=right,text opacity=1,
+%           font=\bf\sffamily\fontsize{8}{9}\selectfont},,axis line style={lightgray, opacity=0, thin},%
+%         height=\HGTPP, width=\WDT,
+%         ybar,bar width=3pt,    
+%         major tick length=0.0pt,
+%         xlabel={fraction of weeks with heathcare event},
+%         %xmin=100,
+%         enlargelimits=true,
+%         xmax=0.45,
+%         xticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,text=\TEXTCOL},
+%         % grid,
+%         grid style={lightgray, opacity=.7},
+%         axis on top=false, 
+%         ylabel={probability}, x tick label style={yshift=0.05in,text=\TEXTCOL},
+%         xlabel style={yshift=0.0in,text=\TEXTCOL},ylabel style={yshift=-0in,xshift=-.45in,text=\TEXTCOL},x tick label style={,text=\TEXTCOL,xshift=.1in,yshift=-.05in,/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+%           /pgf/number format/1000 sep = %\thinspace
+%         },y tick label style={text=\TEXTCOL,/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+%           /pgf/number format/1000 sep = %\thinspace 
+%         },scaled ticks=false, enlarge y limits=0.07,enlarge x limits=0,
+%         ]
+%         \addplot[opacity=.7,fill=\MNCOL, draw=none,area legend] table [col sep=comma,
+%         y=M,
+%         x=proportionNz
+%         ] {\CODEDATA};   
+% %        \addlegendentry{Male}
+%         % \addplot[opacity=1,fill=\FXCOL,draw=none, area legend] table [col sep=comma,
+%         % y=proportionNz,
+%         % x=F
+%         % ] {\CODEDATA};   
+%         %  \addlegendentry{Female}
+%      \end{axis}
+%     \end{tikzpicture}
+%   };
+
+
+  \node[anchor=south west,align=left] (LA) at ([xshift=0.25in,yshift=-0.1in]A.north west) {{\LARGE C.} Autism Insurance Claims 2003-2013\\(source: Truven Marketscan)};
+  \node[anchor=south west,align=left] (LB) at ([yshift=-0.1in]$(LA.north west)!(B.north west)!(LA.south west)$) {{\LARGE D.} Autism Prevalence in US (Population Normalized) };
+   \node[anchor=north west,align=left] (LD) at ([xshift=.5in]$(LA.north west)!(D.north west)!(LA.north east)$) {{\LARGE A.} Population-level Prevalence Differences\\between Positive vs Control Populations};
+   % \node[anchor=north west,align=left] (LF) at ([yshift=0.25in]$(LD.north west)!(F.north west)!(LD.south west)$) {{\LARGE E.} Diagnostic Code Fraction Available per Patient};
+   \node[anchor=north west,align=left] (LC) at ([yshift=0in]$(LB.north west)!(LD.north west)!(LB.north east)$) {{\LARGE B.}
+%Autism Prevalence per 1000 (source: CDC)};
+     %\node[anchor=south west,align=left] (LE) at ([yshift=-.1in]$(LC.north west)!(E.north west)!(LC.south west)$)
+     %{{\LARGE E.}
+       ASD Clinical Diagnosis Age Across Genders };
+
+\end{tikzpicture}
+ 

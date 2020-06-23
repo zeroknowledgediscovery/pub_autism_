@@ -1,0 +1,6 @@
+./Figures/External/methods_brief-figure7.pdf: Figures/comp.csv
+./Figures/External/methods_brief-figure7.pdf: Figures/comp.csv
+./Figures/External/methods_brief-figure7.pdf: ../../../revision_results/LSTM_comparison/truven_male.csv
+./Figures/External/methods_brief-figure7.pdf: ../../../revision_results/LSTM_comparison/truven_female.csv
+./Figures/External/methods_brief-figure7.pdf: ../../../revision_results/LSTM_comparison/ucm_male.csv
+./Figures/External/methods_brief-figure7.pdf: ../../../revision_results/LSTM_comparison/ucm_female.csv

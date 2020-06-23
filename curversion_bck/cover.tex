@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%% LaTeX Resume Template %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%  Ishanu Chattopadhyay  ixc128@psu.edu%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[10pt]{article}
+\documentclass[10pt,onecolumn,compsoc]{IEEEtran}
+\let\labelindent\relax
+\usepackage{enumitem}
+\usepackage[letterpaper, top=.5cm, left=2.5cm, right=3.0cm, bottom=2.0cm, includehead, includefoot]{geometry}
+%
+\input{preamble.tex} 
+%\usepackage[printwatermark]{xwatermark}
+\usepackage{wallpaper}
+\usepackage{wasysym}
+\usepackage[misc]{ifsym}
+%\usepackage{applicationN}
+\usepackage[normalem]{ulem}
+\usepackage{epigraph} 
+%\usepackage{pifont}
+%\usepackage{fancyhdr}
+\newcommand{\Space}{\vspace{10pt}}
+\newcommand{\SpaceS}{\vspace{4pt}}
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tikzexternalize[prefix=./Figures/ExtApp/]% activate externalization!
+\tikzexternaldisable
+\newcommand{\ColorA}{\color{black!70}}
+\newcommand{\ColorB}{\color{Red4!10!black}}
+\newcommand{\ColorD}{\color{darkgray}}
+\newcommand{\ColorBb}{\ColorB}
+\newcommand{\ColorE}{\color{darkgray}}
+\newcommand{\ColorX}{\color{Blue3}}
+\def\Me#1{\def\me{#1}}
+\Me{\sffamily\ColorA {\bf \fontsize{10}{10}\selectfont\color{IndianRed4}Ishanu Chattopadhyay}\\
+Assistant Professor\\
+ Section of Hospital Medicine\\
+Department of Medicine\\
+%Institute for Genomics \& Systems Biology\\
+%Computation Institute\\
+%University of Chicago\\
+900 E 57th Street\\
+KCBD 10152\\
+Chicago IL 60637\\
+\phone: 814 5315312\\
+\Letter: ishanu@uchicago.edu\\{\fontsize{7}{7}\selectfont\sffamily\color{Red3}
+\href{zed.uchicago.edu}{zed.uchicago.edu}}}
+
+\setlength{\headsep}{1.65in}
+\addtolength{\textheight}{-1.25in}
+\renewcommand{\baselinestretch}{1.05}
+\lhead{}
+\chead{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.1pt}
+\lhead{
+\includegraphics[width=3.1in]{/home/ishanu/Dropbox/Apps/ShareLaTeX/letterhead/Figures/RGBPNG/maroon}
+\vskip  1.95em
+%
+\bf \sffamily \fontsize{7}{8}\selectfont \ColorA
+Department of Medicine\\
+5841 South Maryland Avenue\\
+Chicago, IL 60637\\
+\phone: 773 7021234\\
+}
+\rhead{
+\ColorA
+  \footnotesize \me \\
+}
+\rfoot{\scriptsize\bf\sffamily\ColorA  \thepage}
+\cfoot{\scriptsize\bf\sffamily \ColorA Chattopadhyay}
+\lfoot{\scriptsize\bf\sffamily \ColorA \today}
+\CenterWallPaper{.5}{/home/ishanu/Dropbox/Apps/ShareLaTeX/letterhead/Figures/phoenix/lightgray}
+% #######################################################################
+\def\EDITOR{Dr. Mary Elizabeth Sutherland}
+\def\BEDITOR{Dr. Sutherland\xspace}
+\def\JNAME{Nature\xspace}
+\def\JADDR{One New York Plaza Suite 4500\\
+New York, NY 10004-1562}
+% #######################################################################
+
+\begin{document}
+\parskip=12pt
+\parindent=0pt
+\Space
+\Space
+% #######################################################################
+% #######################################################################
+\fontsize{11}{12}\selectfont
+\Space
+\Space
+
+\EDITOR\\
+Senior Editor, \JNAME\\
+\JADDR
+
+Dear \BEDITOR
+
+Please find enclosed the  manuscript entitled "\textbf{Halving The False Positives In Autism Screening With
+Deep Co-morbidity Patterns}" for your consideration for publication in \JNAME as a research article. 
+
+%The etiology of autism spectral disorders (ASD)  is still unclear. Our  incomplete understanding of ASD pathogenesis hampers early intervention which can substantially improve outcomes.
+
+ With no existing laboratory tests, autism spectral disorder (ASD) is currently screened for in toddlers using standard questionnaires (M-CHAT/F)  to be completed by the parents at doctors' visits. The M-CHAT/F produces a notoriously high number of false positives (85 out of every 100 flagged) and  a low sensitivity (38\%). With a nation-wide shortage of practitioners who can confirm the clinical diagnosis and trigger intervention services, this overwhelming number of false positives translates to long wait-times for diganostic evaluations ($>1$ year), thus losing crucial time within which  interventions are the most effective. 
+%
+Additionally, questionnaires are prone to interpretive biases from language barriers  leading to systematic under-diagnosis in diverse communities.  Attempts to uncover genetic markers hasn't been too sucessful: amongst thousands of genes implicated,  no single one can be considered causal for more than 1\% of cases of idiopathic autism.
+
+
+In this study, we  use  co-morbdity patterns associated with autism to design a questionnaire-free screening tool that outperforms the state of the art protocols. Using individual diagnostic codes already recorded during regular doctor's visits from two independent databases of patient records, we engineer a reliable risk estimator based on new stochastic learning algorithms. With large cohort sizes in both databases ($\approx 5M$ and $\approx 70K$ respectively), we demonstrate high predictive performance (AUC $> 80\%$) for either gender from shortly after 2 years of age, and better sensitivity/specificity trade-offs compared to M-CHAT/F.
+Also, in combined operation with M-CHAT/F,  we achieve  a 50\%  increase in sensitivity, or a doubling of the positive predictive value, while not losing specificity | thus we can slash false positives in half that can then  significantly reduce wait-times with immediate impact on patient outcomes.
+
+Carried out by a multi-disciplinary team  of machine learning experts (Chattopadhyay) and clinical practioners in pediatric developmental psychology and autism (Smith, Professor of Pediatrics at UChicago and Executive Committee Chair, American Academy of Pediatrics' Section on Developmental and Behavioral
+Pediatrics), we think the potential impact of this work qualifies it to be publishable in \JNAME. 
+
+Thank you in advance for your consideration. We look forward to
+your response.
+\Space
+
+Sincerely,
+\vspace{0pt}
+
+% 
+\begin{flushleft}
+\tikz{\node[]{    \includegraphics[scale=0.7]{/home/ishanu/Dropbox/Apps/ShareLaTeX/letterhead/Figures/sign2}};}
+\vspace{-15pt}
+
+\rule{2.5in}{1pt}\\
+{\fontsize{10}{10}\selectfont Ishanu Chattopadhyay}
+\hfill \today\\
+Chicago, IL
+\end{flushleft}
+
+% #######################################################################
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

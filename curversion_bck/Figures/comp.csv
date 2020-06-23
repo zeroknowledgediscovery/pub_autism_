@@ -1,0 +1,9 @@
+algorithm AUC Gender Samples
+LSTM-M 0.540 M 300K
+{Random Forest-M} 0.581 M 300K
+CatBoost-M 0.590 M 300K
+LSTMB-F-truven 0.60 F  1
+LSTMB-M-ucm 0.66 M 1
+LSTMB-M-truven 0.80 M 1
+SLD-M 0.852 M 300K
+SLD-F 0.847 F 300K

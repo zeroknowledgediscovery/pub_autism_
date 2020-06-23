@@ -1,0 +1,507 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{cdc0}
+\bibinfo{title}{Data \& statistics on autism spectrum disorder | cdc}
+  (\bibinfo{year}{2019}).
+\newblock \urlprefix\url{https://www.cdc.gov/ncbddd/autism}.
+
+\bibitem{nimh}
+\bibinfo{author}{Gilotty, L.}
+\newblock \bibinfo{title}{Early screening for autism spectrum}
+  (\bibinfo{year}{2019}).
+\newblock
+  \urlprefix\url{https://www.nimh.nih.gov/funding/grant-writing-and-application-process/concept-clearances/2018/early-screening-for-autism-spectrum.shtml}.
+
+\bibitem{pmid31562252}
+\bibinfo{author}{Guthrie, W.} \emph{et~al.}
+\newblock \bibinfo{title}{{{A}ccuracy of {A}utism {S}creening in a {L}arge
+  {P}ediatric {N}etwork}}.
+\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{144}}
+  (\bibinfo{year}{2019}).
+
+\bibitem{pmid27565363}
+\bibinfo{author}{Gordon-Lipkin, E.}, \bibinfo{author}{Foster, J.} \&
+  \bibinfo{author}{Peacock, G.}
+\newblock \bibinfo{title}{{{W}hittling {D}own the {W}ait {T}ime: {E}xploring
+  {M}odels to {M}inimize the {D}elay from {I}nitial {C}oncern to {D}iagnosis
+  and {T}reatment of {A}utism {S}pectrum {D}isorder}}.
+\newblock \emph{\bibinfo{journal}{Pediatr. Clin. North Am.}}
+  \textbf{\bibinfo{volume}{63}}, \bibinfo{pages}{851--859}
+  (\bibinfo{year}{2016}).
+
+\bibitem{cdc}
+\bibinfo{title}{Data \& statistics on autism spectrum disorder | cdc}
+  (\bibinfo{year}{2019}).
+\newblock \urlprefix\url{https://www.cdc.gov/ncbddd/autism/data.html}.
+
+\bibitem{pmid24529515}
+\bibinfo{author}{Schieve, L.~A.} \emph{et~al.}
+\newblock \bibinfo{title}{{{P}opulation attributable fractions for three
+  perinatal risk factors for autism spectrum disorders, 2002 and 2008 autism
+  and developmental disabilities monitoring network}}.
+\newblock \emph{\bibinfo{journal}{Ann Epidemiol}}
+  \textbf{\bibinfo{volume}{24}}, \bibinfo{pages}{260--266}
+  (\bibinfo{year}{2014}).
+
+\bibitem{volkmar2014practice}
+\bibinfo{author}{Volkmar, F.} \emph{et~al.}
+\newblock \bibinfo{title}{Practice parameter for the assessment and treatment
+  of children and adolescents with autism spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{Journal of the American Academy of Child \&
+  Adolescent Psychiatry}} \textbf{\bibinfo{volume}{53}},
+  \bibinfo{pages}{237--257} (\bibinfo{year}{2014}).
+
+\bibitem{hyman2020identification}
+\bibinfo{author}{Hyman, S.~L.}, \bibinfo{author}{Levy, S.~E.},
+  \bibinfo{author}{Myers, S.~M.} \emph{et~al.}
+\newblock \bibinfo{title}{Identification, evaluation, and management of
+  children with autism spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{145}}
+  (\bibinfo{year}{2020}).
+
+\bibitem{kalb2012determinants}
+\bibinfo{author}{Kalb, L.~G.} \emph{et~al.}
+\newblock \bibinfo{title}{Determinants of appointment absenteeism at an
+  outpatient pediatric autism clinic}.
+\newblock \emph{\bibinfo{journal}{Journal of Developmental \& Behavioral
+  Pediatrics}} \textbf{\bibinfo{volume}{33}}, \bibinfo{pages}{685--697}
+  (\bibinfo{year}{2012}).
+
+\bibitem{bisgaier2011access}
+\bibinfo{author}{Bisgaier, J.}, \bibinfo{author}{Levinson, D.},
+  \bibinfo{author}{Cutts, D.~B.} \& \bibinfo{author}{Rhodes, K.~V.}
+\newblock \bibinfo{title}{Access to autism evaluation appointments with
+  developmental-behavioral and neurodevelopmental subspecialists}.
+\newblock \emph{\bibinfo{journal}{Archives of pediatrics \& adolescent
+  medicine}} \textbf{\bibinfo{volume}{165}}, \bibinfo{pages}{673--674}
+  (\bibinfo{year}{2011}).
+
+\bibitem{fenikile2015barriers}
+\bibinfo{author}{Fenikil{\'e}, T.~S.}, \bibinfo{author}{Ellerbeck, K.},
+  \bibinfo{author}{Filippi, M.~K.} \& \bibinfo{author}{Daley, C.~M.}
+\newblock \bibinfo{title}{Barriers to autism screening in family medicine
+  practice: a qualitative study}.
+\newblock \emph{\bibinfo{journal}{Primary health care research \& development}}
+  \textbf{\bibinfo{volume}{16}}, \bibinfo{pages}{356--366}
+  (\bibinfo{year}{2015}).
+
+\bibitem{gordon2016whittling}
+\bibinfo{author}{Gordon-Lipkin, E.}, \bibinfo{author}{Foster, J.} \&
+  \bibinfo{author}{Peacock, G.}
+\newblock \bibinfo{title}{Whittling down the wait time: exploring models to
+  minimize the delay from initial concern to diagnosis and treatment of autism
+  spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{Pediatric Clinics}}
+  \textbf{\bibinfo{volume}{63}}, \bibinfo{pages}{851--859}
+  (\bibinfo{year}{2016}).
+
+\bibitem{robins2014validation}
+\bibinfo{author}{Robins, D.~L.} \emph{et~al.}
+\newblock \bibinfo{title}{Validation of the modified checklist for autism in
+  toddlers, revised with follow-up (m-chat-r/f)}.
+\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{133}},
+  \bibinfo{pages}{37--45} (\bibinfo{year}{2014}).
+
+\bibitem{pmid22511918}
+\bibinfo{author}{Kohane, I.~S.} \emph{et~al.}
+\newblock \bibinfo{title}{{{T}he co-morbidity burden of children and young
+  adults with autism spectrum disorders}}.
+\newblock \emph{\bibinfo{journal}{PLoS ONE}} \textbf{\bibinfo{volume}{7}},
+  \bibinfo{pages}{e33224} (\bibinfo{year}{2012}).
+
+\bibitem{pmid30733689}
+\bibinfo{author}{Tye, C.}, \bibinfo{author}{Runicles, A.~K.},
+  \bibinfo{author}{Whitehouse, A. J.~O.} \& \bibinfo{author}{Alvares, G.~A.}
+\newblock \bibinfo{title}{{{C}haracterizing the {I}nterplay {B}etween {A}utism
+  {S}pectrum {D}isorder and {C}omorbid {M}edical {C}onditions: {A}n
+  {I}ntegrative {R}eview}}.
+\newblock \emph{\bibinfo{journal}{Front Psychiatry}}
+  \textbf{\bibinfo{volume}{9}}, \bibinfo{pages}{751} (\bibinfo{year}{2018}).
+
+\bibitem{pmid25681541}
+\bibinfo{author}{Zerbo, O.} \emph{et~al.}
+\newblock \bibinfo{title}{{{I}mmune mediated conditions in autism spectrum
+  disorders}}.
+\newblock \emph{\bibinfo{journal}{Brain Behav. Immun.}}
+  \textbf{\bibinfo{volume}{46}}, \bibinfo{pages}{232--236}
+  (\bibinfo{year}{2015}).
+
+\bibitem{pmid23935565}
+\bibinfo{author}{Won, H.}, \bibinfo{author}{Mah, W.} \& \bibinfo{author}{Kim,
+  E.}
+\newblock \bibinfo{title}{{{A}utism spectrum disorder causes, mechanisms, and
+  treatments: focus on neuronal synapses}}.
+\newblock \emph{\bibinfo{journal}{Front Mol Neurosci}}
+  \textbf{\bibinfo{volume}{6}}, \bibinfo{pages}{19} (\bibinfo{year}{2013}).
+
+\bibitem{pmid30646068}
+\bibinfo{author}{Xu, G.} \emph{et~al.}
+\newblock \bibinfo{title}{{{A}ssociation of {F}ood {A}llergy and {O}ther
+  {A}llergic {C}onditions {W}ith {A}utism {S}pectrum {D}isorder in
+  {C}hildren}}.
+\newblock \emph{\bibinfo{journal}{JAMA Netw Open}}
+  \textbf{\bibinfo{volume}{1}}, \bibinfo{pages}{e180279}
+  (\bibinfo{year}{2018}).
+
+\bibitem{pmid21651783}
+\bibinfo{author}{Adams, J.~B.} \emph{et~al.}
+\newblock \bibinfo{title}{{{N}utritional and metabolic status of children with
+  autism vs. neurotypical children, and the association with autism severity}}.
+\newblock \emph{\bibinfo{journal}{Nutr Metab (Lond)}}
+  \textbf{\bibinfo{volume}{8}}, \bibinfo{pages}{34} (\bibinfo{year}{2011}).
+
+\bibitem{pmid30823414}
+\bibinfo{author}{Fattorusso, A.}, \bibinfo{author}{Di~Genova, L.},
+  \bibinfo{author}{Dell'Isola, G.~B.}, \bibinfo{author}{Mencaroni, E.} \&
+  \bibinfo{author}{Esposito, S.}
+\newblock \bibinfo{title}{{{A}utism {S}pectrum {D}isorders and the {G}ut
+  {M}icrobiota}}.
+\newblock \emph{\bibinfo{journal}{Nutrients}} \textbf{\bibinfo{volume}{11}}
+  (\bibinfo{year}{2019}).
+
+\bibitem{pmid21282636}
+\bibinfo{author}{Diaz~Heijtz, R.} \emph{et~al.}
+\newblock \bibinfo{title}{{{N}ormal gut microbiota modulates brain development
+  and behavior}}.
+\newblock \emph{\bibinfo{journal}{Proc. Natl. Acad. Sci. U.S.A.}}
+  \textbf{\bibinfo{volume}{108}}, \bibinfo{pages}{3047--3052}
+  (\bibinfo{year}{2011}).
+
+\bibitem{pmid29028817}
+\bibinfo{author}{Rose, S.} \emph{et~al.}
+\newblock \bibinfo{title}{{{M}itochondrial dysfunction in the gastrointestinal
+  mucosa of children with autism: {A} blinded case-control study}}.
+\newblock \emph{\bibinfo{journal}{PLoS ONE}} \textbf{\bibinfo{volume}{12}},
+  \bibinfo{pages}{e0186377} (\bibinfo{year}{2017}).
+
+\bibitem{pmid30109601}
+\bibinfo{author}{Sajdel-Sulkowska, E.~M.} \emph{et~al.}
+\newblock \bibinfo{title}{{{C}ommon {G}enetic {V}ariants {L}ink the
+  {A}bnormalities in the {G}ut-{B}rain {A}xis in {P}rematurity and {A}utism}}.
+\newblock \emph{\bibinfo{journal}{Cerebellum}} \textbf{\bibinfo{volume}{18}},
+  \bibinfo{pages}{255--265} (\bibinfo{year}{2019}).
+
+\bibitem{pmid24729779}
+\bibinfo{author}{Kayser, M.~S.} \& \bibinfo{author}{Dalmau, J.}
+\newblock \bibinfo{title}{{{A}nti-{N}{M}{D}{A} {R}eceptor {E}ncephalitis in
+  {P}sychiatry}}.
+\newblock \emph{\bibinfo{journal}{Curr Psychiatry Rev}}
+  \textbf{\bibinfo{volume}{7}}, \bibinfo{pages}{189--193}
+  (\bibinfo{year}{2011}).
+
+\bibitem{pmid30337860}
+\bibinfo{author}{Dadalko, O.~I.} \& \bibinfo{author}{Travers, B.~G.}
+\newblock \bibinfo{title}{{{E}vidence for {B}rainstem {C}ontributions to
+  {A}utism {S}pectrum {D}isorders}}.
+\newblock \emph{\bibinfo{journal}{Front Integr Neurosci}}
+  \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{47} (\bibinfo{year}{2018}).
+
+\bibitem{pmid30971960}
+\bibinfo{author}{Yamashita, Y.} \emph{et~al.}
+\newblock \bibinfo{title}{{{A}nti-inflammatory {E}ffect of {G}hrelin in
+  {L}ymphoblastoid {C}ell {L}ines {F}rom {C}hildren {W}ith {A}utism {S}pectrum
+  {D}isorder}}.
+\newblock \emph{\bibinfo{journal}{Front Psychiatry}}
+  \textbf{\bibinfo{volume}{10}}, \bibinfo{pages}{152} (\bibinfo{year}{2019}).
+
+\bibitem{pmid30941018}
+\bibinfo{author}{Shen, L.} \emph{et~al.}
+\newblock \bibinfo{title}{{{P}roteomics {S}tudy of {P}eripheral {B}lood
+  {M}ononuclear {C}ells ({P}{B}{M}{C}s) in {A}utistic {C}hildren}}.
+\newblock \emph{\bibinfo{journal}{Front Cell Neurosci}}
+  \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{105} (\bibinfo{year}{2019}).
+
+\bibitem{pmid29691724}
+\bibinfo{author}{Ohja, K.} \emph{et~al.}
+\newblock \bibinfo{title}{{{N}euroimmunologic and {N}eurotrophic {I}nteractions
+  in {A}utism {S}pectrum {D}isorders: {R}elationship to {N}euroinflammation}}.
+\newblock \emph{\bibinfo{journal}{Neuromolecular Med.}}
+  \textbf{\bibinfo{volume}{20}}, \bibinfo{pages}{161--173}
+  (\bibinfo{year}{2018}).
+
+\bibitem{pmid29307081}
+\bibinfo{author}{Gadysz, D.}, \bibinfo{author}{Krzywdziska, A.} \&
+  \bibinfo{author}{Hozyasz, K.~K.}
+\newblock \bibinfo{title}{{{I}mmune {A}bnormalities in {A}utism {S}pectrum
+  {D}isorder-{C}ould {T}hey {H}old {P}romise for {C}ausative {T}reatment?}}
+\newblock \emph{\bibinfo{journal}{Mol. Neurobiol.}}
+  \textbf{\bibinfo{volume}{55}}, \bibinfo{pages}{6387--6435}
+  (\bibinfo{year}{2018}).
+
+\bibitem{pmid27351598}
+\bibinfo{author}{Theoharides, T.~C.}, \bibinfo{author}{Tsilioni, I.},
+  \bibinfo{author}{Patel, A.~B.} \& \bibinfo{author}{Doyle, R.}
+\newblock \bibinfo{title}{{{A}topic diseases and inflammation of the brain in
+  the pathogenesis of autism spectrum disorders}}.
+\newblock \emph{\bibinfo{journal}{Transl Psychiatry}}
+  \textbf{\bibinfo{volume}{6}}, \bibinfo{pages}{e844} (\bibinfo{year}{2016}).
+
+\bibitem{pmid26793298}
+\bibinfo{author}{Young, A.~M.} \emph{et~al.}
+\newblock \bibinfo{title}{{{F}rom molecules to neural morphology: understanding
+  neuroinflammation in autism spectrum condition}}.
+\newblock \emph{\bibinfo{journal}{Mol Autism}} \textbf{\bibinfo{volume}{7}},
+  \bibinfo{pages}{9} (\bibinfo{year}{2016}).
+
+\bibitem{pmid30095240}
+\bibinfo{author}{Croen, L.~A.} \emph{et~al.}
+\newblock \bibinfo{title}{{{F}amily history of immune conditions and autism
+  spectrum and developmental disorders: {F}indings from the study to explore
+  early development}}.
+\newblock \emph{\bibinfo{journal}{Autism Res}} \textbf{\bibinfo{volume}{12}},
+  \bibinfo{pages}{123--135} (\bibinfo{year}{2019}).
+
+\bibitem{pmid30178105}
+\bibinfo{author}{Vargason, T.}, \bibinfo{author}{McGuinness, D.~L.} \&
+  \bibinfo{author}{Hahn, J.}
+\newblock \bibinfo{title}{{{G}astrointestinal {S}ymptoms and {O}ral
+  {A}ntibiotic {U}se in {C}hildren with {A}utism {S}pectrum {D}isorder:
+  {R}etrospective {A}nalysis of a {P}rivately {I}nsured {U}.{S}.
+  {P}opulation}}.
+\newblock \emph{\bibinfo{journal}{J Autism Dev Disord}}
+  \textbf{\bibinfo{volume}{49}}, \bibinfo{pages}{647--659}
+  (\bibinfo{year}{2019}).
+
+\bibitem{pmid27957319}
+\bibinfo{author}{Fiorentino, M.} \emph{et~al.}
+\newblock \bibinfo{title}{{{B}lood-brain barrier and intestinal epithelial
+  barrier alterations in autism spectrum disorders}}.
+\newblock \emph{\bibinfo{journal}{Mol Autism}} \textbf{\bibinfo{volume}{7}},
+  \bibinfo{pages}{49} (\bibinfo{year}{2016}).
+
+\bibitem{Satterstrom484113}
+\bibinfo{author}{Satterstrom, F.~K.} \emph{et~al.}
+\newblock \bibinfo{title}{Large-scale exome sequencing study implicates both
+  developmental and functional changes in the neurobiology of autism}.
+\newblock \emph{\bibinfo{journal}{bioRxiv}}  (\bibinfo{year}{2019}).
+\newblock
+  \eprint{https://www.biorxiv.org/content/early/2019/04/24/484113.full.pdf}.
+
+\bibitem{pmid25038753}
+\bibinfo{author}{Gaugler, T.} \emph{et~al.}
+\newblock \bibinfo{title}{{{M}ost genetic risk for autism resides with common
+  variation}}.
+\newblock \emph{\bibinfo{journal}{Nat. Genet.}} \textbf{\bibinfo{volume}{46}},
+  \bibinfo{pages}{881--885} (\bibinfo{year}{2014}).
+
+\bibitem{pmid15546155}
+\bibinfo{author}{Vargas, D.~L.}, \bibinfo{author}{Nascimbene, C.},
+  \bibinfo{author}{Krishnan, C.}, \bibinfo{author}{Zimmerman, A.~W.} \&
+  \bibinfo{author}{Pardo, C.~A.}
+\newblock \bibinfo{title}{{{N}euroglial activation and neuroinflammation in the
+  brain of patients with autism}}.
+\newblock \emph{\bibinfo{journal}{Ann. Neurol.}} \textbf{\bibinfo{volume}{57}},
+  \bibinfo{pages}{67--81} (\bibinfo{year}{2005}).
+
+\bibitem{pmid21595886}
+\bibinfo{author}{Wei, H.} \emph{et~al.}
+\newblock \bibinfo{title}{{{I}{L}-6 is increased in the cerebellum of autistic
+  brain and alters neural cell adhesion, migration and synaptic formation}}.
+\newblock \emph{\bibinfo{journal}{J Neuroinflammation}}
+  \textbf{\bibinfo{volume}{8}}, \bibinfo{pages}{52} (\bibinfo{year}{2011}).
+
+\bibitem{pmid21629840}
+\bibinfo{author}{Young, A.~M.}, \bibinfo{author}{Campbell, E.},
+  \bibinfo{author}{Lynch, S.}, \bibinfo{author}{Suckling, J.} \&
+  \bibinfo{author}{Powis, S.~J.}
+\newblock \bibinfo{title}{{{A}berrant {N}{F}-kappa{B} expression in autism
+  spectrum condition: a mechanism for neuroinflammation}}.
+\newblock \emph{\bibinfo{journal}{Front Psychiatry}}
+  \textbf{\bibinfo{volume}{2}}, \bibinfo{pages}{27} (\bibinfo{year}{2011}).
+
+\bibitem{pmid30483058}
+\bibinfo{author}{Hughes, H.~K.}, \bibinfo{author}{Mills~Ko, E.},
+  \bibinfo{author}{Rose, D.} \& \bibinfo{author}{Ashwood, P.}
+\newblock \bibinfo{title}{{{I}mmune {D}ysfunction and {A}utoimmunity as
+  {P}athological {M}echanisms in {A}utism {S}pectrum {D}isorders}}.
+\newblock \emph{\bibinfo{journal}{Front Cell Neurosci}}
+  \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{405} (\bibinfo{year}{2018}).
+
+\bibitem{Pearce2000}
+\bibinfo{author}{Pearce, N.}
+\newblock \bibinfo{title}{{The ecological fallacy strikes back.}}
+\newblock \emph{\bibinfo{journal}{Journal of epidemiology and community
+  health}} \textbf{\bibinfo{volume}{54}}, \bibinfo{pages}{326--7}
+  (\bibinfo{year}{2000}).
+\newblock \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/10814650
+  http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC1731667}.
+
+\bibitem{pmid23537858}
+\bibinfo{author}{Murdoch, J.~D.} \& \bibinfo{author}{State, M.~W.}
+\newblock \bibinfo{title}{{{R}ecent developments in the genetics of autism
+  spectrum disorders}}.
+\newblock \emph{\bibinfo{journal}{Curr. Opin. Genet. Dev.}}
+  \textbf{\bibinfo{volume}{23}}, \bibinfo{pages}{310--315}
+  (\bibinfo{year}{2013}).
+
+\bibitem{pmid23637569}
+\bibinfo{author}{Hu, V.~W.}
+\newblock \bibinfo{title}{{{T}he expanding genomic landscape of autism:
+  discovering the 'forest' beyond the 'trees'}}.
+\newblock \emph{\bibinfo{journal}{Future Neurol}} \textbf{\bibinfo{volume}{8}},
+  \bibinfo{pages}{29--42} (\bibinfo{year}{2013}).
+
+\bibitem{pmid29701730}
+\bibinfo{author}{Baio, J.} \emph{et~al.}
+\newblock \bibinfo{title}{{{P}revalence of {A}utism {S}pectrum {D}isorder
+  {A}mong {C}hildren {A}ged 8 {Y}ears - {A}utism and {D}evelopmental
+  {D}isabilities {M}onitoring {N}etwork, 11 {S}ites, {U}nited {S}tates, 2014}}.
+\newblock \emph{\bibinfo{journal}{MMWR Surveill Summ}}
+  \textbf{\bibinfo{volume}{67}}, \bibinfo{pages}{1--23} (\bibinfo{year}{2018}).
+
+\bibitem{althouse2006pediatric}
+\bibinfo{author}{Althouse, L.~A.} \& \bibinfo{author}{Stockman, J.~A.}
+\newblock \bibinfo{title}{Pediatric workforce: A look at pediatric nephrology
+  data from the american board of pediatrics}.
+\newblock \emph{\bibinfo{journal}{The Journal of pediatrics}}
+  \textbf{\bibinfo{volume}{148}}, \bibinfo{pages}{575--576}
+  (\bibinfo{year}{2006}).
+
+\bibitem{cdccp}
+\bibinfo{title}{Prevalence of cerebral palsy, co-occurring autism spectrum
+  disorders, and motor functioning} (\bibinfo{year}{2020}).
+\newblock
+  \urlprefix\url{https://www.cdc.gov/ncbddd/cp/features/prevalence.html}.
+
+\bibitem{christensen2014prevalence}
+\bibinfo{author}{Christensen, D.} \emph{et~al.}
+\newblock \bibinfo{title}{Prevalence of cerebral palsy, co-occurring autism
+  spectrum disorders, and motor functioning--a utism and d evelopmental d
+  isabilities m onitoring n etwork, usa, 2008}.
+\newblock \emph{\bibinfo{journal}{Developmental Medicine \& Child Neurology}}
+  \textbf{\bibinfo{volume}{56}}, \bibinfo{pages}{59--65}
+  (\bibinfo{year}{2014}).
+
+\bibitem{10.1001/jamapsychiatry.2019.1956}
+\bibinfo{author}{Rødgaard, E.-M.}, \bibinfo{author}{Jensen, K.},
+  \bibinfo{author}{Vergnes, J.-N.}, \bibinfo{author}{Soulières, I.} \&
+  \bibinfo{author}{Mottron, L.}
+\newblock \bibinfo{title}{{Temporal Changes in Effect Sizes of Studies
+  Comparing Individuals With and Without Autism: A Meta-analysis}}.
+\newblock \emph{\bibinfo{journal}{JAMA Psychiatry}}
+  \textbf{\bibinfo{volume}{76}}, \bibinfo{pages}{1124--1132}
+  (\bibinfo{year}{2019}).
+\newblock \urlprefix\url{https://doi.org/10.1001/jamapsychiatry.2019.1956}.
+\newblock
+  \eprint{https://jamanetwork.com/journals/jamapsychiatry/articlepdf/2747847/jamapsychiatry\_rdgaard\_2019\_oi\_190046.pdf}.
+
+\bibitem{hansen2017truven}
+\bibinfo{author}{Hansen, L.}
+\newblock \bibinfo{title}{The truven health marketscan databases for life
+  sciences researchers}.
+\newblock \emph{\bibinfo{journal}{Truven Health Ananlytics IBM Watson Health}}
+  (\bibinfo{year}{2017}).
+
+\bibitem{ltgranger80}
+\bibinfo{author}{Granger, C. W.~J.} \& \bibinfo{author}{Joyeux, R.}
+\newblock \bibinfo{title}{An introduction to long-memory time series models and
+  fractional differencing}.
+\newblock \emph{\bibinfo{journal}{Journal of Time Series Analysis}}
+  \textbf{\bibinfo{volume}{1}}, \bibinfo{pages}{15--29}.
+
+\bibitem{CL12g}
+\bibinfo{author}{Chattopadhyay, I.} \& \bibinfo{author}{Lipson, H.}
+\newblock \bibinfo{title}{{{A}bductive learning of quantized stochastic
+  processes with probabilistic finite automata}}.
+\newblock \emph{\bibinfo{journal}{Philos Trans A}}
+  \textbf{\bibinfo{volume}{371}}, \bibinfo{pages}{20110543}
+  (\bibinfo{year}{2013}).
+
+\bibitem{Stoyanov2010}
+\bibinfo{author}{Stoyanov, S.~V.}, \bibinfo{author}{Racheva-Iotova, B.},
+  \bibinfo{author}{Rachev, S.~T.} \& \bibinfo{author}{Fabozzi, F.~J.}
+\newblock \bibinfo{title}{Stochastic models for risk estimation in volatile
+  markets: a survey}.
+\newblock \emph{\bibinfo{journal}{Annals of Operations Research}}
+  \textbf{\bibinfo{volume}{176}}, \bibinfo{pages}{293--309}
+  (\bibinfo{year}{2010}).
+\newblock \urlprefix\url{https://doi.org/10.1007/s10479-008-0468-1}.
+
+\bibitem{Shumway2000}
+\bibinfo{author}{Shumway, R.~H.} \& \bibinfo{author}{Stoffer, D.~S.}
+\newblock \emph{\bibinfo{title}{Time Series Regression and ARIMA Models}},
+  \bibinfo{pages}{89--212} (\bibinfo{publisher}{Springer New York},
+  \bibinfo{address}{New York, NY}, \bibinfo{year}{2000}).
+\newblock \urlprefix\url{https://doi.org/10.1007/978-1-4757-3261-0_2}.
+
+\bibitem{freedman04}
+\bibinfo{author}{Freedman, D.~A.}
+\newblock \emph{\bibinfo{title}{Ecological Fallacy}}, \bibinfo{pages}{293--294}
+  (\bibinfo{publisher}{SAGE Publications}, \bibinfo{address}{Thousand Oaks,
+  CA}, \bibinfo{year}{2004}).
+
+\bibitem{rao92}
+\bibinfo{author}{Rao, B.~R.}, \bibinfo{author}{Day, R.~D.} \&
+  \bibinfo{author}{Marsh, G.~M.}
+\newblock \bibinfo{title}{Estimation of relative risks from individual and
+  ecological correlation studies} \textbf{\bibinfo{volume}{21}},
+  \bibinfo{pages}{241--268} (\bibinfo{year}{1992}).
+
+\bibitem{bendel90}
+\bibinfo{author}{Bendel, R.~B.} \& \bibinfo{author}{Carlin, B.~P.}
+\newblock \bibinfo{title}{{Bayes} methods in the ecological fallacy context:
+  estimation of individual correlation from aggregate data}
+  \textbf{\bibinfo{volume}{19}}, \bibinfo{pages}{2595--2623}
+  (\bibinfo{year}{1990}).
+
+\bibitem{GEMS}
+\bibinfo{title}{General equivalence mappings}.
+\newblock
+  \urlprefix\url{https://www.cms.gov/Medicare/Coding/ICD10/downloads/ICD-10_GEM_fact_sheet.pdf}.
+
+\bibitem{Cover}
+\bibinfo{author}{Cover, T.~M.} \& \bibinfo{author}{Thomas, J.~A.}
+\newblock \emph{\bibinfo{title}{Elements of Information Theory (Wiley Series in
+  Telecommunications and Signal Processing)}}
+  (\bibinfo{publisher}{Wiley-Interscience}, \bibinfo{address}{New York, NY,
+  USA}, \bibinfo{year}{2006}).
+
+\bibitem{kullback1951}
+\bibinfo{author}{Kullback, S.} \& \bibinfo{author}{Leibler, R.~A.}
+\newblock \bibinfo{title}{On information and sufficiency}.
+\newblock \emph{\bibinfo{journal}{Ann. Math. Statist.}}
+  \textbf{\bibinfo{volume}{22}}, \bibinfo{pages}{79--86}
+  (\bibinfo{year}{1951}).
+\newblock \urlprefix\url{https://doi.org/10.1214/aoms/1177729694}.
+
+\bibitem{doob1953stochastic}
+\bibinfo{author}{Doob, J.}
+\newblock \emph{\bibinfo{title}{Stochastic Processes}}.
+\newblock Wiley Publications in Statistics (\bibinfo{publisher}{John Wiley \&
+  Sons}, \bibinfo{year}{1953}).
+\newblock \urlprefix\url{https://books.google.com/books?id=KvJQAAAAMAAJ}.
+
+\bibitem{gbm02}
+\bibinfo{author}{Friedman, J.~H.}
+\newblock \bibinfo{title}{Stochastic gradient boosting}.
+\newblock \emph{\bibinfo{journal}{Comput. Stat. Data Anal.}}
+  \textbf{\bibinfo{volume}{38}}, \bibinfo{pages}{367--378}
+  (\bibinfo{year}{2002}).
+\newblock \urlprefix\url{http://dx.doi.org/10.1016/S0167-9473(01)00065-2}.
+
+\bibitem{CRUTCHFIELD199411}
+\bibinfo{author}{Crutchfield, J.~P.}
+\newblock \bibinfo{title}{The calculi of emergence: computation, dynamics and
+  induction}.
+\newblock \emph{\bibinfo{journal}{Physica D: Nonlinear Phenomena}}
+  \textbf{\bibinfo{volume}{75}}, \bibinfo{pages}{11 -- 54}
+  (\bibinfo{year}{1994}).
+\newblock
+  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/0167278994902739}.
+
+\bibitem{jarquin2011racial}
+\bibinfo{author}{Jarquin, V.~G.}, \bibinfo{author}{Wiggins, L.~D.},
+  \bibinfo{author}{Schieve, L.~A.} \& \bibinfo{author}{Van Naarden-Braun, K.}
+\newblock \bibinfo{title}{Racial disparities in community identification of
+  autism spectrum disorders over time; metropolitan atlanta, georgia,
+  2000--2006}.
+\newblock \emph{\bibinfo{journal}{Journal of Developmental \& Behavioral
+  Pediatrics}} \textbf{\bibinfo{volume}{32}}, \bibinfo{pages}{179--187}
+  (\bibinfo{year}{2011}).
+
+\end{thebibliography}

@@ -1,0 +1,345 @@
+\begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+\def\TEXTCOL{gray}
+    \tikzset{
+        hatch distance/.store in=\hatchdistance,
+        hatch distance=20pt,
+        hatch thickness/.store in=\hatchthickness,
+        hatch thickness=2pt
+    }
+
+    \makeatletter
+    \pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{flexible hatch}
+    {\pgfqpoint{0pt}{0pt}}
+    {\pgfqpoint{\hatchdistance}{\hatchdistance}}
+    {\pgfpoint{\hatchdistance-1pt}{\hatchdistance-1pt}}%
+    {
+        \pgfsetcolor{\tikz@pattern@color}
+        \pgfsetlinewidth{\hatchthickness}
+        \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+        \pgfpathlineto{\pgfqpoint{\hatchdistance}{\hatchdistance}}
+        \pgfusepath{stroke}
+    }
+    \makeatother
+\pgfdeclarepatternformonly{north east lines wide}%
+   {\pgfqpoint{-1pt}{-1pt}}%
+   {\pgfqpoint{10pt}{10pt}}%
+   {\pgfqpoint{9pt}{9pt}}%
+   {
+     \pgfsetlinewidth{0.4pt}
+     \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+     \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+     \pgfusepath{stroke}
+    }
+
+
+  \def\WDT{4.75in} 
+  \def\WDTA{2.0in} 
+
+  \def\datafile{../data/figfiles/model_complexity.csv}
+  \def\riskfile{../data/figfiles/risk.csv}
+  \def\sampleimg{../data/figfiles/sample.pdf}
+  \def\sampledat{../data/figfiles/sampledat.csv}
+  \def\auctime{../data/figfiles/auc_time.csv}
+
+
+
+
+
+\def\PNEGA{A081985877}
+\def\PNEGB{A057678322}
+\def\PNEGC{A020137017}
+\def\PPOSA{A045894836}
+\def\PPOSB{A081873132}
+\def\PPOSC{A081568622}
+
+  
+  \def\HGT{1.6in}
+  \def\WDT{3.5in}
+  \def\WDTC{4in}
+  \def\WDTR{1.9in}
+  \def\WDTH{1.7in}
+  
+  \node[] (A0) at (0,0) {};
+  % \node [anchor=north] (M) at (A.south) {\includegraphics[width=\WDTC]{\CHLM}};
+  % \node [anchor=north] (F) at ([yshift=-0.25in]M.south) {\includegraphics[width=\WDTC]{\CHLF}};
+
+  \node[] (A) {
+    \begin{tikzpicture}[]
+  \begin{groupplot}[group style={group name=A,group size= 1 by 2},legend style={anchor=east,at={(.5,0.8)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont},axis line style={lightgray, opacity=0, thin},%
+    enlargelimits=true,
+     height=\HGT,
+    width=\WDT,
+     enlarge x limits=0.03,
+    ] 
+    \nextgroupplot[ybar,bar width=5pt,    
+xtick=data,% crucial line for the xticklabels directive 
+    xmin=0, 
+    xticklabels from table={\datafile}{feature},
+    xticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,align=right,rotate=90, 
+text width=1.1in, anchor=east, yshift=0in,xshift=-.045in,text=\TEXTCOL},
+    major tick length=0pt,
+    xticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,text=\TEXTCOL},
+    %grid,
+    grid style={lightgray, opacity=.7},
+    axis on top=false, 
+    ylabel={},
+    xlabel style={yshift=0.05in,text=\TEXTCOL},xticklabels=\empty,ylabel style={yshift=-.15in}]
+    \addplot[opacity=1,fill=\MNCOL, area legend] table [ 
+    x expr=\coordindex,
+    y=NEGM
+    ] {\datafile};   
+    \addlegendentry{Male Control}
+    \addplot[opacity=1,fill=\MXCOL, area legend] table [ 
+    x expr=\coordindex,
+    y=POSM
+    ] {\datafile};   
+    \addlegendentry{Male Positive}
+
+    \nextgroupplot[ybar,bar width=5pt,    xtick=data,% crucial line for the xticklabels directive 
+    xmin=0, 
+    xticklabels from table={\datafile}{feature},
+    xticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,align=right,rotate=90, 
+text width=1.1in, anchor=east, yshift=0in,xshift=-.045in,text=\TEXTCOL},
+    major tick length=0pt,
+    xticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,text=\TEXTCOL},
+    %grid,
+    grid style={lightgray, opacity=.7},
+    axis on top=false, 
+    ylabel={model complexity (no. of states)},
+    xlabel style={yshift=-0.69in,text=\TEXTCOL},,ylabel style={text=\TEXTCOL,xshift=.7in,yshift=-.15in},xlabel={disease group}]
+    \addplot[opacity=1,fill=\FNCOL, area legend] table [ 
+    x expr=\coordindex,
+    y=NEGF
+    ] {\datafile};   
+    \addlegendentry{Female Control}
+    \addplot[opacity=1,fill=\FXCOL, area legend] table [ 
+    x expr=\coordindex,
+    y=POSF
+    ] {\datafile};   
+    \addlegendentry{Female Positive}
+  \end{groupplot}
+\end{tikzpicture}
+};
+\def\AXISCOL{white}
+\def\BANDCOL{lightgray}
+\def\PLOTCOLA{black}
+\def\PLOTCOLB{\MXCOL}
+\def\PLOTCOLC{black}
+\def\PLOTCOLD{\FXCOL}
+\def\WDT{2.150in}
+\def\HGT{1.25in}
+
+\def\WDT{1.35in}
+\def\HGT{1.25in}
+
+\def\SCALE{1.75}
+\def\LWDT{0.5mm}
+\node[anchor=north west] (B) at ([xshift=.5in]A.north east)
+{
+  \begin{tikzpicture}[]
+    \begin{groupplot}[group style={group name=A,group size= 1 by 3},
+      legend style={anchor=east,at={(0,1.05)},
+        inner sep=3pt,
+        draw=none,
+        fill=white,fill opacity=.85,
+        align=left,anchor=west,
+        text opacity=1,
+        font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},
+      grid style={thick,dashed, gray!40},
+      grid,
+    enlargelimits=true,scale only axis=true,scaled x ticks = false,scaled y ticks = false,
+     height=\HGT,
+    width=\WDT,
+    enlarge x limits=0.03,axis line style={\AXISCOL, opacity=1,ultra  thick, rounded corners=0pt}, y tick label style={/pgf/number format/fixed,/pgf/number format/precision=3,/pgf/number format/fixed zerofill,
+     /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+      },
+      major tick length=0pt]
+
+    \nextgroupplot[xticklabels=\empty,text=\TEXTCOL]
+    \addplot[ smooth,  line width=\LWDT, \MNCOL,mark=*, opacity=.85,
+    mark options={%
+      scale=\SCALE,draw=\MNCOL,  thick, fill=\MNCOL,  opacity=1,
+    },]table[col sep=comma,x=time, y=mcontrolM]
+    {\riskfile};
+    \addlegendentry{Males Control};
+ 
+
+   \addplot[forget plot,smooth, draw=none,,name path=A]table[col sep=comma,x=time, y=UcontrolM]
+    {\riskfile};
+    \addplot[forget plot,smooth,  draw=none,,name path=B]table[col sep=comma,x=time, y=LcontrolM]
+    {\riskfile};
+    \addplot[forget plot,\BANDCOL,opacity=.5] fill between[of=A and B];
+    
+
+    
+    \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=*, opacity=.85,
+    mark options={%
+      scale=\SCALE,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  opacity=1,
+    },]table[col sep=comma,x=time, y=mtreatmentM]
+    {\riskfile};
+    \addlegendentry{Males Positive};
+
+
+    
+   \addplot[smooth, draw=none,,name path=A]table[col sep=comma,x=time, y=UtreatmentM]
+    {\riskfile};
+    \addplot[smooth,  draw=none,,name path=B]table[col sep=comma,x=time, y=LtreatmentM]
+    {\riskfile};
+    \addplot[\BANDCOL,opacity=.5] fill between[of=A and B];
+    
+
+    \nextgroupplot[xlabel={weeks},text=\TEXTCOL,xlabel style={yshift=0.025in},,ylabel={risk (99\% confidence)},ylabel style={xshift=.3in}]
+    \addplot[ smooth, line width=\LWDT, \FNCOL,mark=*, opacity=.85,
+    mark options={%
+      scale=\SCALE,draw=\FNCOL,  thick, fill=\FNCOL,  opacity=1,
+    },]table[col sep=comma,x=time, y=mcontrolF]
+    {\riskfile};
+    \addlegendentry{Females Control};
+
+   \addplot[forget plot,smooth, draw=none,,name path=A]table[col sep=comma,x=time, y=UcontrolF]
+    {\riskfile};
+    \addplot[forget plot,smooth,  draw=none,,name path=B]table[col sep=comma,x=time, y=LcontrolF]
+    {\riskfile};
+    \addplot[forget plot,\BANDCOL,opacity=.5] fill between[of=A and B];
+    
+
+    
+    \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=*, opacity=.85,
+    mark options={%
+      scale=\SCALE,draw=\PLOTCOLD,  thick, fill=\PLOTCOLD,  opacity=1,
+    },]table[col sep=comma,x=time, y=mtreatmentF]
+    {\riskfile};
+    \addlegendentry{Females Positive};
+
+   \addplot[smooth, draw=none,,name path=A]table[col sep=comma,x=time, y=UtreatmentF]
+    {\riskfile};
+    \addplot[smooth,  draw=none,,name path=B]table[col sep=comma,x=time, y=LtreatmentF]
+    {\riskfile};
+    \addplot[\BANDCOL,opacity=.5] fill between[of=A and B];
+
+    \nextgroupplot[yshift=-.5in,text=\TEXTCOL,xlabel={weeks},xlabel style={yshift=0.025in},ylabel style={xshift=-0.1in},ylabel={AUC},
+    %legend style={anchor=east,at={(.9,.3)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},
+    grid style={thick,dashed, gray!40}]
+    
+    \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=*, opacity=.85,
+    mark options={%
+      scale=\SCALE,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  opacity=1,
+    },]table[col sep=comma,x=time, y=M]
+    {\auctime};
+    \addlegendentry{Males};
+    
+    \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=*, opacity=.85,
+    mark options={%
+      scale=\SCALE,draw=\PLOTCOLD,  thick, fill=\PLOTCOLD,  opacity=1,
+    },]table[col sep=comma,x=time, y=F]
+    {\auctime};
+    \addlegendentry{Females};
+     
+\end{groupplot}
+
+
+    \end{tikzpicture}
+  };
+  \def\WDTI{2in}
+  \def\SCALEX{.950}
+  \node[anchor=north west] (CC) at ([yshift=-.3in]A.south west)
+  {
+    \begin{tikzpicture}[scale=\SCALEX]
+      \def\ISEP{3pt}
+    \node[anchor=north,scale=\SCALEX] (C) 
+    {\includegraphics[width=\WDTI]{\sampleimg}};
+    
+    % \node[anchor=center,circle, draw=\XCOL,fill=\XCOL,inner sep=\ISEP,
+    % %label={[]-90:(f)}
+    % ] (C6) at ([xshift=0.81in,yshift=.2in]C.center)  {};
+    % \node[anchor=center,circle, draw=\XCOL,fill=\XCOL,inner sep=\ISEP,%label={[]-90:(a)}
+    % ] (C1) at ([xshift=-0.15in,yshift=.055in]C.center)  {};  
+    % \node[anchor=center,circle, draw=\XCOL,fill=\XCOL,inner sep=\ISEP,%label={[]-90:(b)}
+    % ] (C2) at ([xshift=-0.92in,yshift=.09in]C.center)  {};  
+    % \node[anchor=center,circle, draw=\NCOL,fill=\NCOL,inner sep=\ISEP,%label={[]-90:(c)}
+    % ] (C3) at ([xshift=-0.68in,yshift=-.03in]C.center)  {};  
+    % \node[anchor=center,circle,draw=\NCOL,fill=\NCOL,,inner sep=\ISEP,%label={[]-90:(d)}
+    % ] (C4) at ([xshift=0.62in,yshift=.25in]C.center)  {};  
+    % \node[anchor=center,circle, draw=\NCOL,fill=\NCOL,,inner sep=\ISEP,%label={[]-90:(e)}
+    % ] (C5) at ([xshift=0.32in,yshift=.16in]C.center)  {};  
+\end{tikzpicture}
+};
+\def\PLOTCOLX{\XCOL}
+\def\SCALE{1.2}
+
+ \node[anchor=west] (D) at ([xshift=.05in,yshift=0.1in]CC.east)
+{
+  \begin{tikzpicture}[]
+\def\OPC{.5}
+    \begin{groupplot}[group style={group name=A,group size= 1 by 3},legend style={anchor=east,at={(.8,1.1)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},grid style={thick,dashed, gray!40},
+      grid,
+    enlargelimits=true,scale only axis=true,scaled x ticks = false,scaled y ticks = false,
+     height=1.5in,
+    width=.95in,
+    enlarge x limits=0.03,axis line style={\AXISCOL, opacity=1,ultra  thick, rounded corners=0pt}, y tick label style={/pgf/number format/fixed,/pgf/number format/precision=3,/pgf/number format/fixed zerofill,
+     /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+      },
+      major tick length=0pt,ylabel={absolute risk},ylabel style={xshift=-.5in,yshift=0.1in}]
+%A011565041,A027245034,A060472285,A024598392,A024433912,A049203164
+    \nextgroupplot[xlabel={weeks},text=\TEXTCOL,ymode=log]
+    \addplot[forget plot, smooth, opacity=\OPC, line width=\LWDT, \NCOL,mark=*, 
+    mark options={%
+      scale=\SCALE,draw=\NCOL,  thick, fill=\NCOL,  
+    },]table[col sep=comma,x=time, y=\PNEGA]
+    {\sampledat};
+    %\addlegendentry{Males Control};
+
+    \addplot[forget plot, smooth, opacity=\OPC,  line width=\LWDT, \NCOL,mark=*, 
+    mark options={%
+      scale=\SCALE,draw=\NCOL,  thick, fill=\NCOL, 
+    },]table[col sep=comma,x=time, y=\PNEGB]
+    {\sampledat};
+    %\addlegendentry{Males Control};
+
+    \addplot[ smooth, opacity=\OPC,  line width=\LWDT, \NCOL,mark=*, 
+    mark options={%
+      scale=\SCALE,draw=\NCOL,  thick, fill=\NCOL, 
+    },]table[col sep=comma,x=time, y=\PNEGC]
+    {\sampledat};
+    \addlegendentry{control};
+
+
+ 
+
+    
+    \addplot[forget plot, smooth,opacity=\OPC,   line width=\LWDT, \PLOTCOLX,mark=*, 
+    mark options={%
+      scale=\SCALE,draw=\PLOTCOLX,  thick, fill=\PLOTCOLX,  
+    },]table[col sep=comma,x=time, y=\PPOSA]
+    {\sampledat};
+    \addplot[forget plot, smooth, opacity=\OPC,  line width=\LWDT, \PLOTCOLX,mark=*, 
+    mark options={%
+      scale=\SCALE,draw=\PLOTCOLX,  thick, fill=\PLOTCOLX, 
+    },]table[col sep=comma,x=time, y=\PPOSB]
+    {\sampledat};
+    %\addlegendentry{Males Control};
+
+    \addplot[ smooth,opacity=\OPC,   line width=\LWDT, \PLOTCOLX,mark=*, 
+    mark options={%
+      scale=\SCALE,draw=\PLOTCOLX,  thick, fill=\PLOTCOLX,  
+    },]table[col sep=comma,x=time, y=\PPOSC]
+    {\sampledat};
+    \addlegendentry{positive};
+
+
+\end{groupplot}
+\end{tikzpicture}
+
+
+  };
+
+
+
+
+  \node[anchor=south west,align=left] (LA) at ([xshift=.2in,yshift=0in]A.north west) {{\LARGE A.} Model Complexity for Control \& Treatment Groups   };
+  \node[anchor=north west,align=left] (LB) at ($(LA.north west)!(B.north west)!(LA.north east)$) {{\LARGE B.} Average Risk over time  };
+  \node[anchor=south west,align=left] (LB1) at ([xshift=0in,yshift=-3.8in]B.north west) {{\LARGE D.} Overall AUC over time   };
+
+  \node[anchor=north west,align=left] (LD) at ($(LA.north west)!(LB1.north)!(LA.south west)$) {{\LARGE C.} Risks for 6 Random Subjects};
+
+\end{tikzpicture}

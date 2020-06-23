@@ -1,0 +1,6 @@
+./Figures/External/stdtools.pdf: Figures/comp.csv
+./Figures/External/stdtools.pdf: Figures/comp.csv
+./Figures/External/stdtools.pdf: ../../../revision_results/LSTM_comparison/truven_male.csv
+./Figures/External/stdtools.pdf: ../../../revision_results/LSTM_comparison/truven_female.csv
+./Figures/External/stdtools.pdf: ../../../revision_results/LSTM_comparison/ucm_male.csv
+./Figures/External/stdtools.pdf: ../../../revision_results/LSTM_comparison/ucm_female.csv

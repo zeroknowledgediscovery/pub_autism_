@@ -1,0 +1,326 @@
+\begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+  \def\TEXTCOL{gray}
+  \tikzset{
+    hatch distance/.store in=\hatchdistance,
+    hatch distance=20pt,
+    hatch thickness/.store in=\hatchthickness,
+    hatch thickness=2pt
+  }
+
+
+\pgfplotsset{
+    accommodate labels/.code 2 args={
+        \newlength{\myl}
+        \pgfplotstableread{#1}\data
+        \def\largestlength{0}
+        \pgfplotstableforeachcolumnelement{#2}\of\data\as\cell{
+            \settowidth{\myl}{\pgfinterruptpicture\cell\endpgfinterruptpicture}
+            \pgfmathsetmacro\largestlength{max(\the\myl,\largestlength)}
+        }
+        \pgfplotsset{
+            enlarge x limits={
+                upper,              value=1/(1-(\largestlength+4pt)/\pgfkeysvalueof{/pgfplots/width})-1
+            }
+        }
+    }
+}
+
+
+  
+  \makeatletter
+  \pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{flexible hatch}
+  {\pgfqpoint{0pt}{0pt}}
+  {\pgfqpoint{\hatchdistance}{\hatchdistance}}
+  {\pgfpoint{\hatchdistance-1pt}{\hatchdistance-1pt}}%
+  {
+    \pgfsetcolor{\tikz@pattern@color}
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfqpoint{\hatchdistance}{\hatchdistance}}
+    \pgfusepath{stroke}
+  }
+  \makeatother
+  \pgfdeclarepatternformonly{north east lines wide}%
+  {\pgfqpoint{-1pt}{-1pt}}%
+  {\pgfqpoint{10pt}{10pt}}%
+  {\pgfqpoint{9pt}{9pt}}%
+  {
+    \pgfsetlinewidth{0.4pt}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+    \pgfusepath{stroke}
+  }
+
+
+  \def\DISX{\DATA/figfiles/MFXcodes.csv}
+  \def\DISM{ntb/MFmatch.csv}
+  \def\DISM{\DATA/figfiles/MFcodes.csv}
+
+  \def\DISMM{ntb/male.csv}
+  \def\DISFF{ntb/female.csv}
+  \def\DISMM{\DATA/figfiles/Mcodes.csv}
+  \def\DISFF{\DATA/figfiles/Fcodes.csv}
+  
+  \def\HGT{2.5in}
+  \def\HGTA{5.5in}
+  \def\WDT{2in}
+  \def\WDTX{1.75in}
+  \def\HGTX{8.25in}
+  \def\OPC{.5}
+
+  \clip (.7in,0.5in) rectangle (7.5in,-8.5in);
+  \node [anchor=north west,align=left] (R) at (0,0) {
+    \begin{tikzpicture}[text=\TEXTCOL]
+      \begin{axis}[legend style={anchor=east,at={(0.5,1.05)},inner sep=3pt,draw=none,fill=white,fill opacity=.850,align=right,text opacity=1,font=\bf\sffamily\fontsize{6}{9}\selectfont},axis line style={lightgray, opacity=0, thin},%
+        %enlargelimits=true,
+        % grid,
+        % xshift=.1in,
+        anchor=north west,
+        height=\HGT,
+        width=\WDT,
+        %xbar, 
+        ytick=data,% crucial line for the xticklabels directive 
+        % ymin=0,
+        %accommodate labels={\DISX}{description},
+        yticklabels from table={\DISX}{code},
+        yticklabel style
+        ={font=\bf\sffamily\fontsize{7}{7}\selectfont,
+          align=right,rotate=0, text width=1.1in,
+          anchor=east, yshift=0in,xshift=-.045in,text=\TEXTCOL},
+        major tick length=0pt,
+        xticklabel style=
+        {font=\bf\sffamily\fontsize{7}{7}\selectfont,
+          text=\TEXTCOL},
+        grid,
+        grid style={lightgray, dashed,opacity=.7},
+        axis on top=false, bar width=8pt,
+        xlabel={$\leftarrow$ TN $\Delta$-frequency TP $\rightarrow$},
+        scaled x ticks=false,
+        xlabel style={yshift=0.05in,text=\TEXTCOL},
+        ylabel style={yshift=0.075in,text=\TEXTCOL},
+        % enlarge y limits=0.03, 
+         x tick label style={/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+     /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+   },
+   nodes near coords,,visualization depends on=x \as \rawx,
+    every node near coord/.append style={anchor=west,align=left, text width=3in,font=\sffamily\rm\fontsize{6}{8}\selectfont,text=darkgray,
+        shift={(axis direction cs:0.00-0.02*\rawx*\coordindex+0*\rawx*\rawx,0)}},
+   point meta=explicit symbolic,ylabel={ICD9 codes}, xtick ={-0.04,0,0.04}
+        ] 
+
+        \addplot[opacity=1,fill opacity=1,text opacity=1,fill=\MXCOL,xbar,area legend] table [ 
+        y expr=\coordindex,
+        x=pnM
+        ] {\DISX};   
+        \addlegendentry{Male}
+        \addplot[opacity=\OPC,text opacity=1,fill=\FXCOL,,postaction={
+        pattern=north east lines
+    },xbar,area legend] table [ 
+        y expr=\coordindex,
+        x=pnF,meta=description
+        ] {\DISX};   
+        \addlegendentry{Female}
+        % \addplot[opacity=1,fill=\FXCOL] table [ 
+        % y expr=\coordindex,
+        % x=F
+        % ] {\IMP};   
+        % \addlegendentry{Female}
+      \end{axis} 
+    \end{tikzpicture}
+  };
+
+
+
+  \node [anchor=north west,align=left] (M) at ([yshift=-.225in]R.south west) {
+    \begin{tikzpicture}[text=\TEXTCOL]
+      \begin{axis}[legend style={anchor=east,at={(0.5,1.05)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont},axis line style={lightgray, opacity=0, thin},%
+        %enlargelimits=true,
+        % grid,
+        % xshift=.1in,
+        anchor=north west,
+        height=\HGTA,
+        width=\WDT,
+        %xbar, 
+        ytick=data,% crucial line for the xticklabels directive 
+        % ymin=0,
+        %accommodate labels={\DISX}{description},
+        yticklabels from table={\DISM}{code},
+        yticklabel style
+        ={font=\bf\sffamily\fontsize{7}{7}\selectfont,
+          align=right,rotate=0, text width=1.1in,
+          anchor=east, yshift=0in,xshift=-.045in,text=\TEXTCOL},
+        major tick length=0pt,
+        xticklabel style=
+        {font=\bf\sffamily\fontsize{7}{7}\selectfont,
+          text=\TEXTCOL},
+        grid,
+        grid style={lightgray, dashed,opacity=.7},
+        axis on top=false, bar width=8pt,
+        xlabel={$\leftarrow$ TN $\Delta$-frequency TP $\rightarrow$},
+        scaled x ticks=false,
+        xlabel style={yshift=0.05in,text=\TEXTCOL},
+        ylabel style={yshift=0.075in,text=\TEXTCOL},
+         enlarge y limits=0.05,
+         x tick label style={/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+     /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+   },visualization depends on=x \as \rawx,
+   nodes near coords,
+   every node near coord/.append style={anchor=west,align=left, text width=3in,font=\sffamily\rm\fontsize{6}{8}\selectfont,text=darkgray,
+        shift={(axis direction cs:0.008-.03*\rawx*\coordindex,0)}},
+   point meta=explicit symbolic,ylabel={ICD9 codes}, xtick ={-0.04,0,0.04}
+        ] 
+
+        \addplot[fill=\MXCOL,xbar,area legend,opacity=1,text opacity=1] table [ 
+        y expr=\coordindex,
+        x=pnM
+        ] {\DISM};   
+        \addlegendentry{Male}
+        \addplot[opacity=1,fill=\FXCOL,postaction={
+        pattern=north east lines
+    },xbar,area legend,opacity=\OPC,text opacity=1] table [ 
+        y expr=\coordindex,
+        x=pnF,meta=description
+        ] {\DISM};   
+        \addlegendentry{Female}
+        % \addplot[opacity=1,fill=\FXCOL] table [ 
+        % y expr=\coordindex,
+        % x=F
+        % ] {\IMP};   
+        % \addlegendentry{Female}
+      \end{axis} 
+    \end{tikzpicture}
+  };
+
+
+
+
+
+  \node [anchor=north west,align=left] (MM) at ([xshift=-2.25in]R.north east) {
+    \begin{tikzpicture}[text=\TEXTCOL]
+      \begin{axis}[legend style={anchor=east,at={(0.5,1.05)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont},axis line style={lightgray, opacity=0, thin},%
+        %enlargelimits=false,
+        % grid,
+        % xshift=.1in,
+        anchor=north west,
+        height=\HGTX,
+        width=\WDTX,
+        %xbar, 
+        ytick=data,% crucial line for the xticklabels directive 
+        % ymin=0,
+        %accommodate labels={\DISX}{description},
+        yticklabels from table={\DISMM}{code},
+        yticklabel style
+        ={font=\bf\sffamily\fontsize{7}{7}\selectfont,
+          align=right,rotate=0, text width=1.1in,
+          anchor=east, yshift=0in,xshift=-.045in,text=\TEXTCOL},
+        major tick length=0pt,
+        xticklabel style=
+        {font=\bf\sffamily\fontsize{7}{7}\selectfont,
+          text=\TEXTCOL},
+        grid,
+        grid style={lightgray, dashed,opacity=.7},
+        axis on top=false, bar width=8pt,
+        xlabel={$\leftarrow$ TN $\Delta$-frequency TP $\rightarrow$},
+        scaled x ticks=false,
+        xlabel style={yshift=0.05in,text=\TEXTCOL},
+        ylabel style={yshift=0.075in,text=\TEXTCOL},
+        enlarge y limits=0.03,
+         x tick label style={/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+     /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+   },
+   nodes near coords,
+    every node near coord/.append style={anchor=west,align=left, text width=2in,font=\sffamily\rm\fontsize{8}{8}\selectfont,text=darkgray},
+   point meta=explicit symbolic,ylabel={ICD9 codes},, xtick ={-0.04,0,0.04}
+        ] 
+
+        \addplot[fill=\MXCOL,xbar,area legend,opacity=1,text opacity=1] table [ 
+        y expr=\coordindex,
+        x=pn
+        ] {\DISMM};   
+        \addlegendentry{Male}
+        % \addplot[opacity=1,fill=\FXCOL,xbar,area legend,opacity=\OPC,text opacity=1] table [ 
+        % y expr=\coordindex,
+        % x=delta,meta=description
+        % ] {\DISMM};   
+        % \addlegendentry{Female}
+        % \addplot[opacity=1,fill=\FXCOL] table [ 
+        % y expr=\coordindex,
+        % x=F
+        % ] {\IMP};   
+        % \addlegendentry{Female}
+      \end{axis} 
+    \end{tikzpicture}
+  };
+
+  
+  \node [anchor=north west,align=left] (FF) at ([xshift=-2.9in]MM.north east) {
+    \begin{tikzpicture}[text=\TEXTCOL]
+      \begin{axis}[legend style={anchor=east,at={(0.5,1.05)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont},axis line style={lightgray, opacity=0, thin},%
+        %enlargelimits=false,
+        % grid,
+        % xshift=.1in,
+        anchor=north west,
+        height=\HGTX,
+        width=\WDTX,
+        %xbar, 
+        ytick=data,% crucial line for the xticklabels directive 
+        % ymin=0,
+        %accommodate labels={\DISX}{description},
+        yticklabels from table={\DISFF}{code},
+        yticklabel style
+        ={font=\bf\sffamily\fontsize{7}{7}\selectfont,
+          align=right,rotate=0, text width=1.1in,
+          anchor=east, yshift=0in,xshift=-.0450in,text=\TEXTCOL},
+        major tick length=0pt,
+        xticklabel style=
+        {font=\bf\sffamily\fontsize{7}{7}\selectfont,
+          text=\TEXTCOL},
+        grid,
+        grid style={lightgray, dashed,opacity=.7},
+        axis on top=false, bar width=8pt,
+        xlabel={$\leftarrow$ TN $\Delta$-frequency TP $\rightarrow$},
+        scaled x ticks=false,
+        xlabel style={yshift=0.05in,text=\TEXTCOL},
+        ylabel style={yshift=0.075in,text=\TEXTCOL},
+        enlarge y limits=0.03,
+         x tick label style={/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+     /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+   },
+   nodes near coords,
+    every node near coord/.append style={anchor=west,align=left, text width=2in,font=\sffamily\rm\fontsize{8}{8}\selectfont,text=darkgray},
+   point meta=explicit symbolic,%ylabel={ICD9 codes},
+, xtick ={-0.04,0,0.04}
+        ] 
+
+        \addplot[fill=\FXCOL,xbar,area legend,opacity=\OPC,text opacity=1] table [ 
+        y expr=\coordindex,
+        x=pn
+        ] {\DISFF};   
+        \addlegendentry{Female}
+        % \addplot[opacity=1,fill=\FXCOL,xbar,area legend,opacity=\OPC,text opacity=1] table [ 
+        % y expr=\coordindex,
+        % x=delta,meta=description
+        % ] {\DISMM};   
+        % \addlegendentry{Female}
+        % \addplot[opacity=1,fill=\FXCOL] table [ 
+        % y expr=\coordindex,
+        % x=F
+        % ] {\IMP};   
+        % \addlegendentry{Female}
+      \end{axis} 
+    \end{tikzpicture}
+  }; 
+ 
+
+  \node[anchor=south west,align=left] (LA) at ([xshift=0.7in,yshift=0in]R.north west) {{\LARGE A.} Codes with Maximum Mismatch Across Genders};
+  \node[anchor=south west,align=left] (LB) at ($(LA.north west)!(M.north)!(LA.south west)$) {{\LARGE B.}  Codes Common Across Genders };
+  \node[anchor=north west,align=left] (LB) at ([xshift=.65in]$(LA.north west)!(MM.west)!(LA.north east)$) {{\LARGE C.} Code Frequency Deviation Between Control \& Positive  };
+  %\node[anchor=north west,align=left] (LB) at ([xshift=.8in]$(LA.north west)!(FF.west)!(LA.north east)$) {{\LARGE D.} $\Delta$ Frequency (Females)   };
+  % \node[anchor=south west,align=left] (LB) at ([xshift=.2in,yshift=0in]F.north west) {{\LARGE B.} AUC Spatial Variation (Females)   };
+  % \node[anchor=south west,align=left] (LC) at ([xshift=0in,yshift=-.3in]$(LA.west)!(E.north west)!(LB.west)$) {{\LARGE C.} AUC Distribution (Males \& Females)};
+  % % \node[anchor=south west,align=left] (LC1) at ([xshift=0in,yshift=-.6in]$(LA.west)!(G.north west)!(LB.west)$) {{\large D.} AUC Distribution After Imputation Of Counties With No Positive Cases (Males \& Females)};
+  % \node[anchor=north west,align=left] (LD) at ([xshift=0in,yshift=0in]$(B.west)!(LA.north)!(B.north west)$) {{\LARGE D.} ROC Curve  };
+
+  % \node[anchor=south west,align=left] (LR) at ([xshift=-0.15in,yshift=-0.05in]$(LD.north west)!(R.north)!(LD.south west)$) {{\LARGE E.} Top 20 Predictive Features };
+
+\end{tikzpicture}

@@ -1,0 +1,12 @@
+  399+1+0 (2/0/0/0) _top_
+  552+1+0 (1/4/0/0) Section: Introduction
+  0+1+0 (1/0/0/0) Section: Methods
+  573+5+0 (1/0/4/0) Subsection: Source of Electronic Patient Records
+  165+5+0 (1/0/0/0) Subsection: Time-series Modeling of  Diagnostic History
+  403+7+0 (1/0/14/0) Subsection: Step 1: Partitioning The Human Disease Spectrum} We begin by partitioning the human disease spectrum into  $17$ non-overlapping  categories,  as shown in Extended Data Table~\ref{EXT-tab0}. Each category is defined by a set of diagnostic codes from the International Classification of Diseases, Ninth Revision (ICD9) (See Extended Data Table~\ref{EXT-tab0} in the main text  and Table SI-\ref{SI-tab0
+  412+8+0 (1/0/19/0) Subsection: Step 2: Model Inference \& The Sequence Likelihood Defect
+  204+10+0 (1/0/5/0) Subsection: Step 3: Risk Estimation Pipeline With Semi-supervised \& Supervised Learning Modules
+  180+3+0 (1/0/3/0) Subsection: Calculating Relative Risk
+  378+10+0 (1/0/17/0) Subsection: Boosting Performance Via Leveraging Population Stratification Induced By Existing Tests
+  777+1+0 (1/0/41/0) Section: Results
+  1065+1+0 (1/0/13/0) Section: Discussion

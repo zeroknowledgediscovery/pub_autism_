@@ -1,0 +1,7 @@
+\begin{tikzpicture}[anchor=center]
+	\def\a{30}
+	\def\ls{8}
+	\node[stateF] (A) at (0, 0) {};
+	\path[edge] (A) to[out=\a, in=-\a, looseness=\ls] node[pos=.2,above] {0(.85)} (A);
+	\path[edge] (A) to[out=180-\a, in=180+\a, looseness=\ls] node[pos=.2,above] {2(.15)} (A);
+\end{tikzpicture}

@@ -1,0 +1,61 @@
+\begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+  \def\TEXTCOL{gray}
+  \tikzset{
+    hatch distance/.store in=\hatchdistance,
+    hatch distance=20pt,
+    hatch thickness/.store in=\hatchthickness,
+    hatch thickness=2pt
+  }
+
+
+  \def\HGTPP{2.2in}
+  \def\WDT{6in}
+  \def\CHLPREV{../../data_latest/figfiles/prev_combined}
+  \def\CHLPREVN{../../data_latest/figfiles/prev_combined_norm}
+  \def\DATAA{../../data/figfiles/diffinit.csv}
+  \def\BWDT{5.5pt}
+  \def\LENDATA{../../data/figfiles/LEN.csv}
+  \def\CDCDATA{../../data/figfiles/cdc_prevalence.csv}
+  \def\CODEDATA{../../data/figfiles/propcode.csv}
+
+  \node[] (A0) at (0,0.0) {};
+    \node[anchor=north west] (A) at (A0) {
+    \begin{tikzpicture}[]
+      \begin{axis}[legend cell align=left,legend style={anchor=east,at={(0.4,1.05)},
+          inner sep=3pt,draw=none,fill=white,fill opacity=.85,
+          align=right,text opacity=1,
+          font=\bf\sffamily\fontsize{8}{9}\selectfont},,axis line style={lightgray, opacity=0, thin},%
+        height=\HGTPP, width=\WDT,
+        ybar,bar width=8pt,    
+        major tick length=0.0pt,
+        xlabel={fraction of weeks with heathcare event},
+        %xmin=100,
+        enlargelimits=true,
+        xmax=0.45,
+        xticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,text=\TEXTCOL},
+        % grid,
+        grid style={lightgray, opacity=.7},
+        axis on top=false, 
+        ylabel={probability}, x tick label style={yshift=0.05in,text=\TEXTCOL},
+        xlabel style={yshift=0.0in,text=\TEXTCOL},ylabel style={yshift=-0in,xshift=-.45in,text=\TEXTCOL},x tick label style={,text=\TEXTCOL,xshift=.1in,yshift=-.05in,/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+          /pgf/number format/1000 sep = %\thinspace
+        },y tick label style={text=\TEXTCOL,/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+          /pgf/number format/1000 sep = %\thinspace 
+        },scaled ticks=false, enlarge y limits=0.07,enlarge x limits=0,
+        ]
+        \addplot[opacity=.7,fill=\MNCOL, draw=none,area legend] table [col sep=comma,
+        y=M,
+        x=proportionNz
+        ] {\CODEDATA};   
+%        \addlegendentry{Male}
+        % \addplot[opacity=1,fill=\FXCOL,draw=none, area legend] table [col sep=comma,
+        % y=proportionNz,
+        % x=F
+        % ] {\CODEDATA};   
+        %  \addlegendentry{Female}
+     \end{axis}
+    \end{tikzpicture}
+  };
+
+  \node[anchor=south west,align=left] (LA) at ([xshift=-0in,yshift=-0.1in]A.north west) { Number of Diagnostic Codes Per Week Per Child By  Insurance Claims 2003-2013 (source: Truven Marketscan)};
+\end{tikzpicture}

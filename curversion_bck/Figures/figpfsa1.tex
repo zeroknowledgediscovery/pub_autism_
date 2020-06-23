@@ -1,0 +1,25 @@
+\begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+\def\TEXTCOL{gray}
+
+
+  \def\datafileFN{../data_latest/PFSA/Figures/_F_\TYP_NEG}
+  \def\datafileMN{../data_latest/PFSA/Figures/_M_\TYP_NEG}
+  \def\datafileFP{../data_latest/PFSA/Figures/_F_\TYP_POS}
+  \def\datafileMP{../data_latest/PFSA/Figures/_M_\TYP_POS}
+
+  \node[] (A0) at (0,0) {};
+\node[anchor=west] (A) at (A0) {\includegraphics[width=\WDTA]{\datafileMN}};
+\node[anchor=west] (B) at (A.east) {\includegraphics[width=\WDT]{\datafileMP}};
+\node[anchor=north west] (C) at ([yshift=\YSHT]A.south west) {\includegraphics[width=\WDTA]{\datafileFN}};
+\node[anchor=west] (D) at (C.east) {\includegraphics[width=\WDT]{\datafileFP}};
+
+
+ \node[anchor=south west,align=left] (LA) at ([xshift=0in,yshift=0in]A.north west) {{\LARGE A.} \TYPL\xspace (Males Control)   };
+ \node[anchor=south west,align=left] (LB) at ([xshift=0in,yshift=\YSHTL]$(LA.south west)!(B.north west)!(LA.south east)$) {{\LARGE B.} \TYPL\xspace (Males Treatment)   };
+
+
+ \node[anchor=south west,align=left] (LC) at ([xshift=0in,yshift=0in]C.north west) {{\LARGE C.} \TYPL\xspace (Females Control)   };
+ \node[anchor=south west,align=left] (LD) at ([xshift=0in,yshift=\YSHTLB]$(LC.south west)!(D.north west)!(LC.south east)$) {{\LARGE D.} \TYPL\xspace (Females Treatment)   };
+
+
+\end{tikzpicture}

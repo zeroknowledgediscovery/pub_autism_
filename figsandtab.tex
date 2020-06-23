@@ -1,0 +1,284 @@
+\def\RIC{\RICTXT}
+
+% #########################################
+% #########################################
+\def\MXCOL{black}
+\def\FXCOL{Orchid3}
+\def\MNCOL{SeaGreen4}
+\def\FNCOL{SeaGreen4}
+\def\NCOL{SeaGreen4}
+\def\XCOL{Tomato}
+\def\WCOL{Tomato}
+\def\YCOL{DodgerBlue4}
+\def\TEXTCOL{gray}
+\def\AXISCOL{white}
+% ###########################################################
+% ###########################################################
+\ifFIGS
+\begin{figure}[!ht]
+  \tikzexternalenable
+  \tikzsetnextfilename{occurv}
+  \vspace{-0pt}
+  \centering 
+
+  \iftikzX
+  \input{Figures/figpred0v}  
+  \else
+  \includegraphics[width=0.45\textwidth]{Figures/External/occurv}
+  \fi
+   
+  \captionN{ASD Occurrence Patterns. 
+    Panel A illustrates the differential representation of different disease categories in the \treatment and control cohorts, and panel B shows the distribution of the age of  diagnosis for males and females in the Truven dataset. Panel C illustrates the spatial distribution of ASD insurance claims, and panel D shows the same data after population normalization, illustrating the relatively small demographic skew to ASD prevalence within the general population with access to medical insurance, which is consistent with the suggestion that prevalence variation might be linked to regional and socioeconomic disparities in access to services~\cite{jarquin2011racial}.
+  }\label{EXT-fig0}
+\end{figure}
+\else
+\refstepcounter{figure}\label{EXT-fig0}
+\fi
+% ###########################################################
+% ###########################################################
+% ##########################################
+\begin{table*}[!ht]
+  \begin{center}
+    \captionN{Patient Counts In De-identified Data \& The Fraction of Datasets Excluded By Our Exclusion Criteria$^\star$}\label{tab2}
+    \sffamily\small
+    \begin{tabular}{L{1.5in}L{.695in}L{.695in}C{.695in}L{.695in}L{.695in}}
+      &\multicolumn{2}{c@{\quad}}{Truven}    
+      &&                                           
+         \multicolumn{2}{c}{UCM} \\\cline{2-3}\cline{5-6}          
+      Distinct Patients &\multicolumn{2}{c@{\quad}}{115,805,687}    
+      &&                                           
+         \multicolumn{2}{c}{69,484} \\\cline{2-3}\cline{5-6}          
+      &Male& Female    && Male  &Female      \\
+      \hline
+      ASD Diagnosis Count$^\dag$ & 12,146 & 3,018& &307& 70 \\\hline
+      Control Count$^\dag$ & 2,301,952 & 2,186,468 & & 20,249& 17,386\\\hline
+      AUC at 125 weeks & 82.3\% & 82.5\% & &83.1\%& 81.37\%\\\hline
+      AUC at 150 weeks & 84.79\% & 85.26\% & &82.15\%& 83.39\%\\\hline
+      &&     &  &   &      \\
+      \multicolumn{5}{c}{Excluded Fraction of the Data sets}      &      \\
+      &&     &  &   &      \\
+      \hline
+      Positive Category & 0.0002 & 0.0& &0.0160& 0.0 \\\hline
+      Control Category & 0.0045 &0.0045 & &0.0413&  0.0476\\\hline
+
+      &&     &  &   &      \\
+      \multicolumn{6}{c}{Average Number of Diagnostic Codes In Excluded Patients (corresponding number in included patients)}           \\
+      &&     &  &   &      \\
+      \hline
+      Positive Category & 4.33 (35.93) & 0.0 (36.07)& &2.6 (9.75)& 0.0 (10.18) \\\hline
+      Control Category & 1.57 (17.06) & 1.48 (15.96)  & & 2.32 (6.8)& 2.07 (6.79) \\\hline
+
+    \end{tabular}
+
+
+  \end{center}
+  \vskip 1em
+  \small
+  $^\dag$ Cohort sizes are smaller than the total number of distinct patients due to the following exclusion criteria: 1) At least one code within our complete set of tracked diagnostic codes is present in the patient record, 2) Time-lag between first and last available record for a patient is at least 15 weeks.
+
+  $^\star$ Dataset sizes are after the exclusion criteria are applied
+\end{table*}
+% ###########################################################
+% ###########################################################
+\begin{table*}[!t]
+  \centering
+  
+  \captionN{Disease Categories (A few ICD9 codes shown from the complete set of $9,835$ unique ICD9 codes considered. See SI-Table~\ref{SI-tab0} in  Supplementary text for complete list)}\label{EXT-tab0}
+  \vskip .5em
+  
+  \small\color{black!90}
+  \begin{tabular}{L{1in}|L{2in} | |L{3in}}\hline
+    \bf\sffamily   Category$^\dag$ & \bf\sffamily  Description  & \bf\sffamily  Examples of ICD9$^\star$ Codes \\\hline
+    \rowcolor{lightgray!80}ASD$^\star$ & Diagnostic Target & 299 299.0 299.00 299.01 299.9 299.8 299.91 299.90 299.80 299.81 299.1 299.10 299.11\\\hline
+    \cellcolor{Red1!70}Immunologic & Diseases related to dys-regulation of the Immune system &580.81 580.89 580.0 580.8 461 461.8 461.0 477.9 477.2 477 477.8\\\hline
+    \cellcolor{Red1!70}Infectious & Diseases Caused By Pathogens &487.8 488.12 488.0 488.01 487.0 487.1 488.09 464.4 466 466.11 466.1\\\hline
+    \cellcolor{Red1!50}Nutrition &  Symptoms concerning nutrition, metabolism and development   & 783.0 783.21 783.3 783.40 783.42 783.7 783.9\\\hline
+    \cellcolor{Red1!50}Mental Disorders & Psychiatric phenotypes other than ASD & 290 -  319 (except 299.x) \\\hline
+    \cellcolor{Red1!50}Health Services &Contact With   Health Services and Classification Of Factors Influencing Health Status  & V01.0 V01.1 V01.2 V01.3 V01.4   V09.70 V09.71 V88.02 V88.03 V89.01 V89.02 V89.03 V89.04 V89.05 V89.09 \\\hline
+    \cellcolor{IndianRed1!50}Digestive & Diseases Of The Digestive System &540.0 540.1 541.0 542 540 541 543.0 562.03 562.01 562.00 562.10\\\hline
+    \cellcolor{IndianRed1!50}Otic & Diseases Of The Ear And Mastoid Process
+                                                                &381.51 381.50 381.81 381.89 381.61 381.62 381 381.7 385.82 383.32 380.30\\\hline
+    \cellcolor{IndianRed1!50}Musculoskeletal & Congenital musculoskeletal anomalies &756.52 756.53 733.02 733.0 733.09 737.43 737.41 737.20 737.29 737.4 737.2\\\hline
+    \cellcolor{IndianRed1!50}Developmental & Congenital  anomalies (Non-overlapping with muskuloskeletal)  &755.55 743.45 743.11 743.10 743.00 743.03 743.44 743.22 743.20 743.21 758.4\\\hline
+    \cellcolor{IndianRed1!30}Reproductive & Diseases Of The Genitourinary System   &611.79 611.71 611.89 611.81 676.64 611 676.60 611.6 611.4 611.3 611.2\\\hline
+    \cellcolor{IndianRed1!20}Integumentary & Diseases Of Skin And Subcutaneous Tissue &706.0 706.1 704.00 704.02 704.09 680.9 680.1 680.5 680.7 680.6 680\\\hline
+    % 
+    Ophthalmologic & Disorders Of The Eye And Adnexa &362.8 362.9 362.6 362.1 362.3 362.18 362.17 362.13 362.11 363.33 363.32\\\hline
+    Hematologic &  Diseases Of The Blood And Blood-Forming Organs & 286.9 286.6 283.19 283.11 283.9 283.1 284.0 284.09 284 284.01\\\hline
+    Metabolic & Metabolic Disorders (Non-overlapping with respiratory, digestive and immunological conditions) &273.4 270 270.3 712.11 712.13 712.12 712.14 712.18 712.30 712.37 712.36\\\hline
+    Cardiovascular & Diseases Of Arteries, Arterioles, And Capillaries  &442.89 441.6 442.82 442.83 441.03 441.02 441.00 442 414.11 447.70 447.71\\\hline
+    Respiratory & Diseases Of The Respiratory System (non-overlapping with Infectious) &516.31 516.30 516.32 516.35 516.37 516.36 516.8 516.0 277.0 277.00 277.01\\\hline
+    Endocrine & Disorders Of Thyroid and other Endocrine Glands &244 244.9 244.2 255.41 255.5 255.4 259.51 255 259.4 255.11 242.2\\\hline
+  \end{tabular}
+  \vskip 1em
+  \small
+  $^\dag$ Categories inferred to be   important for risk modulation are proportionately highlighted.\\
+  $^\star$ ICD10 codes when present were mapped back to closest ICD9 matches using published General Equivalence Mappings~\cite{GEMS}.
+\end{table*}
+% ###########################################################
+% ###########################################################
+% ###########################################################
+
+
+% ###########################################################
+\begin{table*}[t]
+  \centering
+  
+  \captionN{Engineered Features (Total Count: 165)}\label{EXT-tab1}
+  \vskip .5em
+
+  \begin{tabular}{L{2.25in}|L{3in}|C{1in}} \hline
+    \textbf{Feature Type$^\ddag$}               & \textbf{Description}   & \textbf{No. of Features}   \\\hline
+    {[}Disease Category{]}$_{ \ \Delta}$               & Likelihood Defect (See Methods section) & 17   \\\hline
+    {[}Disease Category{]}$_{ \ 0}$               & Likelihood of control model (See Methods section) & 17  \\\hline
+    {[}Disease Category{]}$_{\textrm{ proportion}}$   & Occurrences in the encoded sequence / length of the sequence         & 17\\\hline
+    {[}Disease Category{]}$_{\textrm{ streak}}$      & Maximum Length of adjacent occurrences  of {[}Disease Category{]}    & 51      \\\hline
+    {[}Disease Category{]}$_\textrm{ prevalence}$   &  Maximum, mean  and variance of Occurrences in the encoded sequence / Total Number of diagnostic codes in the mapped sequence   & 51      \\\hline
+    Feature Mean, Feature Variance, Feature Maximum for difference of control and case models                 & Mean, Variance, Maximum of the {[}Disease Category{]}$_{ \ \Delta}$ values   & 3     \\\hline
+    Feature Mean, Feature Variance, Feature Maximum for control models               & Mean, Variance, Maximum of the {[}Disease Category{]}$_{\ 0}$ values   & 3     \\\hline
+    Streak      & Maximum, mean  and variance of the length of adjacent occurrences  of {[}Disease Category{]}    & 3      \\\hline
+    Intermission& Maximum, mean  and variance of the length of adjacent empty weeks     & 3    \\\hline
+  \end{tabular}
+  \vskip 1em
+  \small
+  $^\ddag$ Disease categories are described in Table~\ref{EXT-tab0}
+\end{table*}
+% ###########################################################
+% ###########################################################
+% ###########################################################
+
+% ###########################################################
+% ###########################################################
+\ifFIGS
+\begin{figure*}[!t]
+  \tikzexternalenable
+  \tikzsetnextfilename{perfA}
+
+  \centering  
+   
+  \def\DATA{../../data_revision}
+  \iftikzX
+  \input{Figures/figpred1_}
+  \else
+  \includegraphics[width=0.85\textwidth]{Figures/External/perfA.pdf}
+  \fi
+
+  \captionN{Predictive Performance. Panel %C shows the distribution of the AUC, and panel
+    A shows the ROC curves for males and females. Panel B shows the feature importance inferred by our prediction pipeline. The detailed description of the features is given in Table~\ref{EXT-tab0}. The most import feature is related to immunologic disorders, and we note that in addition to features related to individual disease categories, we also have the mean control likelihood (rank 3), which may be interpreted as the average likelihood of the diagnostic patterns correspond to the control category as opposed to the \treatment category. Panels C and D show the spatial variation in the achieved predictive performance at 150 weeks, measured by AUC, for males and females, respectively. Gray areas lack data on either positive or negative cases. These county-specific AUC plots show that the performance of the algorithm has  relatively weak geospatial dependence, which is important in the light of current uneven distribution of diagnostic resources.
+  }\label{fig1}
+\end{figure*}
+\else
+\refstepcounter{figure}\label{fig1}
+\fi
+% ###########################################################
+% ###########################################################
+% ###########################################################
+% ###########################################################
+\ifFIGS
+\begin{figure*}[!ht]
+  \tikzexternalenable
+  \tikzsetnextfilename{perfB}
+  
+  \centering 
+  \def\DATA{../../data_revision}
+  \iftikzX
+  \input{Figures/figpred2_}
+  \else
+  \includegraphics[width=0.85\textwidth]{Figures/External/perfB.pdf}
+  \fi
+
+  \captionN{\textbf{More details on Predictive Performance and Variation of Inferred Risk.} Panel A illustrates AUC achieved as a function of
+    patient age, for the Truven and UCM datasets. The shaded area outlines the 2 - 2.5  years of age, and  shows that we achieve $>80\%$ AUC for either sex from shortly after 2 years.   Panel B illustrates how the average risk changes with time for the control and the positive cohorts. Panel C shows the distribution of the prediction horizon: the time to a clinical diagnosis after inferred  relative risk crosses $90\%$. Panel D shows that for each new disease code for a low-risk child, ASD risk increases by approximately $2\%$ for either sex. Panel E illustrates the risk progression of a specific, ultimately autistic male child in the Truven database. Abbreviations in the legend: ill defn. (Symptoms, Signs, And Ill-Defined Conditions),   musc. skltl. (Diseases Of The Musculoskeletal System And Connective Tissue), cond. orig. in perintl. (Certain Conditions Originating In The Perinatal Period), immun. (Endocrine, Nutritional And Metabolic Diseases, And Immunity Disorders), nerv. \& sensory (Diseases Of The Nervous System And Sense Organs), respir. (Respiratory Disorders), and digest. (Digestive Disorders). Panel F illustrates  how inferred models differ between the control vs. the \treatment cohorts. On average, models get less complex, implying the exposures get more statistically independent.}\label{fig2}
+\end{figure*}
+\else
+\refstepcounter{figure}\label{fig2}
+\fi
+% ###########################################################
+% ###########################################################
+% ###########################################################
+\ifFIGS
+% ###########################################################
+\begin{figure}[!ht]
+  \tikzexternalenable
+  \tikzsetnextfilename{perfCv}
+
+  \centering
+  
+  \def\AXISCOL{white}
+  \def\TEXTCOL{gray}
+  \iftikzX
+  \input{Figures/figprcv_.tex}
+  \else
+  \includegraphics[width=0.5\textwidth]{Figures/External/perfCv.pdf}
+  \fi
+
+  \captionN{\textbf{Metrics relevant to clinical practice: PPV vs Sensitivity trade-offs.} Panel A shows the precision/recall curves, $i.e.$,  the trade-off between PPV and sensitivity. Panel B shows how we can boost performance using population stratification from the distribution of M-CHAT/F scores in the population, as reported by the CHOP study~\cite{pmid31562252}. Panel C illustrates the boosted performance compared to M-CHAT/F alone,
+    measured by the relative percentage increase in sensitivity, and percentage decrease in positive screens. Note that the population prevalence impacts this optimization, and hence  we have  a distinct  curve for each prevalence value ($1.7\%$ is the CDC estimate, while $2.23\%$ is reported by the CHOP study).  The two extreme operating zones marked as High Precision (HP) and High Recall (HR): if we choose to operate in HR, then we do not reduce the number of positive screens by much, but maximize sensitivity, while by operating in HP, we do not increase sensitivity by much but double the PPV achieved in current practice. Note in all these zones, we maintain specificity above $95\%$, which is the current state of art, implying that by doubling the PPV, we can halve the number of positive screens currently reported, thus potentially sharply reducing the queues and wait-times. }\label{figprc}
+\end{figure}
+
+% ###########################################################
+\else
+\refstepcounter{figure}\label{figprc}
+\fi 
+% ###########################################################
+% ##########################################
+% ####################################
+\def\RCOL{\rowcolor{teal!40}}
+%#################################### 
+\begin{table*}[t]   
+\centering 
+\captionN{PPV Achieved at 100, 112 and 150 Weeks For Each Dataset and Gender {\bf (M-CHAT/F:  sensitivity=$38.8\%$, specificity=$95\%$, PPV=$14.6\%$ between 16 and  26 months ($\approx$112 weeks))}}\label{EXT-tabssp}
+
+  \vskip .5em
+
+\begin{tabular}{L{.75in}|L{.75in}|L{.75in}|L{.5in}|L{.5in}|L{.75in}}
+\hline
+\input{Figures/plotdata/ssp}
+\end{tabular}
+\end{table*}  
+%####################################
+% %####################################
+
+%#################################### 
+\begin{table*}[t]
+\centering
+\captionN{Personalized Operation Conditioned on M-CHAT/F Scores at  26 months}\label{EXT-tabboost}
+  \vskip .5em
+
+\begin{tabular} {L{.33in}|L{.33in}|L{.33in}|L{.33in}||L{.35in}|L{.35in}|L{.375in}||L{.375in}|L{.35in}|L{.35in}||L{.6in}}
+\hline
+\multicolumn{4}{c||}{\cellcolor{lightgray!60}M-CHAT/F Outcome}  & \multicolumn{3}{c||}{\mnp{.9in}{\vskip .2em global performance (Truven)\vskip .2em  } }&\multicolumn{3}{c||}{\mnp{1in}{\vskip .2em global performance\\(UCM)\vskip .2em }} &  \multirow{3}{*}{prevalence$^\star$}\\\cline{0-9}
+ 0-2  NEG & 3-7  NEG & 3-7  POS & $\geq  8$  POS & \multirow{2}{*}{\mnp{.1in}{speci-ficity}} & \multirow{2}{*}{\mnp{.1in}{sensi-tivity}} &\multirow{2}{*}{PPV}& \multirow{2}{*}{\mnp{.1in}{speci-ficity}} & \multirow{2}{*}{\mnp{.1in}{sensi-tivity}} & \multirow{2}{*}{PPV} & \\\cline{0-3}
+\multicolumn{4}{c}{\cellcolor{lightgray} specificity choices}  & & & &&&&\\\hline 
+  \input{Figures/plotdata/boost} 
+\end{tabular}
+\vskip 1em
+
+\flushleft
+$^\star$Prevalence reported by CDC is $1.7\%$, while the CHOP study reports a value of $2.23\%$. The results of our optimization depend on the prevalence estimate.
+\end{table*}  
+%####################################
+%###########################################################
+%###########################################################
+\ifFIGS
+\begin{figure*}[!t]
+  \tikzexternalenable
+    \tikzsetnextfilename{comorbidA}
+
+\def\DATA{../../data_latest}
+\iftikzX
+ \input{Figures/figClass0_.tex}
+ \else
+  \includegraphics[width=0.9\textwidth]{Figures/External/comorbidA}
+\fi
+  \vspace{-5pt}
+  
+  \captionN{\textbf{Co-morbidity Patterns} Panel A and B. Difference in occurrence frequencies of diagnostic codes between true positive (TP) and true negative (TN) predictions. The dotted line on panel B shows the  abscissa lower cut-off in Panel A, illustrating the lower prevalence of codes in females. Panel C illustrates log-odds ratios for ICD9 disease categories at different ages. Importantly, the negative associations disappear when we consider older children, consistent with the lack of such reports in the literature which lack studies on very young cohorts. }\label{EXT-fig3}
+  \vspace{-5pt}
+  
+\end{figure*}
+\else
+\refstepcounter{figure}\label{EXT-fig3}
+\fi
+% ###########################################################
+% #############

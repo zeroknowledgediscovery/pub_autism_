@@ -1,0 +1,180 @@
+
+\pgfplotsset{
+    discard if/.style 2 args={
+        x filter/.append code={
+            \edef\tempa{\thisrow{#1}}
+            \edef\tempb{#2}
+            \ifx\tempa\tempb
+                \def\pgfmathresult{inf}
+            \fi
+        }
+    },
+    discard if not/.style 2 args={
+        x filter/.append code={
+            \edef\tempa{\thisrow{#1}}
+            \edef\tempb{#2}
+            \ifx\tempa\tempb
+            \else
+                \def\pgfmathresult{inf}
+            \fi
+        }
+    }
+  }
+
+  \begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+  \def\TEXTCOL{gray}
+
+  \def\DATAPATH{../../revision_results/roc/restricted_neg_len/RAW/}
+  \def\datafile{\DATAPATH/thisRFall.csv}
+
+
+  \def\AXISCOL{white}
+  \def\WDTa{1.85in}
+  \def\HGTa{2in}
+  \def\HGT{1.2in}
+  \def\WDT{1.2in}
+  \def\MXCOLB{gray}
+  \def\FXCOLB{CadetBlue3}
+  \def\OPC{.75}
+  \def\OPCB{.65}
+  \def\LWDT{0.7mm}
+  \def\SKIP{4}  
+  \def\WDTa{1.75in}
+  \def\WDTb{1.25in}
+  \def\HGTa{1.65in}
+  \def\SKIP{5}
+  \def\SKIPB{1}
+  \def\LCOL{black}
+
+  \node[] (A0) at (0,0) {};
+  \node[anchor=center] (N) at (A0.south)
+  {
+    \begin{tikzpicture}[text=\TEXTCOL, ]
+      \begin{groupplot}
+        [name=Agg,
+        group style={
+          group name=Ag,
+          group size=3 by 1,
+          xlabels at=edge bottom,
+          xticklabels at=edge bottom,
+          vertical sep=.75in,
+          horizontal sep=.8in,
+        },        ,legend cell align={left},
+        legend style={anchor=east,at={(-0.12,1.1)},
+          inner sep=3pt,
+          draw=none,
+          fill=white,fill opacity=.850,
+          align=left,anchor=west,
+          text opacity=1,
+          font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},legend columns=2, 
+        name=K,
+        clip=true,,
+        width=\WDTa,
+        height=\HGTa,
+        scale only axis=true,
+        enlargelimits=false,
+        axis on top=false,
+        % axis background/.style={
+        %   shade,top color=transparent!5,bottom color=transparent!5},
+        axis line style={\AXISCOL, opacity=1,ultra  thick, 
+          rounded corners=0pt}, 
+        grid,
+        grid style={thick,dashed, gray!40},
+        % xticklabel style={xshift=0.05in,yshift=-.05in},
+        xlabel style={yshift=.05in,text=\TEXTCOL},
+        ylabel style={align=center,,text=\TEXTCOL,anchor=center,
+          yshift=-.15in},
+        % tickpos=left,
+        ytick align=outside,
+        xtick align=outside,
+        major tick length=0pt,
+        scaled y ticks = false,
+        y tick label style={/pgf/number format/fixed,
+          /pgf/number format/1000 sep = \thinspace % Optional if you00 separator 
+        },
+        ylabel={PPV},xlabel={sensitivity (TPR)},point meta=explicit,
+        colorbar style={width=.1in,y tick label style={/pgf/number format/fixed,/pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+     /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+      },}
+        % extra x ticks={1},extra x tick labels={1}
+        ]
+
+   \nextgroupplot[colorbar horizontal,xmin=.98,extra x ticks={1},colorbar style={at={(0,1.2)},title={prevalence},title style={yshift=-.1in},
+          height=.1in,scaled x ticks=false,
+x tick label style={/pgf/number format/fixed,
+          /pgf/number format/precision=3,/pgf/number format/fixed zerofill,
+          /pgf/number format/1000 sep = %\thinspace % Optional to replace comma as the 1000 separator 
+        },
+          xticklabel style={yshift=-.025in},},ylabel={MCHAT-F relative wait time},xlabel={MCHAT-F relative sensitivity}]
+        \pgfplotsset{
+colormap={hot}{color(0cm)=(lightgray!70); color(1cm)=(lightgray!80); color(2cm)=(lightgray!80!Bisque1); color(3cm)=(Bisque1!90!Tomato); color(4cm)=(Tomato); color(5cm)=(Red1)}
+}
+\addplot [mesh, each nth point=\SKIP, filter discard warning=false, 
+        unbounded coords=discard,line width=\LWDT]table [col sep=comma,x=rs,y=tm,meta=rho,
+discard if not={gender}{M},
+restrict expr to domain={\thisrow{c}}{0.95:1},
+restrict expr to domain={\thisrow{rho}}{0.017:0.024},
+restrict expr to domain={\thisrow{rs}}{1:1.5},
+] {\datafile};   
+
+\node[anchor=west] (x11) at (axis cs:1,0.7) {};
+\node[anchor=west] (x12) at (axis cs:1.35,0.525) {};
+\node[anchor=west] (xx) at (axis cs:1,0.5) {};
+
+
+        \nextgroupplot[colorbar,width=\WDTb,xshift=-.2in, title={{\Large i.}  specificity shown by color},colorbar style={xshift=-.1in,,ylabel=specificity,ylabel style={yshift=-.2in}},title style={yshift=.12in,xshift=.15in}]
+        \pgfplotsset{
+colormap={hot}{color(0cm)=(MidnightBlue); color(1cm)=(CadetBlue2!90!black); color(2cm)=(CadetBlue1!93!black); color(3cm)=(Bisque1!93!black); color(4cm)=(DarkOrange1); color(5cm)=(Yellow2!93!black)}
+}
+
+\addplot [mesh, very thick, , each nth point=\SKIPB, filter discard warning=false, 
+        unbounded coords=discard
+%point meta min=0.92, point meta max=0.98
+]table [col sep=comma,x=s,y=p,meta=c,
+%discard if not={gender}{M},
+restrict expr to domain={\thisrow{c}}{0.966:1},restrict expr to domain={\thisrow{rho}}{0.012:1}] {\datafile};
+\node[anchor=west] (x01) at (axis cs:0.5,0.35) {};
+\node[anchor=west] (x02) at (axis cs:0.25,0.25) {};
+
+        \nextgroupplot[colorbar,ylabel={},width=\WDTb, title={{\Large ii.}   prevalence shown by color},colorbar style={y tick label style={/pgf/number format/fixed,/pgf/number format/precision=3,/pgf/number format/fixed zerofill,
+     /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+      },xshift=-.1in,,ylabel=prevalence,ylabel style={yshift=-.2in}},title style={yshift=.12in,xshift=.15in}]
+        \pgfplotsset{
+colormap={hot}{color(0cm)=(lightgray!70); color(1cm)=(lightgray!80); color(2cm)=(lightgray!80!Bisque1); color(3cm)=(Bisque1!90!Tomato); color(4cm)=(Tomato); color(5cm)=(Red1)}
+}
+\addplot [mesh, very thick, each nth point=\SKIPB, filter discard warning=false, 
+        unbounded coords=discard]table [col sep=comma,x=s,y=p,meta=rho,
+%discard if not={gender}{M},
+restrict expr to domain={\thisrow{c}}{0.966:1},restrict expr to domain={\thisrow{rho}}{0.012:1}] {\datafile};
+
+\node[anchor=west] (x1) at (axis cs:0.5,0.35) {};
+\node[anchor=west] (x2) at (axis cs:0.25,0.25) {};
+
+      \end{groupplot}
+\node[anchor=west, fill=white] (x1) at (x1) {Female};
+\node[anchor=center, fill=white] (x2) at (x2) {Male};
+\draw[-{Latex},thick,\MXCOL] (x2) -- ($(x2)!.3!(x1)$);
+\draw[-{Latex},thick,\FXCOL] (x1) -- ($(x1)!.4!(x2)$);
+
+
+\node[anchor=west, fill=white] (x01) at (x01) {Female};
+\node[anchor=center, fill=white] (x02) at (x02) {Male};
+\draw[-{Latex},thick,\MXCOL] (x02) -- ($(x02)!.3!(x01)$);
+\draw[-{Latex},thick,\FXCOL] (x01) -- ($(x01)!.4!(x02)$);
+
+\node[anchor=west, fill=white,text=IndianRed1] (x11) at (x11) {CHOP{\color{\TEXTCOL}$^\bigstar$}};
+\node[anchor=center, fill=white] (x12) at (x12) {CDC{\color{\TEXTCOL}$^\bigstar$}};
+\draw[-{Latex},thick,] (x12) -- ($(x12)!.3!(x11)$);
+\draw[-{Latex},thick] (x11) -- ($(x11)!.35!(x12)$);
+
+\draw[-{Latex},very thick,\LCOL]  ($(xx)!1.2in!(xx.north)$) --(xx) node [pos=0,above,right,fill=white,align=center,text=\LCOL,yshift=.1in] {wait-time\\cut in half};
+
+\end{tikzpicture}
+  }; 
+ \node[anchor=south west] (L1) at ([yshift=-.05in]N.north west) {{\Large C.} Wait time  vs  Recall   (specificity$>97\%$)};
+ \node[anchor=south west] (L2) at ([xshift=.4in]L1.south east) {{\Large D.} Pareto fronts for 4D operating point choices wrt prevalence variations};
+
+\node[anchor=north west,align=left,font=\sffamily\fontsize{7}{7}\selectfont] (L3) at (N.south west) {$\ddag$Using population statsitics from CHOP study (See SI-Table~\ref{SI-tabCHOP}). $^\dag$HP: High precision/PPV operating point, HR: High recall/sesitivity operating point \\{\color{\TEXTCOL}$^\bigstar$}CHOP estimates prevalence in its study to be $2.23\%$, while CDC estimates are lower at $1.7\%$};
+
+\end{tikzpicture}
+

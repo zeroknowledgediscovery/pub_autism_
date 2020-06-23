@@ -1,0 +1,38 @@
+\begin{tikzpicture}[scale=0.62, every node/.style={transform shape}]
+    \def\d{1.4}
+    \def\angle{45} 
+    
+    \tikzstyle{state} = [circle, fill=black!10, inner sep=1]
+    \tikzstyle{edge0} = [draw, zeroEdge, very thick, ->=latex]
+    \tikzstyle{edge1} = [draw, oneEdge, very thick, ->=latex]
+    
+    \node[] (M2Full) at (-3.55, 0){
+         \begin{tikzpicture}
+            \node[state] (q_0) at (-\d, 0) {$q_0$};
+            \node[state] (q_1) at (\d, 0) {$q_1$};
+            \node[state] (q_lambda) at (0, -1.6*\d) {$q_\lambda$};
+            
+            \path[edge0] (q_0) to [out=180-\angle, in=180+\angle, looseness=14] node[left] {$0(.6)$} (q_0);
+            \path[edge1] (q_0) to [out=-\angle, in=180+\angle] node[below] {$1(.4)$} (q_1);
+            
+            \path[edge0] (q_1) to [out=180-\angle, in=\angle] node[above] {$0(.4)$} (q_0);
+            \path[edge1] (q_1) to [out=-\angle, in=\angle, looseness=14] node[right] {$1(.6)$} (q_1);
+            
+            \path[edge0, dotted] (q_lambda) to [out=150, in=-90] node[left] {$0(.5)$} (q_0);
+            \path[edge1, dotted] (q_lambda) to [out=30, in=-90] node[right] {$1(.5)$} (q_1);
+        \end{tikzpicture}
+    };
+    
+    \node[] (M2) at (3.55, .5) {
+        \begin{tikzpicture}
+            \node[state] (q_0) at (-\d, 0) {$q_0$};
+            \node[state] (q_1) at (\d, 0) {$q_1$};
+            
+            \path[edge0] (q_0) to [out=180-\angle, in=180+\angle, looseness=14] node[left] {$0(.6)$} (q_0);
+            \path[edge1] (q_0) to [out=-\angle, in=180+\angle] node[below] {$1(.4)$} (q_1);
+            
+            \path[edge0] (q_1) to [out=180-\angle, in=\angle] node[above] {$0(.4)$} (q_0);
+            \path[edge1] (q_1) to [out=-\angle, in=\angle, looseness=14] node[right] {$1(.6)$} (q_1);
+        \end{tikzpicture}
+    };
+\end{tikzpicture}

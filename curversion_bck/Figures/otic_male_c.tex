@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\def\d{2.2}
+	\def\ls{8}
+	\def\a{35}
+	\node[stateM] (A) at (0, 0) {};
+	\node[stateM] (B) at (\d, 0) {};
+	\node[stateM] (C) at (2*\d, 0) {};
+	\node[stateM] (D) at (3*\d, 0) {};
+
+	\path[edge] (A) to[out=180-\a, in=180+\a, looseness=\ls] node[pos=.2,above] {0(.86)} (A);
+	\path[edge] (A) to[out=\a, in=180-\a] node[pos=.5,above] {2(.14)} (B);
+
+	\path[edge] (B) to[out=180+\a, in=-\a] node[pos=.5,below] {0(.77)} (A);
+	\path[edge] (B) to[out=90-\a, in=90+\a, looseness=\ls] node[pos=.5,above] {1(.01)} (B);
+	\path[edge] (B) to[out=\a, in=180-\a] node[pos=.5,above] {2(.22)} (C);
+
+	\path[edge] (C) to[out=180+\a, in=-\a] node[pos=.5,below] {0(.64)} (B);
+	\path[edge] (C) to[out=90-\a, in=90+\a, looseness=\ls] node[pos=.5,above] {1(.02)} (C);
+	\path[edge] (C) to[out=\a, in=180-\a] node[pos=.5,above] {2(.34)} (D);
+
+	\path[edge] (D) to[out=180+\a, in=-\a] node[pos=.5,below] {0(.45)} (C);
+	\path[edge] (D) to[out=60-\a, in=60+\a, looseness=\ls] node[pos=.5,above] {1(.02)} (D);
+	\path[edge] (D) to[out=-60-\a, in=-60+\a, looseness=\ls] node[pos=.5,below] {2(.54)} (D);
+\end{tikzpicture}

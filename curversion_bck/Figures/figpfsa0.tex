@@ -1,0 +1,22 @@
+\begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+\def\TEXTCOL{gray}
+
+  \def\WDT{2.75in} 
+  \def\WDTA{4in}    
+
+  \def\datafileFN{../PFSA/Figures/_F_Immune_NEG}
+  \def\datafileMN{../PFSA/Figures/_M_Immune_NEG}
+  \def\datafileFP{../PFSA/Figures/_F_Immune_POS}
+  \def\datafileMP{../PFSA/Figures/_M_Immune_POS}
+
+  \node[] (A0) at (0,0) {};
+\node[anchor=west] (A) at (A0) {\includegraphics[width=\WDTA]{\datafileMN}};
+\node[anchor=west] (B) at (A.east) {\includegraphics[width=\WDT]{\datafileMP}};
+\node[anchor=north west] (C) at (A.south west) {\includegraphics[width=\WDTA]{\datafileFN}};
+\node[anchor=west] (D) at (C.east) {\includegraphics[width=\WDT]{\datafileFP}};
+
+
+
+
+
+\end{tikzpicture}

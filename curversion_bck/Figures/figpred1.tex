@@ -1,0 +1,237 @@
+\begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+\def\TEXTCOL{gray}
+    \tikzset{
+        hatch distance/.store in=\hatchdistance,
+        hatch distance=20pt,
+        hatch thickness/.store in=\hatchthickness,
+        hatch thickness=2pt
+    }
+
+    \makeatletter
+    \pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{flexible hatch}
+    {\pgfqpoint{0pt}{0pt}}
+    {\pgfqpoint{\hatchdistance}{\hatchdistance}}
+    {\pgfpoint{\hatchdistance-1pt}{\hatchdistance-1pt}}%
+    {
+        \pgfsetcolor{\tikz@pattern@color}
+        \pgfsetlinewidth{\hatchthickness}
+        \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+        \pgfpathlineto{\pgfqpoint{\hatchdistance}{\hatchdistance}}
+        \pgfusepath{stroke}
+    }
+    \makeatother
+\pgfdeclarepatternformonly{north east lines wide}%
+   {\pgfqpoint{-1pt}{-1pt}}%
+   {\pgfqpoint{10pt}{10pt}}%
+   {\pgfqpoint{9pt}{9pt}}%
+   {
+     \pgfsetlinewidth{0.4pt}
+     \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+     \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+     \pgfusepath{stroke}
+    }
+
+ 
+  \def\WDT{4.75in} 
+  \def\WDTA{2in}    
+
+  \def\datafile{../data/figfiles/AUC.csv}
+  \def\datafileimp{../data/figfiles/AUC_imputed.csv}
+ % \def\CHLM{Figures/augmented_M_fips_auc_rainbow}
+ % \def\CHLF{Figures/augmented_F_fips_auc_rainbow}
+
+  \def\CHLM{../data/figfiles/augmented_M_fips_auc_rainbow0}
+  \def\CHLF{../data/figfiles/augmented_F_fips_auc_rainbow0}
+  % \def\CHLM{Figures/augmented_M_fips_auc_Spectral_r0}
+  % \def\CHLF{Figures/augmented_F_fips_auc_Spectral_r0}
+  % \def\CHLM{Figures/augmented_M_fips_auc_Purples0}
+  % \def\CHLF{Figures/augmented_F_fips_auc_Purples0}
+
+  \def\ROCF{../data/figfiles/ROC_F_s.csv}
+  \def\ROCM{../data/figfiles/ROC_M_s.csv}
+  \def\IMP{../data/figfiles/importance20.csv}
+
+  \def\HGT{1.60in}
+  \def\WDT{6in}
+  \def\WDTC{4in}
+  \def\WDTR{1.9in}
+  \def\WDTH{1.7in}
+  
+  \node[] (A) at (0,0) {};
+  \node [anchor=north] (M) at (A.south) {\includegraphics[width=\WDTC]{\CHLM}};
+  \node [anchor=north] (F) at ([yshift=-0.25in]M.south) {\includegraphics[width=\WDTC]{\CHLF}};
+  
+  \begin{axis}[text=\TEXTCOL,
+    legend style={text=black,anchor=east,at={(0.32,0.4)},inner sep=3pt,draw=none,fill=lightgray!10,fill opacity=.35,align=right,text opacity=1},
+    name=E,
+    at=(F.south west),
+    xshift=0.6in,
+    yshift=-0.1in,
+    anchor=north west,
+    width=\WDT,
+    height=\HGT,
+    ybar,
+    bar width=4pt,
+    xmin=.6,
+    xmax=1,
+    scale only axis=true, 
+    axis on top=false,
+    % axis background/.style={
+    % shade,top color=transparent!15,bottom color=transparent!10},
+    axis line style={lightgray!2, thin},
+    grid,
+    grid style={dashed,opacity=.95,thin,black!10},
+    % xticklabel style={xshift=0.05in,yshift=-.05in},
+    % xlabel style={xshift=-.075in,yshift=.05in,text=black},
+    ylabel style={align=center,,text=black,anchor=center,
+      yshift=-.1in,xshift=-.1in,font=\bf\sffamily\fontsize{7}{8}\selectfont,text=\TEXTCOL},
+    % tickpos=left,
+    ytick align=outside,
+    xtick align=outside,
+    major tick length=0pt,
+    scaled y ticks = false,
+    y tick label style={/pgf/number format/fixed,
+      /pgf/number format/1000 sep = \thinspace % Optional if you want to replace comma as the 1000 separator 
+    },
+    ylabel={probability},
+    ytick={0,0.02,0.04,0.06,0.08},
+    ]
+    \addplot [draw=none, thin, fill=\FXCOL,,fill opacity=1,, area legend]table [col sep=comma,x=AUC,y=F, area legend] {\datafileimp};
+    \addlegendentry{AUC (Female)};
+    \addplot [draw=none, thin, fill=\MXCOL,fill opacity=1, area legend] table [col sep=comma,x=AUC,y=M, area legend] {\datafileimp};
+    \addlegendentry{AUC (Male)};
+    % \draw[very thick,Red2] (axis cs:0.677,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:0.677,\pgfkeysvalueof{/pgfplots/ymax}) node [midway,right,fill=white,fill opacity=.9,text opacity=1,inner sep=2pt,pos=0.2,font=\sffamily\fontsize{6}{6}\selectfont] {0.677};
+    % \draw[very thick,Red2] (axis cs:0.73,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:0.73,\pgfkeysvalueof{/pgfplots/ymax}) node [midway,right,fill=white,fill opacity=.9,text opacity=1,inner sep=2pt,pos=0.2,font=\sffamily\fontsize{6}{6}\selectfont] {0.73};
+  \end{axis}
+
+  % \begin{axis}[
+  %   legend style={anchor=east,at={(0.42,0.3)},inner sep=3pt,draw=none,fill=lightgray!10,fill opacity=.35,align=right,text opacity=1},
+  %   name=G,
+  %   at=(E.south west),
+  %   xshift=0in,
+  %   yshift=0in,
+  %   anchor=north west,
+  %   width=\WDT,
+  %   height=\HGT,
+  %   ybar,
+  %   bar width=3pt,
+  %   xmin=.5,
+  %   xmax=1.0,
+  %   scale only axis=true, 
+  %   axis on top=false,
+  %   % axis background/.style={
+  %   % shade,top color=transparent!15,bottom color=transparent!10},
+  %   axis line style={lightgray!2, thin},
+  %   grid,
+  %   grid style={dashed,opacity=.95,thin,black!10},
+  %   % xticklabel style={xshift=0.05in,yshift=-.05in},
+  %   % xlabel style={xshift=-.075in,yshift=.05in,text=black},
+  %   ylabel style={align=center,,text=black,anchor=center,
+  %     yshift=-.1in,xshift=-.2in,font=\bf\sffamily\fontsize{7}{8}\selectfont},
+  %   % tickpos=left,
+  %   ytick align=outside,
+  %   xtick align=outside,
+  %   major tick length=0pt,
+  %   scaled y ticks = false,
+  %   y tick label style={/pgf/number format/fixed,
+  %     /pgf/number format/1000 sep = \thinspace % Optional if you want to replace comma as the 1000 separator 
+  %   },
+  %   ylabel={probability},
+  %   ytick={0,0.02,0.04,0.06,0.08},
+  %   ]
+  %   % \addplot [draw=none, thin, fill=\FXCOL,,fill opacity=1,]table [col sep=comma,x=AUC,y=F] {\datafileimp};
+  %   % \addlegendentry{AUC (Female)};
+  %   \addplot [draw=none, thin, fill=black,fill opacity=1] table [col sep=comma,x=AUC,y=M] {\datafileimp};
+  %   \addlegendentry{AUC (Male)};
+  %   % \draw[very thick,Red2] (axis cs:0.677,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:0.677,\pgfkeysvalueof{/pgfplots/ymax}) node [midway,right,fill=white,fill opacity=.9,text opacity=1,inner sep=2pt,pos=0.2,font=\sffamily\fontsize{6}{6}\selectfont] {0.677};
+  %   % \draw[very thick,Red2] (axis cs:0.73,\pgfkeysvalueof{/pgfplots/ymin}) -- (axis cs:0.73,\pgfkeysvalueof{/pgfplots/ymax}) node [midway,right,fill=white,fill opacity=.9,text opacity=1,inner sep=2pt,pos=0.2,font=\sffamily\fontsize{6}{6}\selectfont] {0.73};
+  % \end{axis}
+
+
+  
+  \node [anchor=north west, align=left,align=left] (B) at ([xshift=.85in,yshift=-.750in]M.north east) {
+    \begin{axis}[text=\TEXTCOL, legend style={text=black,anchor=east,at={(1,0.2)},inner sep=1pt,draw=none,fill=gray!19,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{7}{8}\selectfont},
+    name=K,
+    %at=(F.south west),
+    xshift=0in,
+    yshift=-0.1in,
+    anchor=center,
+    width=\WDTR,
+    height=\WDTH,
+    scale only axis=true,
+    enlargelimits=false,
+    axis on top=false,
+     axis background/.style={
+     shade,top color=transparent!0,bottom color=transparent!15},
+    axis line style={black!2, very thick},
+    grid,
+    grid style={opacity=.95,thin,black!20},
+    % xticklabel style={xshift=0.05in,yshift=-.05in},
+    xlabel style={yshift=.05in,text=\TEXTCOL},
+    ylabel style={align=center,,text=\TEXTCOL,anchor=center,
+      yshift=-.175in},
+    % tickpos=left,
+    ytick align=outside,
+    xtick align=outside,
+    major tick length=0pt,
+    scaled y ticks = false,
+    y tick label style={/pgf/number format/fixed,
+      /pgf/number format/1000 sep = \thinspace % Optional if you want to replace comma as the 1000 separator 
+    },
+    ylabel={TPR},xlabel={FPR},
+    extra x ticks={1},extra x tick labels={1}]
+
+        \addplot [smooth,draw=\MXCOL, very thick, fill=\MXCOL,fill opacity=.95,]table [col sep=comma,x=fpr ,y=tpr] {\ROCM};
+    \addlegendentry{Male (AUC 84.4\%)}
+      \addplot [smooth,draw=\FXCOL, ultra thick, fill=none,, pattern color=\FXCOL,pattern=north west lines,,,fill opacity=.95,]table [col sep=comma,x=fpr ,y=tpr] {\ROCF};
+    \addlegendentry{Female (AUC 81.6\%)}
+    \end{axis}
+
+  };
+
+  \node [anchor=north west,align=left] (R) at ([xshift=.55in,yshift=.6in]F.north east) {
+
+\begin{axis}[legend style={anchor=east,at={(.9,0.1)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont},axis line style={lightgray, opacity=0, thin},%
+enlargelimits=true,
+%grid,
+xshift=.1in,
+anchor=north west,
+  height=4.75in,
+width=1.75in,
+    xbar, 
+    ytick=data,% crucial line for the xticklabels directive 
+    ymin=0, 
+    yticklabels from table={\IMP}{feature},
+        yticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,align=right,rotate=0, text width=1.1in, anchor=east, yshift=0in,xshift=-.045in,text=\TEXTCOL},
+major tick length=0pt,
+xticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,text=\TEXTCOL},
+grid,
+grid style={lightgray, opacity=.7},
+axis on top=false, bar width=4.2pt,xlabel={importance},xlabel style={yshift=0.05in,text=\TEXTCOL},
+enlarge y limits=0.03,
+] 
+
+\addplot[opacity=1,fill=\MXCOL, area legend] table [ 
+    y expr=\coordindex,
+    x=M
+] {\IMP};   
+\addlegendentry{Male}
+\addplot[opacity=1,fill=\FXCOL, area legend] table [ 
+    y expr=\coordindex,
+    x=F
+] {\IMP};   
+\addlegendentry{Female}
+
+\end{axis} 
+
+  };
+
+  \node[anchor=south west,align=left] (LA) at ([xshift=.2in,yshift=0in]M.north west) {{\LARGE A.} AUC Spatial Variation (Males)   };
+  \node[anchor=south west,align=left] (LB) at ([xshift=.2in,yshift=0in]F.north west) {{\LARGE B.} AUC Spatial Variation (Females)   };
+  \node[anchor=south west,align=left] (LC) at ([xshift=0in,yshift=-.3in]$(LA.west)!(E.north west)!(LB.west)$) {{\LARGE C.} AUC Distribution (Males \& Females)};
+  % \node[anchor=south west,align=left] (LC1) at ([xshift=0in,yshift=-.6in]$(LA.west)!(G.north west)!(LB.west)$) {{\large D.} AUC Distribution After Imputation Of Counties With No Positive Cases (Males \& Females)};
+  \node[anchor=north west,align=left] (LD) at ([xshift=0in,yshift=0in]$(B.west)!(LA.north)!(B.north west)$) {{\LARGE D.} ROC Curve  };
+
+  \node[anchor=south west,align=left] (LR) at ([xshift=-0.15in,yshift=-0.05in]$(LD.north west)!(R.north)!(LD.south west)$) {{\LARGE E.} Top 20 Predictive Features };
+
+\end{tikzpicture}

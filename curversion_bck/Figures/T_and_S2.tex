@@ -1,0 +1,42 @@
+\begin{tikzpicture}[scale=.8, every node/.style={transform shape}]
+    \def\d{1.4}
+    \tikzstyle{state} = [circle, fill=black!10, inner sep=1, minimum size=15]
+    \tikzstyle{edge0} = [draw, zeroEdge, very thick, ->=latex]
+    \tikzstyle{edge1} = [draw, oneEdge, very thick, ->=latex]
+            
+    \node at (-3.5, 0) {
+        \begin{tikzpicture}
+            \def\radius{1.2}
+            \def\startingAngle{90}
+            \def\theta{120}
+            \def\phi{45}
+            \def\looseness{10}
+            
+            \node[state] (q) at (\startingAngle: \radius) {$q$};
+            \node[state] (r) at (\startingAngle+120: \radius) {$r$};
+            \node[state] (s) at (\startingAngle+240: \radius) {$s$};
+            
+            \path[edge0] (q) to [out=\startingAngle-\phi, in=\startingAngle+\phi, looseness=\looseness] node[above] {$0(.5)$} (q);
+            \path[edge1] (q) to [out=\startingAngle+\theta, in=\startingAngle+120-\theta] node[left] {$1(.5)$} (r);
+            
+            \path[edge0] (r) to [out=\startingAngle-240+\theta, in=\startingAngle+240-\theta] node[below] {$0(.8)$} (s);
+            \path[edge1] (r) to [out=\startingAngle+120-\phi, in=\startingAngle+120+\phi, looseness=\looseness] node[left] {$1(.2)$} (r);
+            
+            \path[edge0] (s) to [out=\startingAngle+240-\phi, in=\startingAngle+240+\phi, looseness=\looseness] node[right] {$0(.7)$} (s);
+            \path[edge1] (s) to [out=\startingAngle-120+\theta, in=\startingAngle-\theta] node[right] {$1(.3)$} (q);
+	    \end{tikzpicture}
+    };
+    \node at (3.5, .35) {
+        \def\angle{45}
+        \begin{tikzpicture}
+            \node[state] (q_0) at (-\d, 0) {$q_0$};
+            \node[state] (q_1) at (\d, 0) {$q_1$};
+            
+            \path[edge0] (q_0) to [out=180-\angle, in=180+\angle, looseness=14] node[left] {$0(1/3)$} (q_0);
+            \path[edge1] (q_0) to [out=-\angle, in=180+\angle] node[below] {$1(2/3)$} (q_1);
+            
+            \path[edge0] (q_1) to [out=-\angle, in=\angle, looseness=14] node[right] {$0(2/3)$} (q_1);
+            \path[edge1] (q_1) to [out=180-\angle, in=\angle] node[above] {$1(1/3)$} (q_0);
+	    \end{tikzpicture}
+    };
+\end{tikzpicture}

@@ -1,0 +1,279 @@
+%\tikzexternaldisable
+\pgfplotsset{
+    discard if/.style 2 args={
+        x filter/.append code={
+            \edef\tempa{\thisrow{#1}}
+            \edef\tempb{#2}
+            \ifx\tempa\tempb
+                \def\pgfmathresult{inf}
+            \fi
+        }
+    },
+    discard if not/.style 2 args={
+        x filter/.append code={
+            \edef\tempa{\thisrow{#1}}
+            \edef\tempb{#2}
+            \ifx\tempa\tempb
+            \else
+                \def\pgfmathresult{inf}
+            \fi
+        }
+    }
+  }
+
+  \begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+\def\TEXTCOL{gray}
+   
+\def\datafile{/home/ishanu/ZED/Research/XG3_/autism/results/tex/optcode_/data/s75Mr023.csv}
+\def\datafileV{/home/ishanu/ZED/Research/XG3_/autism/results/tex/optcode_/data/s112Mr023.csv}
+\def\datafileX{/home/ishanu/ZED/Research/XG3_/autism/results/tex/optcode_/data/s150Mr023.csv}
+ \def\datafileW{/home/ishanu/ZED/Research/XG3_/autism/results/tex/optcode_/data/s125Mr023.csv}
+ \def\datafileH{/home/ishanu/ZED/Research/XG3_/autism/revision_results/roc/restricted_neg_len/RAW/PRC_pipeline_BASIC_M_100w.csv}
+
+\def\datafileHp{/home/ishanu/ZED/Research/XG3_/autism/revision_results/roc/restricted_neg_len/RAW/pareto_PRC_pipeline_BASIC_M_100w.csv}
+
+       \def\datafilef{/home/ishanu/ZED/Research/XG3_/autism/revision_results/roc/restricted_neg_len/RAW/PRC_pipeline_BASIC_F_75w.csv}
+  \def\datafilefH{/home/ishanu/ZED/Research/XG3_/autism/revision_results/roc/restricted_neg_len/RAW/PRC_pipeline_BASIC_F_100w.csv}
+ \def\vdatafile{/home/ishanu/ZED/Research/XG3_/autism/revision_results/roc/restricted_neg_len/RAW/PRC_valid_BASIC_M_75w.csv}
+  \def\vdatafileH{/home/ishanu/ZED/Research/XG3_/autism/revision_results/roc/restricted_neg_len/RAW/PRC_valid_BASIC_M_100w.csv}
+
+\def\vdatafileHp{/home/ishanu/ZED/Research/XG3_/autism/revision_results/roc/restricted_neg_len/RAW/pareto_PRC_valid_BASIC_M_100w.csv}
+
+       \def\vdatafilef{/home/ishanu/ZED/Research/XG3_/autism/revision_results/roc/restricted_neg_len/RAW/PRC_valid_BASIC_F_75w.csv}
+  \def\vdatafilefH{/home/ishanu/ZED/Research/XG3_/autism/revision_results/roc/restricted_neg_len/RAW/PRC_valid_BASIC_F_100w.csv}
+
+\def\AXISCOL{white}
+\def\BANDCOL{lightgray}
+\def\PLOTCOLA{black}
+\def\PLOTCOLB{\MXCOL}
+\def\PLOTCOLBu{\MXCOL}
+\def\PLOTCOLC{black}
+\def\PLOTCOLD{\FXCOL}
+\def\FNCOLB{SeaGreen2}
+\def\PLOTCOLDu{\FXCOL}
+\def\WDTa{1in}
+\def\HGTa{1.5in}
+
+\def\SCALE{1.5}
+\def\SCALEA{1.25}
+\def\SCALEB{.9}
+\def\OPC{.75}
+\def\OPCB{.95}
+\def\BWIDTH{4pt}
+\def\LWDT{0.5mm}
+
+\tikzstyle{mopt} = [ scale=\SCALEB, , opacity=0,fill opacity=1,] 
+%   \pgfplotsset{
+%   %   colormap/hot,
+%      colormap/viridis,
+% % colormap={reverse winter}{
+% %         indices of colormap={
+% %          \pgfplotscolormaplastindexof{YlGnBu},...,0 of YlGnBu}
+% %     },
+%  }
+\pgfplotsset{
+colormap={hot}{color(0cm)=(Orchid1); color(1cm)=(DodgerBlue1); color(2cm)=(DodgerBlue2); color(3cm)=(orange); color(4cm)=(DarkOrange1); color(5cm)=(Yellow2)}
+}
+\pgfplotsset{
+colormap={hot}{color(0cm)=(MidnightBlue); color(1cm)=(CadetBlue2!90!black); color(2cm)=(CadetBlue1!93!black); color(3cm)=(Bisque1!93!black); color(4cm)=(DarkOrange1); color(5cm)=(Yellow2!93!black)}
+}
+\node[] (A) {
+\begin{tikzpicture}[anchor=center,font=\bf\sffamily\fontsize{8}{10}\selectfont]
+\begin{groupplot}[name=Agg,
+    group style={
+        group name=Ag,
+        group size=4 by 1,
+        xlabels at=edge bottom,
+        ylabels at=edge left,
+        xticklabels at=edge bottom,
+        vertical sep=25pt,
+        horizontal sep=.5in,
+    },% colormap={reverse winter}{
+    %     indices of colormap={
+    %      \pgfplotscolormaplastindexof{Spectral},...,0 of Spectral}
+    % },
+  grid style={thick,dashed, gray!40},%,point meta min=.9,point meta max=1,colorbar,
+      % ymax=0.855
+      ,legend cell align={left},
+      legend style={anchor=east,at={(0.25,1.1)},
+        inner sep=3pt,
+        draw=none,
+        fill=white,fill opacity=.850,
+        align=left,anchor=west,
+        text opacity=1,
+        font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},
+      grid style={thick,dashed, gray!40},
+      grid,
+    enlargelimits=false,scale only axis=true,scaled x ticks = false,scaled y ticks = false,
+    axis line style={\AXISCOL, opacity=1,ultra  thick, rounded corners=0pt}, y tick label style={/pgf/number format/fixed,/pgf/number format/precision=3,/pgf/number format/fixed zerofill,
+     /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+      },
+      major tick length=0pt,legend columns=1, legend style={,xshift=-.5in,yshift=.2in},
+      xlabel={sensitivity},xticklabel style={yshift=-.05in},xlabel style={yshift=0.025in},ylabel
+      style={xshift=0in},ylabel={PPV},
+      grid style={thick,dashed, gray!40},%point meta min=0.92, point meta max=0.98,
+title style={yshift=-.05in,xshift=-.2in,align=left}]
+
+      \nextgroupplot[%ymin=0.14,ymax=.28,xmin=.35,xmax=.65,
+      text=\TEXTCOL, height=\HGTa,
+    width=\WDTa,title={{\Large A.} 75 weeks\\Truven}]
+   \addplot[scatter, only marks, mark options={mopt}]table[x index=5, y index=6,meta index=4,point meta=explicit]
+    {\datafile};
+      \nextgroupplot[%ymin=0.14,ymax=.28,xmin=.35,xmax=.65,
+      text=\TEXTCOL, height=\HGTa,
+    width=\WDTa,title={{\Large B.} 100 weeks\\Truven}]
+   \addplot[scatter, only marks, mark options={mopt}]table[x index=5, y index=6,meta index=4,point meta=explicit]
+    {\datafileV};
+      \nextgroupplot[%ymin=0.14,ymax=.28,xmin=.35,xmax=.65,
+      text=\TEXTCOL, height=\HGTa,
+    width=\WDTa,title={{\Large C.} 26 month\\Truven}]
+   \addplot[scatter, only marks, mark options={mopt}]table[x index=5, y index=6,meta index=4,point meta=explicit]
+    {\datafileW};
+      \nextgroupplot[%ymin=0.14,ymax=.28,xmin=.35,xmax=.65,
+      colorbar,colorbar style={ylabel=specificity,ylabel style={yshift=-.325in}},
+      text=\TEXTCOL, height=\HGTa,
+    width=\WDTa,title={{\Large D.} 150 weeks\\Truven}]
+   \addplot[scatter, only marks, mark options={mopt}]table[col sep=space,x index=5, y index=6,meta index=4,point meta=explicit]
+    {\datafileX};
+
+      % \nextgroupplot[ymin=0.14,ymax=.28,xmin=.3,xmax=.82,text=\TEXTCOL, height=\HGTa,
+   %  width=\WDTa,ylabel={},title={{\Large B.} 24 month, Male \\Truven}]
+   % \addplot[only marks,scatter,scatter src=explicit, mark options={%
+   %   mopt,
+   %  },]table[col sep=comma,x=s, y=p,meta=c]
+   %  {\datafileH};
+   %  \node[,thick,anchor=center,] (x1) at (axis cs:.388,0.145) {};
+   %  \node[thick,anchor=center,] (x2) at (axis cs:.42,0.27) {};
+   %  \node[thick,anchor=center,] (x3) at (axis cs:.69,0.15) {};
+   %  %\draw[->,>=stealth',thick,dashed] (x1) -- (x2);
+   % % \addplot[mark=*, only marks, mark options={scale=.4,fill=black}]table[col sep=comma,x=s, y=p]
+   % %  {\datafileHp};
+
+   %    \nextgroupplot[ymin=0.14,ymax=.28,xmin=.35,xmax=.65,text=\TEXTCOL, height=\HGTa,
+   %  width=\WDTa,ylabel={}, ,title={{\Large C.} 18 month, Female \\Truven}]
+   % \addplot[only marks,scatter,scatter src=explicit, mark options={%
+   %   mopt,
+   %  },]table[col sep=comma,x=s, y=p,meta=c]
+   %  {\datafilef};
+
+   %    \nextgroupplot[ymin=0.14,ymax=.28,xmin=.3,xmax=.82,text=\TEXTCOL, height=\HGTa,
+   %  width=\WDTa,ylabel={}, extra x ticks={.3},,title={{\Large D.} 24 month, Female \\Truven}]
+   % \addplot[only marks,scatter,scatter src=explicit, mark options={%
+   %   mopt,
+   %  },]table[col sep=comma,x=s, y=p,meta=c]
+   %  {\datafilefH};
+   %  \node[,thick,anchor=center,] (x1f) at (axis cs:.388,0.145) {};
+   %  \node[thick,anchor=center,] (x2f) at (axis cs:.42,0.275) {};
+   %  \node[thick,anchor=center,] (x3f) at (axis cs:.74,0.158) {};
+  \end{groupplot}
+       %  \node[draw=IndianRed1,fill=none,thick,anchor=center,label={[text=IndianRed1]180:HP}] (x2) at (x2) {}; 
+%     \node[draw=IndianRed1,fill=none,thick,anchor=center,label={[text=IndianRed1,fill=white]0:HR}] (x3) at (x3) {};
+%     \draw[-{latex},IndianRed1,ultra thick,dashed] (x1) -- (x2);
+%     \draw[-{Latex},IndianRed1,ultra thick,dashed] (x1) -- (x3);
+% \node[draw=Red4,fill=Red2,thick,anchor=center,label={[text=Red1,fill=white,font=\bf\sffamily\fontsize{6}{7}\selectfont,yshift=0.1in]120:MCHAT-F}] (x1) at (x1) {};
+
+%          \node[draw=IndianRed1,fill=none,thick,anchor=center,label={[text=IndianRed1]180:HP}] (x2f) at (x2f) {};
+%     \node[draw=IndianRed1,fill=none,thick,anchor=center,label={[text=IndianRed1,fill=white]0:HR}] (x3f) at (x3f) {};
+%     \draw[-{latex},IndianRed1,ultra thick,dashed,opacity=1] (x1f) -- (x2f);
+%     \draw[-{Latex},IndianRed1,ultra thick,dashed,opacity=1] (x1f) -- (x3f);
+% \node[draw=Red4,fill=Red2,thick,anchor=center,label={[text=Red1,fill=white,font=\bf\sffamily\fontsize{6}{7}\selectfont,yshift=0.1in]120:MCHAT-F}] (x1f) at (x1f) {};
+
+\end{tikzpicture}};
+
+% \def\WDTa{1.2in}
+
+% \node[anchor=north west] (B) at (A.north east) {
+% \begin{tikzpicture}[anchor=center,font=\bf\sffamily\fontsize{8}{10}\selectfont]
+% \begin{groupplot}[
+%     group style={
+%         group name=Bg,
+%         group size=2 by 2,
+%         xlabels at=edge bottom,
+%         xticklabels at=edge bottom,
+%         vertical sep=35pt,
+%         horizontal sep=.65in,
+%       },% colormap={reverse winter}{
+%     %     indices of colormap={
+%     %      \pgfplotscolormaplastindexof{Spectral},...,0 of Spectral}
+%     % },
+%   grid style={thick,dashed, gray!40},%,point meta min=.9,point meta max=1,colorbar,
+%       % ymax=0.855
+%       ,legend cell align={left},
+%       legend style={anchor=east,at={(0.25,1.1)},
+%         inner sep=3pt,
+%         draw=none,
+%         fill=white,fill opacity=.850,
+%         align=left,anchor=west,
+%         text opacity=1,
+%         font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},
+%       grid style={thick,dashed, gray!40},
+%       grid,
+%     enlargelimits=false,scale only axis=true,scaled x ticks = false,scaled y ticks = false,
+%     axis line style={\AXISCOL, opacity=1,ultra  thick, rounded corners=0pt}, y tick label style={/pgf/number format/fixed,/pgf/number format/precision=3,/pgf/number format/fixed zerofill,
+%      /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+%       },
+%       major tick length=0pt,legend columns=1, legend style={,xshift=-.5in,yshift=.2in},
+%       xlabel={},xticklabel style={yshift=-.05in},xlabel style={yshift=0.025in},ylabel
+%       style={xshift=-0.1in},ylabel={},
+%       grid style={thick,dashed, gray!40},point meta min=0.92, point meta max=0.98,title style={yshift=-.05in,xshift=-.2in,align=left}]
+
+%       \nextgroupplot[ymin=0.14,ymax=.325,xmin=.35,xmax=.85,text=\TEXTCOL, height=\HGTa,
+%     width=\WDTa,,title={{\Large E.} 18 month, Male \\UCM}]
+%    \addplot[only marks,scatter,scatter src=explicit, mark options={%
+%      mopt,
+%     },]table[col sep=comma,x=s, y=p,meta=c]
+%     {\vdatafile};
+
+%       \nextgroupplot[ymin=0.14,ymax=.325,xmin=.3,xmax=.85,text=\TEXTCOL, height=\HGTa,
+%     width=\WDTa,ylabel={},,title={{\Large F.} 24 month, Male \\UCM}]
+%    \addplot[only marks,scatter,scatter src=explicit, mark options={%
+%      mopt,
+%     },]table[col sep=comma,x=s, y=p,meta=c]
+%     {\vdatafileH};
+%    % \addplot[mark=*, only marks, mark options={scale=.4,fill=black}]table[col sep=comma,x=s, y=p]
+%    %  {\datafileHp};
+
+%       \nextgroupplot[ymin=0.14,ymax=.325,xmin=.3,xmax=.85,text=\TEXTCOL, height=\HGTa,
+%     width=\WDTa,ylabel={}, ,,title={{\Large G.} 18 month, Female \\UCM}]
+%    \addplot[only marks,scatter,scatter src=explicit, mark options={%
+%      mopt,
+%     },]table[col sep=comma,x=s, y=p,meta=c]
+%     {\vdatafilef};
+
+%       \nextgroupplot[ymin=0.14,ymax=.325,xmin=.3,xmax=.85,text=\TEXTCOL, height=\HGTa,
+%     width=\WDTa,ylabel={}, extra x ticks={.3},,title={{\Large H.} 24 month, Female \\UCM}]
+%    \addplot[only marks,scatter,scatter src=explicit, mark options={%
+%      mopt,
+%     },]table[col sep=comma,x=s, y=p,meta=c]
+%     {\vdatafilefH};
+%   \end{groupplot}
+
+%     %\node[draw=Red4,thick,text=Red4,anchor=center] (x1_) at (x1) {X};
+
+% \end{tikzpicture}};
+% \node[anchor=north,font=\bf\sffamily\fontsize{8}{10}\selectfont,text=\TEXTCOL] (CC) at ([yshift=0in]$(A.south west)!.5!(B.south east)$) {sensitivity};
+
+% \node[anchor=south] (CC) at ([yshift=2.15in]$(A)!.5!(B)$) {
+% \begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont,text=\TEXTCOL]
+% \begin{axis}[,
+%     hide axis,
+%     scale only axis,
+%     height=0pt,
+%     width=0pt,
+%     colorbar horizontal,
+%     point meta min=0.92,
+%     point meta max=0.98,
+%     colorbar style={
+%       title={specificity},title style={yshift=-.1in},
+%       width=4in,
+%       height=.15in,
+%       xticklabel style={yshift=-.05in},
+%         xtick={0.92,0.93,0.94,.95,0.96,0.97,0.98}
+%     }]
+%     \addplot [draw=none] coordinates {(0,0)};
+% \end{axis}
+% \end{tikzpicture}};
+
+
+\end{tikzpicture}
+

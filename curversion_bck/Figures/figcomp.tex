@@ -1,0 +1,113 @@
+  \begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{8}\selectfont]
+    \def\DATA{Figures/comp.csv}
+    \def\WDT{3in}
+    \def\HGT{2in}
+ \def\AXISCOL{white}
+  \def\MXCOLB{lightgray}
+  \def\FXCOLB{CadetBlue2}
+  \def\BANDCOL{lightgray}
+  \def\PLOTCOLA{black}
+  \def\PLOTCOLB{\MXCOL}
+  \def\PLOTCOLBu{\MXCOL}
+  \def\PLOTCOLC{black}
+  \def\PLOTCOLD{\FXCOL}
+  \def\FNCOLB{SeaGreen2}
+  \def\PLOTCOLDu{\FXCOL}
+  \def\WDTa{2.2in}
+  \def\HGTa{1.850in}
+\def\OPC{.9}
+    \def\SKIP{4}
+
+\def\datafilemt{../../../revision_results/LSTM_comparison/truven_male.csv}
+\def\datafilemu{../../../revision_results/LSTM_comparison/ucm_male.csv}
+\def\datafileft{../../../revision_results/LSTM_comparison/truven_female.csv}
+\def\datafilefu{../../../revision_results/LSTM_comparison/ucm_female.csv}
+\def\LWDT{.5mm}
+  
+    \node[] (A) at (0,0) {
+        \begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{8}\selectfont]
+    \begin{axis}[legend cell align=left,legend style={anchor=west,at={(.1,0.8)},inner sep=3pt,draw=none,fill=white,fill opacity=.85,align=right,text opacity=1,font=\bf\sffamily\fontsize{8}{9}\selectfont},axis line style={lightgray, opacity=0.50, thin},%
+      enlargelimits=true,
+      % grid,
+      xshift=.1in,
+      anchor=north west,
+      height=\HGT,
+      width=\WDT,
+      ybar, 
+      xtick=data,% crucial line for the xticklabels directive 
+      xmin=0, 
+      xticklabels from table={\DATA}{algorithm},
+      xticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,align=right,rotate=90,  anchor=east, yshift=0in,xshift=-0.1in,text=\TEXTCOL},
+      major tick length=0pt,
+      yticklabel style={font=\bf\sffamily\fontsize{7}{7}\selectfont,text=\TEXTCOL},
+      grid,
+      grid style={lightgray, opacity=.7},xlabel={algorithm},
+      axis on top=false, bar width=15pt,ylabel={AUC},xlabel style={yshift=-0.750in,text=\TEXTCOL},
+      %enlarge y limits=0.03,
+      ] 
+
+      \addplot[opacity=1,fill=\MXCOL, area legend] table [ 
+      x expr=\coordindex,
+      y=AUC
+      ] {\DATA};   
+      %\addlegendentry{Male (sample size: 300K)}
+
+    \end{axis} 
+  \end{tikzpicture}};
+\node[anchor=south west] (B) at ([xshift=0.2in]A.south east) {
+  \begin{tikzpicture}
+    \begin{axis} [,legend cell align={left},
+      legend style={anchor=east,at={(0,.97)},
+        inner sep=3pt,
+        draw=none,
+        fill=white,fill opacity=.850,
+        align=left,anchor=west,
+        text opacity=1,
+        font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},
+      grid style={thick,dashed, gray!40},
+      grid,
+      enlargelimits=true,scale only axis=true,
+      scaled x ticks = false,scaled y ticks = false,
+      height=\HGTa,
+      width=\WDTa,
+      ,axis line style={\AXISCOL, opacity=1,ultra  thick, rounded corners=0pt}, y tick label style={/pgf/number format/fixed,/pgf/number format/precision=1,/pgf/number format/fixed zerofill,
+        /pgf/number format/1000 sep = %\thinspace % Optional if you want to replace comma as the 1000 separator 
+      },
+      major tick length=0pt,legend columns=2, legend style={,xshift=-.5in,yshift=.2in},
+      yshift=-.75in,text=\TEXTCOL,xlabel={FPR},xlabel style={yshift=0.025in},ylabel
+      style={xshift=-0.1in},ylabel={TPR},
+      grid style={thick,dashed, gray!40},xmin=-.050]
+      
+      \addplot[ each nth point=\SKIP, filter discard warning=false, 
+        unbounded coords=discard,smooth,smooth,  line width=\LWDT, \MXCOL,mark=none, opacity=\OPC,
+      ]table[col sep=comma,x=fpr, y=tpr]
+      {\datafilemt};
+      \addlegendentry{Males (Truven)}
+
+
+      \addplot[ each nth point=\SKIP, filter discard warning=false, 
+        unbounded coords=discard,smooth,smooth,  line width=\LWDT, \FXCOL,mark=none, opacity=\OPC,
+      ]table[col sep=comma,x=fpr, y=tpr]
+      {\datafileft};
+      \addlegendentry{Females (Truven)}      
+
+      \addplot[ each nth point=\SKIP, filter discard warning=false, 
+        unbounded coords=discard,smooth,smooth,  line width=\LWDT, \MXCOLB,mark=none, opacity=\OPC,
+      ]table[col sep=comma,x=fpr, y=tpr]
+      {\datafilemu};
+      \addlegendentry{Males (UCM)}
+
+      \addplot[ each nth point=\SKIP, filter discard warning=false, 
+        unbounded coords=discard,smooth,smooth,  line width=\LWDT, \FXCOLB,mark=none, opacity=\OPC,
+      ]table[col sep=comma,x=fpr, y=tpr]
+      {\datafilefu};
+      \addlegendentry{Females (UCM)}
+
+      \draw[fill=lightgray,draw=none,opacity=.5] (axis cs:0,0) -- (axis cs:1,0) -- (axis cs:1,1) -- cycle;
+    \end{axis}
+  \end{tikzpicture}
+};
+\node[anchor=south west] (L1) at (A.north west) {{\Large A.} Sample of Baseline Approaches with AUC $>0.5$ };
+\node[anchor=south west] (L2)  at ($(L1.south west)!(B.west)!(L1.south east)$) {{\Large B.} ROC Curves for LSTMB (LSTM with pre-processing)};
+
+\end{tikzpicture}

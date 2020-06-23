@@ -1,0 +1,547 @@
+\pgfplotsset{
+  discard if/.style 2 args={
+    x filter/.append code={
+      \edef\tempa{\thisrow{#1}}
+      \edef\tempb{#2}
+      \ifx\tempa\tempb
+      \def\pgfmathresult{inf}
+      \fi
+    }
+  },
+  discard if not/.style 2 args={
+    x filter/.append code={
+      \edef\tempa{\thisrow{#1}}
+      \edef\tempb{#2}
+      \ifx\tempa\tempb
+      \else
+      \def\pgfmathresult{inf}
+      \fi
+    }
+  }
+}
+
+\begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{10}\selectfont]
+  \def\TEXTCOL{gray}
+  \tikzset{
+    hatch distance/.store in=\hatchdistance,
+    hatch distance=20pt,
+    hatch thickness/.store in=\hatchthickness,
+    hatch thickness=2pt
+  }
+
+  \def\WDT{4.75in} 
+  \def\WDTA{2in}
+  
+\def\DATA{../../data_revision}
+\def\DATAPATH{/home/ishanu/ZED/Research/XG3_/autism/revision_results/performance/restricted_neg_len/} 
+\def\datafile{\DATAPATH/PERFORMANCE_STATS.csv}
+\def\datafileE{\DATAPATH/equal_size_auc/sample_auc_stats.csv}
+\def\datafileEmt{\DATAPATH/equal_size_auc/male_truven.csv}
+\def\datafileEft{\DATAPATH/equal_size_auc/female_truven.csv}
+\def\datafileEmu{\DATAPATH/equal_size_auc/male_UCM.csv}
+\def\datafileEfu{\DATAPATH/equal_size_auc/female_UCM.csv}
+  \def\auctime{\DATA/figfiles/auc_time.csv}
+  \def\auctimeV{\DATA/figfiles/Vauc_time.csv}
+
+  \def\HGT{1.6in}
+  \def\WDT{1.25in}
+  \def\WDTC{4in}
+  \def\WDTR{1.9in}
+  \def\WDTH{1.7in}
+
+\def\MXCOLX{DarkOrange1}
+\def\FXCOLX{SeaGreen4}
+
+  \def\AXISCOL{white}
+  \def\MXCOLB{lightgray}
+  \def\FXCOLB{CadetBlue2}
+  \def\BANDCOL{lightgray}
+  \def\PLOTCOLA{black}
+  \def\PLOTCOLB{\MXCOL}
+  \def\PLOTCOLBu{\MXCOL}
+  \def\PLOTCOLC{black}
+  \def\PLOTCOLD{\FXCOL}
+  \def\FNCOLB{SeaGreen2}
+  \def\PLOTCOLDu{\FXCOL}
+  \def\WDTa{1.85in}
+  \def\HGTa{2in}
+
+  \def\SCALE{1.5}
+  \def\SCALEA{1.25}
+  \def\SCALEB{1.15}
+  \def\SCALEX{1.5}
+  \def\OPC{.55}
+  \def\OPCh{.55}
+  \def\OPCX{.65}
+  \def\OPCB{.65}
+  \def\BWIDTH{4pt}
+  \def\LWDT{0.5mm}
+  \def\LWDTX{1mm}
+  \node[] (A0) at (0,0) {};
+
+  \node[anchor=center] (N) at (A0.south)
+  {
+    \begin{tikzpicture}
+      \begin{axis} [,legend cell align={left},
+        legend style={anchor=east,at={(0.25,1.1)},
+          inner sep=3pt,
+          draw=none,
+          fill=white,fill opacity=.850,
+          align=left,anchor=west,
+          text opacity=1,
+          font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},
+        grid style={thick,dashed, gray!40},
+        grid,
+        enlargelimits=true,scale only axis=true,
+        scaled x ticks = false,scaled y ticks = false,
+        height=\HGTa,
+        width=\WDT,
+        enlarge x limits=0.07,axis line style={\AXISCOL, 
+          opacity=1,ultra  thick, rounded corners=0pt}, 
+        y tick label style={/pgf/number format/fixed,
+          /pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+          /pgf/number format/1000 sep = %\thinspace % Optional 
+        },
+        major tick length=0pt,legend columns=1, legend style={,xshift=-.5in,yshift=.2in},
+        yshift=-.75in,text=\TEXTCOL,xlabel={age [weeks]},xlabel style={yshift=0.025in},ylabel
+        style={xshift=-0in},ylabel={AUC},
+        grid style={thick,dashed, gray!40},
+        % ymax=0.855
+        ]
+        
+        \draw [draw=none,ultra thick,opacity=.2,postaction={
+          pattern=flexible hatch,
+          hatch distance=7pt,
+          hatch thickness=2pt,
+          draw=none,
+          opacity=.5,
+          pattern color=lightgray, %ultra thick,
+        },] (axis cs:150,\pgfkeysvalueof{/pgfplots/ymin})
+        -- (axis cs:150,\pgfkeysvalueof{/pgfplots/ymax}) -- 
+        (axis cs:100,\pgfkeysvalueof{/pgfplots/ymax}) 
+        -- (axis cs:100,\pgfkeysvalueof{/pgfplots/ymin}) --cycle;
+
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=*, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  
+          opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{pipeline},
+        discard if not={tag}{PSYCH},,discard if not={gender}{M}]
+        {\datafile};
+        \addlegendentry{Males (Truven)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=*, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLD,  thick, fill=\PLOTCOLD,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{pipeline},
+        discard if not={tag}{PSYCH},,discard if not={gender}{F}]
+        {\datafile};
+        \addlegendentry{Females (Truven)}
+        % 
+      \end{axis}\end{tikzpicture}
+  };
+  \node[anchor=south west] (N1) at (N.south east)
+  {
+    \begin{tikzpicture}
+      \begin{axis} [,legend cell align={left},
+        legend style={anchor=east,at={(0,1.1)},
+          inner sep=3pt,
+          draw=none,
+          fill=white,fill opacity=.850,
+          align=left,anchor=west,
+          text opacity=1,
+          font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},
+        grid style={thick,dashed, gray!40},
+        grid,
+        enlargelimits=true,scale only axis=true,
+        scaled x ticks = false,scaled y ticks = false,
+        height=\HGTa,
+        width=\WDT,
+        enlarge x limits=0.07,axis line style={\AXISCOL, opacity=1,
+          ultra  thick, rounded corners=0pt}, 
+        y tick label style={/pgf/number format/fixed,
+          /pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+          /pgf/number format/1000 sep = %\thinspace % 
+        },
+        major tick length=0pt,legend columns=1, legend style={,xshift=-.5in,yshift=.2in},
+        yshift=-.75in,text=\TEXTCOL,xlabel={age [weeks]},xlabel style={yshift=0.025in},ylabel
+        style={xshift=-0in},ylabel={},
+        grid style={thick,dashed, gray!40},
+        % ymax=0.855
+        ]
+        
+        \draw [draw=none,ultra thick,opacity=.2,postaction={
+          pattern=flexible hatch,
+          hatch distance=7pt,
+          hatch thickness=2pt,
+          draw=none,
+          opacity=.5,
+          pattern color=lightgray, %ultra thick,
+        },] (axis cs:150,\pgfkeysvalueof{/pgfplots/ymin}) 
+        -- (axis cs:150,\pgfkeysvalueof{/pgfplots/ymax}) 
+        -- (axis cs:100,\pgfkeysvalueof{/pgfplots/ymax}) 
+        -- (axis cs:100,\pgfkeysvalueof{/pgfplots/ymin}) --cycle;
+
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=*, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, discard if not={dataset}{pipeline},
+        discard if not={tag}{TWOTARG},,discard if not={gender}{M}]
+        {\datafile};
+        \addlegendentry{Males (Truven, two codes)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=*, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLD,  thick, fill=\PLOTCOLD,  
+          opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{pipeline},discard if not={tag}{TWOTARG},,
+        discard if not={gender}{F}]
+        {\datafile};
+        \addlegendentry{Females (Truven, two codes)}
+        % 
+
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=square*, opacity=\OPCB,
+        mark options={%
+          scale=\SCALEA,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  opacity=\OPCB,
+        },]table[col sep=comma,x=week, y=auc, discard if not={dataset}{pipeline},
+        discard if not={tag}{BASIC},,discard if not={gender}{M}]
+        {\datafile};
+        \addlegendentry{Males (Truven, one code)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=square*, opacity=\OPCB,
+        mark options={%
+          scale=\SCALEA,draw=\PLOTCOLD,  thick, fill=\PLOTCOLD,  opacity=\OPCB,
+        },]table[col sep=comma,x=week, y=auc, discard if not={dataset}{pipeline},
+        discard if not={tag}{BASIC},,discard if not={gender}{F}]
+        {\datafile};
+        \addlegendentry{Females (Truven, one code)}
+        % 
+      \end{axis}\end{tikzpicture}
+  };
+
+  \node[anchor=south west] (N1c) at (N1.south east)
+  {
+    \begin{tikzpicture}
+      \begin{axis} [,legend cell align={left},
+        legend style={anchor=east,at={(0,1.1)},
+          inner sep=3pt,
+          draw=none,
+          fill=white,fill opacity=.850,
+          align=left,anchor=west,
+          text opacity=1,
+          font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},
+        grid style={thick,dashed, gray!40},
+        grid,
+        enlargelimits=true,scale only axis=true,scaled x ticks = false,
+        scaled y ticks = false,
+        height=\HGTa,
+        width=\WDTa,
+        enlarge x limits=0.07,axis line style={\AXISCOL, opacity=1,ultra  thick, 
+          rounded corners=0pt}, y tick label style={/pgf/number format/fixed,
+          /pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+          /pgf/number format/1000 sep = %\thinspace % Optional 
+        },
+        major tick length=0pt,legend columns=1, 
+        legend style={,xshift=-.5in,yshift=.2in},
+        yshift=-.75in,text=\TEXTCOL,xlabel={AUC},
+        xlabel style={yshift=0.025in},
+        ylabel
+        style={xshift=-0.4in},ylabel={histogram bin count},
+        grid style={thick,dashed, gray!40},
+        % ymax=0.855
+        ]
+
+        \addplot[draw=gray,fill  opacity=.4,fill=\MXCOL,area legend,hist={
+        bins=10,%,density=true,
+        data min=0.77,
+        data max=.87,%handler/.style={sharp plot},
+  %intervals=false
+      }   ]table[col sep=comma,y index=3, 
+        ]
+        {\datafileEmt};
+        \addlegendentry{Males (Truven)}
+
+        \addplot[draw=gray, fill opacity=\OPCh,fill=\FXCOL,area legend,hist={
+        bins=12,%density=true,
+        data min=0.78,
+        data max=.87,%handler/.style={sharp plot},
+        %intervals=false
+      }   ]table[col sep=comma,y index=3, 
+        ]
+        {\datafileEft};
+        \addlegendentry{Females (Truven)}
+
+        \addplot[draw=gray, fill opacity=\OPCh,fill=\MXCOLB,area legend,hist={
+        bins=10,%,density=true,
+        data min=0.78,
+        data max=.89,
+        % handler/.style={sharp plot},
+        %intervals=false
+      }   ]table[col sep=comma,y index=3, 
+        ]
+        {\datafileEmu};
+        \addlegendentry{Males (UCM)}
+
+        \addplot[draw=gray, fill opacity=\OPCh,fill=\FXCOLB,area legend,hist={
+        bins=6,
+        % ,density=true,
+        data min=0.8,
+        data max=.85,
+        % handler/.style={sharp plot,smooth},
+        % intervals=false
+      }   ]table[col sep=comma,y index=3, 
+        ]
+        {\datafileEfu};
+        \addlegendentry{Females (UCM)}
+
+      \end{axis}\end{tikzpicture}
+  };
+
+  \node[anchor=north west] (N2) at ([yshift=-.45in]N.south west)
+  {
+    \begin{tikzpicture}
+      \begin{axis} [,legend cell align={left},
+        legend style={anchor=east,at={(1.4,.35)},
+          inner sep=3pt,
+          draw=none,
+          fill=white,fill opacity=.850,
+          align=left,anchor=west,
+          text opacity=1,
+          font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},
+        grid style={thick,dashed, gray!40},
+        grid,
+        enlargelimits=true,scale only axis=true,scaled x ticks = false,
+        scaled y ticks = false,
+        height=\HGTa,
+        width=\WDTa,
+        enlarge x limits=0.07,axis line style={\AXISCOL, opacity=1,
+          ultra  thick, 
+          rounded corners=0pt}, y tick label style={/pgf/number format/fixed,
+          /pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+          /pgf/number format/1000 sep = %\thinspace 
+        },
+        major tick length=0pt,legend columns=1, 
+        legend style={,xshift=-.5in,yshift=.2in},
+        yshift=-.75in,text=\TEXTCOL,xlabel={age [weeks]},
+        xlabel style={yshift=0.025in},ylabel
+        style={xshift=-0.1in},ylabel={AUC},
+        grid style={thick,dashed, gray!40},
+        ymax=0.900,enlarge y limits=false,
+        ymin=0.60,, title={{\Large i.} Truven},
+        ]
+         \draw [draw=none,ultra thick,opacity=.1,postaction={
+          pattern=flexible hatch,
+          hatch distance=7pt,
+          hatch thickness=2pt,
+          draw=none,
+          opacity=.5,
+          pattern color=lightgray, %ultra thick,
+        },] (axis cs:150,\pgfkeysvalueof{/pgfplots/ymin})
+        -- (axis cs:150,\pgfkeysvalueof{/pgfplots/ymax}) -- 
+        (axis cs:100,\pgfkeysvalueof{/pgfplots/ymax}) 
+        -- (axis cs:100,\pgfkeysvalueof{/pgfplots/ymin}) --cycle;
+       
+         \addplot[ smooth,  line width=\LWDTX,\MXCOLX,mark=*, opacity=\OPCX,
+        mark options={%
+          scale=\SCALEX,draw=\MXCOLX,  thick, fill=\MXCOLX,  opacity=\OPC,
+        },]table[col sep=comma,,x=time, y=M]{\auctime};
+        \addlegendentry{Males (PFSA+seq)}
+        % 
+        \addplot[ smooth,  line width=\LWDTX, \FXCOLX,mark=*, opacity=\OPCX,
+        mark options={%
+          scale=\SCALEX,draw=\FXCOLX,  thick, fill=\FXCOLX,  opacity=\OPC,
+        },]table[col sep=comma,,x=time, y=F]{\auctime};
+        \addlegendentry{Females (PFSA+seq)}
+        % 
+ 
+       \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=o, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  opacity=\OPC,
+        },]table[col sep=comma,x=week, 
+        y=auc, discard if not={dataset}{pipeline},
+        discard if not={tag}{SEQONLY},,discard if not={gender}{M}]
+        {\datafile};
+        \addlegendentry{Males (seq)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=o, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLD,  thick, 
+          fill=\PLOTCOLD,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{pipeline},
+        discard if not={tag}{SEQONLY},,discard if not={gender}{F}]
+        {\datafile};
+        \addlegendentry{Females (seq)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=square, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  
+          opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{pipeline},discard if not={tag}{PFSAONLY},,
+        discard if not={gender}{M}]
+        {\datafile};
+        \addlegendentry{Males (PFSA)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=square, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLD,  thick, fill=\PLOTCOLD,  
+          opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, discard if not={dataset}{pipeline},
+        discard if not={tag}{PFSAONLY},,discard if not={gender}{F}]
+        {\datafile};
+        \addlegendentry{Females (PFSA)}
+        % 
+       \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=square*, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, discard if not={dataset}{pipeline},
+        discard if not={tag}{DENSITY},,discard if not={gender}{M}]
+        {\datafile};
+        \addlegendentry{Males (density)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=square*, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLD,  thick, fill=\PLOTCOLD,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, discard if not={dataset}{pipeline},
+        discard if not={tag}{DENSITY},,discard if not={gender}{F}]
+        {\datafile};
+        \addlegendentry{Females (density)}    %
+       
+      \end{axis}\end{tikzpicture}
+  };
+
+  \node[anchor=north west] (N3) at (N2.north east)
+  {
+    \begin{tikzpicture}
+      \begin{axis} [,legend cell align={left},
+        legend style={anchor=east,at={(1.4,.12)},
+          inner sep=3pt,
+          draw=none,
+          fill=white,fill opacity=.850,
+          align=left,anchor=west,
+          text opacity=1,
+          font=\bf\sffamily\fontsize{8}{9}\selectfont,text=black},
+        grid style={thick,dashed, gray!40},
+        grid,
+        enlargelimits=true,scale only axis=true,scaled x ticks = false,
+        scaled y ticks = false,
+        height=\HGTa,
+        width=\WDTa,
+        enlarge x limits=0.07,axis line style={\AXISCOL, opacity=1,ultra  thick, 
+          rounded corners=0pt}, y tick label style={/pgf/number format/fixed,
+          /pgf/number format/precision=2,/pgf/number format/fixed zerofill,
+          /pgf/number format/1000 sep = %\thinspace % Optional if yo
+        },
+        major tick length=0pt,legend columns=1, 
+        legend style={,xshift=-.5in,yshift=.2in},
+        yshift=-.75in,text=\TEXTCOL,xlabel={age [weeks]},
+        xlabel style={yshift=0.025in},ylabel
+        style={xshift=-0.1in},ylabel={},
+        grid style={thick,dashed, gray!40},
+        ymax=0.890,enlarge y limits=false,
+        ymin=0.60, title={{\Large ii.} UCM},
+        ]
+        
+         \draw [draw=none,ultra thick,opacity=.1,postaction={
+          pattern=flexible hatch,
+          hatch distance=7pt,
+          hatch thickness=2pt,
+          draw=none,
+          opacity=.5,
+          pattern color=lightgray, %ultra thick,
+        },] (axis cs:150,\pgfkeysvalueof{/pgfplots/ymin})
+        -- (axis cs:150,\pgfkeysvalueof{/pgfplots/ymax}) -- 
+        (axis cs:100,\pgfkeysvalueof{/pgfplots/ymax}) 
+        -- (axis cs:100,\pgfkeysvalueof{/pgfplots/ymin}) --cycle;
+
+
+       \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=o, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{validation},
+        discard if not={tag}{SEQONLY},,
+        discard if not={gender}{M}]
+        {\datafile};
+        % \addlegendentry{Males (seq)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=o, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLD,  thick, fill=\PLOTCOLD,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{validation},
+        discard if not={tag}{SEQONLY},,
+        discard if not={gender}{F}]
+        {\datafile};
+        % \addlegendentry{Females (seq)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=square, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{validation},
+        discard if not={tag}{PFSAONLY},,
+        discard if not={gender}{M}]
+        {\datafile};
+        % \addlegendentry{Males (PFSA)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=square, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLD,  thick, fill=\PLOTCOLD,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{validation},
+        discard if not={tag}{PFSAONLY},,
+        discard if not={gender}{F}]
+        {\datafile};
+        % \addlegendentry{Females (PFSA)}
+        % 
+        % 
+        \addplot[ smooth,  line width=\LWDTX, \MXCOLX,mark=*, opacity=\OPCX,
+        mark options={%
+          scale=\SCALEX,draw=\MXCOLX,  thick, fill=\MXCOLX,  opacity=\OPCX,
+        },]table[col sep=comma,,x=time, y=M]{\auctimeV};
+        % 
+        \addplot[ smooth,  line width=\LWDTX, \FXCOLX,mark=*, opacity=\OPCX,
+        mark options={%
+          scale=\SCALEX,draw=\FXCOLX,  thick, fill=\FXCOLX,  opacity=\OPCX,
+        },]table[col sep=comma,,x=time, y=F]{\auctimeV};
+        % \addlegendentry{Females}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLB,mark=square*, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLB,  thick, fill=\PLOTCOLB,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{validation},
+        discard if not={tag}{DENSITY},,
+        discard if not={gender}{M}]
+        {\datafile};
+        % \addlegendentry{Males (density)}
+        % 
+        \addplot[ smooth,  line width=\LWDT, \PLOTCOLD,mark=square*, opacity=\OPC,
+        mark options={%
+          scale=\SCALEB,draw=\PLOTCOLD,  thick, fill=\PLOTCOLD,  opacity=\OPC,
+        },]table[col sep=comma,x=week, y=auc, 
+        discard if not={dataset}{validation},
+        discard if not={tag}{DENSITY},,
+        discard if not={gender}{F}]
+        {\datafile};
+ 
+      \end{axis}\end{tikzpicture}
+  };
+
+  \node[anchor=north west, align=left] (L1) at ([yshift=.7in]N.north west) {{\Large A.} Disambiguation of \\ Autism Diagnosis\\from Other Psych. Phenotypes};
+
+  \node[anchor=north west, align=left] (L2) at ($(L1.north west)!(N1.west)!(L1.north east)$) {{\Large B.} Comparison of Performance with\\
+    One vs Two ASD Diagnostic Codes};
+
+  \node[anchor=north west, align=left] (L2) at ([xshift=.22in]$(L1.north west)!(N1c.west)!(L1.north east)$) {{\Large C.} AUC Distribution with Matched\\Control \& Treatment Population Sizes};
+
+  \node[anchor=south west, align=left] (L4) at ($(L1.south west)!(N2.north west)!(L1.north west)$) {{\Large D.} Comparison of Performance with 
+    Different Feature Categories (Only PFSA based features, Only Sequence-statistics\\based features,   only Code-density, and PFSA + Sequence-statistics features combined)};
+
+\end{tikzpicture}
+
