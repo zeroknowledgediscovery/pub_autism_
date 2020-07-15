@@ -1,0 +1,24 @@
+\BOOKMARK [1][-]{section.1}{Pipeline Optimization}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Input Data Format}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Algorithms}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Example Run with Released Application}{}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Prerequisites \046 Installation}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.2}{EHR data format}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{Sample Python code risk estimation}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.4}{Sample Python script risk estimation}{section.2}% 8
+\BOOKMARK [1][-]{section.3}{Comparison With State of the Art Off-the-shelf ML Algorithms}{}% 9
+\BOOKMARK [1][-]{section.4}{Comparison With Pipeline Variations, Feature Subsets and Neural Net Post-processing}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Feature Subset Evaluations \046 Code Density As A Feature}{section.4}% 11
+\BOOKMARK [1][-]{section.5}{Threshold Selection on ROC Curve}{}% 12
+\BOOKMARK [1][-]{section.6}{Note on Reciever Operating Characteristics \(ROC\) and Precision-recall Curves}{}% 13
+\BOOKMARK [1][-]{section.7}{Effect of Class Imbalance}{}% 14
+\BOOKMARK [1][-]{section.8}{Note on ASD Clinical Diagnosis \046 Uncertainty of EHR Record}{}% 15
+\BOOKMARK [2][-]{subsection.8.1}{Diagnostic Evaluations}{section.8}% 16
+\BOOKMARK [2][-]{subsection.8.2}{Change In Diagnostic Criteria for ASD, Inclusion of PDD, Asperger, and Disambiguation From Unrelated Psychiatric Phenotypes}{section.8}% 17
+\BOOKMARK [2][-]{subsection.8.3}{Performance Comparison With M-CHAT/F}{section.8}% 18
+\BOOKMARK [1][-]{section.9}{Improving Wait-times For Diagnostic Evaluations by Reducing False Positives in Routine Screening}{}% 19
+\BOOKMARK [2][-]{subsection.9.1}{4D Decision Optimization Using M-CHAT/F Population Stratification To Boost PPV}{section.9}% 20
+\BOOKMARK [1][-]{section.10}{Generating PFSA Models From Set of Input Streams with Variable Input Lengths}{}% 21
+\BOOKMARK [1][-]{section.11}{Probabilsitic Finite State Automata Inference}{}% 22
+\BOOKMARK [2][-]{subsection.11.1}{Probabilistic Finite-State Automaton}{section.11}% 23
+\BOOKMARK [1][-]{section.12}{Sequence Likelihood Defect}{}% 24

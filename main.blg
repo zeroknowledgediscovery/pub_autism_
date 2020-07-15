@@ -1,0 +1,80 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: naturemag.bst
+Database file #1: aut.bib
+I was expecting an "="---line 653 of file aut.bib
+ : @misc{GEMS, title={General Equivalence Mappings}, url={https://www.cms.gov/Medicare/Coding/ICD10/downloads/ICD-10_GEM_fact_sheet.pdf}, publisher={Centers for Medicare \& Medicaid Services}, year 
+ :                                                                                                                                                                                                    accessed={2019}, month={Apr}}
+I'm skipping whatever remains of this entry
+Repeated entry---line 1023 of file aut.bib
+ : @article{pmid29691724
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1036 of file aut.bib
+ : @article{pmid29307081
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1048 of file aut.bib
+ : @article{pmid30941018
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1058 of file aut.bib
+ : @article{pmid23935565
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1126 of file aut.bib
+ : @article{pmid25681541
+ :                      ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 1168 of file aut.bib
+ : abstract = {Abstract. The idea of fractional differencing is introduced in terms of the infinite filter that corresponds to the expansion of (1-B)d. When the filter is applied to white noise, a class of time series is generated with distinctive properties, particularly in the very low frequencies and provides potentially useful long-memory forecasting properties. Such models are shown to possibly arise from aggregation of independent components. Generation and estimation of these models are considered and applications on generated and real data presented.},
+ :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1376 of file aut.bib
+ : @article{volkmar2014practice
+ :                             ,
+I'm skipping whatever remains of this entry
+Warning--empty year in ltgranger80
+You've used 57 entries,
+            2348 wiz_defined-function locations,
+            1322 strings with 27118 characters,
+and the built_in function-call counts, 21124 in all, are:
+= -- 1470
+> -- 528
+< -- 0
++ -- 266
+- -- 131
+* -- 2629
+:= -- 2347
+add.period$ -- 173
+call.type$ -- 57
+change.case$ -- 55
+chr.to.int$ -- 0
+cite$ -- 58
+duplicate$ -- 1944
+empty$ -- 1986
+format.name$ -- 178
+if$ -- 4198
+int.to.chr$ -- 0
+int.to.str$ -- 57
+missing$ -- 450
+newline$ -- 295
+num.names$ -- 53
+pop$ -- 331
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 332
+stack$ -- 0
+substring$ -- 858
+swap$ -- 1915
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 125
+width$ -- 59
+write$ -- 627
+(There were 8 error messages)
