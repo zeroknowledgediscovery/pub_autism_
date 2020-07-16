@@ -22,7 +22,7 @@
 \def\jobnameX{zero}
 \newif\ifFIGS
 \FIGSfalse  
-\FIGStrue
+%\FIGStrue
 % Use the lineno option to display guide line numbers if required.
 
 %\templatetype{pnasresearcharticle} % Choose template 
@@ -122,7 +122,7 @@ Furthermore, being functionally independent of the M-CHAT/F, we show that there 
 % ##########################################
 % ##########################################
 % ###########################################################
-\subsection*{Source of Electronic Patient Records}
+%\subsection*{Source of Electronic Patient Records}
 
 We view the task of predicting  ASD diagnosis   as a binary classification problem: sequences of diagnostic codes are classified into positive and control categories, where ``positive'' refers to children eventually diagnosed with ASD, as indicated by the presence of a clinical diagnosis (ICD9 code 299.X) in their medical records. Of the two independent sources of clinical incidence data used in this study,  the primary source used to train our predictive pipeline  is the Truven Health Analytics MarketScan\textsuperscript{\textregistered} Commercial Claims and Encounters Database for the years 2003 to 2012~\cite{hansen2017truven} (referred to  as the Truven dataset). This US national database contains data contributed by over 150 insurance carriers, large self-insuring companies,  and is a culmination of over  4.6 billion inpatient and outpatient service claims and  almost six billion diagnosis codes. We extracted histories of patients within the age of $0-9$ years, and excluded  patients for whom:  1) At least one code of any available phenotypes is present, 2) Lag between first and last available record for a patient should be at least 15 weeks. These exclusion criteria ensure that we are not considering patients who have too few observations to either train on. Additionally, during validation runs,  we restricted the control set to patients observable in the databases to those whose last record is not before the first 150 weeks of life. Characteristics of excluded patients is shown in Table~\ref{tab2}. We trained with over  30M diagnostic records (16,649,548 for males and  14,318,303  for females with 9,835 unique  codes).
 
@@ -183,9 +183,10 @@ The significant diversity of diagnostic codes (6,089 distinct ICD-9 codes and 11
 
 % We need two training sets: one to infer the models, and one to  train the classifier  with features  derived  from the inferred models. Thus, we do a random 3-way split of the set of unique patients into \textit{feature-engineering} ($25\%$), \textit{training} ($25\%$) and \textit{test} ($50\%$) sets. We use the feature-engineering set of ids first to infer our PFSA models \textit{(unsupervised model inference in each category)}, which then allows us to train the gradient-boosting classifier using the training set and PFSA models \textit{(classical supervised learning)}, and we finally execute  out-of-sample validation on the test set. Fig.~\ref{fig1}B shows the top $15$ features  ranked in order of their relative importance (relative loss in performance when dropped out of the analysis). 
 %####################
-\subsection*{Calculating Relative Risk}
+%\subsection*{Calculating Relative Risk}
 Our pipeline maps medical histories to a   raw indicator of 
-risk. However, to make crisp predictions, we must choose  a decision threshold for this raw score. Conceptually identical to the notion of Type 1 and Type 2 errors in classical statistical analyses, the choice of a threshold trades off false positives (Type 1 error) for false negatives (Type 2 error): choosing a small threshold  results in predicting a larger fraction of future diagnoses correctly, $i.e.$ have a high true positive rate (TPR), while simultaneously suffering from a higher false positive rate (FPR), and vice versa. Therefore, a choice of a specific decision threshold   reflects a choice of the maximum FPR and minimum TPR, and is   driven by the application at hand. In this study, we base our analysis on maximizing the $F_1$-score, defined as the harmonic mean of sensitivity and specificity, to make a   balanced trade-off between the two kinds of errors (See Supplementary text, Section~\ref{SI-sec:F1}). The \textit{relative risk} is then defined as the ratio of the raw  risk to the  decision threshold, and a value  $>1$  predicts a future ASD diagnosis.
+risk. However, to make crisp predictions, we must choose  a decision threshold for this raw score. % Conceptually identical to the notion of Type 1 and Type 2 errors in classical statistical analyses, the choice of a threshold trades off false positives (Type 1 error) for false negatives (Type 2 error): choosing a small threshold  results in predicting a larger fraction of future diagnoses correctly, $i.e.$ have a high true positive rate (TPR), while simultaneously suffering from a higher false positive rate (FPR), and vice versa. Therefore, a choice of a specific decision threshold   reflects a choice of the maximum FPR and minimum TPR, and is   driven by the application at hand.
+In this study, we base our analysis on maximizing the $F_1$-score, defined as the harmonic mean of sensitivity and specificity, to make a   balanced trade-off between the two kinds of errors (See Supplementary text, Section~\ref{SI-sec:F1}). The \textit{relative risk} is then defined as the ratio of the raw  risk to the  decision threshold, and a value  $>1$  predicts a future ASD diagnosis.
 %####################
 \subsection*{Boosting Performance Via Leveraging Population Stratification Induced By Existing Tests}
 We leverage the population stratification induced by an existing independent screening test (M-CHAT/F) to improve combined performance. Here a combination  refers to the conditional choice of the sensitivity/specificity trade-offs for our tool in each sub-population such that the overall performance is optimized with respect to whether we wish to maximize the PPV or the sensitivity at a specified minimum level of specificity.
@@ -206,8 +207,6 @@ We consider  $4$ sub-populations defined by M-CHAT/F score brackets~\cite{pmid31
 % ####################
 
 \section*{Results}
-
-
 We measure our performance using several standard metrics including the AUC, sensitivity, specificity and the PPV. For the prediction of the eventual ASD  status, we achieve an out-of-sample AUC of $82.3\%$ and  $82.5\%$ for males and females respectively at $125$ weeks for the Truven dataset. In the UCM dataset, our performance is comparable: $83.1\%$ and $81.3\%$ for males and females respectively (Fig.~\ref{fig1} and \ref{fig2}).  Our AUC is shown to improve approximately  linearly  with patient age: Fig.~\ref{fig2}A illustrates that the  AUC  reaches 90\%  in the Truven dataset at the age of four. Importantly, we train  our  pipeline on 50\% of the Truven dataset, and use held back data from Truven, and the entirety of the UCM dataset for validation: \textit{No new training is done in the UCM dataset.} Good  performance on these independent datasets lends strong evidence for our claims. Furthermore, applicability in new datasets \textit{without local re-training} makes it readily  deployable in clinical settings.
 
 What are the inferred patterns that  elevate risk?  Enumerating the top $15$ predictive features (Fig.~\ref{fig1}B), ranked  according to their automatically inferred weights  (the feature ``importances''), we found that while infections and immunologic disorders are the most predictive, there is significant effect from all the $17$ disease categories. Thus, the  co-morbid indicators are  distributed across the disease spectrum, and no single  disorder is uniquely implicated (See also Fig.~\ref{fig2}F). Importantly, predictability is relatively agnostic to the number of local cases across US counties (Fig.~\ref{fig1}C-D) which is important in light of the current uneven distribution of  diagnostic resources~\cite{gordon2016whittling,althouse2006pediatric} across states and regions.
@@ -249,8 +248,8 @@ Future efforts will attempt to realize our approach within a clinical setting. W
 
 \subsection*{Data Sharing} Software implementation of the pipeline is available at: \href{https://github.com/zeroknowledgediscovery/ehrzero}{https://github.com/zeroknowledgediscovery/ehrzero}, and installation in standard python environments
 may be done from \href{https://pypi.org/project/ehrzero/}{https://pypi.org/project/ehrzero/}.
-A sample of de-identified data
-from the UCM database is be shared as part of the public software package.
+%A sample of de-identified data
+%from the UCM database is be shared as part of the public software package.
 
 
 

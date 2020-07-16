@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.9.11)  16 JUL 2020 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.9.11)  16 JUL 2020 16:38
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1959,27 +1959,6 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
 
 LaTeX Warning: Reference `EXT-tab0' on page 2 undefined on input line 113.
 
-<Figures/External/perfA.pdf, id=89, 496.33128pt x 454.13365pt>
-File: Figures/External/perfA.pdf Graphic file (type pdf)
-<use Figures/External/perfA.pdf>
-Package pdftex.def Info: Figures/External/perfA.pdf  used on input line 176.
-(pdftex.def)             Requested size: 421.8838pt x 386.02928pt.
-
-LaTeX Warning: Reference `EXT-tab0' on page 2 undefined on input line 181.
-
-
-LaTeX Warning: Reference `EXT-tab0' on page 2 undefined on input line 181.
-
-<Figures/External/perfB.pdf, id=90, 486.91512pt x 608.61577pt>
-File: Figures/External/perfB.pdf Graphic file (type pdf)
-<use Figures/External/perfB.pdf>
-Package pdftex.def Info: Figures/External/perfB.pdf  used on input line 200.
-(pdftex.def)             Requested size: 421.8838pt x 527.33693pt.
-<Figures/External/perfCv.pdf, id=91, 317.79326pt x 362.38487pt>
-File: Figures/External/perfCv.pdf Graphic file (type pdf)
-<use Figures/External/perfCv.pdf>
-Package pdftex.def Info: Figures/External/perfCv.pdf  used on input line 225.
-(pdftex.def)             Requested size: 372.24774pt x 424.49176pt.
 (./Figures/plotdata/ssp.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 261--261
 []\OT1/phv/m/n/10 global per-
@@ -2040,16 +2019,7 @@ Overfull \hbox (12.7723pt too wide) in paragraph at lines 262--262
 \OT1/phv/m/n/10 tivity 
  []
 
-(./Figures/plotdata/boost.tex)
-<Figures/External/comorbidA.pdf, id=94, 505.89pt x 686.565pt>
-File: Figures/External/comorbidA.pdf Graphic file (type pdf)
-<use Figures/External/comorbidA.pdf>
-Package pdftex.def Info: Figures/External/comorbidA.pdf  used on input line 284
-.
-(pdftex.def)             Requested size: 446.69426pt x 606.24286pt.
-)
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 125.
+(./Figures/plotdata/boost.tex))
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 127.
 
 
@@ -2059,15 +2029,16 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 
 LaTeX Warning: Reference `EXT-tab0' on page 2 undefined on input line 134.
 
-[2]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 188.
- [3] [4 <./Figures/External/perfA.pdf>] [5 <./Figures/External/perfB.pdf>]
-[6 <./Figures/External/perfCv.pdf>]
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 189.
+[2]
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 191.
+ [3] [4]
 
-LaTeX Warning: Reference `EXT-fig0' on page 7 undefined on input line 215.
+LaTeX Warning: Reference `EXT-fig0' on page 5 undefined on input line 214.
 
-[7] [8 <./Figures/External/comorbidA.pdf>] [9] [10] (./main.bbl
+[5] [6] (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 14--19
 []\OT1/phv/m/n/8 Gilotty, L.  Early screen-ing for autism spec-trum (2019).  UR
 L [][]$\OT1/pcr/m/n/8 https : / / www . nimh . nih . gov / funding /
@@ -2081,7 +2052,7 @@ nces / 2018 / early-[]screening-[]for-[]autism-[]spectrum .
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 24.
-[11]
+[7]
 Underfull \hbox (badness 3088) in paragraph at lines 349--356
 []\OT1/phv/m/n/8 Pearce, N.  The eco-log-i-cal fal-lacy strikes back.  \OT1/phv
 /m/sl/8 Jour-nal of epi-demi-ol-ogy and com-mu-nity health \OT1/phv/b/n/8 54\OT
@@ -2102,36 +2073,30 @@ OT1/pcr/m/n/8 https : / / jamanetwork . com / journals / jamapsychiatry / artic
 lepdf / 2747847 /
  []
 
-) [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 290.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 290.
+) [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 289.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 289.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 290.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 290.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 289.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 289.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 290.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 289.
  ) 
 Here is how much of TeX's memory you used:
- 47509 strings out of 492678
- 1056718 string characters out of 6133535
- 1684093 words of memory out of 11000000
- 50366 multiletter control sequences out of 15000+600000
- 50658 words of font info for 115 fonts, out of 8000000 for 9000
+ 47477 strings out of 492678
+ 1055923 string characters out of 6133535
+ 1663038 words of memory out of 11000000
+ 50348 multiletter control sequences out of 15000+600000
+ 49504 words of font info for 114 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  64i,18n,96p,1886b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{figure.5} has been referenced but does not exist,
  replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.1} has been referenced but does not exist, r
-eplaced by a fixed one
-
-pdfTeX warning (dest): name{figure.4} has been referenced but does not exist, r
-eplaced by a fixed one
 
 pdfTeX warning (dest): name{table.3} has been referenced but does not exist, re
 placed by a fixed one
@@ -2148,8 +2113,8 @@ replaced by a fixed one
  </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xcc
 mi7.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath
 -fonts/xccsy9.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/publi
-c/concrete/ccr9.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/pub
-lic/concmath-fonts/xccmi9.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/
+c/concmath-fonts/xccmi9.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/lj
+four/public/concrete/ccr9.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/
 ljfour/public/concrete/ccr7.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/p
 k/ljfour/public/concmath-fonts/xccmi6.600pk> </home/ishanu/.texlive2018/texmf-v
 ar/fonts/pk/ljfour/public/concmath-fonts/xccmi10.600pk> </home/ishanu/.texlive2
@@ -2163,10 +2128,10 @@ exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
 vro8a.pfb>
-Output written on main.pdf (12 pages, 15808487 bytes).
+Output written on main.pdf (8 pages, 113674 bytes).
 PDF statistics:
- 604 PDF objects out of 1000 (max. 8388607)
- 424 compressed objects within 5 object streams
- 93 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 390 PDF objects out of 1000 (max. 8388607)
+ 309 compressed objects within 4 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
