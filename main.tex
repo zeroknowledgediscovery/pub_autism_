@@ -1,7 +1,17 @@
-\documentclass[onecolumn,10pt]{IEEEtran}
+% \documentclass[onecolumn,10pt]{IEEEtran}
+\documentclass[3p,super,numbers,sort&compress,10pt]{elsarticle}
 \let\labelindent\relax
 \usepackage{enumitem}
-\input{preamble.tex} 
+\input{preamble.tex}
+\usepackage[size=normal]{subcaption}
+\makeatletter
+\def\ps@pprintTitle{%
+   \let\@oddhead\@empty
+   \let\@evenhead\@empty
+   \let\@oddfoot\@empty
+   \let\@evenfoot\@oddfoot
+}
+\makeatother
 \input{custom_defs}
 \renewcommand{\baselinestretch}{1.05}
 \externaldocument[SI-]{SI}
@@ -19,8 +29,10 @@
 % {pnasresearcharticle} = Template for a two-column research article
 % {pnasmathematics} %= Template for a one-column mathematics article
 % {pnasinvited} %= Template for a PNAS invited submission
-\cfoot{}
-\title{\TITLE}
+\cfoot{\scriptsize\thepage}
+\lfoot{}
+\rfoot{}
+% \title{\TITLE}
 
 % % Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
 % \author[a]{\authora}
@@ -60,12 +72,31 @@
 
 \tikzexternaldisable
 \begin{document}
+\begin{frontmatter}
+  \title{\TITLE} 
+  \author[ad1]{Dmytro Onishchenko}
+  \author[ad1]{Yi Huang}
+  \author[ad1]{James van Horne}
+  \author[ad4,ad7]{Peter J. Smith}
+  \author[ad5,ad6]{Michael M. Msall}
+  \author[ad1,ad2,ad3]{Ishanu Chattopadhyay\corref{cor1}}
 
-\maketitle
+  \address[ad1]{Department of Medicine, University of Chicago, Chicago, IL, USA}
+  \address[ad2]{Committee on Genetics, Genomics \& Systems Biology, University of Chicago, Chicago, IL, USA}
+  \address[ad3]{Committee on Quantitative Methods in Social, Behavioral, and Health Sciences, University of Chicago, Chicago, IL, USA}
+  \address[ad4]{Department of Pediatrics, Section of Developmental and Behavioral Pediatrics, University of Chicago, Chicago, IL, USA}
+  \address[ad5]{Department of Pediatrics, Section Chief of Developmental and Behavioral Pediatrics, University of Chicago, Chicago, IL, USA}
+  \address[ad6]{Joseph  P. Kennedy Research Center on Intellectual and Neurodevelopmental Disabilities, University of Chicago, Chicago, IL, USA}
+  \address[ad7]{Executive Committee Chair, American Academy of Pediatrics’ Section on Developmental and Behavioral Pediatrics}
 
+  \cortext[cor1]{To whom correspondence should be addressed: e-mail:  \texttt{ishanu@uchicago.edu}.}
+  % ABSTRACT
+  
 \begin{abstract}
    Autism spectrum disorder (ASD) is a developmental disability associated with  significant social, communication, and behavioral challenges. There is   a need for tools that help identify children with ASD as early as possible~\cite{cdc0,nimh}. Our current incomplete understanding of ASD pathogenesis, and the lack of reliable biomarkers hampers early detection,  intervention, and developmental trajectories. In this study we develop and validate  machine inferred digital biomarkers for autism using individual diagnostic codes already recorded during medical encounters. Our risk estimator  identifies  children at high risk  with a corresponding area under the receiver operating characteristic curve (AUC)  exceeding 80\% from shortly after two years of age for either sex, and across two independent databases of patient records. Thus, we systematically leverage ASD co-morbidities -  with no requirement of additional blood work, tests  or  procedures - to predict  elevated  risk  during the earliest childhood years, when intervention is the  most effective.  Our methodology has superior performance to common questionnaires-based screenings such as the M-CHAT/F~\cite{pmid31562252}, and has the potential to  reduce socio-economic, ethnic and demographic biases. Further, by conditioning on the individual M-CHAT/F scores, we can either halve the false positives or boost sensitivity by over 50\%, while maintaining  specificity  above 95\%. Translated into practice, our algorithmic approach could significantly reduce the median diagnostic age for ASD, and also reduce  long post-screen wait-times~\cite{pmid27565363} currently experienced by families for confirmatory diagnoses and access to  evidence based interventions.
 \end{abstract} 
+\end{frontmatter}
+%%%%%%%%%%%%%%%%%%%% 
 
 \section*{Introduction}
 %
@@ -93,80 +124,84 @@ Furthermore, being functionally independent of the M-CHAT/F, we show that there 
 % ###########################################################
 \subsection*{Source of Electronic Patient Records}
 
-We view the task of predicting  ASD diagnosis   as a binary classification problem: sequences of diagnostic codes are classified into positive and control categories, where ``positive'' refers to children eventually diagnosed with ASD, as indicated by the presence of a clinical diagnosis (ICD9 code 299.X) in their medical records. Of the two independent sources of clinical incidence data used in this study,  the primary source used to train our predictive pipeline  is the Truven Health Analytics MarketScan\textsuperscript{\textregistered} Commercial Claims and Encounters Database for the years 2003 to 2012~\cite{hansen2017truven} (referred to  as the Truven dataset). This US national database contains data contributed by over 150 insurance carriers, large self-insuring companies, and Medi and is a culmination of over  4.6 billion inpatient and outpatient service claims and  almost six billion diagnosis codes. We extracted histories of patients within the age of $0-9$ years, and excluded  patients for whom:  1) At least one code of any available phenotypes is present, 2) Lag between first and last available record for a patient should be at least 15 weeks. These exclusion criteria ensure that we are not considering patients who have too few observations to either train on. Additionally, during validation runs,  we restricted the control set to patients observable in the databases to those whose last record is not before the first 150 weeks of life. Characteristics of excluded patients is shown in Table~\ref{tab2}. We trained with over  30M diagnostic records (16,649,548 for males and  14,318,303  for females with 9,835 unique  codes).
+We view the task of predicting  ASD diagnosis   as a binary classification problem: sequences of diagnostic codes are classified into positive and control categories, where ``positive'' refers to children eventually diagnosed with ASD, as indicated by the presence of a clinical diagnosis (ICD9 code 299.X) in their medical records. Of the two independent sources of clinical incidence data used in this study,  the primary source used to train our predictive pipeline  is the Truven Health Analytics MarketScan\textsuperscript{\textregistered} Commercial Claims and Encounters Database for the years 2003 to 2012~\cite{hansen2017truven} (referred to  as the Truven dataset). This US national database contains data contributed by over 150 insurance carriers, large self-insuring companies,  and is a culmination of over  4.6 billion inpatient and outpatient service claims and  almost six billion diagnosis codes. We extracted histories of patients within the age of $0-9$ years, and excluded  patients for whom:  1) At least one code of any available phenotypes is present, 2) Lag between first and last available record for a patient should be at least 15 weeks. These exclusion criteria ensure that we are not considering patients who have too few observations to either train on. Additionally, during validation runs,  we restricted the control set to patients observable in the databases to those whose last record is not before the first 150 weeks of life. Characteristics of excluded patients is shown in Table~\ref{tab2}. We trained with over  30M diagnostic records (16,649,548 for males and  14,318,303  for females with 9,835 unique  codes).
 
 While the Truven database is used for both training and out-of-sample cross-validation with held-back  data, our second independent dataset  consisting of de-identified diagnostic records for children treated at the University of Chicago Medical Center between the years of 2006 to 2018 (the UCM dataset), aids in further cross-validation. We considered children between the ages of $0-5$ years, and  applied the same exclusion criteria as the Truven dataset.  The  number of  patients used from the two databases is shown in Table~\ref{tab2}.
 
-Our datasets are consistent with documented prevalence, with no significant geospatial prevalence variation (Fig.~\ref{EXT-fig0}D) and reveal that  infections and immunological disorders have differential representation in the \treatment and control groups (Fig.~\ref{EXT-fig0}C).  The  median diagnosis age is  just over  3 years in the claims database (Fig.~\ref{EXT-fig0}B)  versus 3 years 10 months to 4 years  in US~\cite{pmid29701730}. Cohort details are given in Table~\ref{tab2} and discussed in Methods. Importantly, for the positive cohort, we only consider diagnostic history up to the first ASD code.
+Our datasets are consistent with documented prevalence. % with no significant geospatial prevalence variation (Fig.~\ref{EXT-fig0}D) and reveal that  infections and immunological disorders have differential representation in the \treatment and control groups (Fig.~\ref{EXT-fig0}C).
+The  median diagnosis age is  just over  3 years in the claims database  versus 3 years 10 months to 4 years  in US~\cite{pmid29701730}. Cohort details are given in Table~\ref{tab2} and discussed in Methods. For the positive cohort, we only consider diagnostic history up to the first ASD code.
 
 The significant diversity of diagnostic codes (6,089 distinct ICD-9 codes and 11,522 distinct ICD-10 codes in total in the two datasets), along with the sparsity of codes per sequence and the need to make good predictions as early as possible,  makes this a difficult learning problem, where standard deep learning approaches do not suffice (See Table~\ref{EXT-tab0}). To address these issues, we proceed by  partitioning the  disease spectrum into $17 $ broad categories, $e.g.$ infectious diseases, immunologic disorders, endocrinal disorders etc. Each patient is then represented by 17 distinct time series, each  tracking an individual disease category. At the population level, these disease-specific sparse stochastic time series are  compressed into specialized Markov models (separately for the control and the treatment cohorts) to identify  the distinctive patterns  pertaining to elevated ASD risk. With these inferred patterns included as features (Table~\ref{EXT-tab1}) we train a second level predictor that learns to map   individual patients  to the control or the \treatment groups based on their  similarity  to the identified  Markov models of category-specific diagnostic histories (See Methods). %This novel two step learning algorithm outperforms standard tools, and achieves  stable performance across datasets.
 %####################
-\subsection*{Time-series Modeling of  Diagnostic History}
-Individual diagnostic histories  can have long-term memory~\cite{ltgranger80}, implying that the order, frequency, and comorbid interactions between diseases are   important for assessing the future risk of our target phenotype. 
-We analyze  patient-specific  diagnostic code sequences by first  representing the medical history of each patient as a set of stochastic categorical time-series | one each for a specific group of related disorders |  followed by the inference of stochastic models  for  these individual data streams. These inferred generators are from a special class of  Hidden Markov Models (HMMs), referred to as Probabilistic Finite State Automata (PFSA)~\cite{CL12g}. The inference algorithm we use is distinct from classical HMM learning, and has important advantages related to its ability to infer structure, and its sample complexity (See Supplementary text, Section~\ref{SI-sec:PFSA}). We infer a separate class of models for the \treatment and control cohorts, and then the problem reduces to determining the probability that the short diagnostic history from a  new  patient arises from the \treatment as opposed to the control category of the inferred models. 
-%####################
-\subsection*{Step 1: Partitioning The Human Disease Spectrum} We begin by partitioning the human disease spectrum into  $17$ non-overlapping  categories,  as shown in Table~\ref{EXT-tab0}. Each category is defined by a set of diagnostic codes from the International Classification of Diseases, Ninth Revision (ICD9) (See Table~\ref{EXT-tab0} in the main text  and Table SI-\ref{SI-tab0} in the Supplementary text for description of  the categories used in this study).
-For this study, we considered $9,835$ distinct ICD9 codes (and their ICD10 General Equivalence Mappings (GEMS)~\cite{GEMS} equivalents). We came across 6,089 distinct ICD-9 codes and 11,522 distinct ICD-10 codes in total in the two datasets we analyzed. Transforming the diagnostic histories to report only the broad categories   reduces the number of distinct codes that the pipeline needs to handle, thus improving statistical  power.  %The trade-offs for this increased power consist of 1) the loss of distinction between disorders in the same category, and  2) some inherent subjectivity in determining the constituent ICD9 codes that define each category, $e.g.$ an ear infection may be classified either an otic disease or an infectious one.
-% 
-Our categories largely align with the top-level ICD9 categories, with small 
-adjustments, $e.g.$ bringing all infections under one category irrespective of the pathogen or the target organ.
-We do not pre-select the phenotypes; we want our algorithm to seek out the important patterns without any manual curation of the input data. The limitation of the set of phenotypes to $9835$ unique codes arises from excluding patients from the database who have very few and rare codes that will skew the statistical estimates. As shown in Table~\ref{tab2}, we exclude a very small number of patients, and who have  very short diagnostic histories with a very small number of codes.
+% \subsection*{Time-series Modeling of  Diagnostic History}
+% Individual diagnostic histories  can have long-term memory~\cite{ltgranger80}, implying that the order, frequency, and comorbid interactions between diseases are   important for assessing the future risk of our target phenotype. 
+% We analyze  patient-specific  diagnostic code sequences by first  representing the medical history of each patient as a set of stochastic categorical time-series | one each for a specific group of related disorders |  followed by the inference of stochastic models  for  these individual data streams. These inferred generators are from a special class of  Hidden Markov Models (HMMs), referred to as Probabilistic Finite State Automata (PFSA)~\cite{CL12g}. The inference algorithm we use is distinct from classical HMM learning, and has important advantages related to its ability to infer structure, and its sample complexity (See Supplementary text, Section~\ref{SI-sec:PFSA}). We infer a separate class of models for the \treatment and control cohorts, and then the problem reduces to determining the probability that the short diagnostic history from a  new  patient arises from the \treatment as opposed to the control category of the inferred models. 
+% %####################
+% \subsection*{Step 1: Partitioning The Human Disease Spectrum}
+% We begin by partitioning the human disease spectrum into  $17$ non-overlapping  categories,  as shown in Table~\ref{EXT-tab0}. Each category is defined by a set of diagnostic codes from the International Classification of Diseases, Ninth Revision (ICD9) (See Table~\ref{EXT-tab0} in the main text  and Table SI-\ref{SI-tab0} in the Supplementary text for description of  the categories used in this study).
+% For this study, we considered $9,835$ distinct ICD9 codes (and their ICD10 General Equivalence Mappings (GEMS)~\cite{GEMS} equivalents). We came across 6,089 distinct ICD-9 codes and 11,522 distinct ICD-10 codes in total in the two datasets we analyzed. Transforming the diagnostic histories to report only the broad categories   reduces the number of distinct codes that the pipeline needs to handle, thus improving statistical  power.  %The trade-offs for this increased power consist of 1) the loss of distinction between disorders in the same category, and  2) some inherent subjectivity in determining the constituent ICD9 codes that define each category, $e.g.$ an ear infection may be classified either an otic disease or an infectious one.
+% % 
+% Our categories largely align with the top-level ICD9 categories, with small 
+% adjustments, $e.g.$ bringing all infections under one category irrespective of the pathogen or the target organ.
+% We do not pre-select the phenotypes; we want our algorithm to seek out the important patterns without any manual curation of the input data. The limitation of the set of phenotypes to $9835$ unique codes arises from excluding patients from the database who have very few and rare codes that will skew the statistical estimates. As shown in Table~\ref{tab2}, we exclude a very small number of patients, and who have  very short diagnostic histories with a very small number of codes.
 
-% Next, we process raw diagnostic histories to  report only the categories. 
-For each patient, the past  medical history is a sequence $(t_1,x_1),\cdots,(t_m,x_m)$, where $t_i$ are timestamps and $x_i$ are ICD9 codes diagnosed at time $t_i$.  We map individual patient history to a three-alphabet categorical time series $z^k$ corresponding to the disease category $k$,  as follows. For each week $i$, we have: 
-\cgather{\label{eq1}
-  z^k_i =  \left \{ \begin{array}{ll}
-                      0 & \textrm{if no diagnosis codes  in week } i\\
-                      1 & \textrm{if there exists a diagnosis of category $k$ in week } i\\
-                      2 & \textrm{otherwise}
-                    \end{array} \right.
-                }\noindent
-                The time-series $z^k$ is terminated at a particular week if the patient is diagnosed with ASD the week after. Thus for patients in the control cohort, the length of the mapped trinary series is limited by the time for which the individual is observed within the  2003 -- 2012 span of our database. In contrast, for patients in  the \treatment cohort, the length of the mapped series reflect the time to the first ASD diagnosis. Patients do not necessarily enter the database at birth, and we prefix each series with 0s to  approximately synchronize observations to age in weeks. Each patient is now represented by $17$ mapped trinary series.
-%####################
-\subsection*{Step 2: Model Inference \& The Sequence Likelihood Defect}
-The mapped series, stratified by  sex, disease-category, and ASD diagnosis-status are considered to be independent sample paths, and we want to explicitly model these systems as specialized HMMs (PFSAs). We model the \treatment and the control cohorts for each sex, and in  each disease category separately, ending up with a total of $68$ HMMs at the population level ($17$ categories, $2$ sexes, $2$ cohort-types: \treatment and control, SI-Fig.~\ref{SI-EXT-autgrid} in the supplementary text provides some examples). Each of these inferred models is  a PFSA;  a directed graph with probability-weighted edges, and acts as an optimal generator of the  stochastic process driving the  sequential appearance of the three letters (as defined by Eq.~\eqref{eq1})  corresponding to each sex, disease category, and cohort-type (See Section~\ref{SI-sec:PFSA} in the Supplementary text for  background on PFSA inference). 
+% % Next, we process raw diagnostic histories to  report only the categories. 
+% For each patient, the past  medical history is a sequence $(t_1,x_1),\cdots,(t_m,x_m)$, where $t_i$ are timestamps and $x_i$ are ICD9 codes diagnosed at time $t_i$.  We map individual patient history to a three-alphabet categorical time series $z^k$ corresponding to the disease category $k$,  as follows. For each week $i$, we have: 
+% \cgather{\label{eq1}
+%   z^k_i =  \left \{ \begin{array}{ll}
+%                       0 & \textrm{if no diagnosis codes  in week } i\\
+%                       1 & \textrm{if there exists a diagnosis of category $k$ in week } i\\
+%                       2 & \textrm{otherwise}
+%                     \end{array} \right.
+%                 }\noindent
+%                 The time-series $z^k$ is terminated at a particular week if the patient is diagnosed with ASD the week after. Thus for patients in the control cohort, the length of the mapped trinary series is limited by the time for which the individual is observed within the  2003 -- 2012 span of our database. In contrast, for patients in  the \treatment cohort, the length of the mapped series reflect the time to the first ASD diagnosis. Patients do not necessarily enter the database at birth, and we prefix each series with 0s to  approximately synchronize observations to age in weeks. Each patient is now represented by $17$ mapped trinary series.
+% %####################
+% \subsection*{Step 2: Model Inference \& The Sequence Likelihood Defect}
+% The mapped series, stratified by  sex, disease-category, and ASD diagnosis-status are considered to be independent sample paths, and we want to explicitly model these systems as specialized HMMs (PFSAs). We model the \treatment and the control cohorts for each sex, and in  each disease category separately, ending up with a total of $68$ HMMs at the population level ($17$ categories, $2$ sexes, $2$ cohort-types: \treatment and control, SI-Fig.~\ref{SI-EXT-autgrid} in the supplementary text provides some examples). Each of these inferred models is  a PFSA;  a directed graph with probability-weighted edges, and acts as an optimal generator of the  stochastic process driving the  sequential appearance of the three letters (as defined by Eq.~\eqref{eq1})  corresponding to each sex, disease category, and cohort-type (See Section~\ref{SI-sec:PFSA} in the Supplementary text for  background on PFSA inference). 
 
-To reliably infer the cohort-type of a new patient, $i.e$, the likelihood of a diagnostic sequnce being generated by the corresponding cohort model, we generalize the notion of Kullbeck-Leibler (KL) divergence~\cite{Cover,kullback1951} between probability distributions to a divergence $\mathcal{D}_{\textrm{KL}}(G \vert \vert H)$ between ergodic stationary categorical stochastic processes~\cite{doob1953stochastic} $G,H$ as:
-\cgather{
-  \mathcal{D}_{\textrm{KL}}(G \vert \vert H) = \lim_{n\rightarrow \infty} \frac{1}{n}  \sum_{x:|x| = n}p_G(x)\log\frac{p_G(x)}{p_H(x)}  }%
-where $\vert x\vert $ is the sequence length, and $p_G(x) ,p_H(x) $ are the probabilities of sequence $x$ being generated by the processes $G,H$ respectively. Defining the  log-likelihood of  $x$ being generated by a process $G$ as :
-\cgather{
-  L(x,G)= -\frac{1}{\vert x\vert}\log p_G(x) 
-}%
-The cohort-type for an observed sequence $x$ | which is actually generated by the hidden process $G$ | can be formally inferred from observations based on the following provable relationships (See Suppl. text Section~\ref{SI-sec:PFSA}, Theorem 6 and 7):
-\begin{subequations}\label{eqR}\cgather{
-    \lim_{\vert x \vert \rightarrow \infty}L(x,G) = \mathcal{H}(G)   \\
-    \lim_{\vert x \vert \rightarrow \infty } L(x,H)  =\mathcal{H}(G) +  \mathcal{D}_{\textrm{KL}}(G \vert \vert H)   
-  }\end{subequations}%
-where  $\mathcal{H}(\cdot)$ is the entropy rate of a process~\cite{Cover}. Importantly, Eq.~\eqref{eqR} shows that the computed likelihood has an additional non-negative contribution from the divergence term when we choose the incorrect generative process.  Thus, if a  patient is eventually going to be diagnosed with ASD, then we expect that the disease-specific mapped series corresponding to  her diagnostic history be modeled by the PFSA in the \treatment cohort. Denoting the PFSA corresponding to disease category $j$ for \treatment and control cohorts as $G^{j}_+,G^{j}_0$ respectively, we can compute the \textit{sequence likelihood defect} (SLD, $\Delta^j$) as:
-\cgather{
-  \Delta^j \triangleq L(G^{j}_0,x) - L(G^{j}_+,x) \rightarrow \mathcal{D}_{\textrm{KL}}(G^{j}_0 \vert \vert G^{j}_+) \label{eq6}
-}%
-With  the inferred  PFSA  models and  the individual diagnostic history, we  estimate the SLD measure on the  right-hand side of Eqn.~\eqref{eq6}. The higher this likelihood defect, the higher  the similarity of diagnosis history to that of children with autism.
-%####################
-\subsection*{Step 3: Risk Estimation Pipeline With Semi-supervised \& Supervised Learning Modules}
-The risk estimation pipeline operates on patient specific information limited to the sex and available  diagnostic history from birth, and produces an estimate of the relative risk of ASD diagnosis at a specific age, with an associated  confidence value. To learn the parameters and associated model structures of  this pipeline, we transform the patient specific data to a set of engineered features, and the feature vectors realized on the
-\treatment and control sets are  used to train a gradient-boosting classifier~\cite{gbm02}. The complete list of $165$ features used  is provided in Table~\ref{EXT-tab1}.
+% To reliably infer the cohort-type of a new patient, $i.e$, the likelihood of a diagnostic sequnce being generated by the corresponding cohort model, we generalize the notion of Kullbeck-Leibler (KL) divergence~\cite{Cover,kullback1951} between probability distributions to a divergence $\mathcal{D}_{\textrm{KL}}(G \vert \vert H)$ between ergodic stationary categorical stochastic processes~\cite{doob1953stochastic} $G,H$ as:
+% \cgather{
+%   \mathcal{D}_{\textrm{KL}}(G \vert \vert H) = \lim_{n\rightarrow \infty} \frac{1}{n}  \sum_{x:|x| = n}p_G(x)\log\frac{p_G(x)}{p_H(x)}  }%
+% where $\vert x\vert $ is the sequence length, and $p_G(x) ,p_H(x) $ are the probabilities of sequence $x$ being generated by the processes $G,H$ respectively. Defining the  log-likelihood of  $x$ being generated by a process $G$ as :
+% \cgather{
+%   L(x,G)= -\frac{1}{\vert x\vert}\log p_G(x) 
+% }%
+% The cohort-type for an observed sequence $x$ | which is actually generated by the hidden process $G$ | can be formally inferred from observations based on the following provable relationships (See Suppl. text Section~\ref{SI-sec:PFSA}, Theorem 6 and 7):
+% \begin{subequations}\label{eqR}\cgather{
+%     \lim_{\vert x \vert \rightarrow \infty}L(x,G) = \mathcal{H}(G)   \\
+%     \lim_{\vert x \vert \rightarrow \infty } L(x,H)  =\mathcal{H}(G) +  \mathcal{D}_{\textrm{KL}}(G \vert \vert H)   
+%   }\end{subequations}%
+% where  $\mathcal{H}(\cdot)$ is the entropy rate of a process~\cite{Cover}. Importantly, Eq.~\eqref{eqR} shows that the computed likelihood has an additional non-negative contribution from the divergence term when we choose the incorrect generative process.  Thus, if a  patient is eventually going to be diagnosed with ASD, then we expect that the disease-specific mapped series corresponding to  her diagnostic history be modeled by the PFSA in the \treatment cohort. Denoting the PFSA corresponding to disease category $j$ for \treatment and control cohorts as $G^{j}_+,G^{j}_0$ respectively, we can compute the \textit{sequence likelihood defect} (SLD, $\Delta^j$) as:
+% \cgather{
+%   \Delta^j \triangleq L(G^{j}_0,x) - L(G^{j}_+,x) \rightarrow \mathcal{D}_{\textrm{KL}}(G^{j}_0 \vert \vert G^{j}_+) \label{eq6}
+% }%
+% With  the inferred  PFSA  models and  the individual diagnostic history, we  estimate the SLD measure on the  right-hand side of Eqn.~\eqref{eq6}. The higher this likelihood defect, the higher  the similarity of diagnosis history to that of children with autism.
+% %####################
+% \subsection*{Step 3: Risk Estimation Pipeline With Semi-supervised \& Supervised Learning Modules}
+% The risk estimation pipeline operates on patient specific information limited to the sex and available  diagnostic history from birth, and produces an estimate of the relative risk of ASD diagnosis at a specific age, with an associated  confidence value. To learn the parameters and associated model structures of  this pipeline, we transform the patient specific data to a set of engineered features, and the feature vectors realized on the
+% \treatment and control sets are  used to train a gradient-boosting classifier~\cite{gbm02}. The complete list of $165$ features used  is provided in Table~\ref{EXT-tab1}.
 
-We need two training sets: one to infer the models, and one to  train the classifier  with features  derived  from the inferred models. Thus, we do a random 3-way split of the set of unique patients into \textit{feature-engineering} ($25\%$), \textit{training} ($25\%$) and \textit{test} ($50\%$) sets. We use the feature-engineering set of ids first to infer our PFSA models \textit{(unsupervised model inference in each category)}, which then allows us to train the gradient-boosting classifier using the training set and PFSA models \textit{(classical supervised learning)}, and we finally execute  out-of-sample validation on the test set. Fig.~\ref{fig1}B shows the top $15$ features  ranked in order of their relative importance (relative loss in performance when dropped out of the analysis). 
+% We need two training sets: one to infer the models, and one to  train the classifier  with features  derived  from the inferred models. Thus, we do a random 3-way split of the set of unique patients into \textit{feature-engineering} ($25\%$), \textit{training} ($25\%$) and \textit{test} ($50\%$) sets. We use the feature-engineering set of ids first to infer our PFSA models \textit{(unsupervised model inference in each category)}, which then allows us to train the gradient-boosting classifier using the training set and PFSA models \textit{(classical supervised learning)}, and we finally execute  out-of-sample validation on the test set. Fig.~\ref{fig1}B shows the top $15$ features  ranked in order of their relative importance (relative loss in performance when dropped out of the analysis). 
 %####################
 \subsection*{Calculating Relative Risk}
 Our pipeline maps medical histories to a   raw indicator of 
 risk. However, to make crisp predictions, we must choose  a decision threshold for this raw score. Conceptually identical to the notion of Type 1 and Type 2 errors in classical statistical analyses, the choice of a threshold trades off false positives (Type 1 error) for false negatives (Type 2 error): choosing a small threshold  results in predicting a larger fraction of future diagnoses correctly, $i.e.$ have a high true positive rate (TPR), while simultaneously suffering from a higher false positive rate (FPR), and vice versa. Therefore, a choice of a specific decision threshold   reflects a choice of the maximum FPR and minimum TPR, and is   driven by the application at hand. In this study, we base our analysis on maximizing the $F_1$-score, defined as the harmonic mean of sensitivity and specificity, to make a   balanced trade-off between the two kinds of errors (See Supplementary text, Section~\ref{SI-sec:F1}). The \textit{relative risk} is then defined as the ratio of the raw  risk to the  decision threshold, and a value  $>1$  predicts a future ASD diagnosis.
 %####################
 \subsection*{Boosting Performance Via Leveraging Population Stratification Induced By Existing Tests}
-We leverage the population stratification induced by an existing independent screening test (M-CHAT/F) to improve combined performance. Here a combination  refers to the conditional choice of the sensitivity/specificity trade-offs for our tool in each sub-population such that the overall performance is optimized with respect to whether we wish to maximize the PPV or the sensitivity at a specified minimum level of specificity. Assume that there are $m$ sub-populations such that: the sensitivities, specificities achieved, and the prevalences in each sub-population are given by $s_i,c_i$ and $\rho_i$ respectively, with $ i \in \{1,\cdots, m\}$. Let $\beta_i$ be the relative size of each sub-population. Then, we have (See Supplementary text, Section~\ref{SI-subsec:4D}):
-\begin{subequations}\label{eqscpop}
-  \cgather{
-    s= \sum_{i=1}^m s_i \gamma_i  \\
-    c= \sum_{i=1}^m c_i \gamma_i' %\\PPV = \frac{s}{s+(1-c)(\frac{1}{\rho} -1)}
-    \intertext{
-      where we have denoted:
-    }
-    \gamma_i = \beta_i \frac{\rho_i }{\rho}, \textrm{ and }  \gamma_i'= \beta_i \frac{1-\rho_i}{1-\rho}
-  }%
-\end{subequations}%
-and $s,c,\rho$ are the overall sensitivity, specificity, and prevalence. Knowing the values of $\gamma_i, \gamma_i'$, we can carry out an $m$-dimensional search to identify the feasible choices of $s_i,c_i$ pairs for each $i$, such that some global constraint is satisfied, $e.g.$ minimum values of specificity, sensitivity, and PPV. We consider  $4$ sub-populations defined by M-CHAT/F score brackets~\cite{pmid31562252}, and if the screen result is considered a positive (high risk, indicating the need for a full diagnostic evaluation) or a negative, $i.e. $, low risk: 1) score   $\leq 2$  screening ASD negative, 2) score $[3-7]$ screening ASD negative on follow-up, 3) score  $[3-7]$ and  screening ASD positive on follow-up, and 4) score  $\geq 8$,  screening ASD positive. (See SI-Table~\ref{SI-EXT-tabCHOP}). The ``follow-up'' in the context of M-CHAT/F refers to the re-evaluation of responses by qualified personnel. We use published data on the relative sizes and the prevalence statistics in these sub-populations~\cite{pmid31562252} to   compute the feasible conditional choices of our  operating point  to strictly supersede  M-CHAT/F performance. Two limiting operating conditions are  of special interest here, where we maximize PPV under some minimum specificity and sensitivity (denoted as  the High Precision or the HP operating point), and where we maximize sensitivity under some minimum PPV and specificity (denoted as the High Recall or the HR  operating point). Taking these minimum values of specificity, sensitivity, and PPV to be those reported for  M-CHAT/F, we identify the set feasible set of conditional choices in a four-dimensional decision space  that would  outperform M-CHAT/F in universal screening. The results are shown in Fig.~\ref{figprc}B.
+We leverage the population stratification induced by an existing independent screening test (M-CHAT/F) to improve combined performance. Here a combination  refers to the conditional choice of the sensitivity/specificity trade-offs for our tool in each sub-population such that the overall performance is optimized with respect to whether we wish to maximize the PPV or the sensitivity at a specified minimum level of specificity.
+% Assume that there are $m$ sub-populations such that: the sensitivities, specificities achieved, and the prevalences in each sub-population are given by $s_i,c_i$ and $\rho_i$ respectively, with $ i \in \{1,\cdots, m\}$. Let $\beta_i$ be the relative size of each sub-population. Then, we have (See Supplementary text, Section~\ref{SI-subsec:4D}):
+% \begin{subequations}\label{eqscpop}
+%   \cgather{
+%     s= \sum_{i=1}^m s_i \gamma_i  \\
+%     c= \sum_{i=1}^m c_i \gamma_i' %\\PPV = \frac{s}{s+(1-c)(\frac{1}{\rho} -1)}
+%     \intertext{
+%       where we have denoted:
+%     }
+%     \gamma_i = \beta_i \frac{\rho_i }{\rho}, \textrm{ and }  \gamma_i'= \beta_i \frac{1-\rho_i}{1-\rho}
+%   }%
+% \end{subequations}%
+% and $s,c,\rho$ are the overall sensitivity, specificity, and prevalence. Knowing the values of $\gamma_i, \gamma_i'$, we can carry out an $m$-dimensional search to identify the feasible choices of $s_i,c_i$ pairs for each $i$, such that some global constraint is satisfied, $e.g.$ minimum values of specificity, sensitivity, and PPV.
+We consider  $4$ sub-populations defined by M-CHAT/F score brackets~\cite{pmid31562252}, and if the screen result is considered a positive (high risk, indicating the need for a full diagnostic evaluation) or a negative, $i.e. $, low risk: 1) score   $\leq 2$  screening ASD negative, 2) score $[3-7]$ screening ASD negative on follow-up, 3) score  $[3-7]$ and  screening ASD positive on follow-up, and 4) score  $\geq 8$,  screening ASD positive. (See SI-Table~\ref{SI-EXT-tabCHOP}). The ``follow-up'' in the context of M-CHAT/F refers to the re-evaluation of responses by qualified personnel. We use published data on the relative sizes and the prevalence statistics in these sub-populations~\cite{pmid31562252} to   compute the feasible conditional choices of our  operating point  to strictly supersede  M-CHAT/F performance. Two limiting operating conditions are  of special interest here, where we maximize PPV under some minimum specificity and sensitivity (denoted as  the High Precision or the HP operating point), and where we maximize sensitivity under some minimum PPV and specificity (denoted as the High Recall or the HR  operating point). Taking these minimum values of specificity, sensitivity, and PPV to be those reported for  M-CHAT/F, we identify the set feasible set of conditional choices in a four-dimensional decision space  that would  outperform M-CHAT/F in universal screening. The results are shown in Fig.~\ref{figprc}B.
 
 % ####################
 

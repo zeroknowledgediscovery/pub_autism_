@@ -14,30 +14,33 @@
 \def\AXISCOL{white}
 % ###########################################################
 % ###########################################################
-\ifFIGS
-\begin{figure}[t]
-  \tikzexternalenable
-  \tikzsetnextfilename{occur}
-  \vspace{-0pt}
-  \centering 
+% \ifFIGS
+% \begin{figure}[t]
+%   \tikzexternalenable
+%   \tikzsetnextfilename{occur}
+%   \vspace{-0pt}
+%   \centering 
 
-  \iftikzX
-  \input{Figures/figpred0}  
-  \else
-  \includegraphics[width=0.9\textwidth]{Figures/External/occur}
-  \fi
+%   \iftikzX
+%   \input{Figures/figpred0}  
+%   \else
+%   \includegraphics[width=0.9\textwidth]{Figures/External/occur}
+%   \fi
    
-  \captionN{ASD Occurrence Patterns. 
-    Panel A illustrates the differential representation of different disease categories in the \treatment and control cohorts, and panel B shows the distribution of the age of  diagnosis for males and females in the Truven dataset. Panel C illustrates the spatial distribution of ASD insurance claims, and panel D shows the same data after population normalization, illustrating the relatively small demographic skew to ASD prevalence within the general population with access to medical insurance, which is consistent with the suggestion that prevalence variation might be linked to regional and socioeconomic disparities in access to services~\cite{jarquin2011racial}.
-  }\label{EXT-fig0}
-\end{figure}
-\else
-\refstepcounter{figure}\label{EXT-fig0}
-\fi
+%   \captionN{ASD Occurrence Patterns. 
+%     Panel A illustrates the differential representation of different disease categories in the \treatment and control cohorts, and panel B shows the distribution of the age of  diagnosis for males and females in the Truven dataset. Panel C illustrates the spatial distribution of ASD insurance claims, and panel D shows the same data after population normalization, illustrating the relatively small demographic skew to ASD prevalence within the general population with access to medical insurance, which is consistent with the suggestion that prevalence variation might be linked to regional and socioeconomic disparities in access to services~\cite{jarquin2011racial}.
+%   }\label{EXT-fig0}
+% \end{figure}
+% \else
+% \refstepcounter{figure}\label{EXT-fig0}
+% \fi
 % ###########################################################
 % ###########################################################
 % ##########################################
 \begin{table*}[!ht]
+  % \mnp{\textwidth}{
+  \captionN{Patient Numbers, Inclusion-exc;usion Criteria and Features Used In Analysis}
+    \begin{subtable}{\textwidth}
   \begin{center}
     \captionN{Patient Counts In De-identified Data \& The Fraction of Datasets Excluded By Our Exclusion Criteria$^\star$}\label{tab2}
     \sffamily\small
@@ -72,58 +75,23 @@
 
 
   \end{center}
-  \vskip 1em
+    \vskip .5em
   \small
   $^\dag$ Cohort sizes are smaller than the total number of distinct patients due to the following exclusion criteria: 1) At least one code within our complete set of tracked diagnostic codes is present in the patient record, 2) Time-lag between first and last available record for a patient is at least 15 weeks.
 
   $^\star$ Dataset sizes are after the exclusion criteria are applied
-\end{table*}
-% ###########################################################
-% ###########################################################
-\begin{table*}[!t]
-  \centering
-  
-  \captionN{Disease Categories (A few ICD9 codes shown from the complete set of $9,835$ unique ICD9 codes considered. See SI-Table~\ref{SI-tab0} in  Supplementary text for complete list)}\label{EXT-tab0}
-  \vskip .5em
-  
-  \small\color{black!90}
-  \begin{tabular}{L{1in}|L{2in} | |L{3in}}\hline
-    \bf\sffamily   Category$^\dag$ & \bf\sffamily  Description  & \bf\sffamily  Examples of ICD9$^\star$ Codes \\\hline
-    \rowcolor{lightgray!80}ASD$^\star$ & Diagnostic Target & 299 299.0 299.00 299.01 299.9 299.8 299.91 299.90 299.80 299.81 299.1 299.10 299.11\\\hline
-    \cellcolor{Red1!70}Immunologic & Diseases related to dys-regulation of the Immune system &580.81 580.89 580.0 580.8 461 461.8 461.0 477.9 477.2 477 477.8\\\hline
-    \cellcolor{Red1!70}Infectious & Diseases Caused By Pathogens &487.8 488.12 488.0 488.01 487.0 487.1 488.09 464.4 466 466.11 466.1\\\hline
-    \cellcolor{Red1!50}Nutrition &  Symptoms concerning nutrition, metabolism and development   & 783.0 783.21 783.3 783.40 783.42 783.7 783.9\\\hline
-    \cellcolor{Red1!50}Mental Disorders & Psychiatric phenotypes other than ASD & 290 -  319 (except 299.x) \\\hline
-    \cellcolor{Red1!50}Health Services &Contact With   Health Services and Classification Of Factors Influencing Health Status  & V01.0 V01.1 V01.2 V01.3 V01.4   V09.70 V09.71 V88.02 V88.03 V89.01 V89.02 V89.03 V89.04 V89.05 V89.09 \\\hline
-    \cellcolor{IndianRed1!50}Digestive & Diseases Of The Digestive System &540.0 540.1 541.0 542 540 541 543.0 562.03 562.01 562.00 562.10\\\hline
-    \cellcolor{IndianRed1!50}Otic & Diseases Of The Ear And Mastoid Process
-                                                                &381.51 381.50 381.81 381.89 381.61 381.62 381 381.7 385.82 383.32 380.30\\\hline
-    \cellcolor{IndianRed1!50}Musculoskeletal & Congenital musculoskeletal anomalies &756.52 756.53 733.02 733.0 733.09 737.43 737.41 737.20 737.29 737.4 737.2\\\hline
-    \cellcolor{IndianRed1!50}Developmental & Congenital  anomalies (Non-overlapping with muskuloskeletal)  &755.55 743.45 743.11 743.10 743.00 743.03 743.44 743.22 743.20 743.21 758.4\\\hline
-    \cellcolor{IndianRed1!30}Reproductive & Diseases Of The Genitourinary System   &611.79 611.71 611.89 611.81 676.64 611 676.60 611.6 611.4 611.3 611.2\\\hline
-    \cellcolor{IndianRed1!20}Integumentary & Diseases Of Skin And Subcutaneous Tissue &706.0 706.1 704.00 704.02 704.09 680.9 680.1 680.5 680.7 680.6 680\\\hline
-    % 
-    Ophthalmologic & Disorders Of The Eye And Adnexa &362.8 362.9 362.6 362.1 362.3 362.18 362.17 362.13 362.11 363.33 363.32\\\hline
-    Hematologic &  Diseases Of The Blood And Blood-Forming Organs & 286.9 286.6 283.19 283.11 283.9 283.1 284.0 284.09 284 284.01\\\hline
-    Metabolic & Metabolic Disorders (Non-overlapping with respiratory, digestive and immunological conditions) &273.4 270 270.3 712.11 712.13 712.12 712.14 712.18 712.30 712.37 712.36\\\hline
-    Cardiovascular & Diseases Of Arteries, Arterioles, And Capillaries  &442.89 441.6 442.82 442.83 441.03 441.02 441.00 442 414.11 447.70 447.71\\\hline
-    Respiratory & Diseases Of The Respiratory System (non-overlapping with Infectious) &516.31 516.30 516.32 516.35 516.37 516.36 516.8 516.0 277.0 277.00 277.01\\\hline
-    Endocrine & Disorders Of Thyroid and other Endocrine Glands &244 244.9 244.2 255.41 255.5 255.4 259.51 255 259.4 255.11 242.2\\\hline
-  \end{tabular}
-  \vskip 1em
-  \small
-  $^\dag$ Categories inferred to be   important for risk modulation are proportionately highlighted.\\
-  $^\star$ ICD10 codes when present were mapped back to closest ICD9 matches using published General Equivalence Mappings~\cite{GEMS}.
-\end{table*}
-% ###########################################################
-% ###########################################################
-% ###########################################################
 
+\end{subtable}
+\vskip 1em
+% %}
 
-% ###########################################################
-\begin{table*}[t]
-  \centering
-  
+% \end{table*}
+% % ###########################################################
+% % ###########################################################% ###########################################################
+% \begin{table*}[t]
+%\mnp{\textwidth}{
+  \begin{subtable}{\textwidth}
+%\begin{center}  
   \captionN{Engineered Features (Total Count: 165)}\label{EXT-tab1}
   \vskip .5em
 
@@ -139,12 +107,57 @@
     Streak      & Maximum, mean  and variance of the length of adjacent occurrences  of {[}Disease Category{]}    & 3      \\\hline
     Intermission& Maximum, mean  and variance of the length of adjacent empty weeks     & 3    \\\hline
   \end{tabular}
-  \vskip 1em
+  %\end{center}
+  \vskip .5em
   \small
   $^\ddag$ Disease categories are described in Table~\ref{EXT-tab0}
+ \end{subtable}
+%}
 \end{table*}
 % ###########################################################
 % ###########################################################
+% ###########################################################
+% ###########################################################
+% \begin{table*}[!t]
+%   \centering
+  
+%   \captionN{Disease Categories (A few ICD9 codes shown from the complete set of $9,835$ unique ICD9 codes considered. See SI-Table~\ref{SI-tab0} in  Supplementary text for complete list)}\label{EXT-tab0}
+%   \vskip .5em
+  
+%   \small\color{black!90}
+%   \begin{tabular}{L{1in}|L{2in} | |L{3in}}\hline
+%     \bf\sffamily   Category$^\dag$ & \bf\sffamily  Description  & \bf\sffamily  Examples of ICD9$^\star$ Codes \\\hline
+%     \rowcolor{lightgray!80}ASD$^\star$ & Diagnostic Target & 299 299.0 299.00 299.01 299.9 299.8 299.91 299.90 299.80 299.81 299.1 299.10 299.11\\\hline
+%     \cellcolor{Red1!70}Immunologic & Diseases related to dys-regulation of the Immune system &580.81 580.89 580.0 580.8 461 461.8 461.0 477.9 477.2 477 477.8\\\hline
+%     \cellcolor{Red1!70}Infectious & Diseases Caused By Pathogens &487.8 488.12 488.0 488.01 487.0 487.1 488.09 464.4 466 466.11 466.1\\\hline
+%     \cellcolor{Red1!50}Nutrition &  Symptoms concerning nutrition, metabolism and development   & 783.0 783.21 783.3 783.40 783.42 783.7 783.9\\\hline
+%     \cellcolor{Red1!50}Mental Disorders & Psychiatric phenotypes other than ASD & 290 -  319 (except 299.x) \\\hline
+%     \cellcolor{Red1!50}Health Services &Contact With   Health Services and Classification Of Factors Influencing Health Status  & V01.0 V01.1 V01.2 V01.3 V01.4   V09.70 V09.71 V88.02 V88.03 V89.01 V89.02 V89.03 V89.04 V89.05 V89.09 \\\hline
+%     \cellcolor{IndianRed1!50}Digestive & Diseases Of The Digestive System &540.0 540.1 541.0 542 540 541 543.0 562.03 562.01 562.00 562.10\\\hline
+%     \cellcolor{IndianRed1!50}Otic & Diseases Of The Ear And Mastoid Process
+%                                                                 &381.51 381.50 381.81 381.89 381.61 381.62 381 381.7 385.82 383.32 380.30\\\hline
+%     \cellcolor{IndianRed1!50}Musculoskeletal & Congenital musculoskeletal anomalies &756.52 756.53 733.02 733.0 733.09 737.43 737.41 737.20 737.29 737.4 737.2\\\hline
+%     \cellcolor{IndianRed1!50}Developmental & Congenital  anomalies (Non-overlapping with muskuloskeletal)  &755.55 743.45 743.11 743.10 743.00 743.03 743.44 743.22 743.20 743.21 758.4\\\hline
+%     \cellcolor{IndianRed1!30}Reproductive & Diseases Of The Genitourinary System   &611.79 611.71 611.89 611.81 676.64 611 676.60 611.6 611.4 611.3 611.2\\\hline
+%     \cellcolor{IndianRed1!20}Integumentary & Diseases Of Skin And Subcutaneous Tissue &706.0 706.1 704.00 704.02 704.09 680.9 680.1 680.5 680.7 680.6 680\\\hline
+%     % 
+%     Ophthalmologic & Disorders Of The Eye And Adnexa &362.8 362.9 362.6 362.1 362.3 362.18 362.17 362.13 362.11 363.33 363.32\\\hline
+%     Hematologic &  Diseases Of The Blood And Blood-Forming Organs & 286.9 286.6 283.19 283.11 283.9 283.1 284.0 284.09 284 284.01\\\hline
+%     Metabolic & Metabolic Disorders (Non-overlapping with respiratory, digestive and immunological conditions) &273.4 270 270.3 712.11 712.13 712.12 712.14 712.18 712.30 712.37 712.36\\\hline
+%     Cardiovascular & Diseases Of Arteries, Arterioles, And Capillaries  &442.89 441.6 442.82 442.83 441.03 441.02 441.00 442 414.11 447.70 447.71\\\hline
+%     Respiratory & Diseases Of The Respiratory System (non-overlapping with Infectious) &516.31 516.30 516.32 516.35 516.37 516.36 516.8 516.0 277.0 277.00 277.01\\\hline
+%     Endocrine & Disorders Of Thyroid and other Endocrine Glands &244 244.9 244.2 255.41 255.5 255.4 259.51 255 259.4 255.11 242.2\\\hline
+%   \end{tabular}
+%   \vskip 1em
+%   \small
+%   $^\dag$ Categories inferred to be   important for risk modulation are proportionately highlighted.\\
+%   $^\star$ ICD10 codes when present were mapped back to closest ICD9 matches using published General Equivalence Mappings~\cite{GEMS}.
+% \end{table*}
+% ###########################################################
+% ###########################################################
+% ###########################################################
+
+
 % ###########################################################
 
 % ###########################################################
@@ -209,7 +222,7 @@
   \iftikzX
   \input{Figures/figprcv_.tex}
   \else
-  \includegraphics[width=0.5\textwidth]{Figures/External/perfCv.pdf}
+  \includegraphics[width=0.75\textwidth]{Figures/External/perfCv.pdf}
   \fi
 
   \captionN{\textbf{Metrics relevant to clinical practice: PPV vs Sensitivity trade-offs.} Panel A shows the precision/recall curves, $i.e.$,  the trade-off between PPV and sensitivity. Panel B shows how we can boost performance using population stratification from the distribution of M-CHAT/F scores in the population, as reported by the CHOP study~\cite{pmid31562252}. Panel C illustrates the boosted performance compared to M-CHAT/F alone,
@@ -225,22 +238,20 @@
 % ####################################
 \def\RCOL{\rowcolor{teal!40}}
 %#################################### 
-\begin{table*}[t]   
+\begin{table*}[!ht]
+  \captionN{Standalone and Combined Performance}
+\begin{subtable}{\textwidth}
 \centering 
-\captionN{PPV Achieved at 100, 112 and 150 Weeks For Each Dataset and Gender {\bf (M-CHAT/F:  sensitivity=$38.8\%$, specificity=$95\%$, PPV=$14.6\%$ between 16 and  26 months ($\approx$112 weeks))}}\label{EXT-tabssp}
+\captionN{Standalone PPV Achieved at 100, 112 and 150 Weeks For Each Dataset and Gender {\bf (M-CHAT/F:  sensitivity=$38.8\%$, specificity=$95\%$, PPV=$14.6\%$ between 16 and  26 months ($\approx$112 weeks))}}\label{EXT-tabssp}
 
   \vskip .5em
 
 \begin{tabular}{L{.75in}|L{.75in}|L{.75in}|L{.5in}|L{.5in}|L{.75in}}
 \hline
 \input{Figures/plotdata/ssp}
-\end{tabular}
-\end{table*}  
-%####################################
-% %####################################
-
-%#################################### 
-\begin{table*}[t]
+\end{tabular}\end{subtable}
+\vskip 1em
+\begin{subtable}{\textwidth}
 \centering
 \captionN{Personalized Operation Conditioned on M-CHAT/F Scores at  26 months}\label{EXT-tabboost}
   \vskip .5em
@@ -256,6 +267,7 @@
 
 \flushleft
 $^\star$Prevalence reported by CDC is $1.7\%$, while the CHOP study reports a value of $2.23\%$. The results of our optimization depend on the prevalence estimate.
+\end{subtable}
 \end{table*}  
 %####################################
 %###########################################################

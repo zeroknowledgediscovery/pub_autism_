@@ -35,46 +35,45 @@ Repeated entry---line 1376 of file aut.bib
  : @article{volkmar2014practice
  :                             ,
 I'm skipping whatever remains of this entry
-Warning--empty year in ltgranger80
-You've used 57 entries,
+You've used 49 entries,
             2348 wiz_defined-function locations,
-            1322 strings with 27118 characters,
-and the built_in function-call counts, 21124 in all, are:
-= -- 1470
-> -- 528
+            1266 strings with 25684 characters,
+and the built_in function-call counts, 18426 in all, are:
+= -- 1283
+> -- 471
 < -- 0
-+ -- 266
-- -- 131
-* -- 2629
-:= -- 2347
-add.period$ -- 173
-call.type$ -- 57
-change.case$ -- 55
++ -- 237
+- -- 117
+* -- 2308
+:= -- 2060
+add.period$ -- 148
+call.type$ -- 49
+change.case$ -- 49
 chr.to.int$ -- 0
-cite$ -- 58
-duplicate$ -- 1944
-empty$ -- 1986
-format.name$ -- 178
-if$ -- 4198
+cite$ -- 49
+duplicate$ -- 1703
+empty$ -- 1709
+format.name$ -- 159
+if$ -- 3645
 int.to.chr$ -- 0
-int.to.str$ -- 57
-missing$ -- 450
-newline$ -- 295
-num.names$ -- 53
-pop$ -- 331
+int.to.str$ -- 49
+missing$ -- 392
+newline$ -- 254
+num.names$ -- 46
+pop$ -- 274
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 332
+skip$ -- 280
 stack$ -- 0
-substring$ -- 858
-swap$ -- 1915
+substring$ -- 750
+swap$ -- 1690
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 125
-width$ -- 59
-write$ -- 627
+warning$ -- 0
+while$ -- 110
+width$ -- 51
+write$ -- 542
 (There were 8 error messages)

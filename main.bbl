@@ -123,21 +123,6 @@
 \newblock \emph{\bibinfo{journal}{PLoS ONE}} \textbf{\bibinfo{volume}{7}},
   \bibinfo{pages}{e33224} (\bibinfo{year}{2012}).
 
-\bibitem{jarquin2011racial}
-\bibinfo{author}{Jarquin, V.~G.}, \bibinfo{author}{Wiggins, L.~D.},
-  \bibinfo{author}{Schieve, L.~A.} \& \bibinfo{author}{Van Naarden-Braun, K.}
-\newblock \bibinfo{title}{Racial disparities in community identification of
-  autism spectrum disorders over time; metropolitan atlanta, georgia,
-  2000--2006}.
-\newblock \emph{\bibinfo{journal}{Journal of Developmental \& Behavioral
-  Pediatrics}} \textbf{\bibinfo{volume}{32}}, \bibinfo{pages}{179--187}
-  (\bibinfo{year}{2011}).
-
-\bibitem{GEMS}
-\bibinfo{title}{General equivalence mappings}.
-\newblock
-  \urlprefix\url{https://www.cms.gov/Medicare/Coding/ICD10/downloads/ICD-10_GEM_fact_sheet.pdf}.
-
 \bibitem{hansen2017truven}
 \bibinfo{author}{Hansen, L.}
 \newblock \bibinfo{title}{The truven health marketscan databases for life
@@ -152,51 +137,6 @@
   {D}isabilities {M}onitoring {N}etwork, 11 {S}ites, {U}nited {S}tates, 2014}}.
 \newblock \emph{\bibinfo{journal}{MMWR Surveill Summ}}
   \textbf{\bibinfo{volume}{67}}, \bibinfo{pages}{1--23} (\bibinfo{year}{2018}).
-
-\bibitem{ltgranger80}
-\bibinfo{author}{Granger, C. W.~J.} \& \bibinfo{author}{Joyeux, R.}
-\newblock \bibinfo{title}{An introduction to long-memory time series models and
-  fractional differencing}.
-\newblock \emph{\bibinfo{journal}{Journal of Time Series Analysis}}
-  \textbf{\bibinfo{volume}{1}}, \bibinfo{pages}{15--29}.
-
-\bibitem{CL12g}
-\bibinfo{author}{Chattopadhyay, I.} \& \bibinfo{author}{Lipson, H.}
-\newblock \bibinfo{title}{{{A}bductive learning of quantized stochastic
-  processes with probabilistic finite automata}}.
-\newblock \emph{\bibinfo{journal}{Philos Trans A}}
-  \textbf{\bibinfo{volume}{371}}, \bibinfo{pages}{20110543}
-  (\bibinfo{year}{2013}).
-
-\bibitem{Cover}
-\bibinfo{author}{Cover, T.~M.} \& \bibinfo{author}{Thomas, J.~A.}
-\newblock \emph{\bibinfo{title}{Elements of Information Theory (Wiley Series in
-  Telecommunications and Signal Processing)}}
-  (\bibinfo{publisher}{Wiley-Interscience}, \bibinfo{address}{New York, NY,
-  USA}, \bibinfo{year}{2006}).
-
-\bibitem{kullback1951}
-\bibinfo{author}{Kullback, S.} \& \bibinfo{author}{Leibler, R.~A.}
-\newblock \bibinfo{title}{On information and sufficiency}.
-\newblock \emph{\bibinfo{journal}{Ann. Math. Statist.}}
-  \textbf{\bibinfo{volume}{22}}, \bibinfo{pages}{79--86}
-  (\bibinfo{year}{1951}).
-\newblock \urlprefix\url{https://doi.org/10.1214/aoms/1177729694}.
-
-\bibitem{doob1953stochastic}
-\bibinfo{author}{Doob, J.}
-\newblock \emph{\bibinfo{title}{Stochastic Processes}}.
-\newblock Wiley Publications in Statistics (\bibinfo{publisher}{John Wiley \&
-  Sons}, \bibinfo{year}{1953}).
-\newblock \urlprefix\url{https://books.google.com/books?id=KvJQAAAAMAAJ}.
-
-\bibitem{gbm02}
-\bibinfo{author}{Friedman, J.~H.}
-\newblock \bibinfo{title}{Stochastic gradient boosting}.
-\newblock \emph{\bibinfo{journal}{Comput. Stat. Data Anal.}}
-  \textbf{\bibinfo{volume}{38}}, \bibinfo{pages}{367--378}
-  (\bibinfo{year}{2002}).
-\newblock \urlprefix\url{http://dx.doi.org/10.1016/S0167-9473(01)00065-2}.
 
 \bibitem{althouse2006pediatric}
 \bibinfo{author}{Althouse, L.~A.} \& \bibinfo{author}{Stockman, J.~A.}
