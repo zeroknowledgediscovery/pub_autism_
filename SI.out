@@ -1,0 +1,29 @@
+\BOOKMARK [1][-]{section.1}{Detailed Mathematical Approach}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Time-series Modeling of Diagnostic History}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Step 1: Partitioning The Human Disease Spectrum}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Step 2: Model Inference \046 The Sequence Likelihood Defect}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Step 3: Risk Estimation Pipeline With Semi-supervised \046 Supervised Learning Modules}{section.1}% 5
+\BOOKMARK [1][-]{section.2}{Comparison With State of the Art Off-the-shelf ML Algorithms}{}% 6
+\BOOKMARK [1][-]{section.3}{Comparison With Pipeline Variations, Feature Subsets and Neural Net Post-processing}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Feature Subset Evaluations \046 Code Density As A Feature}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Threshold Selection on ROC Curve}{}% 9
+\BOOKMARK [1][-]{section.5}{Note on Reciever Operating Characteristics \(ROC\) and Precision-recall Curves}{}% 10
+\BOOKMARK [1][-]{section.6}{Effect of Class Imbalance}{}% 11
+\BOOKMARK [1][-]{section.7}{Note on ASD Clinical Diagnosis \046 Uncertainty of EHR Record}{}% 12
+\BOOKMARK [2][-]{subsection.7.1}{Diagnostic Evaluations}{section.7}% 13
+\BOOKMARK [2][-]{subsection.7.2}{Change In Diagnostic Criteria for ASD, Inclusion of PDD, Asperger, and Disambiguation From Unrelated Psychiatric Phenotypes}{section.7}% 14
+\BOOKMARK [2][-]{subsection.7.3}{Performance Comparison With M-CHAT/F}{section.7}% 15
+\BOOKMARK [1][-]{section.8}{Improving Wait-times For Diagnostic Evaluations by Reducing False Positives in Routine Screening}{}% 16
+\BOOKMARK [2][-]{subsection.8.1}{4D Decision Optimization Using M-CHAT/F Population Stratification To Boost PPV}{section.8}% 17
+\BOOKMARK [1][-]{section.9}{Generating PFSA Models From Set of Input Streams with Variable Input Lengths}{}% 18
+\BOOKMARK [1][-]{section.10}{Probabilsitic Finite State Automata Inference}{}% 19
+\BOOKMARK [2][-]{subsection.10.1}{Probabilistic Finite-State Automaton}{section.10}% 20
+\BOOKMARK [1][-]{section.11}{Sequence Likelihood Defect}{}% 21
+\BOOKMARK [1][-]{section.12}{Pipeline Optimization}{}% 22
+\BOOKMARK [2][-]{subsection.12.1}{Input Data Format}{section.12}% 23
+\BOOKMARK [2][-]{subsection.12.2}{Algorithms}{section.12}% 24
+\BOOKMARK [1][-]{section.13}{Example Run with Released Application}{}% 25
+\BOOKMARK [2][-]{subsection.13.1}{Prerequisites \046 Installation}{section.13}% 26
+\BOOKMARK [2][-]{subsection.13.2}{EHR data format}{section.13}% 27
+\BOOKMARK [2][-]{subsection.13.3}{Sample Python code risk estimation}{section.13}% 28
+\BOOKMARK [2][-]{subsection.13.4}{Sample Python script risk estimation}{section.13}% 29

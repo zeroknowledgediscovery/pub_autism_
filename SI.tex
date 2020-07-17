@@ -189,8 +189,8 @@
 \clearpage
 
 
-\section{Detailed Mathematical Approach}
-
+\section{Detailed Mathematical Approach}\label{sec:mathdetails}
+ 
 \subsection{Time-series Modeling of  Diagnostic History}
 Individual diagnostic histories  can have long-term memory~\cite{ltgranger80}, implying that the order, frequency, and comorbid interactions between diseases are   important for assessing the future risk of our target phenotype. 
 We analyze  patient-specific  diagnostic code sequences by first  representing the medical history of each patient as a set of stochastic categorical time-series | one each for a specific group of related disorders |  followed by the inference of stochastic models  for  these individual data streams. These inferred generators are from a special class of  Hidden Markov Models (HMMs), referred to as Probabilistic Finite State Automata (PFSA)~\cite{CL12g}. The inference algorithm we use is distinct from classical HMM learning, and has important advantages related to its ability to infer structure, and its sample complexity (See Supplementary text, Section~\ref{SI-sec:PFSA}). We infer a separate class of models for the \treatment and control cohorts, and then the problem reduces to determining the probability that the short diagnostic history from a  new  patient arises from the \treatment as opposed to the control category of the inferred models. 
