@@ -12,6 +12,13 @@
 \newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{144}}
   (\bibinfo{year}{2019}).
 
+\bibitem{ltgranger80}
+\bibinfo{author}{Granger, C. W.~J.} \& \bibinfo{author}{Joyeux, R.}
+\newblock \bibinfo{title}{An introduction to long-memory time series models and
+  fractional differencing}.
+\newblock \emph{\bibinfo{journal}{Journal of Time Series Analysis}}
+  \textbf{\bibinfo{volume}{1}}, \bibinfo{pages}{15--29}.
+
 \bibitem{CL12g}
 \bibinfo{author}{Chattopadhyay, I.} \& \bibinfo{author}{Lipson, H.}
 \newblock \bibinfo{title}{{{A}bductive learning of quantized stochastic
@@ -19,6 +26,41 @@
 \newblock \emph{\bibinfo{journal}{Philos Trans A}}
   \textbf{\bibinfo{volume}{371}}, \bibinfo{pages}{20110543}
   (\bibinfo{year}{2013}).
+
+\bibitem{GEMS}
+\bibinfo{title}{General equivalence mappings}.
+\newblock
+  \urlprefix\url{https://www.cms.gov/Medicare/Coding/ICD10/downloads/ICD-10_GEM_fact_sheet.pdf}.
+
+\bibitem{Cover}
+\bibinfo{author}{Cover, T.~M.} \& \bibinfo{author}{Thomas, J.~A.}
+\newblock \emph{\bibinfo{title}{Elements of Information Theory (Wiley Series in
+  Telecommunications and Signal Processing)}}
+  (\bibinfo{publisher}{Wiley-Interscience}, \bibinfo{address}{New York, NY,
+  USA}, \bibinfo{year}{2006}).
+
+\bibitem{kullback1951}
+\bibinfo{author}{Kullback, S.} \& \bibinfo{author}{Leibler, R.~A.}
+\newblock \bibinfo{title}{On information and sufficiency}.
+\newblock \emph{\bibinfo{journal}{Ann. Math. Statist.}}
+  \textbf{\bibinfo{volume}{22}}, \bibinfo{pages}{79--86}
+  (\bibinfo{year}{1951}).
+\newblock \urlprefix\url{https://doi.org/10.1214/aoms/1177729694}.
+
+\bibitem{doob1953stochastic}
+\bibinfo{author}{Doob, J.}
+\newblock \emph{\bibinfo{title}{Stochastic Processes}}.
+\newblock Wiley Publications in Statistics (\bibinfo{publisher}{John Wiley \&
+  Sons}, \bibinfo{year}{1953}).
+\newblock \urlprefix\url{https://books.google.com/books?id=KvJQAAAAMAAJ}.
+
+\bibitem{gbm02}
+\bibinfo{author}{Friedman, J.~H.}
+\newblock \bibinfo{title}{Stochastic gradient boosting}.
+\newblock \emph{\bibinfo{journal}{Comput. Stat. Data Anal.}}
+  \textbf{\bibinfo{volume}{38}}, \bibinfo{pages}{367--378}
+  (\bibinfo{year}{2002}).
+\newblock \urlprefix\url{http://dx.doi.org/10.1016/S0167-9473(01)00065-2}.
 
 \bibitem{Breiman}
 \bibinfo{author}{Breiman, L.}

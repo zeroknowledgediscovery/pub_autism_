@@ -1,51 +1,71 @@
+% ###########################################################
+% ###########################################################
+\ifFIGS
+\begin{figure*}[!ht]
+  \tikzexternalenable
+    \tikzsetnextfilename{comorbidB}
+  \vspace{-5pt}
 
-%#################################### 
-\begin{table*}[!ht]
-\centering
+\def\DATA{../../data_latest}
+\iftikzX
+\input{Figures/figClass1Y3_}
+\else
+  \includegraphics[width=0.8\textwidth]{Figures/External/comorbidB}
+  \fi
+  \vspace{-5pt}
+  
+  \captionN{\textbf{Details of Co-morbidity Patterns (at age $<3$ years)} for immunologic (panel A), respiratory (panel B), infections (panel C),  and disorders with similar pathobiology manifesting opposing association with autism (panel D).}\label{EXT-fig4}
+    \vspace{-5pt}
 
-\mnp{.89\textwidth}{
+\end{figure*}
+\else
+\refstepcounter{figure}\label{EXT-fig4}
+\fi
+%###########################################################
+%###########################################################
+% % ###########################################################
+\ifFIGS
+\begin{figure}[!ht]
+  \tikzexternalenable
+    \tikzsetnextfilename{comorbidC}
 
-\captionN{Boosted Sensitivity, Specificity and PPV Achieved at  \textbf{150 weeks}  Conditioned on M-CHAT/F Scores}\label{EXT-tabboost150}
-  \vskip .5em
+  \def\DATA{../../data_revision}
 
-\begin{tabular} {L{.33in}|L{.33in}|L{.33in}|L{.33in}||L{.35in}|L{.35in}|L{.375in}||L{.375in}|L{.35in}|L{.35in}||L{.6in}}
-\hline
-\multicolumn{4}{c||}{\cellcolor{lightgray!60}M-CHAT/F Outcome}  & \multicolumn{3}{c||}{\mnp{.9in}{\vskip .2em global\\performance (Truven)\vskip .2em  } }&\multicolumn{3}{c||}{\mnp{1in}{\vskip .2em global\\performance\\(UCM)\vskip .2em }} &  \multirow{3}{*}{prevalence}\\\cline{0-9}
- 0-2  NEG & 3-7  NEG & 3-7  POS & $\geq  8$  POS & \multirow{2}{*}{\mnp{.1in}{speci-ficity}} & \multirow{2}{*}{\mnp{.1in}{sensi-tivity}} &\multirow{2}{*}{PPV}& \multirow{2}{*}{\mnp{.1in}{speci-ficity}} & \multirow{2}{*}{\mnp{.1in}{sensi-tivity}} & \multirow{2}{*}{PPV} & \\\cline{0-3}
-\multicolumn{4}{c}{\cellcolor{lightgray} specificity choices}  & & & &&&&\\\hline 
-  \input{Figures/plotdata/boost150} 
-\end{tabular}}
+\iftikzX
+\input{Figures/figClass5Y3.tex}
+\else
+  \includegraphics[width=0.9\textwidth]{Figures/External/comorbidC}
+  \fi
 
-\vspace{5pt}
-
-\mnp{.97\textwidth}{
-  \captionN{Population Stratification Results on large M-CHAT/F Study(n=20,375)~\cite{pmid31562252} }\label{EXT-tabCHOP}
-    \vskip .5em
-
-  \begin{tabular}{C{.5in} | L{1.5in}|L{1in}|L{1in}|L{1in}||L{.5in}}\hline
- \bf \sffamily   Id &  \bf \sffamily Sub-population & \bf \sffamily Test Result & \bf \sffamily ASD positive & \bf \sffamily ASD Negative & \bf \sffamily Total \% \\\hline
-   A &  M-CHAT/F $\geqq 8$ & Positive & 0.34\% & 0.64\% & 0.99\% \\\hline
-  B &   M-CHAT/F $\in [3,7]$ & Positive (after follow-up)& 0.52\% & 4.39\% & 4.91\% \\\hline
- C &    M-CHAT/F $\in [3,7]$ & Negative (after follow-up)& 0.14\% & 3.1\% & 3.24\% \\\hline
-  D &   M-CHAT/F $\in [0,2] $ & Negative & 1.22\% & 89.63\% & 90.86\% \\\hline\hline
-    Total \%& &   &2.23\% & 97.77\% & 100\% \\\hline
-    \end{tabular}
-}
-
-\vspace{5pt}
-
-\mnp{.9\textwidth}{
-  \captionN{$\gamma,\gamma'$ Computed from Population Stratification Recorded In  M-CHAT/F Study~\cite{pmid31562252} ($\rho=0.0223$) }\label{EXT-tabCHOP2}
-    \vskip .5em
-
-  \begin{tabular}{C{.5in} | L{1.35in} | L{1.5in}|L{.35in}|L{.35in}|L{.35in}|L{.35in}}\hline
- \bf \sffamily   Id  &  \bf \sffamily Sub-population& \bf \sffamily Test Result & $\beta_i$ & $\rho_i$ & \bf \sffamily $\gamma_i$ & \bf \sffamily $\gamma'_i$ \\\hline
-   A & M-CHAT/F $\geqq 8$ &  Positive &.0099 & .3469 &.1540  & .0066 \\\hline
-  B & M-CHAT/F $\in [3,7]$ & Positive (after follow-up)& .0491 & .1059 &.2331  & .0449 \\\hline
- C &   M-CHAT/F $\in [3,7]$ & Negative (after follow-up)& .0324 & .0432 &.0627  & .0317 \\\hline
-  D &  M-CHAT/F $\in [0,2] $ & Negative & .9086 & .0134 &.5471  & .9168 \\\hline
-    \end{tabular}}
-
-\end{table*}
+  \vspace{-0pt}
+  
+  \captionN{\textbf{Co-morbidity Patterns}  for mental disorders, vaccinations and health-service encounters.}\label{EXT-figvv1}
+\end{figure}%##########################################################
+\else
+\refstepcounter{figure}\label{EXT-figvv1}
+\fi
+% % % ###########################################################%
+%###########################################################
 %###############################################
-%###############################################
+%###########################################################
+\ifFIGS
+\begin{figure*}[!ht]
+  \tikzexternalenable
+    \tikzsetnextfilename{nopsych}
+  \centering  
+  \vspace{-10pt}
+  
+  \def\DATA{../../data_latest}
+  \iftikzX
+\input{Figures/figpred1nop_}
+\else
+  \includegraphics[width=0.95\textwidth]{Figures/External/nopsych}
+  \fi 
+     \vspace{-5pt}
+
+     \captionN{Predictive Performance without psychiatric codes (ICD9 290 - 319)  and codes for health status and services (ICD9 V0-V91)  included. As shown, the performance is comparable at 150 weeks, with the AUC for females marginally lower (compare with Fig.~\ref{main-fig1} in the main text). The feature importances also are similar, with infectious diseases inferred to have the most importance (or weight) in the pipeline, which is also the case once we add psychiatric phenotypes, and codes for health services in our analysis. As shown in  Fig.~\ref{EXT-figvv1}A, the psychiatric codes all increase risk, and the vaccination codes (See  Fig.~\ref{EXT-figvv1}B) all decrease risk when those codes are included. This is why an alternate analysis was carried out to make sure that we are not picking up on psychiatric codes alone. Note in particular that the sensitivity/specificity point highlighted in panel A above is identical after adding the codes. This suggests that our predictive performance arises from patterns learned from co-morbidities, which are not just neuropsychiatric in nature.}\label{EXT-fig1nop}
+\end{figure*}
+\else
+\refstepcounter{figure}\label{EXT-fig1nop}
+\fi
+% %###########################################################

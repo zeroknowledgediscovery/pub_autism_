@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.9.11)  16 JUL 2020 15:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.9.11)  17 JUL 2020 10:09
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1575,59 +1575,59 @@ Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
 )
-Package xr Info: IMPORTING LABELS FROM SI.aux on input line 66.
-Package xr Info: IMPORTING LABELS FROM main.aux on input line 91.
+Package xr Info: IMPORTING LABELS FROM SI.aux on input line 73.
+Package xr Info: IMPORTING LABELS FROM main.aux on input line 98.
 
 (./custom_defs.tex) (./SI.aux)
 \openout1 = `SI.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 152.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 152
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 159.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 159
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 152.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 152
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 159.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 159
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 152.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 152
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 159.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 159
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 152.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 152.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 159.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 159.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 152.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 152.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 159.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 159.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 152.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 159.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
@@ -1700,7 +1700,7 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box92
-Package hyperref Info: Link coloring ON on input line 152.
+Package hyperref Info: Link coloring ON on input line 159.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1709,9 +1709,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 152.
-LaTeX Info: Redefining \pageref on input line 152.
-LaTeX Info: Redefining \nameref on input line 152.
+LaTeX Info: Redefining \ref on input line 159.
+LaTeX Info: Redefining \pageref on input line 159.
+LaTeX Info: Redefining \nameref on input line 159.
 
 (./SI.out) (./SI.out)
 \@outlinefile=\write7
@@ -1722,98 +1722,98 @@ LaTeX Info: Redefining \nameref on input line 152.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 152.
+ on input line 159.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def
 File: fc-english.def 2016/01/12
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 172.
-LaTeX Font Info:    Try loading font information for OT1+ccr on input line 172.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 179.
+LaTeX Font Info:    Try loading font information for OT1+ccr on input line 179.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/concmath/ot1ccr.fd
 File: ot1ccr.fd 1999/03/10 v2.0b LaTeX font defs for Concrete math fonts
 )
-LaTeX Font Info:    Try loading font information for OML+ccm on input line 172.
+LaTeX Font Info:    Try loading font information for OML+ccm on input line 179.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/concmath/omlccm.fd
 File: omlccm.fd 1999/03/10 v2.0b LaTeX font defs for Concrete math fonts
 )
-LaTeX Font Info:    Try loading font information for OMS+ccsy on input line 172
+LaTeX Font Info:    Try loading font information for OMS+ccsy on input line 179
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/concmath/omsccsy.fd
 File: omsccsy.fd 1999/03/10 v2.0b LaTeX font defs for Concrete math fonts
 )
-LaTeX Font Info:    Try loading font information for OMX+ccex on input line 172
+LaTeX Font Info:    Try loading font information for OMX+ccex on input line 179
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/concmath/omxccex.fd
 File: omxccex.fd 1999/03/10 v2.0b LaTeX font defs for Concrete math fonts
 )
 LaTeX Font Info:    External font `xccex10' loaded for size
-(Font)              <10> on input line 172.
+(Font)              <10> on input line 179.
 LaTeX Font Info:    External font `xccex10' loaded for size
-(Font)              <7> on input line 172.
+(Font)              <7> on input line 179.
 LaTeX Font Info:    External font `xccex10' loaded for size
-(Font)              <5> on input line 172.
-LaTeX Font Info:    Try loading font information for U+txsya on input line 172.
+(Font)              <5> on input line 179.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 179.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 172.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 179.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 172.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 179.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 172.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 179.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 172.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 179.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 172.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 179.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 172.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 179.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 172.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 179.
 LaTeX Font Info:    External font `xccex10' loaded for size
-(Font)              <8> on input line 172.
+(Font)              <8> on input line 179.
 LaTeX Font Info:    External font `xccex10' loaded for size
-(Font)              <6> on input line 172.
+(Font)              <6> on input line 179.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 172.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 172.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 179.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 179.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 174.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 181.
  (./SI.toc
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1838,294 +1838,246 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 \openout8 = `SI.toc'.
 
 
-(./extabfig.tex
+(./SI.lot
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 17.
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--17
-\OT1/phv/m/n/10 performance
- []
-
-
-Overfull \hbox (4.99718pt too wide) in paragraph at lines 17--17
-[]|  
- []
-
-
-Overfull \hbox (19.44237pt too wide) in paragraph at lines 17--17
-[]\OT1/phv/m/n/10 speci-
- []
-
-
-Overfull \hbox (12.77243pt too wide) in paragraph at lines 17--17
-\OT1/phv/m/n/10 ficity 
- []
-
-
-Overfull \hbox (19.44237pt too wide) in paragraph at lines 17--17
-[]\OT1/phv/m/n/10 sensi-
- []
-
-
-Overfull \hbox (12.7723pt too wide) in paragraph at lines 17--17
-\OT1/phv/m/n/10 tivity 
- []
-
-
-Overfull \hbox (19.44237pt too wide) in paragraph at lines 17--17
-[]\OT1/phv/m/n/10 speci-
- []
-
-
-Overfull \hbox (12.77243pt too wide) in paragraph at lines 17--17
-\OT1/phv/m/n/10 ficity 
- []
-
-
-Overfull \hbox (19.44237pt too wide) in paragraph at lines 17--17
-[]\OT1/phv/m/n/10 sensi-
- []
-
-
-Overfull \hbox (12.7723pt too wide) in paragraph at lines 17--17
-\OT1/phv/m/n/10 tivity 
- []
-
-(./Figures/plotdata/boost150.tex)
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 2.
 LaTeX Font Info:    External font `xccex10' loaded for size
-(Font)              <9> on input line 33.
+(Font)              <9> on input line 3.
 )
-<Figures/External/comorbidB.pdf, id=176, 487.8225pt x 716.55705pt>
-File: Figures/External/comorbidB.pdf Graphic file (type pdf)
-<use Figures/External/comorbidB.pdf>
-Package pdftex.def Info: Figures/External/comorbidB.pdf  used on input line 192
-.
-(pdftex.def)             Requested size: 421.8838pt x 619.704pt.
-<Figures/External/comorbidC.pdf, id=177, 480.59549pt x 690.17848pt>
-File: Figures/External/comorbidC.pdf Graphic file (type pdf)
-<use Figures/External/comorbidC.pdf>
-Package pdftex.def Info: Figures/External/comorbidC.pdf  used on input line 216
-.
-(pdftex.def)             Requested size: 446.69426pt x 641.49077pt.
-<Figures/External/stdtools.pdf, id=178, 454.4699pt x 207.82744pt>
-File: Figures/External/stdtools.pdf Graphic file (type pdf)
-<use Figures/External/stdtools.pdf>
-Package pdftex.def Info: Figures/External/stdtools.pdf  used on input line 240.
+\tf@lot=\write9
+\openout9 = `SI.lot'.
 
-(pdftex.def)             Requested size: 446.69426pt x 204.26884pt.
-<Figures/External/4dopt.pdf, id=179, 496.33029pt x 169.98405pt>
-File: Figures/External/4dopt.pdf Graphic file (type pdf)
-<use Figures/External/4dopt.pdf>
-Package pdftex.def Info: Figures/External/4dopt.pdf  used on input line 263.
-(pdftex.def)             Requested size: 446.69426pt x 152.98941pt.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <6> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 266.
-<Figures/External/sanitycheck.pdf, id=182, 475.43822pt x 503.43181pt>
-File: Figures/External/sanitycheck.pdf Graphic file (type pdf)
-<use Figures/External/sanitycheck.pdf>
-Package pdftex.def Info: Figures/External/sanitycheck.pdf  used on input line 2
-87.
-(pdftex.def)             Requested size: 471.5123pt x 499.30547pt.
-<Figures/External/nopsych.pdf, id=183, 499.67679pt x 454.13365pt>
-File: Figures/External/nopsych.pdf Graphic file (type pdf)
-<use Figures/External/nopsych.pdf>
-Package pdftex.def Info: Figures/External/nopsych.pdf  used on input line 309.
-(pdftex.def)             Requested size: 471.5123pt x 428.54877pt.
-<Figures/External/pfsa.pdf, id=190, 490.63298pt x 594.08246pt>
-File: Figures/External/pfsa.pdf Graphic file (type pdf)
-<use Figures/External/pfsa.pdf>
-Package pdftex.def Info: Figures/External/pfsa.pdf  used on input line 332.
-(pdftex.def)             Requested size: 471.5123pt x 570.9291pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 347.
- [2] [3 <./Figures/External/comorbidB.pdf>]
-[4 <./Figures/External/comorbidC.pdf>] [5 <./Figures/External/stdtools.pdf> <./
-Figures/External/4dopt.pdf>] [6 <./Figures/External/sanitycheck.pdf>] [7 <./Fig
-ures/External/nopsych.pdf>] [8 <./Figures/External/pfsa.pdf>]
-Overfull \hbox (11.089pt too wide) in paragraph at lines 362--362
-[]$[]$|  
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 185.
+ [2] (./icdtab.tex
+Overfull \hbox (14.70273pt too wide) in paragraph at lines 12--12
+ []$[]$|
  []
 
 
-Overfull \hbox (2.58455pt too wide) in alignment at lines 356--362
- [] [] [] 
+Overfull \hbox (12.5021pt too wide) in paragraph at lines 20--20
+ []|
  []
 
 
-Overfull \hbox (2.58455pt too wide) in alignment at lines 362--364
- [] [] [] 
+Overfull \hbox (12.41702pt too wide) in paragraph at lines 22--22
+ []|
  []
 
 
-Overfull \hbox (2.58455pt too wide) in alignment at lines 364--366
- [] [] [] 
+Overfull \hbox (10.44205pt too wide) in paragraph at lines 23--23
+ []|
  []
 
 
-Overfull \hbox (8.88838pt too wide) in paragraph at lines 370--370
-[]|  
+Overfull \hbox (6.65454pt too wide) in paragraph at lines 23--23
+\OT1/phv/m/n/10 Metabolic 
  []
 
 
-Overfull \hbox (8.8033pt too wide) in paragraph at lines 372--372
-[]|  
+Overfull \hbox (10.58716pt too wide) in paragraph at lines 24--24
+ []|
  []
 
 
-Overfull \hbox (6.82832pt too wide) in paragraph at lines 373--373
-[]|  
+Overfull \hbox (10.44205pt too wide) in paragraph at lines 25--25
+ []|
  []
 
 
-Overfull \hbox (6.97343pt too wide) in paragraph at lines 374--374
-[]|  
- []
-
-
-Overfull \hbox (6.82832pt too wide) in paragraph at lines 375--375
-[]|  
- []
-
-
-Overfull \hbox (8.74837pt too wide) in paragraph at lines 376--376
-[]|  
- []
-
-
-Overfull \hbox (6.90834pt too wide) in paragraph at lines 377--377
-[]|  
- []
-
-
-Overfull \hbox (4.04709pt too wide) in paragraph at lines 377--377
-\OT1/phv/m/n/10 Pathogens|  
- []
-
-
-Overfull \hbox (8.88838pt too wide) in paragraph at lines 379--379
-[]|  
- []
-
-
-Overfull \hbox (8.8033pt too wide) in paragraph at lines 380--380
-[]|  
- []
-
-
-Overfull \hbox (8.88838pt too wide) in paragraph at lines 381--381
-[]|  
- []
-
-
-Overfull \hbox (8.88838pt too wide) in paragraph at lines 382--382
-[]|  
- []
-
-
-Overfull \hbox (0.54698pt too wide) in paragraph at lines 382--382
-\OT1/phv/m/n/10 regulation 
- []
-
-
-Overfull \hbox (6.97343pt too wide) in paragraph at lines 383--383
-[]|  
- []
-
-
-Overfull \hbox (9.0335pt too wide) in paragraph at lines 386--386
-[]|  
- []
-
-
-Overfull \hbox (6.82832pt too wide) in paragraph at lines 387--387
-[]|  
- []
-
-
-Overfull \hbox (8.74837pt too wide) in paragraph at lines 388--388
-[]|  
- []
-
-
-Overfull \hbox (6.82832pt too wide) in paragraph at lines 389--389
-[]|  
- []
-
-
-Overfull \hbox (10.53696pt too wide) in paragraph at lines 389--390
+Overfull \hbox (17.76439pt too wide) in paragraph at lines 25--26
 \OT1/phv/m/n/10 metabolism, 
  []
 
 
-Overfull \hbox (6.97343pt too wide) in paragraph at lines 391--391
-[]|  
+Overfull \hbox (12.36209pt too wide) in paragraph at lines 27--27
+ []|
  []
 
 
-Overfull \hbox (2.58455pt too wide) in alignment at lines 366--394
- [] [] [] 
+Overfull \hbox (10.52206pt too wide) in paragraph at lines 28--28
+ []|
  []
 
-[9
 
-] [10] [11] [12] [13] [14] [15] (./pipeline.tex
+Overfull \hbox (11.27452pt too wide) in paragraph at lines 28--28
+\OT1/phv/m/n/10 Pathogens|  
+ []
+
+
+Overfull \hbox (12.5021pt too wide) in paragraph at lines 30--30
+ []|
+ []
+
+
+Overfull \hbox (12.41702pt too wide) in paragraph at lines 31--31
+ []|
+ []
+
+
+Overfull \hbox (12.5021pt too wide) in paragraph at lines 32--32
+ []|
+ []
+
+
+Overfull \hbox (10.58716pt too wide) in paragraph at lines 33--33
+ []|
+ []
+
+
+Overfull \hbox (10.44205pt too wide) in paragraph at lines 36--36
+ []|
+ []
+
+
+Overfull \hbox (10.44205pt too wide) in paragraph at lines 37--37
+ []|
+ []
+
+
+Overfull \hbox (12.5021pt too wide) in paragraph at lines 40--40
+ []|
+ []
+
+
+Overfull \hbox (7.77441pt too wide) in paragraph at lines 40--40
+\OT1/phv/m/n/10 regulation 
+ []
+
+
+Overfull \hbox (12.64722pt too wide) in paragraph at lines 41--41
+ []|
+ []
+
+
+Overfull \hbox (10.44205pt too wide) in paragraph at lines 42--42
+ []|
+ []
+
+
+Overfull \hbox (12.36209pt too wide) in paragraph at lines 43--43
+ []|
+ []
+
+[3
+
+] [4] [5] [6] [7]) [8]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 4.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <7> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 17.
-<Figures/Pipeline.png, id=491, 840.9819pt x 1191.0096pt>
-File: Figures/Pipeline.png Graphic file (type png)
-<use Figures/Pipeline.png>
-Package pdftex.def Info: Figures/Pipeline.png  used on input line 131.
-(pdftex.def)             Requested size: 496.33034pt x 702.90767pt.
-) [16
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 194.
+<Figures/External/pfsa.pdf, id=250, 490.63298pt x 594.08246pt>
+File: Figures/External/pfsa.pdf Graphic file (type pdf)
+<use Figures/External/pfsa.pdf>
+Package pdftex.def Info: Figures/External/pfsa.pdf  used on input line 229.
+(pdftex.def)             Requested size: 471.5123pt x 570.9291pt.
+ [9
 
-] [17] [18 <./Figures/Pipeline.png>] (./ehrapp.tex
-<Figures/scrn.png, id=572, 1414.28375pt x 664.4825pt>
-File: Figures/scrn.png Graphic file (type png)
-<use Figures/scrn.png>
-Package pdftex.def Info: Figures/scrn.png  used on input line 8.
-(pdftex.def)             Requested size: 446.69426pt x 209.87074pt.
-<Figures/ehrzero_example.png, id=574, 1710.39pt x 931.48pt>
-File: Figures/ehrzero_example.png Graphic file (type png)
-<use Figures/ehrzero_example.png>
-Package pdftex.def Info: Figures/ehrzero_example.png  used on input line 15.
-(pdftex.def)             Requested size: 446.69426pt x 243.2593pt.
- [19
+] [10 <./Figures/External/pfsa.pdf>]
+<Figures/External/stdtools.pdf, id=299, 454.4699pt x 207.82744pt>
+File: Figures/External/stdtools.pdf Graphic file (type pdf)
+<use Figures/External/stdtools.pdf>
+Package pdftex.def Info: Figures/External/stdtools.pdf  used on input line 279.
 
- <./Figures/scrn.png> <./Figures/ehrzero_example.png>]
-Overfull \hbox (1.66966pt too wide) in paragraph at lines 39--40
-[]\OT1/pcr/m/n/10 Lorax,M 5,277.03 10,611.79 18,057.8 58,157.8 78,057.8 108,057
-.8 128,057.8 148,057.8 
- []
+(pdftex.def)             Requested size: 446.69426pt x 204.26884pt.
+<Figures/External/sanitycheck.pdf, id=300, 475.43822pt x 503.43181pt>
+File: Figures/External/sanitycheck.pdf Graphic file (type pdf)
+<use Figures/External/sanitycheck.pdf>
+Package pdftex.def Info: Figures/External/sanitycheck.pdf  used on input line 3
+02.
+(pdftex.def)             Requested size: 471.5123pt x 499.30547pt.
+ (./extabfig.tex
+<Figures/External/comorbidB.pdf, id=301, 487.8225pt x 716.55705pt>
+File: Figures/External/comorbidB.pdf Graphic file (type pdf)
+<use Figures/External/comorbidB.pdf>
+Package pdftex.def Info: Figures/External/comorbidB.pdf  used on input line 13.
 
+(pdftex.def)             Requested size: 397.06578pt x 583.25081pt.
+<Figures/External/comorbidC.pdf, id=302, 480.59549pt x 690.17848pt>
+File: Figures/External/comorbidC.pdf Graphic file (type pdf)
+<use Figures/External/comorbidC.pdf>
+Package pdftex.def Info: Figures/External/comorbidC.pdf  used on input line 37.
 
-Overfull \hbox (1.66966pt too wide) in paragraph at lines 53--54
-[]\OT1/pcr/m/n/10 python zero.py -data tests/ZERO$-$example.dat -outfile predic
-tions.csv -n$-$weeks 100 200
- []
-
-<Figures/zero_py_example.png, id=587, 2541.495pt x 1002.74625pt>
-File: Figures/zero_py_example.png Graphic file (type png)
-<use Figures/zero_py_example.png>
-Package pdftex.def Info: Figures/zero_py_example.png  used on input line 57.
-(pdftex.def)             Requested size: 446.69426pt x 176.23296pt.
-) [20 <./Figures/zero_py_example.png>] [21]
+(pdftex.def)             Requested size: 446.69426pt x 641.49077pt.
+<Figures/External/nopsych.pdf, id=303, 499.67679pt x 454.13365pt>
+File: Figures/External/nopsych.pdf Graphic file (type pdf)
+<use Figures/External/nopsych.pdf>
+Package pdftex.def Info: Figures/External/nopsych.pdf  used on input line 62.
+(pdftex.def)             Requested size: 471.5123pt x 428.54877pt.
+) [11] [12 <./Figures/External/stdtools.pdf>] [13 <./Figures/External/sanityche
+ck.pdf>] [14 <./Figures/External/comorbidB.pdf>] [15 <./Figures/External/comorb
+idC.pdf>] [16 <./Figures/External/nopsych.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <10> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 714.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 387.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 714.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 387.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 721.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 394.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 721.
- [22] [23]
-Overfull \hbox (3.06557pt too wide) in paragraph at lines 833--840
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 394.
+ [17]
+Overfull \hbox (3.06557pt too wide) in paragraph at lines 506--513
 []\OT1/phv/m/n/10 At present, the Autism Di-ag-nos-tic Interview-Revised (ADI-R
 ) and Autism Di-ag-nos-tic Ob-ser-va-tion Sched-ule (ADOS)
  []
 
-[24] [25] (./PFSAThm.tex [26]
+[18] [19]
+<Figures/External/4dopt.pdf, id=629, 496.33029pt x 169.98405pt>
+File: Figures/External/4dopt.pdf Graphic file (type pdf)
+<use Figures/External/4dopt.pdf>
+Package pdftex.def Info: Figures/External/4dopt.pdf  used on input line 602.
+(pdftex.def)             Requested size: 446.69426pt x 152.98941pt.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <6> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 605.
+ [20 <./Figures/External/4dopt.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 654--654
+\OT1/phv/m/n/10 performance
+ []
+
+
+Overfull \hbox (4.99718pt too wide) in paragraph at lines 654--654
+[]|  
+ []
+
+
+Overfull \hbox (19.44237pt too wide) in paragraph at lines 654--654
+[]\OT1/phv/m/n/10 speci-
+ []
+
+
+Overfull \hbox (12.77243pt too wide) in paragraph at lines 654--654
+\OT1/phv/m/n/10 ficity 
+ []
+
+
+Overfull \hbox (19.44237pt too wide) in paragraph at lines 654--654
+[]\OT1/phv/m/n/10 sensi-
+ []
+
+
+Overfull \hbox (12.7723pt too wide) in paragraph at lines 654--654
+\OT1/phv/m/n/10 tivity 
+ []
+
+
+Overfull \hbox (19.44237pt too wide) in paragraph at lines 654--654
+[]\OT1/phv/m/n/10 speci-
+ []
+
+
+Overfull \hbox (12.77243pt too wide) in paragraph at lines 654--654
+\OT1/phv/m/n/10 ficity 
+ []
+
+
+Overfull \hbox (19.44237pt too wide) in paragraph at lines 654--654
+[]\OT1/phv/m/n/10 sensi-
+ []
+
+
+Overfull \hbox (12.7723pt too wide) in paragraph at lines 654--654
+\OT1/phv/m/n/10 tivity 
+ []
+
+(./Figures/plotdata/boost150.tex) [21] (./PFSAThm.tex [22]
 LaTeX Font Info:    Font shape `OT1/ccr/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmr/bx/n' tried instead on input line 36.
 LaTeX Font Info:    Font shape `OT1/ccr/bx/n' in size <7> not available
@@ -2149,68 +2101,119 @@ LaTeX Font Info:    Font shape `OMS/ccsy/b/n' in size <5> not available
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
 (Font)              using `U/stmry/m/n' instead on input line 64.
 
-[27]
+[23]
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
 (Font)              Font shape `OT1/pcr/b/n' tried instead on input line 119.
- [28] [29]) (./SI.bbl [30]
-LaTeX Font Info:    Font shape `OT1/ccr/bx/n' in size <8> not available
-(Font)              Font shape `OT1/cmr/bx/n' tried instead on input line 207.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <7> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 124.
+ [24] [25]) (./pipeline.tex [26]
+<Figures/Pipeline.png, id=844, 840.9819pt x 1191.0096pt>
+File: Figures/Pipeline.png Graphic file (type png)
+<use Figures/Pipeline.png>
+Package pdftex.def Info: Figures/Pipeline.png  used on input line 131.
+(pdftex.def)             Requested size: 421.8838pt x 597.48424pt.
+LaTeX Font Info:    Font shape `OT1/ccr/bx/n' in size <9> not available
+(Font)              Font shape `OT1/cmr/bx/n' tried instead on input line 132.
 LaTeX Font Info:    Font shape `OT1/ccr/bx/n' in size <6> not available
-(Font)              Font shape `OT1/cmr/bx/n' tried instead on input line 207.
-) [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1011.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1011.
- (./SI.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1011.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1011.
+(Font)              Font shape `OT1/cmr/bx/n' tried instead on input line 132.
+) (./ehrapp.tex
+<Figures/scrn.png, id=850, 1414.28375pt x 664.4825pt>
+File: Figures/scrn.png Graphic file (type png)
+<use Figures/scrn.png>
+Package pdftex.def Info: Figures/scrn.png  used on input line 8.
+(pdftex.def)             Requested size: 446.69426pt x 209.87074pt.
+<Figures/ehrzero_example.png, id=852, 1710.39pt x 931.48pt>
+File: Figures/ehrzero_example.png Graphic file (type png)
+<use Figures/ehrzero_example.png>
+Package pdftex.def Info: Figures/ehrzero_example.png  used on input line 15.
+(pdftex.def)             Requested size: 446.69426pt x 243.2593pt.
 
+Overfull \hbox (1.66966pt too wide) in paragraph at lines 39--40
+[]\OT1/pcr/m/n/10 Lorax,M 5,277.03 10,611.79 18,057.8 58,157.8 78,057.8 108,057
+.8 128,057.8 148,057.8 
+ []
+
+[27]
+Overfull \hbox (1.66966pt too wide) in paragraph at lines 53--54
+[]\OT1/pcr/m/n/10 python zero.py -data tests/ZERO$-$example.dat -outfile predic
+tions.csv -n$-$weeks 100 200
+ []
+
+<Figures/zero_py_example.png, id=889, 2541.495pt x 1002.74625pt>
+File: Figures/zero_py_example.png Graphic file (type png)
+<use Figures/zero_py_example.png>
+Package pdftex.def Info: Figures/zero_py_example.png  used on input line 57.
+(pdftex.def)             Requested size: 446.69426pt x 176.23296pt.
+[28]) (./SI.bbl [29 <./Figures/Pipeline.png>]
+LaTeX Font Info:    Font shape `OT1/ccr/bx/n' in size <8> not available
+(Font)              Font shape `OT1/cmr/bx/n' tried instead on input line 33.
+
+Underfull \hbox (badness 1092) in paragraph at lines 31--34
+[]\OT1/phv/m/n/8 General equiv-a-lence map-pings.  URL [][]$\OT1/pcr/m/n/8 http
+s : / / www . cms . gov / Medicare / Coding / ICD10 / downloads / ICD-[]10 _ GE
+M _ fact _
+ []
+
+[30 <./Figures/scrn.png> <./Figures/ehrzero_example.png>]) [31 <./Figures/zero_
+py_example.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 776.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 776.
+ (./SI.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 776.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 776.
 Package rerunfilecheck Info: File `SI.out' has not changed.
-(rerunfilecheck)             Checksum: 8B2BE59B54B5834D24E072C52A6D62FC;2163.
+(rerunfilecheck)             Checksum: 068B134593E8805980E8F83F71879CA7;2676.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1011.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 776.
  ) 
 Here is how much of TeX's memory you used:
- 40785 strings out of 492678
- 968998 string characters out of 6133535
- 1562049 words of memory out of 11000000
- 43475 multiletter control sequences out of 15000+600000
- 66607 words of font info for 158 fonts, out of 8000000 for 9000
+ 40848 strings out of 492678
+ 969871 string characters out of 6133535
+ 1557158 words of memory out of 11000000
+ 43510 multiletter control sequences out of 15000+600000
+ 66915 words of font info for 159 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 64i,21n,96p,12094b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/ishanu/.te
-xlive2018/texmf-var/fonts/pk/ljfour/public/concrete/ccr5.600pk> </home/ishanu/.
-texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccmi5.600pk> </hom
-e/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy5.60
-0pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts
-/xccex10.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/con
-crete/ccr7.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/c
-oncmath-fonts/xccmi7.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfou
-r/public/concrete/ccr9.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljf
-our/public/concmath-fonts/xccmi9.600pk> </home/ishanu/.texlive2018/texmf-var/fo
-nts/pk/ljfour/public/concmath-fonts/xccmi10.600pk> </home/ishanu/.texlive2018/t
-exmf-var/fonts/pk/ljfour/public/concrete/ccr10.600pk> </home/ishanu/.texlive201
-8/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy10.600pk> </home/ishanu/
-.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy6.600pk> </ho
-me/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy7.6
-00pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfo
-nts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-helvetic/uhvro8a.pfb>
-Output written on SI.pdf (31 pages, 17940792 bytes).
+ 64i,21n,96p,12113b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{table.caption.3} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.2} has been referenced but does not e
+xist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/ishanu/.texl
+ive2018/texmf-var/fonts/pk/ljfour/public/concrete/ccr5.600pk> </home/ishanu/.te
+xlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccmi5.600pk> </home/
+ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy5.600p
+k> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/x
+ccex10.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concm
+ath-fonts/xccmi7.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/pu
+blic/concmath-fonts/xccsy10.600pk> </home/ishanu/.texlive2018/texmf-var/fonts/p
+k/ljfour/public/concrete/ccr7.600pk> </home/ishanu/.texlive2018/texmf-var/fonts
+/pk/ljfour/public/concmath-fonts/xccmi10.600pk> </home/ishanu/.texlive2018/texm
+f-var/fonts/pk/ljfour/public/concrete/ccr10.600pk> </home/ishanu/.texlive2018/t
+exmf-var/fonts/pk/ljfour/public/concrete/ccr9.600pk> </home/ishanu/.texlive2018
+/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccmi9.600pk> </home/ishanu/.t
+exlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy6.600pk> </home
+/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy7.600
+pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/txfonts/txexa.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfont
+s/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
+lvetic/uhvro8a.pfb>
+Output written on SI.pdf (31 pages, 17958423 bytes).
 PDF statistics:
- 1223 PDF objects out of 1440 (max. 8388607)
- 842 compressed objects within 9 object streams
- 282 named destinations out of 1000 (max. 500000)
- 368 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1310 PDF objects out of 1440 (max. 8388607)
+ 921 compressed objects within 10 object streams
+ 303 named destinations out of 1000 (max. 500000)
+ 408 words of extra memory for PDF output out of 10000 (max. 10000000)
 
