@@ -1,4 +1,3 @@
-% \documentclass[onecolumn,10pt]{IEEEtran}
 \documentclass[3p,super,numbers,sort&compress,10pt]{elsarticle}
 \let\labelindent\relax
 \usepackage{enumitem}
@@ -12,74 +11,32 @@
    \let\@evenfoot\@oddfoot
 }
 \makeatother
-\input{custom_defs}
 \renewcommand{\baselinestretch}{1.05}
 \externaldocument[SI-]{SI}
-% \externaldocument[EXT-]{exfig}
 \newif\iftikzX
 \tikzXtrue
 \tikzXfalse
-\def\jobnameX{zero}
 \newif\ifFIGS
 \FIGSfalse  
 \FIGStrue
-% Use the lineno option to display guide line numbers if required.
 
-%\templatetype{pnasresearcharticle} % Choose template 
-% {pnasresearcharticle} = Template for a two-column research article
-% {pnasmathematics} %= Template for a one-column mathematics article
-% {pnasinvited} %= Template for a PNAS invited submission
 \cfoot{\scriptsize\thepage}
 \lfoot{}
 \rfoot{}
-% \title{\TITLE}
 
-% % Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
-% \author[a]{\authora}
-% \author[a]{\authorb}
-% \author[a]{\authorc}
-% \author[d,g]{\authord}
-% \author[e,f]{\authore}
-% \author[a,b,c,1]{\authorf}
-
-% \affil[a]{\addressa} 
-% \affil[b]{\addressb}  
-% \affil[c]{\addressc} 
-% \affil[d]{\addressd} 
-% \affil[e]{\addresse} 
-% \affil[f]{\addressf} 
-% \affil[g]{\addressg} 
-
-% % Please give the surname of the lead author for the running footer
-% \leadauthor{chattopadhyay} 
- 
-% % Please add a significance statement to explain the relevance of your work
-% \significancestatement{% Authors must submit a 120-word maximum statement about the significance of their research paper written at a level understandable to an undergraduate educated scientist outside their field of speciality. The primary goal of the significance statement is to explain the relevance of the work in broad context to a broad readership. The significance statement appears in the paper itself and is required for all research papers.
-% In this study past medical history in the form of diagnostic codes generated during medical encounters is used to formulate a clinically useful risk estimator for autism screening. We can formulate such a predictor despite considerable heterogeneity in ASD presentation that has made reliable biomarkers hard to identify, and has implicated over 1000 genes as contributing to ASD risk. Furthermore,  the ability to carry out this evaluation without any blood tests, or questionnaire, makes it possible to avoid uncertainties from language barriers and other socio-economic artifacts. In joint operation with existing  screening tools we can boost the predictor performance significantly higher than the current state of art, potentially cutting down false positives by half without losing specificity. 
-% }
- 
-% % Please include corresponding author, author contribution and author declaration information
-% \authorcontributions{%Please provide details of author contributions here.
-% DO implemented the algorithm, DO, YH, JH and IC worked on mathematical modeling, IC, PS and MM designed study parameters, IC wrote the paper
-% }
-% %\authordeclaration{Please declare any competing interests here.}
-% %\equalauthors{\textsuperscript{1}A.O.(Author One) contributed equally to this work with A.T. (Author Two) (remove if not applicable).}
-% \correspondingauthor{\textsuperscript{2}To whom correspondence should be addressed. E-mail: ishanu@uchicago.edu}
-
-% % At least three keywords are required at submission. Please provide three to five keywords, separated by the pipe symbol.
-% \keywords{autism $|$ electronic health record $|$ stochastic learning $|$ co-morbid risk} 
-
+\input{custom_defs}
+ \def\acor{ACoR}
 
 \tikzexternaldisable
 \begin{document}
 \begin{frontmatter}
   \title{\TITLE} 
-  \author[ad1]{Dmytro Onishchenko}
-  \author[ad1]{Yi Huang}
-  \author[ad1]{James van Horne}
-  \author[ad4,ad7]{Peter J. Smith}
-  \author[ad5,ad6]{Michael M. Msall}
-  \author[ad1,ad2,ad3]{Ishanu Chattopadhyay\corref{cor1}}
+  \author[ad1,ad2,ad3]{Ishanu Chattopadhyay, PhD\corref{cor1}}
+  \author[ad1]{Dmytro Onishchenko, MS}
+  \author[ad1]{Yi Huang, PhD}
+  \author[ad1]{James van Horne, MS}
+  \author[ad4,ad7]{Peter J. Smith, MD}
+  \author[ad5,ad6]{Michael M. Msall, MD}
 
   \address[ad1]{Department of Medicine, University of Chicago, Chicago, IL, USA}
   \address[ad2]{Committee on Genetics, Genomics \& Systems Biology, University of Chicago, Chicago, IL, USA}
@@ -91,9 +48,8 @@
 
   \cortext[cor1]{To whom correspondence should be addressed: e-mail:  \texttt{ishanu@uchicago.edu}.}
   % ABSTRACT
-  
 \begin{abstract}
-   Autism spectrum disorder (ASD) is a developmental disability associated with  significant social  and behavioral challenges. There is   a need for tools that help identify children with ASD as early as possible~\cite{cdc0,nimh}. Our current incomplete understanding of ASD pathogenesis, and the lack of reliable biomarkers hampers early detection,  intervention, and developmental trajectories. In this study we develop and validate  machine inferred digital biomarkers for autism using individual diagnostic codes already recorded during medical encounters. Our risk estimator  identifies  children at high risk  with a corresponding area under the receiver operating characteristic curve (AUC)  exceeding 80\% from shortly after two years of age for either sex, and across two independent databases of patient records. Thus, we systematically leverage ASD co-morbidities -  with no requirement of additional blood work, tests  or  procedures - to predict  elevated  risk  during the earliest childhood years, when intervention is the  most effective.  Our methodology has superior performance to common questionnaires-based screenings such as the M-CHAT/F~\cite{pmid31562252}, and has the potential to  reduce socio-economic, ethnic and demographic biases. Further, by conditioning on the individual M-CHAT/F scores, we can either halve the false positives or boost sensitivity by over 50\%, while maintaining  specificity  above 95\%. Translated into practice, our algorithmic approach could significantly reduce the median diagnostic age for ASD, and also reduce  long post-screen wait-times~\cite{pmid27565363} currently experienced by families for confirmatory diagnoses and access to  evidence based interventions.
+   Autism spectrum disorder (ASD) is a developmental disability associated with  significant social  and behavioral challenges. There is   a need for tools that help identify children with ASD as early as possible~\cite{cdc0,nimh}. Our current incomplete understanding of ASD pathogenesis, and the lack of reliable biomarkers hampers early detection,  intervention, and developmental trajectories. In this study we develop and validate  machine inferred digital biomarkers for autism using individual diagnostic codes already recorded during medical encounters. Our risk estimator  identifies  children at high risk  with a corresponding area under the receiver operating characteristic curve (AUC)  exceeding 80\% from shortly after two years of age for either sex, and across two independent databases of patient records. Thus, we systematically leverage ASD co-morbidities -  with no requirement of additional blood work, tests  or  procedures - to compute the Autism Co-morbid Risk Score (\acor) which predicts  elevated  risk  during the earliest childhood years, when interventions are the  most effective.  By itself, \acor has superior performance to common questionnaires-based screenings such as the M-CHAT/F~\cite{pmid31562252}, and has the potential to  reduce socio-economic, ethnic and demographic biases. In addition to standalone performance,  independence from questionnaire based screening allows us to further boost performance by conditioning on the individual M-CHAT/F scores --  we can either halve the false positives or boost sensitivity by over 50\%, while maintaining  specificity  above 95\%. Adopted  in practice, \acor could significantly reduce the median diagnostic age for ASD, and  reduce  long post-screen wait-times~\cite{pmid27565363}  experienced by families for confirmatory diagnoses and access to  evidence based interventions. %With no blood-tests in sight for autism diagnosis, a screening methodology that leverages co-morbid
 \end{abstract} 
 \end{frontmatter}
 %%%%%%%%%%%%%%%%%%%% 
@@ -107,8 +63,8 @@ observation of symptoms is
 necessary~\cite{volkmar2014practice,hyman2020identification} for a clinical diagnosis.  Starting with a positive initial screen, a confirmed diagnosis of ASD is a   multi-step process that often takes 3 months to 1 year,  delaying entry into time-critical intervention programs. While   lengthy evaluations~\cite{kalb2012determinants}, cost of care~\cite{bisgaier2011access},  lack of providers~\cite{fenikile2015barriers}, and lack of comfort in diagnosing ASD by primary care providers~\cite{fenikile2015barriers} are all responsible to varying degrees~\cite{gordon2016whittling}, one  obvious source of this delay is the number of false positives produced in the initial ASD-specific screening tools in use today. For example, the  M-CHAT/F used commonly as a screening tool~\cite{robins2014validation,hyman2020identification},  has an estimated  sensitivity of 38.8\%, specificity of 94.9\% and Positive Predictive Value (PPV) of 14.6\%~\cite{pmid31562252}. Thus,  currently  out of every 100 children with ASD,  M-CHAT/F flags about 39, and out of every 100 children it flags, about 85 are false positives, exacerbating  wait times and queues~\cite{gordon2016whittling}.  Automated   screening  that might be administered with  no specialized training, requires no behavioral observations, and is functionally independent of the tools employed in current practice,  has the potential for  immediate transformative  impact on patient care.
 
 
-While the neurobiological basis of autism remains poorly understood,  a detailed assessment conducted by the US Centers for Disease Control and Prevention (CDC) demonstrated that  children with ASD experience  higher than expected rates of many diseases~\cite{cdc}. These include conditions related to dysregulation of immune pathways such as eczema, allergies, asthma, as well as ear and respiratory infections, gastrointestinal problems, developmental issues, severe headaches, migraines, and seizures~\cite{pmid30733689,pmid22511918}. In the present study, we exploit   these   co-morbidities to estimate the risk of  childhood neuropsychiatric disorders on the autism spectrum. Using sequences of diagnostic codes from past doctor's visits, our risk estimator reliably
-predicts an eventual clinical  diagnosis | or the lack thereof |  for individual patients.
+While the neurobiological basis of autism remains poorly understood,  a detailed assessment conducted by the US Centers for Disease Control and Prevention (CDC) demonstrated that  children with ASD experience  higher than expected rates of many diseases~\cite{cdc}. These include conditions related to dysregulation of immune pathways such as eczema, allergies, asthma, as well as ear and respiratory infections, gastrointestinal problems, developmental issues, severe headaches, migraines, and seizures~\cite{pmid30733689,pmid22511918}. In the present study, we exploit   these   co-morbidities to estimate the risk of  childhood neuropsychiatric disorders on the autism spectrum. We refer to the risk estimated by our approach as the Autism Co-morbid Risk Score (\acor). Using sequences of diagnostic codes from past doctor's visits, our risk estimator reliably
+predicts an eventual clinical  diagnosis -- or the lack thereof -- for individual patients.
 Thus, the key clinical  contribution of this study is the formalization  of subtle co-morbidity patterns as a reliable screening tool, and potentially  improve wait-times for diagnostic evaluations by significantly reducing the number of false positives encountered in initial screens in current practice.
 
 
@@ -117,6 +73,30 @@ Furthermore, being functionally independent of the M-CHAT/F, we show that there 
  
 \input{figsandtab}
 
+\cite{doshi2014comorbidity}: small cohort, age 0-15, only correlation shown.
+
+\cite{lingren2016electronic}: n152, auc=65\%
+
+\cite{pmid27185194}: no autism
+
+\cite{abbas2020multi}:n=375, 18-72 months, auc>90\% questionnaire, video and clinician inputs
+
+\cite{tariq2018mobile}: Mean age 4years $\pm$ 2 yrs , n=116, video, auc=92\%, blinded nonexpert raters from 3-minute home videos of children with and without ASD 
+
+\cite{duda2016clinical}, mean age 5.8 years, Children 16 months–17 years (N = 222)
+were screened during their first visit in a developmental-
+behavioral pediatric clinic.
+
+\cite{duda2014testing}, applies to ADOS, significantly correlated with the ADOS-G (r=−0.814) and ADOS-2 (r=−0.779) and exhibited >97\% sensitivity and >77\% specificity in comparison to both ADOS algorithm scores. The cohort studied was 76.8\% male, 18.5\% female and 4.7\% unknown gender, and the average age at testing was 6.21 years (±4.25 years).
+
+
+\cite{fusaro2014potential}, n=100, videos and non-clinical raters, results also demonstrate the potential for video-based detection of autism in short, unstructured home videos. classification accuracy was 96.8\%, with 94.1\% sensitivity and 100\% specificity, 
+
+\cite{wall2012use} questionnaire, ADOS, mostly older kids with average age around 5 years. high performance
+
+\cite{wall2012use2} ADOS, targets behavior between ages of 4 and 5, questionnaire, high performance
+
+% while othetr ML methods have been attempted, leveraging videoa and sophisticated analysis of questioinarries, there is a key difference in the results. All those approaches do not velerage comorbidity. In some sense such approaches model the physician, no new insight is often possible fro such approaches. We othe otherhand model the disdes processes and it sfootprint in different functions systems that manifest as subtle difference in comorbidity patterns. Thus, we model the diease more directly, and there is clear opportuniuty to gaining new insight into teh pathopsyiology of autism.
 
 \section*{Materials \& Methods}
 % ##########################################
@@ -279,7 +259,8 @@ may be done from \href{https://pypi.org/project/ehrzero/}{https://pypi.org/proje
 
 
 \section*{Acknowledgement}
-This work is funded in part by the Defense Advanced Research Projects Agency (DARPA) project \#FP070943-01-PR. The claims made in this study  do not  reflect the position or the policy of the US Government. The UCM dataset is provided by the Clinical Research Data Warehouse (CRDW) maintained by the Center for Research Informatics (CRI) at the  University of Chicago. The Center for Research Informatics is funded by the Biological Sciences Division, the Institute for Translational Medicine/CTSA (NIH UL1 TR000430) at the University of Chicago. 
+This work is funded in part by the Defense Advanced Research Projects Agency (DARPA) project \#FP070943-01-PR. The claims made in this study  do not  reflect the position or the policy of the US Government. The UCM dataset is provided by the Clinical Research Data Warehouse (CRDW) maintained by the Center for Research Informatics (CRI) at the  University of Chicago. The Center for Research Informatics is funded by the Biological Sciences Division, the Institute for Translational Medicine/CTSA (NIH UL1 TR000430) at the University of Chicago. IRB exemption was granted due to de-identified subjects from University of Chicago, IRB Committee: BSD (Contact: Amy Horst
+ahorst@medicine.bsd.uchicago.edu). IRB\#: Predictive Diagnoses IRB19-1040
 
 
 % Bibliography
