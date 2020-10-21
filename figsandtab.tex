@@ -110,7 +110,7 @@
   %\end{center}
   \vskip .5em
   \small
-  $^\ddag$ Disease categories are described in Table~\ref{SI-tab0}
+  $^\ddag$ Disease categories are described in SI-Table~\ref{SI-tab0} in Supplementary Text.
  \end{subtable}
 %}
 \end{table*}
@@ -176,8 +176,8 @@
   \includegraphics[width=0.85\textwidth]{Figures/External/perfA.pdf}
   \fi
 
-  \captionN{Predictive Performance. Panel %C shows the distribution of the AUC, and panel
-    A shows the ROC curves for males and females. Panel B shows the feature importance inferred by our prediction pipeline. The detailed description of the features is given in Table~\ref{EXT-tab1}. The most import feature is related to immunologic disorders, and we note that in addition to features related to individual disease categories, we also have the mean control likelihood (rank 3), which may be interpreted as the average likelihood of the diagnostic patterns correspond to the control category as opposed to the \treatment category. Panels C and D show the spatial variation in the achieved predictive performance at 150 weeks, measured by AUC, for males and females, respectively. Gray areas lack data on either positive or negative cases. These county-specific AUC plots show that the performance of the algorithm has  relatively weak geospatial dependence, which is important in the light of current uneven distribution of diagnostic resources.
+  \captionN{\textbf{Standalone Predictive Performance of \acor.} Panel %C shows the distribution of the AUC, and panel
+    A shows the ROC curves for males and females (Truven data shown, UCM is similar, see Fig.~\ref{fig2}a). Panel B shows the feature importance inferred by our prediction pipeline. The detailed description of the features is given in Table~\ref{EXT-tab1}. The most import feature is related to immunologic disorders, and we note that in addition to features related to individual disease categories, we also have the mean control likelihood (rank 3), which may be interpreted as the average likelihood of the diagnostic patterns correspond to the control category as opposed to the \treatment category. Panels C and D show the spatial variation in the achieved predictive performance at 150 weeks, measured by AUC, for males and females, respectively. Gray areas lack data on either positive or negative cases. These county-specific AUC plots show that the performance of the algorithm has  relatively weak geospatial dependence, which is important in the light of current uneven distribution of diagnostic resources. Importantly, not all counties has nonzero number of ASD patients; a high performance in those counties reflects a small number of false positives with zero false negatives.
   }\label{fig1}
 \end{figure*}
 \else
@@ -200,7 +200,7 @@
   \includegraphics[width=0.85\textwidth]{Figures/External/perfB.pdf}
   \fi
 
-  \captionN{\textbf{More details on Predictive Performance and Variation of Inferred Risk.} Panel A illustrates AUC achieved as a function of
+  \captionN{\textbf{More Details on Standalone Predictive Performance of \acor  and Variation of Inferred Risk.} Panel A illustrates AUC achieved as a function of
     patient age, for the Truven and UCM datasets. The shaded area outlines the 2 - 2.5  years of age, and  shows that we achieve $>80\%$ AUC for either sex from shortly after 2 years.   Panel B illustrates how the average risk changes with time for the control and the positive cohorts. Panel C shows the distribution of the prediction horizon: the time to a clinical diagnosis after inferred  relative risk crosses $90\%$. Panel D shows that for each new disease code for a low-risk child, ASD risk increases by approximately $2\%$ for either sex. Panel E illustrates the risk progression of a specific, ultimately autistic male child in the Truven database. Abbreviations in the legend: ill defn. (Symptoms, Signs, And Ill-Defined Conditions),   musc. skltl. (Diseases Of The Musculoskeletal System And Connective Tissue), cond. orig. in perintl. (Certain Conditions Originating In The Perinatal Period), immun. (Endocrine, Nutritional And Metabolic Diseases, And Immunity Disorders), nerv. \& sensory (Diseases Of The Nervous System And Sense Organs), respir. (Respiratory Disorders), and digest. (Digestive Disorders). Panel F illustrates  how inferred models differ between the control vs. the \treatment cohorts. On average, models get less complex, implying the exposures get more statistically independent.}\label{fig2}
 \end{figure*}
 \else
@@ -224,9 +224,10 @@
   \else
   \includegraphics[width=0.75\textwidth]{Figures/External/perfCv.pdf}
   \fi
-
-  \captionN{\textbf{Metrics relevant to clinical practice: PPV vs Sensitivity trade-offs.} Panel A shows the precision/recall curves, $i.e.$,  the trade-off between PPV and sensitivity. Panel B shows how we can boost performance using population stratification from the distribution of M-CHAT/F scores in the population, as reported by the CHOP study~\cite{pmid31562252}. Panel C illustrates the boosted performance compared to M-CHAT/F alone,
-    measured by the relative percentage increase in sensitivity, and percentage decrease in positive screens. Note that the population prevalence impacts this optimization, and hence  we have  a distinct  curve for each prevalence value ($1.7\%$ is the CDC estimate, while $2.23\%$ is reported by the CHOP study).  The two extreme operating zones marked as High Precision (HP) and High Recall (HR): if we choose to operate in HR, then we do not reduce the number of positive screens by much, but maximize sensitivity, while by operating in HP, we do not increase sensitivity by much but double the PPV achieved in current practice. Note in all these zones, we maintain specificity above $95\%$, which is the current state of art, implying that by doubling the PPV, we can halve the number of positive screens currently reported, thus potentially sharply reducing the queues and wait-times. }\label{figprc}
+ 
+  \captionN{\textbf{Metrics relevant to clinical practice: PPV vs Sensitivity trade-offs.} Panel A shows the precision/recall curves, $i.e.$,  the trade-off between PPV and sensitivity for \textbf{standalone operation} with \acor. Panel B shows how we can \textbf{boost \acor performance} using population stratification from the distribution of M-CHAT/F scores in the population, as reported by the CHOP study~\cite{pmid31562252}. This is possible because \acor and M-CHAT/F use independent information (co-morbidities vs questionnaire responses). % Panel C illustrates the boosted performance compared to M-CHAT/F alone,
+    % measured by the relative percentage increase in sensitivity, and percentage decrease in positive screens.
+    Note that the population prevalence impacts this optimization, and hence  we have  a distinct  curve for each prevalence value ($1.7\%$ is the CDC estimate, while $2.23\%$ is reported by the CHOP study).  The two extreme operating zones marked as High Precision (HP) and High Recall (HR): if we choose to operate in HR, then we do not reduce the number of positive screens by much, but maximize sensitivity, while by operating in HP, we increase sensitivity by 20-40\% (depending on the prevalence) but double the PPV achieved in current practice. In contrast, when choosing to maximize sensitivity by operating in the HR zone, we only cut down positive flags to about $70\%$ of what we get with M-CHAT/F, but boost sensitivity by $50-90\%$ (Reaching sensitivities over $70\%$). Note in all these zones, we maintain specificity above $95\%$, which is the current state of art, implying that by doubling the PPV, we can halve the number of positive screens currently reported, thus potentially sharply reducing the queues and wait-times. }\label{figprc} 
 \end{figure}
 
 % ###########################################################
@@ -237,9 +238,10 @@
 % ##########################################
 % ####################################
 \def\RCOL{\rowcolor{teal!40}}
+\def\PCOL{Tomato!40}
 %#################################### 
 \begin{table*}[!ht]
-  \captionN{Standalone and Combined Performance}
+  \captionN{Standalone \acor Performance and Boosted Performance Conditioned on M-CHAT/F}
 \begin{subtable}{\textwidth}
 \centering 
 \captionN{Standalone PPV Achieved at 100, 112 and 150 Weeks For Each Dataset and Gender {\bf (M-CHAT/F:  sensitivity=$38.8\%$, specificity=$95\%$, PPV=$14.6\%$ between 16 and  26 months ($\approx$112 weeks))}}\label{EXT-tabssp}
@@ -258,7 +260,7 @@
 
 \begin{tabular} {L{.33in}|L{.33in}|L{.33in}|L{.33in}||L{.35in}|L{.35in}|L{.375in}||L{.375in}|L{.35in}|L{.35in}||L{.6in}}
 \hline
-\multicolumn{4}{c||}{\cellcolor{lightgray!60}M-CHAT/F Outcome}  & \multicolumn{3}{c||}{\mnp{.9in}{\vskip .2em global performance (Truven)\vskip .2em  } }&\multicolumn{3}{c||}{\mnp{1in}{\vskip .2em global performance\\(UCM)\vskip .2em }} &  \multirow{3}{*}{prevalence$^\star$}\\\cline{0-9}
+\multicolumn{4}{c||}{\cellcolor{lightgray!60}M-CHAT/F Outcome}  & \multicolumn{3}{c||}{\mnp{1.2in}{\vskip .2em global performance (Truven)\vskip .2em  } }&\multicolumn{3}{c||}{\mnp{1.2in}{\vskip .2em global performance\\(UCM)\vskip .2em }} &  \multirow{3}{*}{prevalence$^\star$}\\\cline{0-9}
  0-2  NEG & 3-7  NEG & 3-7  POS & $\geq  8$  POS & \multirow{2}{*}{\mnp{.1in}{speci-ficity}} & \multirow{2}{*}{\mnp{.1in}{sensi-tivity}} &\multirow{2}{*}{PPV}& \multirow{2}{*}{\mnp{.1in}{speci-ficity}} & \multirow{2}{*}{\mnp{.1in}{sensi-tivity}} & \multirow{2}{*}{PPV} & \\\cline{0-3}
 \multicolumn{4}{c}{\cellcolor{lightgray} specificity choices}  & & & &&&&\\\hline 
   \input{Figures/plotdata/boost} 

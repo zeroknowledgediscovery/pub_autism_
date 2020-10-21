@@ -48,6 +48,40 @@
   \textbf{\bibinfo{volume}{24}}, \bibinfo{pages}{260--266}
   (\bibinfo{year}{2014}).
 
+\bibitem{howsmon2017classification}
+\bibinfo{author}{Howsmon, D.~P.}, \bibinfo{author}{Kruger, U.},
+  \bibinfo{author}{Melnyk, S.}, \bibinfo{author}{James, S.~J.} \&
+  \bibinfo{author}{Hahn, J.}
+\newblock \bibinfo{title}{Classification and adaptive behavior prediction of
+  children with autism spectrum disorder based upon multivariate data analysis
+  of markers of oxidative stress and dna methylation}.
+\newblock \emph{\bibinfo{journal}{PLoS computational biology}}
+  \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{e1005385}
+  (\bibinfo{year}{2017}).
+
+\bibitem{li2018high}
+\bibinfo{author}{Li, G.}, \bibinfo{author}{Lee, O.} \& \bibinfo{author}{Rabitz,
+  H.}
+\newblock \bibinfo{title}{High efficiency classification of children with
+  autism spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{PloS one}} \textbf{\bibinfo{volume}{13}},
+  \bibinfo{pages}{e0192867} (\bibinfo{year}{2018}).
+
+\bibitem{hicks2018validation}
+\bibinfo{author}{Hicks, S.~D.} \emph{et~al.}
+\newblock \bibinfo{title}{Validation of a salivary rna test for childhood
+  autism spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{Frontiers in genetics}}
+  \textbf{\bibinfo{volume}{9}}, \bibinfo{pages}{534} (\bibinfo{year}{2018}).
+
+\bibitem{smith2020metabolomics}
+\bibinfo{author}{Smith, A.~M.} \emph{et~al.}
+\newblock \bibinfo{title}{A metabolomics approach to screening for autism risk
+  in the children's autism metabolome project}.
+\newblock \emph{\bibinfo{journal}{Autism Research}}
+  \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{1270--1285}
+  (\bibinfo{year}{2020}).
+
 \bibitem{volkmar2014practice}
 \bibinfo{author}{Volkmar, F.} \emph{et~al.}
 \newblock \bibinfo{title}{Practice parameter for the assessment and treatment
@@ -123,29 +157,13 @@
 \newblock \emph{\bibinfo{journal}{PLoS ONE}} \textbf{\bibinfo{volume}{7}},
   \bibinfo{pages}{e33224} (\bibinfo{year}{2012}).
 
-\bibitem{doshi2014comorbidity}
-\bibinfo{author}{Doshi-Velez, F.}, \bibinfo{author}{Ge, Y.} \&
-  \bibinfo{author}{Kohane, I.}
-\newblock \bibinfo{title}{Comorbidity clusters in autism spectrum disorders: an
-  electronic health record time-series analysis}.
-\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{133}},
-  \bibinfo{pages}{e54--e63} (\bibinfo{year}{2014}).
-
-\bibitem{lingren2016electronic}
-\bibinfo{author}{Lingren, T.} \emph{et~al.}
-\newblock \bibinfo{title}{Electronic health record based algorithm to identify
-  patients with autism spectrum disorder}.
-\newblock \emph{\bibinfo{journal}{PloS one}} \textbf{\bibinfo{volume}{11}},
-  \bibinfo{pages}{e0159621} (\bibinfo{year}{2016}).
-
-\bibitem{pmid27185194}
-\bibinfo{author}{Miotto, R.}, \bibinfo{author}{Li, L.}, \bibinfo{author}{Kidd,
-  B.~A.} \& \bibinfo{author}{Dudley, J.~T.}
-\newblock \bibinfo{title}{{{D}eep {P}atient: {A}n {U}nsupervised
-  {R}epresentation to {P}redict the {F}uture of {P}atients from the
-  {E}lectronic {H}ealth {R}ecords}}.
-\newblock \emph{\bibinfo{journal}{Sci Rep}} \textbf{\bibinfo{volume}{6}},
-  \bibinfo{pages}{26094} (\bibinfo{year}{2016}).
+\bibitem{hyde2019applications}
+\bibinfo{author}{Hyde, K.~K.} \emph{et~al.}
+\newblock \bibinfo{title}{Applications of supervised machine learning in autism
+  spectrum disorder research: a review}.
+\newblock \emph{\bibinfo{journal}{Review Journal of Autism and Developmental
+  Disorders}} \textbf{\bibinfo{volume}{6}}, \bibinfo{pages}{128--146}
+  (\bibinfo{year}{2019}).
 
 \bibitem{abbas2020multi}
 \bibinfo{author}{Abbas, H.}, \bibinfo{author}{Garberson, F.},
@@ -155,14 +173,6 @@
   diagnosis in young children}.
 \newblock \emph{\bibinfo{journal}{Scientific reports}}
   \textbf{\bibinfo{volume}{10}}, \bibinfo{pages}{1--8} (\bibinfo{year}{2020}).
-
-\bibitem{tariq2018mobile}
-\bibinfo{author}{Tariq, Q.} \emph{et~al.}
-\newblock \bibinfo{title}{Mobile detection of autism through machine learning
-  on home video: A development and prospective validation study}.
-\newblock \emph{\bibinfo{journal}{PLoS medicine}}
-  \textbf{\bibinfo{volume}{15}}, \bibinfo{pages}{e1002705}
-  (\bibinfo{year}{2018}).
 
 \bibitem{duda2016clinical}
 \bibinfo{author}{Duda, M.}, \bibinfo{author}{Daniels, J.} \&
@@ -208,6 +218,29 @@
   \textbf{\bibinfo{volume}{2}}, \bibinfo{pages}{e100--e100}
   (\bibinfo{year}{2012}).
 
+\bibitem{doshi2014comorbidity}
+\bibinfo{author}{Doshi-Velez, F.}, \bibinfo{author}{Ge, Y.} \&
+  \bibinfo{author}{Kohane, I.}
+\newblock \bibinfo{title}{Comorbidity clusters in autism spectrum disorders: an
+  electronic health record time-series analysis}.
+\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{133}},
+  \bibinfo{pages}{e54--e63} (\bibinfo{year}{2014}).
+
+\bibitem{bishop2018using}
+\bibinfo{author}{Bishop-Fitzpatrick, L.} \emph{et~al.}
+\newblock \bibinfo{title}{Using machine learning to identify patterns of
+  lifetime health problems in decedents with autism spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{Autism Research}}
+  \textbf{\bibinfo{volume}{11}}, \bibinfo{pages}{1120--1128}
+  (\bibinfo{year}{2018}).
+
+\bibitem{lingren2016electronic}
+\bibinfo{author}{Lingren, T.} \emph{et~al.}
+\newblock \bibinfo{title}{Electronic health record based algorithm to identify
+  patients with autism spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{PloS one}} \textbf{\bibinfo{volume}{11}},
+  \bibinfo{pages}{e0159621} (\bibinfo{year}{2016}).
+
 \bibitem{hansen2017truven}
 \bibinfo{author}{Hansen, L.}
 \newblock \bibinfo{title}{The truven health marketscan databases for life
@@ -222,6 +255,28 @@
   {D}isabilities {M}onitoring {N}etwork, 11 {S}ites, {U}nited {S}tates, 2014}}.
 \newblock \emph{\bibinfo{journal}{MMWR Surveill Summ}}
   \textbf{\bibinfo{volume}{67}}, \bibinfo{pages}{1--23} (\bibinfo{year}{2018}).
+
+\bibitem{Cover}
+\bibinfo{author}{Cover, T.~M.} \& \bibinfo{author}{Thomas, J.~A.}
+\newblock \emph{\bibinfo{title}{Elements of Information Theory (Wiley Series in
+  Telecommunications and Signal Processing)}}
+  (\bibinfo{publisher}{Wiley-Interscience}, \bibinfo{address}{New York, NY,
+  USA}, \bibinfo{year}{2006}).
+
+\bibitem{kullback1951}
+\bibinfo{author}{Kullback, S.} \& \bibinfo{author}{Leibler, R.~A.}
+\newblock \bibinfo{title}{On information and sufficiency}.
+\newblock \emph{\bibinfo{journal}{Ann. Math. Statist.}}
+  \textbf{\bibinfo{volume}{22}}, \bibinfo{pages}{79--86}
+  (\bibinfo{year}{1951}).
+\newblock \urlprefix\url{https://doi.org/10.1214/aoms/1177729694}.
+
+\bibitem{doob1953stochastic}
+\bibinfo{author}{Doob, J.}
+\newblock \emph{\bibinfo{title}{Stochastic Processes}}.
+\newblock Wiley Publications in Statistics (\bibinfo{publisher}{John Wiley \&
+  Sons}, \bibinfo{year}{1953}).
+\newblock \urlprefix\url{https://books.google.com/books?id=KvJQAAAAMAAJ}.
 
 \bibitem{althouse2006pediatric}
 \bibinfo{author}{Althouse, L.~A.} \& \bibinfo{author}{Stockman, J.~A.}

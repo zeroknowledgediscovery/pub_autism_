@@ -12,6 +12,16 @@
 \newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{144}}
   (\bibinfo{year}{2019}).
 
+\bibitem{jarquin2011racial}
+\bibinfo{author}{Jarquin, V.~G.}, \bibinfo{author}{Wiggins, L.~D.},
+  \bibinfo{author}{Schieve, L.~A.} \& \bibinfo{author}{Van Naarden-Braun, K.}
+\newblock \bibinfo{title}{Racial disparities in community identification of
+  autism spectrum disorders over time; metropolitan atlanta, georgia,
+  2000--2006}.
+\newblock \emph{\bibinfo{journal}{Journal of Developmental \& Behavioral
+  Pediatrics}} \textbf{\bibinfo{volume}{32}}, \bibinfo{pages}{179--187}
+  (\bibinfo{year}{2011}).
+
 \bibitem{ltgranger80}
 \bibinfo{author}{Granger, C. W.~J.} \& \bibinfo{author}{Joyeux, R.}
 \newblock \bibinfo{title}{An introduction to long-memory time series models and
