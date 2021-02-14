@@ -27,7 +27,7 @@
 \newblock \bibinfo{title}{An introduction to long-memory time series models and
   fractional differencing}.
 \newblock \emph{\bibinfo{journal}{Journal of Time Series Analysis}}
-  \textbf{\bibinfo{volume}{1}}, \bibinfo{pages}{15--29}.
+  \textbf{\bibinfo{volume}{1}}, \bibinfo{pages}{15--29} (\bibinfo{year}{1980}).
 
 \bibitem{CL12g}
 \bibinfo{author}{Chattopadhyay, I.} \& \bibinfo{author}{Lipson, H.}
@@ -55,14 +55,12 @@
 \newblock \emph{\bibinfo{journal}{Ann. Math. Statist.}}
   \textbf{\bibinfo{volume}{22}}, \bibinfo{pages}{79--86}
   (\bibinfo{year}{1951}).
-\newblock \urlprefix\url{https://doi.org/10.1214/aoms/1177729694}.
 
 \bibitem{doob1953stochastic}
 \bibinfo{author}{Doob, J.}
 \newblock \emph{\bibinfo{title}{Stochastic Processes}}.
 \newblock Wiley Publications in Statistics (\bibinfo{publisher}{John Wiley \&
   Sons}, \bibinfo{year}{1953}).
-\newblock \urlprefix\url{https://books.google.com/books?id=KvJQAAAAMAAJ}.
 
 \bibitem{gbm02}
 \bibinfo{author}{Friedman, J.~H.}
@@ -256,7 +254,6 @@
 \newblock \emph{\bibinfo{title}{Stochastic processes}}.
 \newblock Wiley publications in statistics (\bibinfo{publisher}{Wiley},
   \bibinfo{year}{1990}).
-\newblock \urlprefix\url{https://books.google.com/books?id=7Bu8jgEACAAJ}.
 
 \bibitem{chattopadhyay2008structural}
 \bibinfo{author}{Chattopadhyay, I.} \& \bibinfo{author}{Ray, A.}
