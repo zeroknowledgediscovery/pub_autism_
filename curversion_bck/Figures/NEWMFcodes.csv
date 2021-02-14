@@ -1,31 +1,3 @@
-code pnM icdclassM codedescM pnF icdclassF codedescF description
-599.0 -2.206932679662393 9.0 {Diseases Of The Genitourinary System} -2.5042403870187875 9.0 {Diseases Of The Genitourinary System} {Urin tract infection NOS}
-774.6 -2.129866882234004 14.0 {Certain Conditions Originating In The Perinatal Period} -3.522211844864664 14.0 {Certain Conditions Originating In The Perinatal Period} {Fetal/neonatal jaund NOS}
-784.3 2.1238368080330767 15.0 {Symptoms Signs And Ill-Defined Conditions} 5.063339486724688 15.0 {Symptoms Signs And Ill-Defined Conditions} {Aphasia}
-345.80 2.199919114490516 5.0 {Diseases Of The Nervous System And Sense Organs} 6.156836674726027 5.0 {Diseases Of The Nervous System And Sense Organs} {Epilep NEC w/o intr epil}
-345.40 2.353234023270378 5.0 {Diseases Of The Nervous System And Sense Organs} 2.7438048354168694 5.0 {Diseases Of The Nervous System And Sense Organs} {Psymotr epil w/o int epi}
-277.9 2.362153912717733 2.0 {Endocrine Nutritional And Metabolic Diseases And Immunity Disorders} 2.2701314772821717 2.0 {Endocrine Nutritional And Metabolic Diseases And Immunity Disorders} {Metabolism dis. NOS}
-333.1 2.3701402643503835 5.0 {Diseases Of The Nervous System And Sense Organs} 3.1434048240726358 5.0 {Diseases Of The Nervous System And Sense Organs} {Tremor NEC}
-728.9 2.4503047425677758 12.0 {Diseases Of The Musculoskeletal System And Connective Tissue} 2.770238092485025 12.0 {Diseases Of The Musculoskeletal System And Connective Tissue} {Muscle/ligament dis NOS}
-783.40 2.6184587914838215 15.0 {Symptoms Signs And Ill-Defined Conditions} 3.6148905908515188 15.0 {Symptoms Signs And Ill-Defined Conditions} {Lack norm physio dev NOS}
-296.90 2.6273631293174557 4.0 {Mental Disorders} 6.898774019455405 4.0 {Mental Disorders} {Episodic mood disord NOS}
-315.8 2.6731441269431886 4.0 {Mental Disorders} 2.2864863656984498 4.0 {Mental Disorders} {Development delays NEC}
-309.21 2.850506680631665 4.0 {Mental Disorders} 5.013329066150027 4.0 {Mental Disorders} {Separation anxiety}
-315.39 2.9069322252559613 4.0 {Mental Disorders} 3.6338931948970004 4.0 {Mental Disorders} {Speech/language dis NEC}
-348.30 2.908304685155394 5.0 {Diseases Of The Nervous System And Sense Organs} 2.7797368446429327 5.0 {Diseases Of The Nervous System And Sense Organs} {Encephalopathy NOS}
-742.1 3.0184394999735202 13.0 {Congenital Anomalies} 2.135532278896819 13.0 {Congenital Anomalies} {Microcephalus}
-742.2 3.247082841322584 13.0 {Congenital Anomalies} 3.8226144967887996 13.0 {Congenital Anomalies} {Reduction deform, brain}
-781.3 3.278255815863089 15.0 {Symptoms Signs And Ill-Defined Conditions} 3.741251609516198 15.0 {Symptoms Signs And Ill-Defined Conditions} {Lack of coordination}
-784.5 3.310300518299101 15.0 {Symptoms Signs And Ill-Defined Conditions} 3.3176052583442486 15.0 {Symptoms Signs And Ill-Defined Conditions} {Dysarthria}
-349.9 3.3630699242961968 5.0 {Diseases Of The Nervous System And Sense Organs} 3.201182624739447 5.0 {Diseases Of The Nervous System And Sense Organs} {Cns dis. NOS}
-315.31 3.4463007797574856 4.0 {Mental Disorders} 3.3584542861018707 4.0 {Mental Disorders} {Expressive language dis}
-315.9 3.460771728461605 4.0 {Mental Disorders} 3.693301573377483 4.0 {Mental Disorders} {Development delay NOS}
-315.5 3.501981164791043 4.0 {Mental Disorders} 4.47456711449781 4.0 {Mental Disorders} {Mixed dev. dis}
-529.5 3.7259754179855653 8.0 {Diseases Of The Digestive System} 5.577018179473086 8.0 {Diseases Of The Digestive System} {Plicated tongue}
-309.0 3.812986794975195 4.0 {Mental Disorders} 6.2104461253314085 4.0 {Mental Disorders} {Adjustmnt dis w depressn}
-458.0 3.949118969299775 6.0 {Diseases Of The Circulatory System} 5.240545942851872 6.0 {Diseases Of The Circulatory System} {Orthostatic hypotension}
-379.54 3.949118969299775 5.0 {Diseases Of The Nervous System And Sense Organs} 6.49330891134724 5.0 {Diseases Of The Nervous System And Sense Organs} {Nystagms w vestibulr dis}
-345.60 4.0735178783610255 5.0 {Diseases Of The Nervous System And Sense Organs} 3.1186510849196973 5.0 {Diseases Of The Nervous System And Sense Organs} {Inf spasm w/o intr epil}
-315.32 4.101209067314066 4.0 {Mental Disorders} 4.066558181716315 4.0 {Mental Disorders} {Recp-expres language dis}
-345.81 4.562223442186184 5.0 {Diseases Of The Nervous System And Sense Organs} 6.136633967408508 5.0 {Diseases Of The Nervous System And Sense Organs} {Epilepsy NEC w intr epil}
-985.9 5.430723510223991 16.0 {Injury And Poisoning} 6.0878438032390765 16.0 {Injury And Poisoning} {Toxic effect metal NOS}
+version https://git-lfs.github.com/spec/v1
+oid sha256:cc1a7ad885672b4823bbadefdf0d154b8b5056033cbba4823b0df5c51ff0a72e
+size 4546
