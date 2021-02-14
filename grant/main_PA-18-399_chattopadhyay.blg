@@ -1,0 +1,81 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main_PA-18-399_chattopadhyay.aux
+The style file: naturemag.bst
+Database file #1: aut.bib
+I was expecting an "="---line 842 of file aut.bib
+ : @misc{GEMS, title={General Equivalence Mappings}, url={https://www.cms.gov/Medicare/Coding/ICD10/downloads/ICD-10_GEM_fact_sheet.pdf}, publisher={Centers for Medicare \& Medicaid Services}, year 
+ :                                                                                                                                                                                                    accessed={2019}, month={Apr}}
+I'm skipping whatever remains of this entry
+Repeated entry---line 1212 of file aut.bib
+ : @article{pmid29691724
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1225 of file aut.bib
+ : @article{pmid29307081
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1237 of file aut.bib
+ : @article{pmid30941018
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1315 of file aut.bib
+ : @article{pmid25681541
+ :                      ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 1357 of file aut.bib
+ : abstract = {Abstract. The idea of fractional differencing is introduced in terms of the infinite filter that corresponds to the expansion of (1-B)d. When the filter is applied to white noise, a class of time series is generated with distinctive properties, particularly in the very low frequencies and provides potentially useful long-memory forecasting properties. Such models are shown to possibly arise from aggregation of independent components. Generation and estimation of these models are considered and applications on generated and real data presented.},
+ :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1565 of file aut.bib
+ : @article{volkmar2014practice
+ :                             ,
+I'm skipping whatever remains of this entry
+Database file #2: BibLib1.bib
+Repeated entry---line 2359 of file BibLib1.bib
+ : @article{CL12g
+ :               ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in hedegaard2019international
+You've used 47 entries,
+            2348 wiz_defined-function locations,
+            1266 strings with 26211 characters,
+and the built_in function-call counts, 18506 in all, are:
+= -- 1309
+> -- 485
+< -- 0
++ -- 243
+- -- 121
+* -- 2335
+:= -- 2080
+add.period$ -- 143
+call.type$ -- 47
+change.case$ -- 47
+chr.to.int$ -- 0
+cite$ -- 48
+duplicate$ -- 1677
+empty$ -- 1685
+format.name$ -- 165
+if$ -- 3648
+int.to.chr$ -- 0
+int.to.str$ -- 47
+missing$ -- 389
+newline$ -- 245
+num.names$ -- 46
+pop$ -- 264
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 266
+stack$ -- 0
+substring$ -- 858
+swap$ -- 1672
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 112
+width$ -- 49
+write$ -- 523
+(There were 8 error messages)

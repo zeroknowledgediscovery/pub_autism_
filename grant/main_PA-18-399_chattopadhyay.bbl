@@ -163,33 +163,6 @@
   \textbf{\bibinfo{volume}{148}}, \bibinfo{pages}{575--576}
   (\bibinfo{year}{2006}).
 
-\bibitem{pmid21410398}
-\bibinfo{author}{Kozlowski, A.~M.}, \bibinfo{author}{Matson, J.~L.},
-  \bibinfo{author}{Horovitz, M.}, \bibinfo{author}{Worley, J.~A.} \&
-  \bibinfo{author}{Neal, D.}
-\newblock \bibinfo{title}{{{P}arents' first concerns of their child's
-  development in toddlers with autism spectrum disorders}}.
-\newblock \emph{\bibinfo{journal}{Dev Neurorehabil}}
-  \textbf{\bibinfo{volume}{14}}, \bibinfo{pages}{72--78}
-  (\bibinfo{year}{2011}).
-
-\bibitem{herlihy2015parents}
-\bibinfo{author}{Herlihy, L.}, \bibinfo{author}{Knoch, K.},
-  \bibinfo{author}{Vibert, B.} \& \bibinfo{author}{Fein, D.}
-\newblock \bibinfo{title}{Parents’ first concerns about toddlers with autism
-  spectrum disorder: Effect of sibling status}.
-\newblock \emph{\bibinfo{journal}{Autism}} \textbf{\bibinfo{volume}{19}},
-  \bibinfo{pages}{20--28} (\bibinfo{year}{2015}).
-
-\bibitem{chawarska2013decreased}
-\bibinfo{author}{Chawarska, K.}, \bibinfo{author}{Macari, S.} \&
-  \bibinfo{author}{Shic, F.}
-\newblock \bibinfo{title}{Decreased spontaneous attention to social scenes in
-  6-month-old infants later diagnosed with autism spectrum disorders}.
-\newblock \emph{\bibinfo{journal}{Biological psychiatry}}
-  \textbf{\bibinfo{volume}{74}}, \bibinfo{pages}{195--203}
-  (\bibinfo{year}{2013}).
-
 \bibitem{pmid31562252}
 \bibinfo{author}{Guthrie, W.} \emph{et~al.}
 \newblock \bibinfo{title}{{{A}ccuracy of {A}utism {S}creening in a {L}arge
@@ -307,12 +280,81 @@
   \textbf{\bibinfo{volume}{46}}, \bibinfo{pages}{232--236}
   (\bibinfo{year}{2015}).
 
+\bibitem{hyde2019applications}
+\bibinfo{author}{Hyde, K.~K.} \emph{et~al.}
+\newblock \bibinfo{title}{Applications of supervised machine learning in autism
+  spectrum disorder research: a review}.
+\newblock \emph{\bibinfo{journal}{Review Journal of Autism and Developmental
+  Disorders}} \textbf{\bibinfo{volume}{6}}, \bibinfo{pages}{128--146}
+  (\bibinfo{year}{2019}).
+
+\bibitem{abbas2020multi}
+\bibinfo{author}{Abbas, H.}, \bibinfo{author}{Garberson, F.},
+  \bibinfo{author}{Liu-Mayo, S.}, \bibinfo{author}{Glover, E.} \&
+  \bibinfo{author}{Wall, D.~P.}
+\newblock \bibinfo{title}{Multi-modular ai approach to streamline autism
+  diagnosis in young children}.
+\newblock \emph{\bibinfo{journal}{Scientific reports}}
+  \textbf{\bibinfo{volume}{10}}, \bibinfo{pages}{1--8} (\bibinfo{year}{2020}).
+
+\bibitem{duda2016clinical}
+\bibinfo{author}{Duda, M.}, \bibinfo{author}{Daniels, J.} \&
+  \bibinfo{author}{Wall, D.~P.}
+\newblock \bibinfo{title}{Clinical evaluation of a novel and mobile autism risk
+  assessment}.
+\newblock \emph{\bibinfo{journal}{Journal of autism and developmental
+  disorders}} \textbf{\bibinfo{volume}{46}}, \bibinfo{pages}{1953--1961}
+  (\bibinfo{year}{2016}).
+
+\bibitem{duda2014testing}
+\bibinfo{author}{Duda, M.}, \bibinfo{author}{Kosmicki, J.} \&
+  \bibinfo{author}{Wall, D.}
+\newblock \bibinfo{title}{Testing the accuracy of an observation-based
+  classifier for rapid detection of autism risk}.
+\newblock \emph{\bibinfo{journal}{Translational psychiatry}}
+  \textbf{\bibinfo{volume}{4}}, \bibinfo{pages}{e424--e424}
+  (\bibinfo{year}{2014}).
+
+\bibitem{fusaro2014potential}
+\bibinfo{author}{Fusaro, V.~A.} \emph{et~al.}
+\newblock \bibinfo{title}{The potential of accelerating early detection of
+  autism through content analysis of youtube videos}.
+\newblock \emph{\bibinfo{journal}{PLOS one}} \textbf{\bibinfo{volume}{9}},
+  \bibinfo{pages}{e93533} (\bibinfo{year}{2014}).
+
+\bibitem{wall2012use}
+\bibinfo{author}{Wall, D.~P.}, \bibinfo{author}{Dally, R.},
+  \bibinfo{author}{Luyster, R.}, \bibinfo{author}{Jung, J.-Y.} \&
+  \bibinfo{author}{DeLuca, T.~F.}
+\newblock \bibinfo{title}{Use of artificial intelligence to shorten the
+  behavioral diagnosis of autism}.
+\newblock \emph{\bibinfo{journal}{PloS one}} \textbf{\bibinfo{volume}{7}},
+  \bibinfo{pages}{e43855} (\bibinfo{year}{2012}).
+
+\bibitem{wall2012use2}
+\bibinfo{author}{Wall, D.~P.}, \bibinfo{author}{Kosmicki, J.},
+  \bibinfo{author}{Deluca, T.}, \bibinfo{author}{Harstad, E.} \&
+  \bibinfo{author}{Fusaro, V.~A.}
+\newblock \bibinfo{title}{Use of machine learning to shorten observation-based
+  screening and diagnosis of autism}.
+\newblock \emph{\bibinfo{journal}{Translational psychiatry}}
+  \textbf{\bibinfo{volume}{2}}, \bibinfo{pages}{e100--e100}
+  (\bibinfo{year}{2012}).
+
 \bibitem{hansen2017truven}
 \bibinfo{author}{Hansen, L.}
 \newblock \bibinfo{title}{The truven health marketscan databases for life
   sciences researchers}.
 \newblock \emph{\bibinfo{journal}{Truven Health Ananlytics IBM Watson Health}}
   (\bibinfo{year}{2017}).
+
+\bibitem{hedegaard2019international}
+\bibinfo{author}{Hedegaard, H.}, \bibinfo{author}{Johnson, R.~L.},
+  \bibinfo{author}{Garnett, M.} \& \bibinfo{author}{Thomas, K.~E.}
+\newblock \bibinfo{title}{The international classification of diseases, 10th
+  revision, clinical modification (icd--10--cm): external cause-of-injury
+  framework for categorizing mechanism and intent of injury}
+  (\bibinfo{year}{2019}).
 
 \bibitem{CL12g}
 \bibinfo{author}{Chattopadhyay, I.} \& \bibinfo{author}{Lipson, H.}
@@ -321,8 +363,6 @@
 \newblock \emph{\bibinfo{journal}{Philos Trans A}}
   \textbf{\bibinfo{volume}{371}}, \bibinfo{pages}{20110543}
   (\bibinfo{year}{2013}).
-\newblock
-  \urlprefix\url{http://rsta.royalsocietypublishing.org/content/371/1984/20110543.full.pdf}.
 
 \bibitem{Chattopadhyay20140826}
 \bibinfo{author}{Chattopadhyay, I.} \& \bibinfo{author}{Lipson, H.}
@@ -331,5 +371,20 @@
   \textbf{\bibinfo{volume}{11}} (\bibinfo{year}{2014}).
 \newblock
   \urlprefix\url{http://rsif.royalsocietypublishing.org/content/11/101/20140826}.
+
+\bibitem{huang2019data}
+\bibinfo{author}{Huang, Y.} \& \bibinfo{author}{Chattopadhyay, I.}
+\newblock \bibinfo{title}{Data smashing 2.0: Sequence likelihood (sl)
+  divergence for fast time series comparison}.
+\newblock \emph{\bibinfo{journal}{arXiv preprint arXiv:1909.12243}}
+  (\bibinfo{year}{2019}).
+
+\bibitem{ke2017lightgbm}
+\bibinfo{author}{Ke, G.} \emph{et~al.}
+\newblock \bibinfo{title}{Lightgbm: A highly efficient gradient boosting
+  decision tree}.
+\newblock \emph{\bibinfo{journal}{Advances in neural information processing
+  systems}} \textbf{\bibinfo{volume}{30}}, \bibinfo{pages}{3146--3154}
+  (\bibinfo{year}{2017}).
 
 \end{thebibliography}
