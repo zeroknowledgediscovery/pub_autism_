@@ -135,7 +135,58 @@
 \vspace{20pt}
 
 
-\section*{Abbreviations}
+
+
+\section*{Project Summary}
+% 30 line limit
+Autism spectrum disorder (ASD) is a developmental disability associated with significant social and behavioral challenges, and there is a distinct need for tools that help identify children with ASD as early as possible. To that effect, we introduce and propose to validate  the ASD Co-morbid Risk (\acor) score in a limited clinical study. The \acor is  computed via sophisticated pattern discovery on longitudinal history of diagnostic codes for individual patients, and potentially signals a future ASD diagnosis within 16-26 months of age. Computation of \acor requires no new blood-work,  or questionnaires, and   uses  data  already available on patient file, with no demand for any particular test or demographic information. Thus, \acor is positioned to be a universal screening tool, that can estimate the risk of autism for all children in a pediatric facility near-instantaneously, potentially outperforming existing tools.  Despite  being  highly heritable,  our  current  incomplete understanding of ASD pathogenesis and the lack of reliable biomarkers hampers early detection, intervention and patient outcomes. The currently available questionnaire based screening tools suffer from vast number of false positives which create long wait-times for diagnostic evaluations. Additionally, standardized checklists are vulnerable  to  socio-economic  and  interpretational  biases  that  disproportionately  impact  diagnosis  in  diverse communities.  Borderline  cases  with  children  with  average  to  above  average  cognitive  abilities  might  be  left undiagnosed till start of school, which negatively impact effectiveness of interventions. The \acor score is designed to   address  the  aforementioned complicated  challenges  of  ASD  screening  by  distilling  incipient    patterns predicting  elevated  risk  from  past medical  history  of  individual  patients. Thus to compute \acor, we operationalize a documented aspect of ASD symptomology in that  it  has  a  wide  range  of  co-morbidities  occurring  at  much  higher  rates  than  in  the  general  population. In  the  setting  of  a  pediatric  primary  care  clinic  at  the  Department  of Pediatrics, University of Chicago, we plan to carry out a comparative study of ACoR with  M-CHAT/F, which is the  most common  screening  tool  in  current  use.  Via  a  direct  comparison,  we  specifically  aim  to  1)  estimate prospectively  to  what  extent  we  can  reduce  false  positives,  2)  the  possibility  of  combining  the  scores  for significant improvements in either Positive Predictive Value or the sensitivity while not losing specificity, 3) the superior  performance  in  ethnically  and  demographically  diverse  cohorts,  and  4)  shed  light  on  the  ASD pathobiology by classifying patterns of co-morbidities that map to  distinct presentations. We have extensively validated our results in retrospective studies on two independent databases of patient records with over four million children. These results  indicate superior performance to existing tools, achieving out-of-sample AUC exceeding  $80\%$ for  either sex from just over 2 years of age. Unlike standard machine learning applications, \acor represents a novel screening modality for ASD, functionaly independent of questionnaires, and potentially can address documented language, cultural and social barriers of the existing tools.
+\clearpage
+
+\section*{Project Narrative}
+% 2-3 sentence
+
+In contrast to the current questionnaire based screening tools for autism spectrum disorders (ASD) that suffer from vast amounts of false positives, and a host of demographic, socio-economic and interpretative biases, we aim to validate the ASD Co-morbid Risk (\acor) score,  that estimates ASD risk via sophisticated pattern discovery on the longitudinal medical history of individual patients. Computation of \acor requires no new blood-work, laboratory tests, questionnaires or psychiatric/cognitive  consults, and may be carried out purely from the history of past medical encounters at no additional administrative burden or resource utilization. \acor outperforms   the current tool  M-CHAT/F  in  preliminary  studies, and  on  account  of functional independence, the two scores may be combined to further boost performance to either boost positive predictive value up to 100\% or sensitivity up to 50\% with no loss in current specificity.
+
+\clearpage
+% ·         3.1, protection of human subjects: You already sent me your draft of this.
+
+% ·         3.2, is this a multi-site study: just needs a yes/no response.
+
+% ·         3.3, data safety monitoring plan: not required because you are not proposing a clinical trial.
+
+% ·         3.4, data safety monitoring board: not required because you are not proposing a clinical trial.
+
+% ·         3.5, team structure: not required because you are not proposing a clinical trial.
+
+
+\section*{Facilities and Other Resources} 
+% add RCC + Memory Center resources
+
+\input{Collab_eq.tex}
+
+\vskip 1em
+
+\hrule
+
+\input{compute.tex}
+
+
+\clearpage
+
+%Authentication of Key Biological and Chemical Resources
+%If the Research Strategy does not propose use of key biological and/or %chemical resources, the Authentication attachment may include a brief %statement indicating that no key biological and/or chemical resources %will be used in the activities proposed in the application
+
+%Resource Sharing Plan
+
+%PHS Human Subjects and Clinical Trials Information
+
+%enrollment report
+
+%letters of support
+
+%study section assignment?
+
+
 
 \section{Cover Page}
 \clearpage
@@ -147,7 +198,7 @@ Despite  a growing list of suspected risk factors~\cite{kalb2012determinants,bis
 Further, current  screening tools are sensitive to language barriers and cultural issues, and are  particularly ineffective for children with milder symptoms  with average or above-average cognitive abilities until about school age~\cite{jashar2016cognitive,hyman2020identification}, often due to a ``wait and see'' approach adopted at the primary care. The need for better screening tools is thus paramount.
 
 
-In this study, we plan to develop and validate the efficacy of machine inferred \textbf{digital biomarkers} for autism, mined automatically from past medical encounters. Using individual diagnostic codes already present in individual patient files, we plan to \emph{engineer a reliable risk estimator} ({\bf ASD Co-morbid Risk: \ZERO}) enabled by novel  machine learning algorithms, \emph{and compare its effectiveness against existing  tools such as the M-CHAT/F in a clinical study, with children between 16-26 months of age}. Our rationale is informed by the extensively documented comorbidities of ASD ranging from dysregulation of immune pathways such as eczema, allergies, asthma, as well as ear and respiratory infections, gastrointestinal problems, developmental issues, severe headaches, migraines, and seizures~\cite{pmid30733689,pmid22511918}. While ASD presentation is highly variable, sophisticated pattern recognition on the longitudinal history of  diagnostic codes is expected to reveal uncharted associations that allow precise screening for at-risk patients.
+In this study, we plan to develop and validate the efficacy of machine inferred \textbf{digital biomarkers} for autism, mined automatically from past medical encounters. Using individual diagnostic codes already present in individual patient files, we plan to \emph{engineer a reliable risk estimator} ({\bf ASD Co-morbid Risk: \ZERO}) enabled by novel  machine learning algorithms, \emph{and compare its effectiveness against existing  tools such as the M-CHAT/F in a limited clinical study, with children between 16-26 months of age}. Our rationale is informed by the extensively documented comorbidities of ASD ranging from dysregulation of immune pathways such as eczema, allergies, asthma, as well as ear and respiratory infections, gastrointestinal problems, developmental issues, severe headaches, migraines, and seizures~\cite{pmid30733689,pmid22511918}. While ASD presentation is highly variable, sophisticated pattern recognition on the longitudinal history of  diagnostic codes is expected to reveal uncharted associations that allow precise screening for at-risk patients.
 Orthogonal to  questionnaire based  detection of behavioral signals, the proposed tool potentially reduces socio-economic, ethnic and demographic biases to elicit more  objective and stable results |  with zero  administrative burden on clinicians and parents. With a team comprising machine learning experts, pediatric clinicians and developmental experts with extensive history of research and service in the field,
 the \ZERO score can significantly improve outcomes by either boosting sensitivity of current screening or slashing false positives by half.
 %
@@ -186,7 +237,7 @@ Thus, we are proposing  to exploit observed co-morbidities in children who ultim
 \end{tabular}
 \end{wrapfigure}
 \subsection{Significance}
-Autism spectrum disorder is a developmental disability associated with significant social, communication, and behavioral challenges.  The prevalence of ASD  has risen dramatically in the United States from 1 in 10,000 in
+Autism spectrum disorder is a developmental disability associated with significant social and behavioral challenges.  The prevalence of ASD  has risen dramatically in the United States from 1 in 10,000 in
  1972 to 1 in 59 children in 2014, with males  diagnosed at nearly four times the rate of females~\cite{pmid29701730,cdc}.
 There is a current lack of   consensus on whether increased awareness and recent changes in diagnostic practices~\cite{hyman2020identification} can fully explain this  trend~\cite{pmid19737791}. Nevertheless, with   possibly  over 1\% of individuals affected worldwide~\cite{pmid22495912},  ASD is  a human condition with potentially serious negative impacts on individuals, families, and communities. 
 Early detection can and does improve outcomes~\cite{hyman2020identification}, and is of paramount importance when designing interventions, and is aligned with the  envisioned goal of this initiative, as supported by the National Advisory Mental Health Council (NAMHC) (\href{https://www.nimh.nih.gov/funding/grant-writing-and-application-process/concept-clearances/2018/early-screening-for-autism-spectrum.shtml}{https://www.nimh.nih.gov/funding/grant-writing-and-application-process/concept-clearances/2018/early-screening-for-autism-spectrum.shtml}).
