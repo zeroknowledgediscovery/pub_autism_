@@ -2,7 +2,7 @@
 \usepackage{enumitem}
 \input{preamble.tex} 
 \usepackage{textcomp}
-\usepackage{colortbl}
+\usepackage{colortbl} 
 \usepackage{subfigure}
 \usepackage{array}
 \usepackage{courier}
@@ -147,8 +147,8 @@ Despite  a growing list of suspected risk factors~\cite{kalb2012determinants,bis
 Further, current  screening tools are sensitive to language barriers and cultural issues, and are  particularly ineffective for children with milder symptoms  with average or above-average cognitive abilities until about school age~\cite{jashar2016cognitive,hyman2020identification}, often due to a ``wait and see'' approach adopted at the primary care. The need for better screening tools is thus paramount.
 
 
-In this study, we plan to develop and validate the efficacy of machine inferred \textbf{digital biomarkers} for autism, mined automatically from past medical encounters. Using individual diagnostic codes already present in individual patient files, we plan to \emph{engineer a reliable risk estimator} ({\bf ASD Co-morbid Risk: \ZERO}) enabled by novel  machine learning algorithms, \emph{and compare its effectiveness againsts existing  tools such as the M-CHAT/F in a clinical study, with children between 16-24 months of age}. Our rationale is informed by the extensively documented comorbidities of ASD ranging from dysregulation of immune pathways such as eczema, allergies, asthma, as well as ear and respiratory infections, gastrointestinal problems, developmental issues, severe headaches, migraines, and seizures~\cite{pmid30733689,pmid22511918}. While ASD presentation is highly variable, sophisticated pattern recognition on the longitudinal history of  diagnsotic codes is expected to reveal uncharted associations that allow precise screening for at-risk patients.
-Orthogonal to  questionnaire based  detection of behavioral signals, the proposed tool potentially reduces socio-economic, ethnic and demographic biases to elicit more  objective and stable results |  with zero  administrative burden on clinicians and parents. With a team comprising machine learning experts, pediatric clinicians and developmental experts with extensive history of research and servive in the field,
+In this study, we plan to develop and validate the efficacy of machine inferred \textbf{digital biomarkers} for autism, mined automatically from past medical encounters. Using individual diagnostic codes already present in individual patient files, we plan to \emph{engineer a reliable risk estimator} ({\bf ASD Co-morbid Risk: \ZERO}) enabled by novel  machine learning algorithms, \emph{and compare its effectiveness against existing  tools such as the M-CHAT/F in a clinical study, with children between 16-26 months of age}. Our rationale is informed by the extensively documented comorbidities of ASD ranging from dysregulation of immune pathways such as eczema, allergies, asthma, as well as ear and respiratory infections, gastrointestinal problems, developmental issues, severe headaches, migraines, and seizures~\cite{pmid30733689,pmid22511918}. While ASD presentation is highly variable, sophisticated pattern recognition on the longitudinal history of  diagnostic codes is expected to reveal uncharted associations that allow precise screening for at-risk patients.
+Orthogonal to  questionnaire based  detection of behavioral signals, the proposed tool potentially reduces socio-economic, ethnic and demographic biases to elicit more  objective and stable results |  with zero  administrative burden on clinicians and parents. With a team comprising machine learning experts, pediatric clinicians and developmental experts with extensive history of research and service in the field,
 the \ZERO score can significantly improve outcomes by either boosting sensitivity of current screening or slashing false positives by half.
 %
 Thus, the principal aims  this study are the following:
@@ -156,7 +156,7 @@ Thus, the principal aims  this study are the following:
 \begin{enumerate} 
 [label=$\square$, leftmargin=0pt,
 labelindent=0em, topsep=0.1em, labelsep=*, itemsep=.5em,itemindent=1em]
- \item \textbf{Aim 1: Reduce false positives in current screening protocols.} The current high false positive rate exacerbates post screen wait-time, increasing diagnostic delay. To evaluate the \textit{\guline{hypothesis: \ZERO reduces upto 50\% of false positives}}, we  will track the  cases in which MCHAT-F triggers a flag, but \ZERO does not. Our aim to evaluate the positive predictive value (PPV) of  \ZERO, under high specificty conditions ($>95\%$). Additionally,  evaluate  if \ZERO  replicates high sensitivity observed in preliminary studies without losing specificity.
+ \item \textbf{Aim 1: Reduce false positives in current screening protocols.} The current high false positive rate exacerbates post screen wait-time, increasing diagnostic delay. To evaluate the \textit{\guline{hypothesis: \ZERO reduces up to 50\% of false positives}}, we  will track the  cases in which MCHAT-F triggers a flag, but \ZERO does not. Our aim to evaluate the positive predictive value (PPV) of  \ZERO, under high specificity conditions ($>95\%$). Additionally,  evaluate  if \ZERO  replicates high sensitivity observed in preliminary studies without losing specificity.
 
 \item \textbf{Aim 2. Evaluate the statistical relationship between the \ZERO score and M/CHAT-F, and formalize a joint or conditional operational protocol.} We will characterize statistical association, if any,  between the test scores. \textit{\guline{Hypothesis: The uncertainties or errors in the two tests are are statistically independent.}}  Additionally, we will evaluate our  ability to boost performance by  conditioning the sensitivity-specificity trade-offs on the M-CHAT/F score of individual patients. 
 %
@@ -208,7 +208,7 @@ A  screening capability  independent of existing tools, deployable as an automat
 ASD presentation has significant heterogeneity, with no simple comorbidity  consistently signaling future  diagnosis; our algorithms distill robust actionable signatures under such stochastic scenarios. Thus,  \acor opens the possibility of a new screening modality for  neuropsychiatric diseases beyond ASD.
 
 \textbf{Significance of Specific Aim 1:} 
-Diagnostic delays partially arise from families waiting in queue for diagnostic evaluationsr~\cite{gordon2016whittling}. 
+Diagnostic delays partially arise from families waiting in queue for diagnostic evaluations~\cite{gordon2016whittling}. 
 We expect \ZERO to reduce  false positives significantly, and hence  reduce the number of children  flagged for diagnostic evaluation,  potentially  reducing diagnostic delays. We cannot measure diagnostic delay directly  since evaluations might be fast-tracked, but will use false positive rate as a proxy for wait-time. 
 
 \textbf{Significance of Specific Aim 2:} 
@@ -217,7 +217,7 @@ In our retrospective  preliminary studies,  \ZERO supersedes M-CHAT/F  performan
 \textbf{Significance of Specific Aim 3:} Use of comorbidity patterns to estimate risk might help reduce the subjective component in questionnaire-based screening tools, resulting in reduced effect of potential language and cultural barriers in diverse populations~\cite{hyman2020identification}. With a significant portion of the  cohort expected to be African Americans and Hispanics in our primary care clinic, we  will be able to explicitly investigate these questions.
 
 \textbf{Significance of Specific Aim 4:} 
-Despite   advances in charting  heretibility~\cite{Satterstrom484113,sandin17},
+Despite   advances in charting  heritability~\cite{Satterstrom484113,sandin17},
 efforts to  identify  causal biomarkers  have had limited success~\cite{pmid29691724,pmid29307081}. While   $100-1000$ genes might modulate ASD risk~\cite{pmid26402605,pmid25038753,Satterstrom484113,pmid27891212},   genetics have accounted for a limited number of cases~\cite{pmid18414403}. Suspected sources of environmental  risk  range from maternal infection and inflammation, diet, and  household chemical exposures,  to autoimmune conditions and localized perinatal  inflammation of the central nervous system~\cite{pmid30971960,pmid30941018,pmid29691724,pmid29307081,pmid27351598,pmid26793298,pmid30095240,pmid25681541}. A plurality of   etiologies with converging pathophysiological pathways is also plausible, and we  aim to unravel clues to mechanistic drivers by  categorizing the heterogeneous presentation via signatures buried in longitudinal co-morbidity patterns.
  \subsection{Innovation}
 \paragraph*{Paradigm Shift in ASD Screening} Despite extensive documentation of co-morbidities,   a risk estimator that makes reliable predictions for  individuals | based purely on co-morbidity patterns |  has never been reported to  our knowledge. The sparsity of  diagnostic codes in individuals,  the  absence of physiological disorders  that would consistently signal the eventual emergence of ASD symptoms, combined with the heterogeneity of ASD presentation,  make such an endeavor challenging. This \textit{first-of-its-kind}  study proposes to estimate  risk  of a complex neuropsychiatric disease based on longitudinal patterns learned from   large databases of sparse uncurated  medical history. In our preliminary studies, we achieve an out-of-sample AUC exceeding  $80\%$ for  either sex from just over 2 years of age. 
@@ -267,7 +267,7 @@ $\DXphn\times 2 \times 2  = \the\numexpr  \DXphn  *2 *2  \relax$  PFSA models in
 In addition, we use a range of engineered features that reflect various aspects of the patient-specific diagnostic histories, ultimately computing   $\numfeatures$  features    for each patient. These features are  used to train a standard gradient boosting classifier~\cite{ke2017lightgbm} aiming to  map   individual patients  to a raw risk score. $75\%$ of our patients are randomly selected for training with the rest  held-out as a validation set. We measure our performance using  standard metrics including the Area Under the receiver-operating characteristic curve (AUC), sensitivity, specificity, and  the Positive Predictive Value (PPV).
 
 %\subsection*{Feature Importance \& Comorbidity Spectra}
-Calculation of the \acor score offers  insights into the relative importance of  comorbidity categories, computed  by estimating the  mean change in the raw risk via random perturbation of a particular feature: this is the ``feature importance'' shown in Fig.~\ref{fig1}c for top contrubuting  categories, indicating that immunological, otic, digestive disorders and infections  are   important categories  modulating the \acor score. In our preliminary studies, we  found excellent disambiguation from other intellectual disabilities.
+Calculation of the \acor score offers  insights into the relative importance of  comorbidity categories, computed  by estimating the  mean change in the raw risk via random perturbation of a particular feature: this is the ``feature importance'' shown in Fig.~\ref{fig1}c for top contributing  categories, indicating that immunological, otic, digestive disorders and infections  are   important categories  modulating the \acor score. In our preliminary studies, we  found excellent disambiguation from other intellectual disabilities.
 
 
 Importantly, our features are  based on data already  available in the past  medical records. We do not demand results from specific tests, or look for specific demographic, bio-molecular, physiological and other parameters; \textit{we use what we get} in the diagnostic history of patients.
@@ -311,7 +311,7 @@ Fig.~\ref{fig2}A illustrates the variation of the  AUC  with increasing age of t
 \end{tabular}
 \end{wraptable}  
 %####################################
-We plot the raw risk over time for males and females for the out-of-sample control and \treatment cohorts in Fig.~\ref{fig2}B. Notably, averaged over the population,   the risks differ  from $50$ weeks showing that early diambiguation is possible. Guthrie $\etal$~\cite{pmid31562252}  has  demonstrated that  as a nearly universal screening tool (n=20,375) M-CHAT/F has a sensitivity of 38.8\%, specificity of 94.9\% and PPV of 14.6\%, which suggests  (See Table~\ref{tabssp}) that our approach produces a  superior PPV (exceeding M-CHAT/F PPV by at  $14\%$ (14.1-33.6\%) when sensitivity and specificity are held at comparable values around the age of 26 months ($\approx 112$ weeks). 
+We plot the raw risk over time for males and females for the out-of-sample control and \treatment cohorts in Fig.~\ref{fig2}B. Notably, averaged over the population,   the risks differ  from $50$ weeks showing that early disambiguation is possible. Guthrie $\etal$~\cite{pmid31562252}  has  demonstrated that  as a nearly universal screening tool (n=20,375) M-CHAT/F has a sensitivity of 38.8\%, specificity of 94.9\% and PPV of 14.6\%, which suggests  (See Table~\ref{tabssp}) that our approach produces a  superior PPV (exceeding M-CHAT/F PPV by at  $14\%$ (14.1-33.6\%) when sensitivity and specificity are held at comparable values around the age of 26 months ($\approx 112$ weeks). 
 
 %#################################### 
 \begin{wraptable}[9]{l}{4.2in}
@@ -334,7 +334,53 @@ We plot the raw risk over time for males and females for the out-of-sample contr
 
 \end{wraptable}  
 %####################################
-Ultimately, depending on Aim 2, we would attempt to combine \acor amd M-CHAT/F  via a conditional choice of  sensitivity/specificity trade-offs. In our preliminary studies, this boosts overall performance significantly, with  a PPV $\approx 30\%$  across datasets, or a sensitivity close to or exceeding $50\%$, when we restrict specificities to above $95\%$ (See Table~\ref{tabboost}). 
+Ultimately, depending on Aim 2, we would attempt to combine \acor amd M-CHAT/F  via a conditional choice of  sensitivity/specificity trade-offs. In our preliminary studies, this boosts overall performance significantly, with  a PPV $\approx 30\%$  across datasets, or a sensitivity close to or exceeding $50\%$, when we restrict specificities to above $95\%$ (See Table~\ref{tabboost}).
+
+
+\subsection*{Inferred Co-morbidity Patterns \& Normalized Prevalence Comparison}
+% ###########################################################
+
+\begin{figure*}[t]
+  \tikzexternaldisable
+  \vspace{-10pt}
+
+  \begin{tikzpicture}[font=\bf\sffamily\fontsize{8}{8}\selectfont,scale=.7]
+    \node[label={[yshift=-.5in]90:{\Large A.} Males}] (A) at (0,0) {
+      \includegraphics[height=6in,angle=90]{Figures/bars1}};
+    \node[anchor=west] (B) at (A.east) {\includegraphics[height=2in,angle=0]{Figures/bars2}};
+  \end{tikzpicture}
+  \vspace{-20pt}
+  
+  \captionN{Difference in occurrence frequencies of diagnostic codes between true positive (TP) and true negative (TN) predictions in males. The color coding shows the disease categories of the co-morbidities.}\label{fig3}
+    \vspace{-10pt}
+
+\end{figure*}
+% ###########################################################
+The predictive ability of our pipeline arises from the difference in patterns of co-morbid disorders between the \treatment and the control cohorts: the diagnostic history of individual patients is not random and hides key signatures to future neuropsychiatric outcomes. As an illustrative example, a single random patient from the Truven database is illustrated in Fig.~\ref{fig2}D.
+Color-coding the diagnoses according to the broad ICD9 disease categories reveals that for this specific individual, infections and immunological disorders are experienced early to a much higher degree compared to other diseases, and diseases of the nervous system and sensory organs, as well as ill-defined symptoms dominate the latter period. This suggests the necessity of a deeper interrogation of the structure of co-morbid patterns, which we carried out in our preliminary investigations, as described next.
+%
+While the ASD co-morbidity burden  is reported to be high for nearly the entire spectrum of  physiological disorders, in our preliminary we find novel association patterns in normalized prevalence | the odds of experiencing a specific disorder, particularly in the early years (age~$<3$ years), normalized over all unique disorders experienced in the specified time-frame. Additionally, we only focus on  the true positives in the \treatment cohort and the true negatives in the control cohort. This  allows us to investigate  patterns that correctly disambiguate future ASD status, $i.e.$, strongly favor one outcome over the other at the individual level (as opposed to population-level prevalence rates), as shown in  Fig.~\ref{fig3} for males.
+
+\subsection*{Disambiguation From Unrelated Psychiatric Phenotypes}
+%
+In our retrospective analyses,  we can discriminate between ASD and other unrelated psychiatric phenotypes. Does our pipeline pick up on any psychiatric conditions, or is it specific to ASD? We  evaluated this question, by restricting the  control  cohort in validation to  patients with at least one psychiatric code other than ASD. We get very high discrimination reaching AUCs over $90\%$ at $100-125$ weeks of age, which establishes that our pipeline is indeed largely specific to ASD.
+
+\begin{wrapfigure}[13]{l}{2.2in}  
+  \centering
+  \vspace{-17pt}
+  
+  \includegraphics[width=2.18in]{Figures/demo}
+  \vspace{-15pt}
+
+  
+\caption{Expected demographic makeup  in proposed study}\label{tabdemo1}
+
+\end{wrapfigure}
+\subsection*{Sanity Checks: Uncertainty in EHR Records}
+Recent changes in diagnostic practice, $e.g.$ increased diagnoses from individual clinicians versus prior eras that only allowed diagnosis from the gold-standard multi-disciplinary teams can  increase observed   prevalence, and  raises the possibility that  some diagnostic codes pertaining to ASD in medical history databases could be arising from less restrictive workflows, and  are susceptible to increased uncertainty.  In our study, we verified that restricting the \treatment cohort to children with at least two  distinct ASD diagnostic codes in their medical histories instead of one, has little impact on  out-of-sample predictive performance.
+ 
+We also found that the density of diagnostic codes in a child's medical history by itself is somewhat predictive of a future ASD diagnosis, but not at clinically significant levels.
+
 
 \subsection*{Research Design}
 \ZERO methodology can  screen instantaneously   every child  in primary care, for whom past medical history is available, with zero administrative and resource burden. To achieve the specific  aims, we will gather data from both the child and the primary caregiver in the participating  primary care clinic. The key steps are as  follows (See Fig.~\ref{figflow}):
@@ -342,32 +388,32 @@ Ultimately, depending on Aim 2, we would attempt to combine \acor amd M-CHAT/F  
 \begin{enumerate} 
 [label=$\square$, leftmargin=0pt,
 labelindent=0em, topsep=0.1em, labelsep=*, itemsep=.5em,itemindent=1em]
- \item 1. Pediatric clinic team  will  adminster  M-CHAT/F to incoming children with 16-30 months.
+ \item 1. Pediatric clinic team  will  administer  M-CHAT/F to incoming children with 16-26 months.
 \item 2. The PI's team will
   compute  individual \acor  with consent (steps 1 and 2 in Fig.~\ref{figflow}).
 \item 3. On being flagged by M-CHAT/F  as high risk, or if the \ZERO score indicates high risk and  M-CHAT/F is borderline,  the patients will be scheduled for ADOS-2 evaluation overseen by Dr. Smith and his team (Step 3 in in Fig.~\ref{figflow}).
 \item 4. The evaluation scores will be analyzed by  PI and his  team.
 \end{enumerate}
 
-\begin{wrapfigure}[24]{l}{2.5in}
+\begin{wrapfigure}[25]{l}{2.5in}
   \vspace{-30pt}
   
   \hspace{-10pt}\includegraphics[width=2.75in]{Figures/flow1}
-  \vspace{-25pt}
+  \vspace{-15pt}
   
   \caption{Patient processing logic }\label{figflow}
 \end{wrapfigure}
-The limited scope of this project implies that we need to be aware of the number of ADOS-2 refrerreal generated due to \ZERO, particularly since ADOS-2 evaluations involve significant resource and cost.
+The limited scope of this project implies that we need to be careful about the number of ADOS-2 referral generated due to \ZERO, particularly since ADOS-2 evaluations involve significant resource and cost.
 
 \subsection*{Cohort Selection}
-
+Our expected cohort is diverse (See Fig.~\ref{tabdemo1}).
 Participants (16-26 months) will be approximately 5000 children per year (producing approximately 300 ADOS-2 referrals from M-CHAT/F at no cost to the project) who will be evaluated via both the MCHAT-F screening  during wellness visits at the 1 year, 1.5 year and 2 year mark, and the \ZERO algorithm applied to their diagnostic history on file. Additional inclusion criteria: Child has diagnostic history on record with at least 5 diagnostic codes, and the first code is at least from 15 weeks in the past. Additional exclusion criteria: Diagnostic history only consists of health service contact codes.
 
 Beyond the evaluation of $\approx 300$ children as a part of standard clinical workflow, we will evaluate $100-120$ children at no cost to the patient family, to evaluate the efficacy of \acor when M-CHAT/F is borderline (and does not trigger downstream diagnostic evaluation by itself).
 
 \subsection{Study Interventions}
 No intervention is planned. Outcomes are  efficacy and applicability of \ZERO.
-\subsection*{Risk To Patients} The design of the study guarantees that patients suffer no negative impact from the added \ZERO screen. Indeed, persuant to available resources, patients might  be expedited for ADOS evaluation which  reduces their wait-times. For some borderline cases, which would have been missed by M-CHAT/F, might get flagged by \ZERO, and be scheduled for ADOS, which they would not have had to do with just M-CHAT/F. But this is a positive outcome. There is a small possibility  that \ZERO, due to its own false positives  different from that of M-CHAT/F, might schedule some children for ADOS, who do not have autism, and might cause some stress in parents and families if they are . The potential societal benefit gained in lieu of this discomfort is the validation of the expected  performance boost for ASD screening at the population level PPV by up to 100\%, or the sensitivity by 50\%.
+\subsection*{Risk To Patients} The design of the study guarantees that patients suffer no negative impact from the added \ZERO screen. Indeed, pursuant to available resources, patients might  be expedited for ADOS evaluation which  reduces their wait-times. For some borderline cases, which would have been missed by M-CHAT/F, might get flagged by \ZERO, and be scheduled for ADOS, which they would not have had to do with just M-CHAT/F. But this is a positive outcome. There is a small possibility  that \ZERO, due to its own false positives  different from that of M-CHAT/F, might schedule some children for ADOS, who do not have autism, and might cause some stress in parents and families if they are . The potential societal benefit gained in lieu of this discomfort is the validation of the expected  performance boost for ASD screening at the population level PPV by up to 100\%, or the sensitivity by 50\%.
 
 \subsection*{Procedures} Eligible patients at the Department of Pediatrics, University of Chicago (patients who present for a well-child visit or any other non-emergency reason) will be asked  for consent for access to their past medical history for carrying out the \ZERO screen. 
 If there is a flag either in M-CHAT/F or if M-CHAT/F is borderline with a flag in \ZERO, the  pediatrician will inform parents of a potential elevated risk of ASD, and offer to schedule for an ADOS-2 evaluation. 
@@ -380,6 +426,7 @@ direction of Dr. Smith and Prof. Chattopadhyay. Demographic and clinical history
 
 
 \clearpage
+\normalem 
 
 \bibliographystyle{naturemag}
 \bibliography{aut,BibLib1}
