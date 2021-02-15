@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.9.11)  14 FEB 2021 20:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.9.11)  14 FEB 2021 20:21
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1963,9 +1963,9 @@ Overfull \hbox (8.0675pt too wide) in paragraph at lines 401--403
 [] []
  []
 
-[6 <./Figures/flow1.png>] [7] (./main_PA-18-399_chattopadhyay.bbl [8
+[6 <./Figures/flow1.png>] (./main_PA-18-399_chattopadhyay.bbl [7
 
-]) [9]
+]) [8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 434.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 434.
 
@@ -1978,8 +1978,8 @@ anged.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 434.
  ) 
 Here is how much of TeX's memory you used:
- 37284 strings out of 492678
- 863368 string characters out of 6133535
+ 37283 strings out of 492678
+ 863362 string characters out of 6133535
  1115492 words of memory out of 11000000
  40292 multiletter control sequences out of 15000+600000
  75576 words of font info for 173 fonts, out of 8000000 for 9000
@@ -1998,10 +1998,10 @@ c/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhv
 b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main_PA-18-399_chattopadhyay.pdf (11 pages, 15667537 bytes).
+Output written on main_PA-18-399_chattopadhyay.pdf (10 pages, 15667238 bytes).
 PDF statistics:
- 532 PDF objects out of 1000 (max. 8388607)
- 368 compressed objects within 4 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 528 PDF objects out of 1000 (max. 8388607)
+ 365 compressed objects within 4 object streams
+ 92 named destinations out of 1000 (max. 500000)
  215 words of extra memory for PDF output out of 10000 (max. 10000000)
 
