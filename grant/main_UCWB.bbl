@@ -5,6 +5,25 @@
 \providecommand{\bibinfo}[2]{#2}
 \providecommand{\eprint}[2][]{\url{#2}}
 
+\bibitem{cdc0}
+\bibinfo{title}{Data \& statistics on autism spectrum disorder | cdc}
+  (\bibinfo{year}{2019}).
+\newblock \urlprefix\url{https://www.cdc.gov/ncbddd/autism}.
+
+\bibitem{nimh}
+\bibinfo{author}{Gilotty, L.}
+\newblock \bibinfo{title}{Early screening for autism spectrum}
+  (\bibinfo{year}{2019}).
+\newblock
+  \urlprefix\url{https://www.nimh.nih.gov/funding/grant-writing-and-application-process/concept-clearances/2018/early-screening-for-autism-spectrum.shtml}.
+
+\bibitem{robins2014validation}
+\bibinfo{author}{Robins, D.~L.} \emph{et~al.}
+\newblock \bibinfo{title}{Validation of the modified checklist for autism in
+  toddlers, revised with follow-up (m-chat-r/f)}.
+\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{133}},
+  \bibinfo{pages}{37--45} (\bibinfo{year}{2014}).
+
 \bibitem{hyman2020identification}
 \bibinfo{author}{Hyman, S.~L.}, \bibinfo{author}{Levy, S.~E.},
   \bibinfo{author}{Myers, S.~M.} \emph{et~al.}
@@ -12,32 +31,6 @@
   children with autism spectrum disorder}.
 \newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{145}}
   (\bibinfo{year}{2020}).
-
-\bibitem{kalb2012determinants}
-\bibinfo{author}{Kalb, L.~G.} \emph{et~al.}
-\newblock \bibinfo{title}{Determinants of appointment absenteeism at an
-  outpatient pediatric autism clinic}.
-\newblock \emph{\bibinfo{journal}{Journal of Developmental \& Behavioral
-  Pediatrics}} \textbf{\bibinfo{volume}{33}}, \bibinfo{pages}{685--697}
-  (\bibinfo{year}{2012}).
-
-\bibitem{bisgaier2011access}
-\bibinfo{author}{Bisgaier, J.}, \bibinfo{author}{Levinson, D.},
-  \bibinfo{author}{Cutts, D.~B.} \& \bibinfo{author}{Rhodes, K.~V.}
-\newblock \bibinfo{title}{Access to autism evaluation appointments with
-  developmental-behavioral and neurodevelopmental subspecialists}.
-\newblock \emph{\bibinfo{journal}{Archives of pediatrics \& adolescent
-  medicine}} \textbf{\bibinfo{volume}{165}}, \bibinfo{pages}{673--674}
-  (\bibinfo{year}{2011}).
-
-\bibitem{fenikile2015barriers}
-\bibinfo{author}{Fenikil{\'e}, T.~S.}, \bibinfo{author}{Ellerbeck, K.},
-  \bibinfo{author}{Filippi, M.~K.} \& \bibinfo{author}{Daley, C.~M.}
-\newblock \bibinfo{title}{Barriers to autism screening in family medicine
-  practice: a qualitative study}.
-\newblock \emph{\bibinfo{journal}{Primary health care research \& development}}
-  \textbf{\bibinfo{volume}{16}}, \bibinfo{pages}{356--366}
-  (\bibinfo{year}{2015}).
 
 \bibitem{pmid27565363}
 \bibinfo{author}{Gordon-Lipkin, E.}, \bibinfo{author}{Foster, J.} \&
@@ -49,12 +42,23 @@
   \textbf{\bibinfo{volume}{63}}, \bibinfo{pages}{851--859}
   (\bibinfo{year}{2016}).
 
-\bibitem{robins2014validation}
-\bibinfo{author}{Robins, D.~L.} \emph{et~al.}
-\newblock \bibinfo{title}{Validation of the modified checklist for autism in
-  toddlers, revised with follow-up (m-chat-r/f)}.
-\newblock \emph{\bibinfo{journal}{Pediatrics}} \textbf{\bibinfo{volume}{133}},
-  \bibinfo{pages}{37--45} (\bibinfo{year}{2014}).
+\bibitem{gordon2016whittling}
+\bibinfo{author}{Gordon-Lipkin, E.}, \bibinfo{author}{Foster, J.} \&
+  \bibinfo{author}{Peacock, G.}
+\newblock \bibinfo{title}{Whittling down the wait time: exploring models to
+  minimize the delay from initial concern to diagnosis and treatment of autism
+  spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{Pediatric Clinics}}
+  \textbf{\bibinfo{volume}{63}}, \bibinfo{pages}{851--859}
+  (\bibinfo{year}{2016}).
+
+\bibitem{althouse2006pediatric}
+\bibinfo{author}{Althouse, L.~A.} \& \bibinfo{author}{Stockman, J.~A.}
+\newblock \bibinfo{title}{Pediatric workforce: A look at pediatric nephrology
+  data from the american board of pediatrics}.
+\newblock \emph{\bibinfo{journal}{The Journal of pediatrics}}
+  \textbf{\bibinfo{volume}{148}}, \bibinfo{pages}{575--576}
+  (\bibinfo{year}{2006}).
 
 \bibitem{jashar2016cognitive}
 \bibinfo{author}{Jashar, D.~T.}, \bibinfo{author}{Brennan, L.~A.},
@@ -89,6 +93,32 @@
   2014}.
 \newblock \emph{\bibinfo{journal}{MMWR Surveillance Summaries}}
   \textbf{\bibinfo{volume}{68}}, \bibinfo{pages}{1} (\bibinfo{year}{2019}).
+
+\bibitem{kalb2012determinants}
+\bibinfo{author}{Kalb, L.~G.} \emph{et~al.}
+\newblock \bibinfo{title}{Determinants of appointment absenteeism at an
+  outpatient pediatric autism clinic}.
+\newblock \emph{\bibinfo{journal}{Journal of Developmental \& Behavioral
+  Pediatrics}} \textbf{\bibinfo{volume}{33}}, \bibinfo{pages}{685--697}
+  (\bibinfo{year}{2012}).
+
+\bibitem{bisgaier2011access}
+\bibinfo{author}{Bisgaier, J.}, \bibinfo{author}{Levinson, D.},
+  \bibinfo{author}{Cutts, D.~B.} \& \bibinfo{author}{Rhodes, K.~V.}
+\newblock \bibinfo{title}{Access to autism evaluation appointments with
+  developmental-behavioral and neurodevelopmental subspecialists}.
+\newblock \emph{\bibinfo{journal}{Archives of pediatrics \& adolescent
+  medicine}} \textbf{\bibinfo{volume}{165}}, \bibinfo{pages}{673--674}
+  (\bibinfo{year}{2011}).
+
+\bibitem{fenikile2015barriers}
+\bibinfo{author}{Fenikil{\'e}, T.~S.}, \bibinfo{author}{Ellerbeck, K.},
+  \bibinfo{author}{Filippi, M.~K.} \& \bibinfo{author}{Daley, C.~M.}
+\newblock \bibinfo{title}{Barriers to autism screening in family medicine
+  practice: a qualitative study}.
+\newblock \emph{\bibinfo{journal}{Primary health care research \& development}}
+  \textbf{\bibinfo{volume}{16}}, \bibinfo{pages}{356--366}
+  (\bibinfo{year}{2015}).
 
 \bibitem{burkett2015african}
 \bibinfo{author}{Burkett, K.}, \bibinfo{author}{Morris, E.},
@@ -144,24 +174,6 @@
 \newblock \emph{\bibinfo{journal}{Journal of the American Academy of Child \&
   Adolescent Psychiatry}} \textbf{\bibinfo{volume}{53}},
   \bibinfo{pages}{237--257} (\bibinfo{year}{2014}).
-
-\bibitem{gordon2016whittling}
-\bibinfo{author}{Gordon-Lipkin, E.}, \bibinfo{author}{Foster, J.} \&
-  \bibinfo{author}{Peacock, G.}
-\newblock \bibinfo{title}{Whittling down the wait time: exploring models to
-  minimize the delay from initial concern to diagnosis and treatment of autism
-  spectrum disorder}.
-\newblock \emph{\bibinfo{journal}{Pediatric Clinics}}
-  \textbf{\bibinfo{volume}{63}}, \bibinfo{pages}{851--859}
-  (\bibinfo{year}{2016}).
-
-\bibitem{althouse2006pediatric}
-\bibinfo{author}{Althouse, L.~A.} \& \bibinfo{author}{Stockman, J.~A.}
-\newblock \bibinfo{title}{Pediatric workforce: A look at pediatric nephrology
-  data from the american board of pediatrics}.
-\newblock \emph{\bibinfo{journal}{The Journal of pediatrics}}
-  \textbf{\bibinfo{volume}{148}}, \bibinfo{pages}{575--576}
-  (\bibinfo{year}{2006}).
 
 \bibitem{pmid31562252}
 \bibinfo{author}{Guthrie, W.} \emph{et~al.}

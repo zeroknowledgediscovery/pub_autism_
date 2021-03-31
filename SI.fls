@@ -720,6 +720,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm
 INPUT Figures/External/occurv.pdf
 INPUT ./Figures/External/occurv.pdf
 INPUT ./Figures/External/occurv.pdf
+INPUT Figures/raceeth.pdf
+INPUT ./Figures/raceeth.pdf
+INPUT ./Figures/raceeth.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvb7t.vf
@@ -727,6 +730,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT Figures/External/pfsa.pdf
 INPUT ./Figures/External/pfsa.pdf
 INPUT ./Figures/External/pfsa.pdf
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvro7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm
 INPUT Figures/External/stdtools.pdf
 INPUT ./Figures/External/stdtools.pdf
 INPUT ./Figures/External/stdtools.pdf
@@ -744,8 +749,6 @@ INPUT ./Figures/External/comorbidC.pdf
 INPUT Figures/External/nopsych.pdf
 INPUT ./Figures/External/nopsych.pdf
 INPUT ./Figures/External/nopsych.pdf
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvro7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvbo7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvbo8r.tfm
 INPUT Figures/External/4dopt.pdf

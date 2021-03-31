@@ -148,6 +148,90 @@ Autism spectrum disorder (ASD) is a developmental disability associated with sig
 In contrast to the current questionnaire based screening tools for autism spectrum disorders (ASD) that suffer from vast amounts of false positives, and a host of demographic, socio-economic and interpretative biases, we aim to validate the ASD Co-morbid Risk (\acor) score,  that estimates ASD risk via sophisticated pattern discovery on the longitudinal medical history of individual patients. Computation of \acor requires no new blood-work, laboratory tests, questionnaires or psychiatric/cognitive  consults, and may be carried out purely from the history of past medical encounters at no additional administrative burden or resource utilization. \acor outperforms   the current tool  M-CHAT/F  in  preliminary  studies, and  on  account  of functional independence, the two scores may be combined to further boost performance to either boost positive predictive value up to 100\% or sensitivity up to 50\% with no loss in current specificity.
 
 \clearpage
+
+%Impact: Who will be served by this project? How many individuals will benefit as a result of the project? What is the impact of this project on the University community, as well as the field you are working in? What do you hope the short-term and long-term results of this project will be? How will this further the University’s mission? 
+
+\subsection*{Impact}
+Autism spectrum disorder (ASD) is a developmental disability associated with  significant social  and behavioral challenges. With ASD pathobiology  still unclear, there is   an immediate  need for tools that help identify children with ASD as early as possible~\cite{cdc0,nimh}. Our  incomplete understanding of ASD pathogenesis, and the lack of reliable biomarkers hampers early detection,  intervention, and developmental trajectories.
+
+In this study we aim to validate
+a new screening tool, that relies on sophisticated pattern recognition on patient medical history. With 1 in 54 children in the United States currently diagnosed with ASD, improved early screening can have immediate and significant impact in the community served by the University of Chicago, and the field of developmental pediatrics. Squarely in line with the University's mission of enabling fundamental advances in the field of medicine, this study aims a to validate a key advance in neuropsychiatric screening, where  patterns in physiological co-morbidities -- beyond psychosocial determinants --  are effectively used to assess the risk of a future diagnosis. We  aim to demonstrate that  machine intelligence can discover such patterns  automatically, revealing risk factors, associations, and predictive precursors not known before. 
+
+
+To quantify this impact, we note that even with increasingly  adoption of screening with standardized checklists at 18-24 months, the median age of ASD diagnosis remains at over 4 years.  Starting with a positive initial screen, a clinical diagnosis of ASD is  a  frustrating multi-step process spanning 3 months to 1 year, often delaying  time-critical interventions. One obvious driver for these delays  is the vast number of false positives encountered in the current initial  screening. For example, the  M-CHAT/F, the most widely used  screener~\cite{robins2014validation,hyman2020identification},  produces    over 85 false positives out of every 100   flagged for  diagnostic evaluation, significantly inflating wait times~\cite{pmid27565363}. M-CHAT/F also suffers from low sensitivity, failing to flag approximately 65 out of every 100 children who would be eventually diagnosed. This problem  is exacerbated  in rural and underserved communities, since access to care and resources are sparse  except near urban  centers. For example, only 7\% of developmental pediatricians practice in rural areas, and some states do not even have a developmental pediatrician~\cite{gordon2016whittling,althouse2006pediatric}.
+
+Further, current  screening tools are sensitive to language barriers and cultural issues, and are  particularly ineffective for children with milder symptoms  with average or above-average cognitive abilities until about school age~\cite{jashar2016cognitive,hyman2020identification}, often due to a ``wait and see'' approach adopted at the primary care. %The need for better screening tools is thus paramount.
+
+
+A  screening  tool that tracks the risk of an eventual ASD diagnosis,  based  on the information already being gathered during regular doctor's visits, and which may be implemented as a  fully automated background process requiring no time commitment from providers has the potential to reduce avoidable diagnostic  delays at no additional burden of time, money and personnel resources.  % Use of patterns emergent in  the diagnostic history to estimate risk might help reduce the subjective component in questionnaire-based screening tools, resulting in 1) reduced effect of potential language and cultural barriers in diverse populations, and 2) possibly better identify children with milder symptoms~\cite{hyman2020identification}.
+%Furthermore, being functionally independent of the M-CHAT/F, we hope to show that there is clear advantage to combining the outcomes of the two tools.% : we can take advantage of any population stratification induced by the M-CHAT/F scores to significantly boost combined screening performance.
+
+
+Thus, in this study,  with UCWB's support, we plan to validate the efficacy of our risk estimator ({\bf ASD Co-morbid Risk: \ZERO}),  % machine inferred \textbf{digital biomarkers} for autism, mined automatically from past medical encounters. Using individual diagnostic codes already present in individual patient files, we plan to \emph{engineer a reliable risk estimator} ({\bf ASD Co-morbid Risk: \ZERO}) enabled by novel  machine learning algorithms,
+and  its effectiveness against current practice in a limited clinical study, with children between 16-26 months of age. Our rationale is informed by the extensively documented comorbidities of ASD ranging from dysregulation of immune pathways such as eczema, allergies, asthma, as well as ear and respiratory infections, gastrointestinal problems, developmental issues, severe headaches, migraines, and seizures~\cite{pmid30733689,pmid22511918}.  %A highly heterogeneous  presentation  implies that  sophisticated pattern recognition on the longitudinal history of  diagnostic codes is necessary  to reveal  digital biomarkers for ASD.% associations that allow precise screening for at-risk patients.
+% Orthogonal to  questionnaire based  detection of behavioral signals, the proposed tool potentially reduces socio-economic, ethnic and demographic biases to elicit more  objective and stable results |  with zero  administrative burden on clinicians and parents.
+
+In our preliminary retrospective studies, \ZERO  identifies  children at high risk  with  area under the receiver operating characteristic curve (AUC)  exceeding 80\% from shortly after two years of age for either sex, and across two large independent  databases of patient records (N=4,503,584 and 37,635), conveniently outperforming  M-CHAT/F.
+
+\subsection*{Clarity: How will funds be used} UCWB support will be used to achieve the following specific aims: \begin{enumerate} 
+[label=$\square$, leftmargin=0pt,
+labelindent=0em, topsep=0.1em, labelsep=*, itemsep=.5em,itemindent=1em]
+ \item \textbf{Aim 1: Reduce false positives in current screening protocols.} The current high false positive rate exacerbates post screen wait-time, increasing diagnostic delay. To evaluate the \textit{\guline{hypothesis: \ZERO reduces up to 50\% of false positives}}, we  will track the  cases in which MCHAT-F triggers a flag, but \ZERO does not, and the rate at which such cases are eventually determined to be M-CHAT/F false positives. % Our aim to evaluate the positive predictive value (PPV) of  \ZERO, under high specificity conditions ($>95\%$). Additionally,  evaluate  if \ZERO  replicates high sensitivity observed in preliminary studies without losing specificity.
+
+\item \textbf{Aim 2. Evaluate the statistical relationship between the \ZERO score and M/CHAT-F, and formalize a joint or conditional operational protocol.} We will characterize statistical association, if any,  between the test scores. \textit{\guline{Hypothesis: The uncertainties or errors in the two tests are are statistically independent.}}  Additionally, we will evaluate our  ability to boost performance by conditioning \ZERO on M-CHAT/F. 
+%
+\item \textbf{Aim 3. Evaluate the effectiveness of \ZERO in a demographically diverse population with a range of socio-economic confounders.} \textit{\guline{Hypothesis: A questionnaire-free approach can mitigate biases  from limitation of language, cultural barriers, and demographic diversity,}} $e.g.$ disproportionately failing  to diagnose children with  average to above-average intelligence in diverse populations~\cite{christensen2019prevalence}.% , and under-reporting of symptoms by parents or primary care-givers due to cultural differences~\cite{burkett2015african}.
+  
+
+  \item \textbf{Aim 4. Characterize   heterogeneity of ASD presentation from historical  patterns.} Heterogeneous presentation hinders  understanding of ASD pathobiology. \textit{\guline{Hypothesis: Characterization of  co-morbidity classes and hierarchies  by mapping their \ZERO impact}}, reveal intrinsic classes of underlying disease processes.
+  \end{enumerate}
+% Thus, we are proposing  to exploit observed co-morbidities in children who ultimately meet the criteria for ASD to develop a risk estimation pipeline,  and  predict future clinical  diagnosis  under $2$ years of age. Orthogonal to checklists, we aim to  reduce the median diagnostic age for ASD, by reducing the  long post-screen wait times~\cite{pmid27565363}, by significant boosts in positive predictive value, reduction in false positives, and increased sensitivities at little or no loss of specificity, and \guline{at no additional administrative burden or resource utilization.}
+
+
+\subsection*{Research Design}
+\ZERO  can  screen instantaneously   every child  in primary care, for whom past medical history is available. To achieve the specific  aims, we will gather data from both the child and the primary caregiver in the participating  primary care clinic.  Eligible patients at the Department of Pediatrics, University of Chicago (patients who present for a well-child visit between 16-26 months  or any other non-emergency reason) will be asked  for consent for access to their past medical history for carrying out the \ZERO screen. 
+If there is a flag either in M-CHAT/F or if M-CHAT/F is borderline with a flag in \ZERO, the  pediatrician will inform parents of a potential elevated risk of ASD, and offer to schedule for an ADOS-2 evaluation. 
+The ADOS-2 evaluation triggered by \ZERO flags will be at no cost to the patient. All study procedures and consent forms will be approved by the University of Chicago Institutional Review Board.  For all assessments, basic demographic information, recruitment site, medications and diagnoses assigned by the current clinical treatment team, will be obtained from the parent/caregiver and medical record. The key steps in the study spanning 1 year  are as  follows (See Fig.1):
+%#TODO AGE RESTRICTION
+\begin{enumerate} 
+[label=$\square$, leftmargin=0pt,
+labelindent=0em, topsep=0.1em, labelsep=*, itemsep=.5em,itemindent=1em]
+ \item 1. Pediatric clinic team (led by Dr. Mitchell)  will  administer  M-CHAT/F to incoming children with 16-26 months and procure consent
+\item 2. The PI's team will
+  compute  individual \acor  (steps 1 and 2 in Fig.~\ref{figflow}).
+\item 3. If flagged by M-CHAT/F  as high risk, or if the \ZERO score indicates high risk and  M-CHAT/F is borderline,  the patients will be scheduled for ADOS-2 evaluation overseen by Dr. Smith and his team (Step 3 in Fig.~\ref{figflow}).
+\item 4. The evaluation scores will be analyzed by  PI and his  team.
+\end{enumerate}
+
+\begin{wrapfigure}[20]{l}{2.1in}
+  \vspace{-30pt}
+  
+  \hspace{-10pt}\includegraphics[width=2.25in]{Figures/flow1}
+  \vspace{-25pt}
+  
+  \caption{\bf\small Patient processing logic }\label{figflow}
+\end{wrapfigure}
+\subsection*{Timeline} The study will span 1 year from the time of award. Patient recruitment will continue all throughout the project life. % The limited scope of this project implies that we need to be careful about the number of ADOS-2 referral generated due to \ZERO alone, particularly since ADOS-2 evaluations involve significant resource and cost.
+
+\subsection*{Cohort Selection}
+Our expected cohort, drawn from UCM patient population,  is diverse.
+Participants (16-26 months) will be approximately 5000 children per year (producing approximately 300 ADOS-2 referrals from M-CHAT/F) who will be evaluated via both  MCHAT-F and \ZERO.   Inclusion criteria:  diagnostic history on record with at least 5  codes spanning at least 10 weeks. Exclusion criteria: diagnostic history only consists of health service contact codes. Beyond the evaluation  as a part of standard clinical workflow, we will carry out ADOS-2 evaluation for approximately $500$ children at no cost to the patient family, to evaluate the efficacy of \acor when M-CHAT/F is borderline (and does not trigger downstream diagnostic evaluation by itself). UCWB support will enable these evaluations and associated  costs.
+
+\subsection*{Study Interventions, and Patient Risk}
+No intervention is planned. Outcomes are  efficacy and applicability of \ZERO. The design of the study guarantees that patients suffer no negative impact from the added \ZERO screen. Indeed, pursuant to available resources, patients might  be expedited for ADOS evaluation which  reduces their wait-times. For some borderline cases might be flagged due to false positives. 
+% Need: What other sources of funding are committed or are being sought after for this project? How do you anticipate the project will be funded in future years? Could this project go forward without Women’s Board support? Does it have the potential for autonomous and sustainable funding, either through the creation of revenue, or dedicated multi-year institutional support?
+\subsection*{Need} We have applied for a NIH RO3 grant, and combined  with the data generated in this study, we plan to submit a RO1 proposal within the next year. We need UCWB support to generate prospective data beyond our current preliminary results to be competitive for NIH funding. The expected  impact of this study suggests potential for  autonomous and sustainable funding, either through the creation of revenue (via incorporation within the standard clinical workflow), or dedicated multi-year institutional support.
+
+
+% Feasibility: Do you feel confident that your project will follow its proposed timeline? Do you already have plans for securing the needed personnel to complete the project? Do you already have institutional confidence from your university division and/or unit? Will this project be multi-year? Will Women’s Board funding last for more than one year?
+\subsection*{Feasibility} With a team comprising machine learning experts, pediatric clinicians and developmental experts with extensive history of research and service in the field, and guided by results from our preliminary studies, we are confident that 
+the \ZERO score can significantly improve outcomes by either boosting sensitivity of current screening or slashing false positives by half. Additionally, our preliminary results with two independent and large patient databases has produced positive results.
+
+
+\clearpage
+
+
+
 % ·         3.1, protection of human subjects: You already sent me your draft of this.
 
 % ·         3.2, is this a multi-site study: just needs a yes/no response.
