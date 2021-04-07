@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1617227227 "main.tex" "main.pdf" "main" 1617230408
+["pdflatex"] 1617227227 "main.tex" "main.pdf" "main" 1617305438
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1544722916 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1530836625 2850648 765161d183c5509465c2744baf096a7a ""
@@ -280,10 +280,10 @@
   "main.tex" 1617227222 64938 3b058937dd6adedc8d8a43ad005529e9 ""
   "preamble.tex" 1617209748 15186 57aae6ef06b9df63a1e7dc9ed2bfd6f8 ""
   (generated)
+  "Figures/External/raceeth.md5"
   "x.tex"
-  "main.out"
   "main.log"
-  "main.aux"
+  "main.out"
   "main.pdf"
   "main.auxlock"
-  "Figures/External/raceeth.md5"
+  "main.aux"

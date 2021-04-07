@@ -110,6 +110,20 @@ L.~Hansen, {\it Truven Health Ananlytics IBM Watson Health\/}  (2017).
 \bibitem{pmid29701730}
 J.~Baio, {\it et~al.\/}, {\it MMWR Surveill Summ\/} {\bf 67}, 1 (2018).
 
+\bibitem{CR08}
+I.~Chattopadhyay, A.~Ray, {\it International Journal of Control\/} {\bf 81},
+  820 (2008).
+
+\bibitem{CL12g}
+I.~Chattopadhyay, H.~Lipson, {\it Philos Trans A\/} {\bf 371}, 20110543 (2013).
+
+\bibitem{Chattopadhyay20140826}
+I.~Chattopadhyay, H.~Lipson, {\it Journal of The Royal Society Interface\/}
+  {\bf 11} (2014).
+
+\bibitem{huang2019data}
+Y.~Huang, I.~Chattopadhyay, {\it arXiv preprint arXiv:1909.12243\/}  (2019).
+
 \bibitem{Cover}
 T.~M. Cover, J.~A. Thomas, {\it Elements of Information Theory (Wiley Series in
   Telecommunications and Signal Processing)\/} (Wiley-Interscience, New York,
@@ -261,9 +275,6 @@ I.~Chattopadhyay, H.~Lipson, {\it Journal of The Royal Society Interface\/}
 \bibitem{chlebowski2010using}
 C.~Chlebowski, J.~A. Green, M.~L. Barton, D.~Fein, {\it Journal of autism and
   developmental disorders\/} {\bf 40}, 787 (2010).
-
-\bibitem{CL12g}
-I.~Chattopadhyay, H.~Lipson, {\it Philos Trans A\/} {\bf 371}, 20110543 (2013).
 
 \bibitem{cover2012elements}
 T.~M. Cover, J.~A. Thomas, {\it Elements of information theory\/} (John Wiley

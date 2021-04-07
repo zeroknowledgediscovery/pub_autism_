@@ -8,7 +8,7 @@
 %\usepackage[size=normal]{subcaption}
 \renewcommand{\baselinestretch}{1.05}
 %\input{preambleIEEE.tex} 
-
+ 
 \usepackage{textcomp}
 \usepackage{colortbl}
 \usepackage{subfigure}
@@ -94,24 +94,9 @@
 \rhead{\footnotesize\bf\sffamily\thepage}
 \cfoot{}
 % ###################################
-\def\MXCOL{black}
-\def\FXCOL{Orchid3}
-\def\MNCOL{SeaGreen4} 
-\def\FNCOL{SeaGreen4}
-\def\NCOL{SeaGreen4} 
-\def\XCOL{Tomato}
-\def\WCOL{Tomato}
-\def\YCOL{DodgerBlue4}
-
-\definecolor{MidLavender}{rgb}{.77,.77,.89}
-\definecolor{darkgreen}{RGB}{50, 150, 50}
-\definecolor{MidLavender}{rgb}{.77,.77,.89}
-\definecolor{oneEdge}{rgb}{.37, .52, .54}
-\definecolor{zeroEdge}{rgb}{.93, .45, .43}
-\definecolor{node}{rgb}{.87, .87, .87}
-
 \begin{document}
 \input{custom_defs}
+\def\HCOL{\color{black}}
 \title{{\Large\bf Supplementary Information:}\\\TITLE}
 \maketitle
 
@@ -135,15 +120,17 @@
 \end{figure*}
 %###########################################################
 % ###########################################################
+{\HCOL
 \ifFIGS
 \begin{figure*}[!ht]
   \centering
   \includegraphics[width=\textwidth]{Figures/raceeth}
 
-  \captionN{\textbf{Effect of Race and Ethnicity on Predictive Performance with 95\% Confidence Bounds from the UCM dataset}. Panels A and B show the variation of AUC achieved in out-of-sample data in three race-based population groups (White, African-American anbd Multi-racial). We find no significant differences. Panels C and D show teh performance in Hispanic vs non-Hispanic sub-populations. We find that children with Hispanic backgound have a lower AUC, but the differences are not significant. Other races/ethnicities were not considered due to lack of sufficient data. }\label{figrace}
+  \captionN{\HCOL \textbf{Effect of Race and Ethnicity on Predictive Performance with 95\% Confidence Bounds from the UCM dataset}. Panels A and B show the variation of AUC achieved in out-of-sample data in three race-based population groups (White, African-American anbd Multi-racial). We find no significant differences. Panels C and D show teh performance in Hispanic vs non-Hispanic sub-populations. We find that children with Hispanic backgound have a lower AUC, but the differences are not significant. Other races/ethnicities were not considered due to lack of sufficient data. }\label{figrace}
     \vspace{-5pt}
 
-\end{figure*}
+  \end{figure*}
+  }
 %###########################################################
 
 \section{Detailed Mathematical Approach}\label{sec:mathdetails}
@@ -223,7 +210,7 @@ We need two training sets: one to infer the models, and one to  train the classi
 %###########################################################
 %###########################################################
 %###########################################################
-  \begin{figure}[!ht]
+ {\NCOL \begin{figure}[!ht]
     \begin{verbatim}
 Model: "sequential_4"
 _________________________________________________________________
@@ -240,8 +227,9 @@ Trainable params: 185,465
 Non-trainable params: 0
 _________________________________________________________________
 \end{verbatim}
-    \captionN{The simplest LSTM investigated as a baseline.}\label{figlstmex}
+    \captionN{\HCOL The simplest LSTM investigated as a baseline. More complex models have significantly larger number of trainable parameters (1 to 10 Million). In contrast our pipeline has 13,744 trainable parameters.}\label{figlstmex}
 \end{figure}
+}
 
 Off the shelf algorithms with little or no pre-processing, $i.e.$, using the diagnostic codes themselves are time-stamped categorical features failed to produce clinically relevant performance (See SI-Fig.~\ref{EXT-figcompwsoa}). Classifiers such as random forests~\cite{breiman}, and gradient boosters~\cite{friedman} might be penalized due to their inability to take into account long-range temporal information. Since the number of diagnostic codes available per patient is small, recurrent neural network implementations such as LSTM~\cite{hochreiter} might be suffering from the data sparsity in training. It is possible that the performance of the competing approaches might be improved with extensive tuning or clever feature-engineering.
 %###########################################################
@@ -252,8 +240,8 @@ In addition to the naive baseline approaches, we also evaluated the performance 
 
   Much better results were obtained when we compared our optimized pipeline to pipelines that use only a subset of our features: namely, the  ones that use only features derived from sequence statistics and exclude the ones derived from learning PFSAs (recall that PFSAs are special HMMs we learn using our novel algorithms)  from the disease categories as described in Methods in the main text, or using only the PFSA-based SLD features, or using simply the density of diagnostic codes (See Fig.~\ref{EXT-figcompsi}, panel D). In all these cases we analyzed, our pipeline has a clearly demonstrable advantage (See  Fig.~\ref{EXT-figcompsi}, panel D) that is stable across databases,  under reductions in sample sizes, and in balanced resampling experiments (See Fig.~\ref{EXT-figcompsi}, panel C).
   
-  While it is difficult to explain the exact source of a modeling framework's performance, and even more difficult to explain  non-performance, we can point to the following advantages that our approach has over existing techniques:
-  \begin{enumerate}
+ {\HCOL While it is difficult to explain the exact source of a modeling framework's performance, and even more difficult to explain  non-performance, we can point to the following advantages that our approach has over existing techniques:}
+  \begin{enumerate}\HCOL
     \item \textbf{Purely Classification Algorithms With No Pre-processing Do not Do well.} Pure classifiers such as random forests, gradient boosters, etc. are not time series modeling frameworks, and might not capture stochastic temporal patterns well. While features are not certainly assumed to be independent in these algorithms, it is problematic to learn patterns that do not appear at fixed time points in the diagnostic history.
   \item \textbf{Lower Sample Complexity Compared to Deep Learning Frameworks.} Compared to LSTMs and RNNs, we are able to capture stochastic behavior with more compact models, which results in  better sample complexity. In other words, if we have less data, our models do better, because we estimate fewer parameters.
   \item \textbf{Designed Bottom-up for Learning Stochastic Processes.} It is easily demonstrated that LSTMs and RNNs, while good models of complicated time series in many cases, do not work well for data that are generated by stochastic processes, $i.e.$ are sample paths of a hidden process.
@@ -261,13 +249,13 @@ In addition to the naive baseline approaches, we also evaluated the performance 
   \end{enumerate}
   %
 
-  
-  Thus, there are two key and related issues: 1) NN models generally have a relatively large number of parameters, and 2) these large number of trainable parameters require substantial amount of data to train. In our case, we indeed have a large number of control examples, but a relatively smaller number of positive examples (children who get diagnosed with autism eventually). The amount of training data, even with our large patient database, is not enough to train anything but the simplest of the NN architectures, and even then the number of parameters for such NN models is substantially larger compared to our architecture. This is shown in our example (See SI-Fig.~\ref{figlstmex}), where one of the LSTM models we investigate (the simplest one we tested) has 185,465 parameters, whereas our complete end to end pipeline has 7025+6719=13,744 trainable parameters (an order of magnitude less, where the first contribution is from inferred PFSA models, the second from the ensemble of decision trees in the final gradient boosting model). Additionally, the number of parameters for deep learning models rapidly increase to millions or tens of millions as the models get more complicated.
+  {\HCOL
+  Thus, there are two key and related issues:  NN models generally have a relatively large number of parameters, and  these large number of trainable parameters require substantial amount of data to train. In our case, we indeed have a large number of control examples, but a relatively smaller number of positive examples (children who get diagnosed with autism eventually). The amount of training data, even with our large patient database, is not enough to train anything but the simplest of the NN architectures, and even then the number of parameters for such NN models is substantially larger compared to our architecture. This is shown in our example (See SI-Fig.~\ref{figlstmex}), where one of the LSTM models we investigate (the simplest one we tested) has 185,465 parameters, whereas our complete end to end pipeline has 7025+6719=13,744 trainable parameters (an order of magnitude less, where the first contribution is from inferred PFSA models, the second from the ensemble of decision trees in the final gradient boosting model). Additionally, the number of parameters for deep learning models rapidly increase to millions or tens of millions as the models get more complicated.
 
- Also note that our framework is adaptive (See examples of PFSA models inferred in SI-Fig.~\ref{EXT-autgrid}, and the network structures of the inferred PFSA models is inferred from data, and not fixed a priori; it produces more states where it needs, thus adapting the model resolution to more complex contexts, and obtaining significantly more compact yet effective representations. We must however add the caveat that with sufficient patience and experience it might be possible to devise a specific NN architecture with similar performance to our framework; however, in our approach such artful insight is unnecessary. 
+ Also note that our framework is adaptive (See examples of PFSA models inferred in SI-Fig.~\ref{EXT-autgrid}), and the network structures of the inferred PFSA models is inferred from data, and not fixed a priori; it produces more states where it needs, thus adapting the model resolution to more complex contexts, and obtaining significantly more compact yet effective representations. We must however add the caveat that with sufficient patience and experience it might be possible to devise a specific NN architecture with similar performance to our framework; however, in our approach such artful insight is unnecessary. 
 
 It also seems possible that NN models, which have no stochastic parameters or components, generalize poorly in this context, which is why the performance is relatively better in the Truven dataset (See SI-Fig.~\ref{EXT-figcompwsoa}), but worse in an independent database.
-
+}
 %####################
 %###########################################################
 \ifFIGS

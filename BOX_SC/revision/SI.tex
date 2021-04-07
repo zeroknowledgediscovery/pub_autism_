@@ -1,0 +1,619 @@
+\documentclass[onecolumn,,10pt]{IEEEtran}
+\let\labelindent\relax
+%\documentclass[3p,10pt]{elsarticle}
+%\let\labelindent\relax
+\usepackage{enumitem}
+\input{preamble_science.tex}
+\usepackage{multirow}
+%\usepackage[size=normal]{subcaption}
+\renewcommand{\baselinestretch}{1.05}
+%\input{preambleIEEE.tex} 
+ 
+\usepackage{textcomp}
+\usepackage{colortbl}
+\usepackage{subfigure}
+\usepackage{array}
+\usepackage{courier}
+\usepackage{wrapfig}
+\usepackage{pifont}
+\usetikzlibrary{chains,backgrounds} 
+\usetikzlibrary{intersections}
+\usetikzlibrary{pgfplots.groupplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplotstable}
+\usepackage{setspace}
+\usetikzlibrary{math}
+\usetikzlibrary{matrix}
+\usepackage{xstring}
+\usepackage{xspace}
+\usepackage{xcite}
+\usepackage{flushend}
+\usepackage{longtable}
+%\makeatletter
+\setlength{\parskip}{.5pc}
+%\parskip=7pt
+\parindent=0pt
+\usepackage{fancyhdr}
+\fancypagestyle{headings}{\renewcommand{\headrulewidth}{0pt}\fancyhf{}\fancyfoot[R]{\thepage}}\pagestyle{headings}
+
+\fancypagestyle{pprintTitle}{\renewcommand{\headrulewidth}{0pt}\fancyhf{}\fancyfoot[R]{\thepage}}
+\usepackage{ifluatex} 
+\ifluatex
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage[]{unicode-math}
+\unimathsetup{math-style=TeX}
+\else 
+\usepackage[utf8]{inputenc}
+\fi 
+\ifluatex\else\usepackage{stmaryrd}\fi
+ 
+\makeatother
+\makeatletter
+\renewcommand{\baselinestretch}{1}
+\renewcommand{\captionN}[1]{\caption{\color{CadetBlue4!80!black} \sffamily \fontsize{9}{10}\selectfont #1  }}
+\tikzexternaldisable 
+\def\COLA{black}
+% ###################################
+% ############################################################
+\externaldocument[SI-]{SI}
+%\externaldocument[EXT-]{exfig}
+\newif\iftikzX
+\tikzXtrue
+\tikzXfalse
+\def\jobnameX{zero}
+\newif\ifFIGS
+\FIGSfalse  
+\FIGStrue
+% ############################################################
+% ############################################################
+%###################################
+\pagestyle{fancy} 
+\rhead{}
+\cfoot{}
+%###################################
+\newcommand{\hil}[1]{{\color{Red1}\itshape #1}}
+%###################################
+%###################################
+%###################################
+\def\ROWCOL{lightgray!70}
+\def\CELLCOL{teal!40}
+\renewcommand{\figurename}{SI-Fig.}
+\renewcommand{\tablename}{SI-Table}
+%\externaldocument[main-]{main2}
+\externaldocument[main-]{main_scienceA}
+\externalcitedocument{main_scienceA}
+\gdef\treatment{positive\xspace}
+
+% ###################################
+% ############################################################
+% ###################################
+
+\pagestyle{fancy}
+\rhead{\footnotesize\bf\sffamily\thepage}
+\cfoot{}
+% ###################################
+\begin{document}
+\input{custom_defs}
+\def\HCOL{\color{black}}
+\title{{\Large\bf Supplementary Information:}\\\TITLE}
+\maketitle
+
+\tableofcontents
+\listoftables
+
+\clearpage
+
+\input{icdtab.tex}
+
+\clearpage
+% ###########################################################
+\ifFIGS
+\begin{figure*}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Figures/External/occurv}
+
+  \captionN{\textbf{ASD Occurrence Patterns}  Panel A illustrates the spatial distribution of ASD insurance claims, and panel B shows the same data after population normalization, illustrating the relatively small demographic skew to ASD prevalence within the general population with access to medical insurance, which is consistent with the suggestion that prevalence variation might be linked to regional and socioeconomic disparities in access to services~\cite{jarquin2011racial}.}\label{figocc}
+    \vspace{-5pt}
+
+\end{figure*}
+%###########################################################
+% ###########################################################
+{\HCOL
+\ifFIGS
+\begin{figure*}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{Figures/raceeth}
+
+  \captionN{\HCOL \textbf{Effect of Race and Ethnicity on Predictive Performance with 95\% Confidence Bounds from the UCM dataset}. Panels A and B show the variation of AUC achieved in out-of-sample data in three race-based population groups (White, African-American anbd Multi-racial). We find no significant differences. Panels C and D show teh performance in Hispanic vs non-Hispanic sub-populations. We find that children with Hispanic backgound have a lower AUC, but the differences are not significant. Other races/ethnicities were not considered due to lack of sufficient data. }\label{figrace}
+    \vspace{-5pt}
+
+  \end{figure*}
+  }
+%###########################################################
+
+\section{Detailed Mathematical Approach}\label{sec:mathdetails}
+ 
+\subsection{Time-series Modeling of  Diagnostic History}
+Individual diagnostic histories  can have long-term memory~\cite{ltgranger80}, implying that the order, frequency, and comorbid interactions between diseases are   important for assessing the future risk of our target phenotype. 
+We analyze  patient-specific  diagnostic code sequences by first  representing the medical history of each patient as a set of stochastic categorical time-series | one each for a specific group of related disorders |  followed by the inference of stochastic models  for  these individual data streams. These inferred generators are from a special class of  Hidden Markov Models (HMMs), referred to as Probabilistic Finite State Automata (PFSA)~\cite{CL12g}. The inference algorithm we use is distinct from classical HMM learning, and has important advantages related to its ability to infer structure, and its sample complexity (See Supplementary text, Section~\ref{SI-sec:PFSA}). We infer a separate class of models for the \treatment and control cohorts, and then the problem reduces to determining the probability that the short diagnostic history from a  new  patient arises from the \treatment as opposed to the control category of the inferred models. 
+%####################
+\subsection{Step 1: Partitioning The Human Disease Spectrum}
+We begin by partitioning the human disease spectrum into  $17$ non-overlapping  categories. Each category is defined by a set of diagnostic codes from the International Classification of Diseases, Ninth Revision (ICD9) (See  Table SI-\ref{SI-tab0} in the Supplementary text for description of  the categories used in this study). For this study, we considered $9,835$ distinct ICD9 codes (and their ICD10 General Equivalence Mappings (GEMS)~\cite{GEMS} equivalents). We came across 6,089 distinct ICD-9 codes and 11,522 distinct ICD-10 codes in total in the two datasets we analyzed. Transforming the diagnostic histories to report only the broad categories   reduces the number of distinct codes that the pipeline needs to handle, thus improving statistical  power.   
+Our categories largely align with the top-level ICD9 categories, with small 
+adjustments, $e.g.$ bringing all infections under one category irrespective of the pathogen or the target organ.
+We do not pre-select the phenotypes; we want our algorithm to seek out the important patterns without any manual curation of the input data. The limitation of the set of phenotypes to $9835$ unique codes arises from excluding patients from the database who have very few and rare codes that will skew the statistical estimates. As shown in Table~\ref{main-tab2} in the main text, we exclude a very small number of patients, and who have  very short diagnostic histories with a very small number of codes.
+
+% Next, we process raw diagnostic histories to  report only the categories. 
+For each patient, the past  medical history is a sequence $(t_1,x_1),\cdots,(t_m,x_m)$, where $t_i$ are timestamps and $x_i$ are ICD9 codes diagnosed at time $t_i$.  We map individual patient history to a three-alphabet categorical time series $z^k$ corresponding to the disease category $k$,  as follows. For each week $i$, we have: 
+\cgather{\label{eq1}
+  z^k_i =  \left \{ \begin{array}{ll}
+                      0 & \textrm{if no diagnosis codes  in week } i\\
+                      1 & \textrm{if there exists a diagnosis of category $k$ in week } i\\
+                      2 & \textrm{otherwise}
+                    \end{array} \right.
+                }\noindent
+                The time-series $z^k$ is terminated at a particular week if the patient is diagnosed with ASD the week after. Thus for patients in the control cohort, the length of the mapped trinary series is limited by the time for which the individual is observed within the  2003 -- 2012 span of our database. In contrast, for patients in  the \treatment cohort, the length of the mapped series reflect the time to the first ASD diagnosis. Patients do not necessarily enter the database at birth, and we prefix each series with 0s to  approximately synchronize observations to age in weeks. Each patient is now represented by $17$ mapped trinary series.
+                % ####################
+                % %###########################################################
+% % ###########################################################
+\ifFIGS
+\begin{figure*}[!t]
+  \tikzexternalenable
+    \tikzsetnextfilename{pfsa}
+  \centering  
+  \vspace{-10pt}
+  
+ \def\DATA{../../data_latest}
+\iftikzX
+\input{Figures/autgrid}
+\else
+  \includegraphics[width=0.95\textwidth]{Figures/External/pfsa}
+  \fi
+      \vspace{-5pt}
+
+     \captionN{Probabilistic Finite State Automata models generated for different disease categories for the control and \treatment cohorts. We note that in the first  cases (digestive disorder), the models get more complex in the \treatment cohort, suggesting that the disorders become less random. However, in the categories of otic and integumentary disorders, the models become less complex suggesting increased independence from past events of similat nature. In case of infectious diseases, the model gets more complex for males, and less complex for females, suggesting distinct sex-specific responses associated with high ASD risk.}\label{EXT-autgrid}
+\end{figure*}
+\else
+\refstepcounter{figure}\label{EXT-autgrid}
+\fi
+% ###########################################################
+
+\subsection{Step 2: Model Inference \& The Sequence Likelihood Defect}
+The mapped series, stratified by  sex, disease-category, and ASD diagnosis-status are considered to be independent sample paths, and we want to explicitly model these systems as specialized HMMs (PFSAs). We model the \treatment and the control cohorts for each sex, and in  each disease category separately, ending up with a total of $68$ HMMs at the population level ($17$ categories, $2$ sexes, $2$ cohort-types: \treatment and control, SI-Fig.~\ref{SI-EXT-autgrid} in the supplementary text provides some examples). Each of these inferred models is  a PFSA;  a directed graph with probability-weighted edges, and acts as an optimal generator of the  stochastic process driving the  sequential appearance of the three letters (as defined by Eq.~\eqref{eq1})  corresponding to each sex, disease category, and cohort-type (See Section~\ref{SI-sec:PFSA} in the Supplementary text for  background on PFSA inference). 
+
+To reliably infer the cohort-type of a new patient, $i.e$, the likelihood of a diagnostic sequnce being generated by the corresponding cohort model, we generalize the notion of Kullbeck-Leibler (KL) divergence~\cite{Cover,kullback1951} between probability distributions to a divergence $\mathcal{D}_{\textrm{KL}}(G \vert \vert H)$ between ergodic stationary categorical stochastic processes~\cite{doob1953stochastic} $G,H$ as:
+\cgather{
+  \mathcal{D}_{\textrm{KL}}(G \vert \vert H) = \lim_{n\rightarrow \infty} \frac{1}{n}  \sum_{x:|x| = n}p_G(x)\log\frac{p_G(x)}{p_H(x)}  }%
+where $\vert x\vert $ is the sequence length, and $p_G(x) ,p_H(x) $ are the probabilities of sequence $x$ being generated by the processes $G,H$ respectively. Defining the  log-likelihood of  $x$ being generated by a process $G$ as :
+\cgather{
+  L(x,G)= -\frac{1}{\vert x\vert}\log p_G(x) 
+}%
+The cohort-type for an observed sequence $x$ | which is actually generated by the hidden process $G$ | can be formally inferred from observations based on the following provable relationships (See Suppl. text Section~\ref{SI-sec:PFSA}, Theorem 6 and 7):
+\begin{subequations}\label{eqR}\cgather{
+    \lim_{\vert x \vert \rightarrow \infty}L(x,G) = \mathcal{H}(G)   \\
+    \lim_{\vert x \vert \rightarrow \infty } L(x,H)  =\mathcal{H}(G) +  \mathcal{D}_{\textrm{KL}}(G \vert \vert H)   
+  }\end{subequations}%
+where  $\mathcal{H}(\cdot)$ is the entropy rate of a process~\cite{Cover}. Importantly, Eq.~\eqref{eqR} shows that the computed likelihood has an additional non-negative contribution from the divergence term when we choose the incorrect generative process.  Thus, if a  patient is eventually going to be diagnosed with ASD, then we expect that the disease-specific mapped series corresponding to  her diagnostic history be modeled by the PFSA in the \treatment cohort. Denoting the PFSA corresponding to disease category $j$ for \treatment and control cohorts as $G^{j}_+,G^{j}_0$ respectively, we can compute the \textit{sequence likelihood defect} (SLD, $\Delta^j$) as:
+\cgather{
+  \Delta^j \triangleq L(G^{j}_0,x) - L(G^{j}_+,x) \rightarrow \mathcal{D}_{\textrm{KL}}(G^{j}_0 \vert \vert G^{j}_+) \label{eq6}
+}%
+With  the inferred  PFSA  models and  the individual diagnostic history, we  estimate the SLD measure on the  right-hand side of Eqn.~\eqref{eq6}. The higher this likelihood defect, the higher  the similarity of diagnosis history to that of children with autism.
+%####################
+\subsection{Step 3: Risk Estimation Pipeline With Semi-supervised \& Supervised Learning Modules}
+The risk estimation pipeline operates on patient specific information limited to the sex and available  diagnostic history from birth, and produces an estimate of the relative risk of ASD diagnosis at a specific age, with an associated  confidence value. To learn the parameters and associated model structures of  this pipeline, we transform the patient specific data to a set of engineered features, and the feature vectors realized on the
+\treatment and control sets are  used to train a gradient-boosting classifier~\cite{friedman}. The complete list of $165$ features used  is provided in Tab.~\ref{main-EXT-tab1} in the main text.
+
+We need two training sets: one to infer the models, and one to  train the classifier  with features  derived  from the inferred models. Thus, we do a random 3-way split of the set of unique patients into \textit{feature-engineering} ($25\%$), \textit{training} ($25\%$) and \textit{test} ($50\%$) sets. We use the feature-engineering set of ids first to infer our PFSA models \textit{(unsupervised model inference in each category)}, which then allows us to train the gradient-boosting classifier using the training set and PFSA models \textit{(classical supervised learning)}, and we finally execute  out-of-sample validation on the test set. Fig.~\ref{main-fig1}B in the main text shows the top $15$ features  ranked in order of their relative importance (relative loss in performance when dropped out of the analysis). 
+\section{Comparison With State of the Art Off-the-shelf ML Algorithms}\label{sec:offtheshelf}
+%###########################################################
+%###########################################################
+%###########################################################
+ {\NCOL \begin{figure}[!ht]
+    \begin{verbatim}
+Model: "sequential_4"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_1 (LSTM)                (None, 150)               180600    
+_________________________________________________________________
+dense_5 (Dense)              (None, 32)                4832      
+_________________________________________________________________
+dense_6 (Dense)              (None, 1)                 33        
+=================================================================
+Total params: 185,465
+Trainable params: 185,465
+Non-trainable params: 0
+_________________________________________________________________
+\end{verbatim}
+    \captionN{\HCOL The simplest LSTM investigated as a baseline. More complex models have significantly larger number of trainable parameters (1 to 10 Million). In contrast our pipeline has 13,744 trainable parameters.}\label{figlstmex}
+\end{figure}
+}
+
+Off the shelf algorithms with little or no pre-processing, $i.e.$, using the diagnostic codes themselves are time-stamped categorical features failed to produce clinically relevant performance (See SI-Fig.~\ref{EXT-figcompwsoa}). Classifiers such as random forests~\cite{breiman}, and gradient boosters~\cite{friedman} might be penalized due to their inability to take into account long-range temporal information. Since the number of diagnostic codes available per patient is small, recurrent neural network implementations such as LSTM~\cite{hochreiter} might be suffering from the data sparsity in training. It is possible that the performance of the competing approaches might be improved with extensive tuning or clever feature-engineering.
+%###########################################################
+%###########################################################
+%###########################################################
+\section{Comparison With  Pipeline Variations, Feature Subsets and Neural Net Post-processing}\label{sec:pipelinevar}
+In addition to the naive baseline approaches, we also evaluated the performance achievable  with LSTMs (denoted as LSTMB in SI-Fig.~\ref{EXT-figcompwsoa}) that use identical preprocessing as our pipeline, $i.e.$, representation of diagnostic histories as trinary sequences in 18 categories for each patient, and achieved $\sim$80\% AUC  at 150 weeks for males in the Truven database (compared to $> 85\%$ for our approach). However, the performances drop significantly when the number of positive samples is reduced, yielding an AUC of 66\% on the UCM dataset for males, 60\% for females on the Truven dataset, and a  worse-than-random 40\% on the UCM dataset respectively (See Fig.~\ref{EXT-figcompwsoa}). 
+
+  Much better results were obtained when we compared our optimized pipeline to pipelines that use only a subset of our features: namely, the  ones that use only features derived from sequence statistics and exclude the ones derived from learning PFSAs (recall that PFSAs are special HMMs we learn using our novel algorithms)  from the disease categories as described in Methods in the main text, or using only the PFSA-based SLD features, or using simply the density of diagnostic codes (See Fig.~\ref{EXT-figcompsi}, panel D). In all these cases we analyzed, our pipeline has a clearly demonstrable advantage (See  Fig.~\ref{EXT-figcompsi}, panel D) that is stable across databases,  under reductions in sample sizes, and in balanced resampling experiments (See Fig.~\ref{EXT-figcompsi}, panel C).
+  
+ {\HCOL While it is difficult to explain the exact source of a modeling framework's performance, and even more difficult to explain  non-performance, we can point to the following advantages that our approach has over existing techniques:}
+  \begin{enumerate}\HCOL
+    \item \textbf{Purely Classification Algorithms With No Pre-processing Do not Do well.} Pure classifiers such as random forests, gradient boosters, etc. are not time series modeling frameworks, and might not capture stochastic temporal patterns well. While features are not certainly assumed to be independent in these algorithms, it is problematic to learn patterns that do not appear at fixed time points in the diagnostic history.
+  \item \textbf{Lower Sample Complexity Compared to Deep Learning Frameworks.} Compared to LSTMs and RNNs, we are able to capture stochastic behavior with more compact models, which results in  better sample complexity. In other words, if we have less data, our models do better, because we estimate fewer parameters.
+  \item \textbf{Designed Bottom-up for Learning Stochastic Processes.} It is easily demonstrated that LSTMs and RNNs, while good models of complicated time series in many cases, do not work well for data that are generated by stochastic processes, $i.e.$ are sample paths of a hidden process.
+    % \item \textbf{We May Have  Missed Some Clever Transformation.} It is possible that extensive tuning or feature selection with LSTMs, RNNs or CNNs or some combination thereof, can replicate our performance, or even do better. There will always be that possibility, notwithstanding how much effort we put in to evaluate competing techniques. The authors welcome  \textit{future work in this direction that surpasses our  performance reported here; this  is only going to help the patients  which is what  matters.}
+  \end{enumerate}
+  %
+
+  {\HCOL
+  Thus, there are two key and related issues:  NN models generally have a relatively large number of parameters, and  these large number of trainable parameters require substantial amount of data to train. In our case, we indeed have a large number of control examples, but a relatively smaller number of positive examples (children who get diagnosed with autism eventually). The amount of training data, even with our large patient database, is not enough to train anything but the simplest of the NN architectures, and even then the number of parameters for such NN models is substantially larger compared to our architecture. This is shown in our example (See SI-Fig.~\ref{figlstmex}), where one of the LSTM models we investigate (the simplest one we tested) has 185,465 parameters, whereas our complete end to end pipeline has 7025+6719=13,744 trainable parameters (an order of magnitude less, where the first contribution is from inferred PFSA models, the second from the ensemble of decision trees in the final gradient boosting model). Additionally, the number of parameters for deep learning models rapidly increase to millions or tens of millions as the models get more complicated.
+
+ Also note that our framework is adaptive (See examples of PFSA models inferred in SI-Fig.~\ref{EXT-autgrid}), and the network structures of the inferred PFSA models is inferred from data, and not fixed a priori; it produces more states where it needs, thus adapting the model resolution to more complex contexts, and obtaining significantly more compact yet effective representations. We must however add the caveat that with sufficient patience and experience it might be possible to devise a specific NN architecture with similar performance to our framework; however, in our approach such artful insight is unnecessary. 
+
+It also seems possible that NN models, which have no stochastic parameters or components, generalize poorly in this context, which is why the performance is relatively better in the Truven dataset (See SI-Fig.~\ref{EXT-figcompwsoa}), but worse in an independent database.
+}
+%####################
+%###########################################################
+\ifFIGS
+\begin{figure}[t]
+  \tikzexternalenable 
+    \tikzsetnextfilename{stdtools}
+    \def\TEXTCOL{gray}
+    \def\MXCOL{black}
+    \centering
+
+   \iftikzX
+\input{Figures/figcomp}
+\else
+  \includegraphics[width=0.9\textwidth]{Figures/External/stdtools}
+  \fi 
+  \captionN{Performance of standard tools on correctly predicting eventual ASD diagnosis, computed at age $150$ weeks of age. Long-short Term Memory (LSTM) networks are the state of the art variation of recurrent neural nets, and Random Forests and Gradient Boosting classifiers (CatBoost) are generally regarded as a representative state of the art classification algorithms. Sequence Likelihood Defect (SLD) is the approach developed in this study. LSTMB denotes LSTM with identical pre-processing as in our pipeline (instead of using raw diagnostic codes). We get much better performance with LSTMB with males in the Truven dataset, but the performance is sensitive to the sizes of the training set, and degrades for smaller samples available for females and in the UCM database, as shown in Panel B.}\label{EXT-figcompwsoa}
+\end{figure}
+\else
+\refstepcounter{figure}\label{EXT-figcompwsoa}
+\fi
+%###########################################################
+%###########################################################
+%###########################################################
+\ifFIGS
+\begin{figure*}[!ht]
+  \tikzexternalenable
+    \tikzsetnextfilename{sanitycheck}
+  \vspace{-10pt}
+  
+  \centering
+\iftikzX
+\input{Figures/figclinic}
+\else
+  \includegraphics[width=0.95\textwidth]{Figures/External/sanitycheck}
+  \fi 
+  
+ \captionN{\textbf{Evaluations of Feature Subsets, Class Imbalance, Code Density, Coding Uncertainty, \& Disambiguation from Other Psychiatric  Phenotypes.} Panel A illustrates that the pipeline performance where the control group is restricted to children to have at least one psychiatric phenotype other than ASD. It is clear that we have very good discrimination between ASD and non-ASD phenotypes. Panel B illustrates the situation where we restrict the treatment cohort to children to have at least $2$ AD diagnostic codes, to see whether the pipeline performance is markedly different in  populations where the coding errors/uncertainty is smaller. We see that such restrictions have no appreciable effect on  pipeline performance. Panel C illustrates the AUC distributions obtained by using sampled control cohorts that are of the same size as the treatment cohort, to evaluate the effect of class imbalance. Again we see that such restrictions do  not appreciably change performance. Panel D explores the performance changes when we use a restricted set of features, or simply use code density as the sole feature. We conclude that the combined feature set used in our optimized pipeline is superior to using the subsets individually. Code density is the least performant feature, and is not stable across databases. }\label{EXT-figcompsi}
+\end{figure*} 
+\else
+\refstepcounter{figure}\label{EXT-figcompsi}
+\fi
+%###########################################################
+%###########################################################
+
+\input{extabfig}
+
+\tikzexternalenable
+
+  
+\subsection{Feature Subset Evaluations \& Code Density As A Feature}\label{subsec:features}
+With regards to Fig.~\ref{EXT-figcompsi}, panel D, we note that the PFSA based features by themselves are comparable to those engineered manually from sequence statistics (the latter include  features such as the proportion of  codes in a patient's history corresponding to specific  disease categories, mean and variance of adjacent empty weeks $etc.$, see main text Table~\ref{main-EXT-tab1} in the main text for details), but the combined runs produce significantly superior results.
+Also, it is interesting to note that simply using the density of diagnostic codes in a child's history is quite predictive of future ASD diagnosis, with the AUC from using just the density of codes as a feature rising to over 75\% in the Truven database at 150 weeks. However, it does not have stable predictive performance across databases, and is also the least performing predictor. We did not include code density in our combined feature set, since it has no effect once the rest of the features are combined.
+
+%\clearpage
+% do we need to this section?
+\section{Threshold Selection on ROC Curve}\label{sec:F1}
+Once the ROC curve has been computed, we must choose a decision threshold to trade-off true positive rate and false positive rate.
+In situations where the number of negatives vastly outnumber the number of positives (which is the case in our problem), it is better to base this trade-off on a measure that is independent of the number of true negatives. The two popular measures considered in the literature  are accuracy and the F1-score:
+\cgather{
+  \textrm{accuracy} = \frac{t_p + t_n}{t_p+f_p+f_n+t_n}\\
+  \textrm{F1}=\frac{2t_p}{2t_p+f_p+f_n}
+}
+The F1-score is the same as accuracy where  the number of true negatives is the same as the number of true positives, thus partially correcting for the class imbalance.
+
+The selection of the threshold may also be dictated by the current practice of ensuring high specificities in screening tests. Thus, the most relevant clinically  operating point  is probably the one corresponding to $95\%$ specificity, which is highlighted in Fig.~\ref{main-fig1}C in the main text.
+\section{Note on Reciever Operating Characteristics (ROC) and Precision-recall  Curves}\label{sec:ROC}
+
+The ROC curve is a plot between the False Positive rate (TPR) and the True Positive Rate (TPR), and the area under the ROC curve (AUC) is often used as a measure of classifier performance. For the same of completeness, we introduce the relevant definitions:
+
+In the following $P$ denotes the total number of positive samples (number of patients who are eventually diagnosed), and $N$ denotes the total number of negative  samples (number of patients in the control group).
+\begin{defn}
+  True positive rate, true negative rate, false positive rate,  positive predictive value (\textbf{PPV}), and \textbf{prevalence} ($\rho$) are defined as: 
+  \calign{
+    \TPR &= \frac{t_p}{P} = \frac{t_p}{t_p+f_n}\\
+    \TNR&= \frac{t_n}{N} = \frac{t_n}{t_n+f_p}\\
+    \FPR&=1-\TNR\\
+    \PPV&=\frac{t_p}{t_p+f_p}\\
+   \rho&=\frac{P}{N+P}
+  }
+  where as before $t_p,t_n,f_p,f_n$ are true positives, true negatives, false positives, and false negatives respectively. 
+\end{defn}
+%
+Note that \TPR is also referred to as \textbf{recall} or \textbf{sensitivity}, and PPV is also referred to as \textbf{precision}. True negative rate is also known as \textbf{specificity}.
+
+A \textbf{precision-recall curve}, or a PPV-sensitivity curve is a plot between \PPV and \TPR.
+
+Denoting sensitivity by $s$, and specifciyty by $c$, it follows that:
+\calign{
+  \PPV & = \frac{t_p/P}{t_p/P + (f_p/N)(N/P)}
+   = \frac{\TPR}{\TPR + ((N-t_n)/N)(N/P)}\\
+ \Rightarrow \PPV & = \frac{s}{s + (1-c)(\frac{1}{\rho} -1)}\label{eq9}
+}%
+Thus, we note that for a fixed specificity and sensitivity, the PPV depends on prevalence. Indeed, it is clear from the above argument that PPV decreases with decreasing prevalence, and vice versa, if specificity and sensitivity are held constant. Also, if prevalence is limited to 2\%, and specificity is held at $95\%$, then the maximum PPV is limited to:
+\cgather{
+ \PPV = s/(s+2.45)\leqq 1/3.45 \sim 29 \% \label{eqPPV}
+}%
+\textbf{This shows that for ASD screening, we can hope for a maximum PPV of $\sim$29\% at 95\% specificity, if the prevalence is stable at around 2\%}.
+
+Compare this with the PPV of $15.8 \%$ (M) and $18.8 \%$ (F) that we achieve at $51.8\%$ sensitivity, where the specificity is held at $95\%$ in Fig.~\ref{main-fig1}C in the main text. Note here that M-Chat/F with follow-up has a PPV of $14.6\%$ as reported by the recent CHOP study~\cite{pmid31562252}.
+%
+
+
+\section{Effect of Class Imbalance}\label{subsec:classimbalance}
+ROC curves are generally assumed to be robust to
+class imbalance.
+Note that if we assume that patient outcomes are independent (which is well-justified in  the case of a non-communicable condition, particularly in large
+databases), then $t_p$ should scale linearly with the total number of positives $P$, implying:
+\cgather{
+\TPR =  \frac{t_p}{P} = \frac{t_p'}{P '}
+  }%
+  implying that with different sizes of the set of positive samples (or negative samples), the ROC curve remains unchanged. In particular, note that even if the prevalence is very small (say 0.01\%), we cannot cheat to boost the AUC by labeling all predictions as negative, or stating that risk is always zero: in that case, our $P$ is very small, but our $t_p=0$ strictly, implying that our $\TPR=0$, thus leading to a zero AUC. We can cheat to boost the accuracy (See the previous section), but not the AUC.
+
+
+  Note that while relative class sizes or imbalance does not affect the ROC (under the assumption that true positives and true negatives scale with the number of positives and negatives), very small absolute sample sizes might still
+  result in poor performance of the model.
+
+We do have significant class imbalance in our datasets. This arises naturally from the low prevalence rate of ASD (small in the sense of comparison of sizes of the control and the \treatment  cohorts). Thus, we validated if the performance of our predictive pipeline remains unchanged by replacing  the full control cohort with a random sample of size equal to that of the \treatment cohort. The results, shown in Fig.~\ref{EXT-figcompsi}C, illustrate that class imbalance has no appreciable effect on our pipeline, as far as the AUC metric is considered.
+
+ The precision-recall curves do get affected by class imbalance, or the prevalence, as shown by Eq~\eqref{eq9}. 
+ However, in diagnostic analysis, they are important since we are generally less interested in the number of true negatives; the ratio of false positives to the total number of positive recommendations by the algorithm is much more relevant, $i.e.$, the PPV or the precision.
+
+We have used this to our advantage. Note that since the PPV is affected by prevalence,  a stratification of the total population with different prevalence in each sub-population suggests the possibility of a conditional choice of the operating point, thus boosting the overall PPV. We describe this approach in the sequel, in Section~\ref{subsec:4D}. First, we establish that our pipeline does not suffer from some important pitfalls arising in the workflows associated with ASD diagnosis, and how the diagnostic codes in Electronic Health Records (EHR) are generated.
+%
+\section{Note on ASD Clinical Diagnosis \& Uncertainty of EHR Record}\label{sec:diag}
+With no precise laboratory  test for ASD, most families experience the following sequence of events~\cite{gordon2016whittling,penner2018practice,hyman2020identification}: 1) routine screening at 18 and 24 months of age  identifies high risk, and   is followed by 2) a diagnostic evaluation. The American Academy of Pediatrics (AAP)  recommends screening all
+children for symptoms of ASD
+ at 18 and
+24 months of age in their primary
+care visits~\cite{johnson2007identification,zwaigenbaum2015early}.  However, results of a screening test are not
+diagnostic (\textit{and hence do not produce an EHR diagnostic code}); they help the primary care
+provider identify children who are at
+risk for a diagnosis of ASD and
+require additional evaluation. The M-CHAT/F is the
+most studied and widely used tool
+for screening toddlers for ASD~\cite{robins2014validation,hyman2020identification}.
+
+Unfortunately, children with milder symptoms are harder to screen for.
+The AAP warns that children with milder symptoms
+and/or average or above-average
+intelligence  may not be identified
+with symptoms until  school age,
+when differences in social language
+or personal rigidities affect function~\cite{hyman2020identification}.
+%
+\subsection{Diagnostic Evaluations}\label{subsec:diageval}
+
+Once a child is determined to be at
+risk for a diagnosis of ASD, either by
+screening or surveillance, a timely
+referral is needed for clinical diagnostic
+evaluation~\cite{penner2018practice}, which 
+will, on positive identification, assign a clinical diagnosis, and 
+produce an EHR record.
+
+The history of symptoms of  ASD presentation in individual patients may be elucidated by questionnaires such as
+the Social Communication Questionnaire (SCQ), or Social Responsiveness
+Scale (SRS), or the Autism Diagnostic Interview-Revised (ADI-R)~\cite{hyman2020identification}. These questionnaires alone are insufficient for making a clinical diagnosis, but provide a structured approach to
+elicit symptoms. Validated observation tools used to provide structured data to confirm a clinical diagnosis include the Autism Diagnostic Observation Schedule,
+Second Edition (ADOS-2)~\cite{esler2015autism} and the
+Childhood Autism Rating Scale,
+Second Edition (CARS-2)~\cite{chlebowski2010using}. Current guidance from the American Academy of Pediatrics~\cite{hyman2020identification}   notes that no single
+observation tool is universally appropriate,
+and that such tools are meant to support the application of the diagnostic criteria informed by history
+and other data.
+
+At present, the Autism Diagnostic Interview-Revised (ADI-R) and Autism Diagnostic Observation
+Schedule (ADOS) are considered the ``gold
+standard'' tools to enable the  diagnosis of ASD~\cite{falkmer2013diagnostic}. 
+The true  ``gold standard'' classification and diagnosis of autism is historically taken to be a multi-disciplinary team (MDT) clinical assessment, including use of the ADOS and
+ADI-R, as well as other assessments with consensus clinical judgment~\cite{falkmer2013diagnostic}.  
+The MDT clinical diagnosis correct classification rate for ASD is approximately 80.8\%. Thus, any individual tool that correctly classifies ASD at a rate of 80 \% or over could be considered to be just as accurate as the ``gold standard''~\cite{falkmer2013diagnostic}. With ADOS-2 and associated tools verfiably  reaching this classification rate, the current APA guidance suggests that individual general pediatricians might hand out initial diagnoses if they are familiar with the relevant DSM diagnostic criteria. This simultaneously raises the prevalence, and  the possibility that  some diagnostic codes pertaining to ASD in medical history databases could be arising from less restrictive workflows, and thus might carry more uncertainty.
+
+In our study, we checked if restricting the treatment cohort to children with at least two  distinct ASD diagnostic codes in their medical histories instead of one (which significantly reduces the possibility of erroneous coding) changes the performance of the algorithm. The results  shown in Fig.~\ref{EXT-figcompsi}B illustrate that we have very little change in out-of-sample predictive performance, thus alleviating this concern.
+
+\subsection{Change In Diagnostic Criteria for ASD, Inclusion of PDD, Asperger, and Disambiguation From Unrelated Psychiatric Phenotypes}\label{subsec:otherpsych}
+
+The DSM-5 established
+a single category of ASD to replace
+the subtypes of autistic disorder,
+Asperger syndrome, and pervasive
+developmental disorder not
+otherwise specified in the Diagnostic
+and Statistical Manual of Mental
+Disorders, Fourth Edition, Text
+Revision (DSM-IV-TR)~\cite{hyman2020identification}. This justifies our use of diagnostic codes from ICD9 299.X as specification of an ASD diagnosis, and use of GEMS mapping to 299.X for ICD10 codes when we encounter them. Future renditions of our pipeline will use purely ICD-10 specification, which does not change the algorithm, but merely how we input data into it.
+
+ It is  interesting to note that we would be actually unable to discriminate between  those phenotypes effectively for  high predictability even if we wanted: in our initial efforts, we found it is very difficult to design a high performing pipeline that recognizes these sub-types separately.
+
+The  question then arises as to how well we can discriminate between ASD and other unrelated psychiatric phenotypes. Does our pipeline pick up on any psychiatric conditions, or is it specific to ASD? We directly evaluated this, by restricting the test control  cohort to  patients with at least one psychiatric code other than ASD. We get very high discrimination reaching AUCs over 90\% at 100-125 weeks of age, which establishes that our pipeline is indeed largely specific to ASD.
+%
+\subsection{Performance Comparison With M-CHAT/F}
+ The M-CHAT/F is the
+most studied and widely used tool
+for screening toddlers for ASD~\cite{robins2014validation,hyman2020identification}.
+
+Guthrie $\etal$~\cite{pmid31562252} from the Children's Hospital of Philadelphia (CHOP)  demonstrate that when applied as a universal screening tool, M-CHAT/F has a sensitivity of 38.8\%, specificity of 94.9\% and PPV of 14.6\%. This work is the only large-scale study of M-CHAT/F (n=20,375) we are aware of with sufficient follow-up after the age of four years to provide a reasonable degree of confidence in the sensitivity of M-CHAT/F.
+
+Comparing the performance metrics achieved at different age groups across data sets and sexes for our pipeline (See main text  Table~\ref{main-EXT-tabssp} in the main text), we conclude that our approach produces a strictly superior PPV (exceeding M-CHAT/F PPV by at  $14\%$ (14.1-33.6\%) when sensitivity and specificity are held at comparable values around the age of 26 months ($\approx 112$ weeks). We cannot compare at other operating points due to a lack of M-CHAT/F performance characterization anywhere else.
+
+Apart from standalone performance, our proposed approach has several key advantages: it is clearly immune to parental educational level, and language barriers. Since access to insurance and medical records do get impacted by socio-economic variables, there is the possibility of some indirect impact from the demographic makeup of the training datasets. But overall, diagnostic histories are free from biases that have historically plagued questionnaire-based screens~\cite{hyman2020identification}. Additionally, while M-CHAT/F is relatively easy and quick to administer, the issue of time and resource commitment cannot be ignored~\cite{hyman2020identification}. These factors conspire  to produce reduced  coverage, which in turn  casts  doubt upon the necessity of universal screening programs despite clear guidance on the contrary from the AAP~\cite{pmid31562252}. 
+
+Additionally, being functionally independent of the M-CHAT/F, we can take advantage of any population stratification induced by the M-CHAT/F results to significantly boost combined screening performance.
+%###############################################
+
+%####################################
+%####################################
+\section{Improving Wait-times For  Diagnostic Evaluations by Reducing False Positives  in Routine Screening}\label{sec:waittime}
+%####################################
+%####################################
+%####################################
+%####################################
+%####################################
+While children with ASD  can be diagnosed as toddlers~\cite{lord2006autism,kleinman2008diagnostic} (developmental concerns may show up before the first birthday~\cite{bolton2012autism,kozlowski2011parents}), the mean  age of
+diagnosis is over 4 years~\cite{baio2014prevalence}. 
+%
+%
+Since a clinical diagnosis of ASD requires the multi-step process described in the previous section, this delay mainly arises from extended   wait-times and queues, which ultimately 
+delays entry into early intervention (EI) programs. 
+While   time-consuming evaluations~\cite{kalb2012determinants}, cost of care~\cite{bisgaier2011access},  lack of providers~\cite{fenikile2015barriers}, lack of comfort in diagnosing
+by primary care providers~\cite{fenikile2015barriers},  and other challenges, are all responsible to varying degrees that culminate in these delays~\cite{gordon2016whittling}, one rather obvious source is the limited PPV of screening tests that are available today. With the PPV of M-CHAT/F being around 14.6\%, over 85 out of 100 people flagged for diagnostic evaluation are false positives, leading to wait times that currently range from 3 months to 1 year. To make matters worse, access to care and resources are sparse  except near urban  centers. For example, only 7\% of developmental pediatricians practice in rural areas, and some states do not even have a developmental pediatrician~\cite{gordon2016whittling,althouse2006pediatric}.
+
+A key contribution of this work is to be able to significantly reduce the number of false positives without sacrificing specificity, and thus significantly  improving wait-times and  patient outcomes.
+  
+\subsection{4D Decision Optimization Using M-CHAT/F Population Stratification To Boost PPV}\label{subsec:4D}
+%###############################################
+%###############################################
+ %###############################################
+%###############################################
+\ifFIGS
+\begin{figure*}[t]
+  \tikzexternalenable
+    \tikzsetnextfilename{4dopt}
+  \vspace{-10pt}
+  
+  \centering
+
+   \iftikzX
+\input{Figures/figclinic_}
+\else
+  \includegraphics[width=0.9\textwidth]{Figures/External/4dopt}
+  \fi 
+
+\captionN{\textbf{4D Search To Take Advantage of Data on Population Stratification (Using Prevalence of 2.23\% as reported by CHOP~\cite{pmid31562252}).} While as  a standalone tool our approach is comparable to M-CHAT/F at around the 26 month mark (and later), we can take advantage of the independence of the tests to devise a conditional choice of the operating parameters for the new approach. In particular, taking advantage of published estimated prevalence rates of different categories of  M-CHAT/F scores, and  true positives in each sub-population upon stratification, we can choose a different set of specificity and sensitivity in each sub-population to yield significantly improved overall performance across databases, and much earlier. Additionally, we can choose to operate at a high recall point, where we maximize overall sensitivity, or a high precision point, where we maximize the positive predictive value.} \label{EXT-fig4D}
+\end{figure*}
+\else
+\refstepcounter{figure}\label{EXT-fig4D}
+\fi
+%###########################################################
+%###############################################
+
+Assume that there are $m$ sub-populations such that:
+the total number of positives and negatives, and the  prevalences in each sub-population are given by $P_i,N_i$ and $\rho_i$ respectively, with $ i \in \{1,\cdots, m\}$. Let $\beta_i$ be the relative size of the sub-populations. Thus, we have:
+\cgather{
+  P = \sum_i P_i\\
+  N= \sum_i N_i\\
+\beta_i = \frac{N_i+P_i}{N+P} \\
+  \rho_i = \frac{P_i}{N_i + P_i}= \frac{P_i}{\beta_i(N + P)}
+}%
+Therefore, denoting the sensitivity and specificity of the sub-populations as $s_i$ and $c_i$ respectively, we have:
+\cgather{
+s=t_p/P = \frac{\sum_i t_p\vert_i}{P} = \frac{\sum_i (t_P\vert_i / P_i ) \times (\beta_i \rho_i (P+N))}{P} =\sum_i s_i \beta_i \frac{\rho_i}{\rho} 
+}%
+Thus, we end up with:
+\begin{subequations}\label{eqscpop}
+\cgather{
+  s= \sum_{i=1}^m s_i \gamma_i  \\
+  c= \sum_{i=1}^m c_i \gamma_i' \\
+PPV = \frac{s}{s+(1-c)(\frac{1}{\rho} -1)}
+\intertext{
+where we have denoted:
+}
+\gamma_i = \beta_i \frac{\rho_i }{\rho}, \textrm{ and }  \gamma_i'= \beta_i \frac{1-\rho_i}{1-\rho}
+  }%
+\end{subequations}%
+  Now, using Table~\ref{EXT-tabCHOP}, we can compute the values for $\gamma_i, \gamma_i'$, as shown below.
+
+%#################################### 
+\begin{table*}[!ht]
+\centering
+
+\mnp{.89\textwidth}{
+
+\captionN{Boosted Sensitivity, Specificity and PPV Achieved at  \textbf{150 weeks}  Conditioned on M-CHAT/F Scores}\label{EXT-tabboost150}
+  \vskip .5em
+
+\begin{tabular} {L{.33in}|L{.33in}|L{.33in}|L{.33in}||L{.35in}|L{.35in}|L{.375in}||L{.375in}|L{.35in}|L{.35in}||L{.6in}}
+\hline
+\multicolumn{4}{c||}{\cellcolor{lightgray!60}M-CHAT/F Outcome}  & \multicolumn{3}{c||}{\mnp{.9in}{\vskip .2em global\\performance (Truven)\vskip .2em  } }&\multicolumn{3}{c||}{\mnp{1in}{\vskip .2em global\\performance\\(UCM)\vskip .2em }} &  \multirow{3}{*}{prevalence}\\\cline{0-9}
+ 0-2  NEG & 3-7  NEG & 3-7  POS & $\geq  8$  POS & \multirow{2}{*}{\mnp{.1in}{speci-ficity}} & \multirow{2}{*}{\mnp{.1in}{sensi-tivity}} &\multirow{2}{*}{PPV}& \multirow{2}{*}{\mnp{.1in}{speci-ficity}} & \multirow{2}{*}{\mnp{.1in}{sensi-tivity}} & \multirow{2}{*}{PPV} & \\\cline{0-3}
+\multicolumn{4}{c}{\cellcolor{lightgray} specificity choices}  & & & &&&&\\\hline 
+  \input{Figures/plotdata/boost150} 
+\end{tabular}}
+
+\vspace{5pt}
+
+\mnp{.97\textwidth}{
+  \captionN{Population Stratification Results on large M-CHAT/F Study(n=20,375)~\cite{pmid31562252} }\label{EXT-tabCHOP}
+    \vskip .5em
+
+  \begin{tabular}{C{.5in} | L{1.5in}|L{1in}|L{1in}|L{1in}||L{.5in}}\hline
+ \bf \sffamily   Id &  \bf \sffamily Sub-population & \bf \sffamily Test Result & \bf \sffamily ASD positive & \bf \sffamily ASD Negative & \bf \sffamily Total \% \\\hline
+   A &  M-CHAT/F $\geqq 8$ & Positive & 0.34\% & 0.64\% & 0.99\% \\\hline
+  B &   M-CHAT/F $\in [3,7]$ & Positive (after follow-up)& 0.52\% & 4.39\% & 4.91\% \\\hline
+ C &    M-CHAT/F $\in [3,7]$ & Negative (after follow-up)& 0.14\% & 3.1\% & 3.24\% \\\hline
+  D &   M-CHAT/F $\in [0,2] $ & Negative & 1.22\% & 89.63\% & 90.86\% \\\hline\hline
+    Total \%& &   &2.23\% & 97.77\% & 100\% \\\hline
+    \end{tabular}
+}
+
+\vspace{5pt}
+
+\mnp{.9\textwidth}{
+  \captionN{$\gamma,\gamma'$ Computed from Population Stratification Recorded In  M-CHAT/F Study~\cite{pmid31562252} ($\rho=0.0223$) }\label{EXT-tabCHOP2}
+    \vskip .5em
+
+  \begin{tabular}{C{.5in} | L{1.35in} | L{1.5in}|L{.35in}|L{.35in}|L{.35in}|L{.35in}}\hline
+ \bf \sffamily   Id  &  \bf \sffamily Sub-population& \bf \sffamily Test Result & $\beta_i$ & $\rho_i$ & \bf \sffamily $\gamma_i$ & \bf \sffamily $\gamma'_i$ \\\hline
+   A & M-CHAT/F $\geqq 8$ &  Positive &.0099 & .3469 &.1540  & .0066 \\\hline
+  B & M-CHAT/F $\in [3,7]$ & Positive (after follow-up)& .0491 & .1059 &.2331  & .0449 \\\hline
+ C &   M-CHAT/F $\in [3,7]$ & Negative (after follow-up)& .0324 & .0432 &.0627  & .0317 \\\hline
+  D &  M-CHAT/F $\in [0,2] $ & Negative & .9086 & .0134 &.5471  & .9168 \\\hline
+    \end{tabular}}
+
+\end{table*}
+%###############################################
+%###############################################
+
+Using the prevalence and stratification parameters calculated from the CHOP study (See main text  Table~\ref{EXT-tabCHOP2}~\cite{pmid31562252}), we can compute a conditional choice of sensitivity and specificity for our tool, in each sub-population to ultimately yield an overall performance significantly  superior to  M-CHAT/F. We carry out a four-dimensional search at the age the CHOP population stratification is reported ($26$ months or 112 weeks approximately) to  identify the feasible region with  PPV  $>14.6\%$, or sensitivity  $>38.8\%$ while keeping specificity  $>94.9\%$ where each of these dimensions represent the independent choice of sensitivity in the corresponding sub-population. For each set of 4 choices, the corresponding specificities are read-off from our computed ROC curve, and then the overall sensitivity, specificity and PPV are calculated using Eq.~\eqref{eqscpop}. The results are shown in Fig.~\ref{EXT-fig4D}, where we include the computations at $75$ weeks, $125$ weeks, and $150$ weeks, with the same population stratification (although understandably the stratification will deviate from the values obtained at 26 months for those other ages).
+
+An important assumption here is that the two tests are independent. Since M-CHAT/F is based on the detection of behavioral signals of developmental delay associated with autism via questionnaires completed by the primary care-givers, while our pipeline is based on  physical comorbidities, independence is reasonable. Hence, we can simulate the application of the pipeline to each sub-population, and compute the overall performance quantities using a pre-computed ROC curve. Here we use the curve corresponding to the age in weeks, but average the male and female ROC curves, which are  close as shown in Fig.~\ref{main-fig1} in the main text. The male-female averaging is necessary since the results from the CHOP study does not report sex stratified data.
+ 
+We show the feasible region obtained by this computation in Fig.~\ref{EXT-fig4D} of this document, and in main text Fig.~\ref{main-figprc} of the main text. Particularly, note that we get a PPV close to or higher than $30\%$ at the high precision (HP) operating point, or a sensitivity above  55\% for the high recall (HR) operating point, when we restrict specificities to above $95\%$.
+  
+It is important to note  that Eq.~\eqref{eqscpop} and hence the results are dependent on the population prevalence $\rho$. We report the dependence of the solution to the 4D optimization for population prevalence between $1.7\%$ (CDC estimate~\cite{hyman2020identification}), and $2.23\%$ (CHOP estimate~\cite{pmid31562252}).
+In particular, it is illuminating to compare these results directly with M-CHAT/F performance, as shown in Fig.~\ref{main-figprc}, panels B and C in the main text. In panel C, we show that for any stable population prevalence between  
+$1.7\%$ and $2.24\%$, we can achieve nearly double the PPV without losing sensitivity, or increase the sensitivity by about 50\% without sacrificing PPV, while holding not letting the  specificity to drop below $94\%$.
+
+
+\section{Generating PFSA Models From Set of Input Streams with Variable Input Lengths}\label{sec:varl}
+Our PFSA reconstruction algorithm~\cite{CL12g} is distinct from standard HMM learning. We do not need to pre-specify structures, or the number of states in the algorithm, and all model parameters are inferred directly from data. Additionally, we can operate either  with 1) a single input stream, or  2) a set of input streams of possibly varying lengths which are assumed to be different and independent sample paths from the unknown stochastic generator we are trying to infer. At an intuitive level, we use the input data to infer the length of histories one must remember to estimate the current state, and predict futures for the process being modeled. Thus, we do not step     through the symbol streams with a pre-specified model structure, and  avoid the need to have equal-length inputs. More details of the algorithm are provided in the next section.
+
+The ability to model a set of input streams of varying lengths is particularly important, since medical histories of different patients are typically of different lengths.
+
+\input{PFSAThm.tex}
+
+
+\section{Pipeline Optimization}\label{sec:pipeline}
+\input{pipeline.tex}
+%\clearpage
+\input{ehrapp.tex}
+% \clearpage
+
+%\bibliographystyle{naturemag}
+%\bibliography{mergedbib}
+
+
+
+
+\end{document}
+
+%  LocalWords:  comorbidities
