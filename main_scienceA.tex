@@ -135,6 +135,17 @@ Additionally, we found that including information on prescribed medications and 
 
 As a key limitation to our approach, automated pattern recognition  might not reveal true causal precursors. The relatively uncurated nature of the  data does not correct for coding mistakes by the clinician and other artifacts, $e.g.$   a bias towards over-diagnosis of  children on the borderline of the diagnostic criteria due to clinicians' desire to help families access service, and biases arising from changes in diagnostic practices over time~\cite{10.1001/jamapsychiatry.2019.1956}. Discontinuities in patient medical histories from change in provider-networks  can also introduce  uncertainties  in risk estimates, and socio-economic status of patients which impact access to healthcare  might skew patterns in EHR databases. Despite these limitations, the design of a questionnaire-free component to ASD screening  that systematically leverages co-morbidities  has far-reaching consequences, by potentially slashing the false positives and wait-times, as well as removing systemic under-diagnosis issues amongst females and minorities. 
 
+
+One minor issue is that accuracy while popular in the deep
+learning community is not an objective and correct metric to assess a learning or decision making function but rather also consider the trust given that there be nonidealities in the
+training datasets (errors, misclasifications, misinterpretations, subjectivity, etc). There have been seminal work efforts in clarifying this issue of accuracy versus trust~\cite{cheng2020there} and this could be discussed as a potential future research direction.
+
+
+Another limitation or issue can potentially be negative associations which might be indication of collider bias~\cite{berkson1946limitations}.
+And neural network equivalent of these methods is not obvious, and the
+methods used in the current manuscript involve fewer nominal free parameters.
+
+
 Future efforts will attempt to realize our approach within a clinical setting. We will also explore the impact of  maternal medical history, and the  use of calculated risk to trigger   blood-work to look for expected  transcriptomic  signatures of ASD. Finally,  the analysis developed here applies to phenotypes beyond ASD, thus opening the door to the possibility of  general  comorbidity-aware risk predictions  from electronic health record databases. {\HCOL We will also investigate the possibility of identifying more transparent and interpretable risk precursors via post-processing of our inferred models.}
 
 
