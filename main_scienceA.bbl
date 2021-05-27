@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{cdc0}
 \textrm{Centers for Disease Control and Prevention}, Data \& statistics on
@@ -244,9 +244,16 @@ V.~W. Hu, {\it Future Neurol\/} {\bf 8}, 29 (2013).
 D.~Christensen, {\it et~al.\/}, {\it Developmental Medicine \& Child
   Neurology\/} {\bf 56}, 59 (2014).
 
+\bibitem{berkson1946limitations}
+J.~Berkson, {\it Biometrics Bulletin\/} {\bf 2}, 47 (1946).
+
 \bibitem{10.1001/jamapsychiatry.2019.1956}
 E.-M. Rødgaard, K.~Jensen, J.-N. Vergnes, I.~Soulières, L.~Mottron, {\it JAMA
   Psychiatry\/} {\bf 76}, 1124 (2019).
+
+\bibitem{cheng2020there}
+M.~Cheng, S.~Nazarian, P.~Bogdan, {\it Frontiers in Artificial Intelligence\/}
+  {\bf 3}, 54 (2020).
 
 \bibitem{GEMS}
 General equivalence mappings.

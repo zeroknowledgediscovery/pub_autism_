@@ -666,9 +666,6 @@ INPUT cover.aux
 INPUT ./cover.out
 INPUT ./cover.out
 INPUT /home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy8.600pk
-INPUT /home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concrete/ccr10.657pk
-INPUT /home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy10.657pk
-INPUT /home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccmi10.657pk
 INPUT /home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/ifsym/ifsym10.482pk
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb

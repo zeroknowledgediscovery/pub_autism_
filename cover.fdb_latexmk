@@ -1,9 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1617299343 "cover.tex" "cover.pdf" "cover" 1617299898
-  "/home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccmi10.657pk" 1550471055 16024 87d1cbf82a775477906bd519e63c204d ""
-  "/home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy10.657pk" 1550471052 14628 f44a24e94591ef036862a23fe22a8f10 ""
+["pdflatex"] 1622053478 "cover.tex" "cover.pdf" "cover" 1622053480
   "/home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy8.600pk" 1549563858 10972 af14d85a2c541779a56e119dde070b21 ""
-  "/home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/concrete/ccr10.657pk" 1550471054 11044 74ecac3e6f6bd1023ef566969d156cbd ""
   "/home/ishanu/.texlive2018/texmf-var/fonts/pk/ljfour/public/ifsym/ifsym10.482pk" 1547673595 5240 e032a90962fa30c721676b4192ab3543 ""
   "/home/ishanu/Dropbox/Apps/ShareLaTeX/letterhead/Figures/RGBPNG/maroon.png" 1388903326 95868 2a313fb867de6a8ac67b111c44222223 ""
   "/home/ishanu/Dropbox/Apps/ShareLaTeX/letterhead/Figures/phoenix/lightgray.jpg" 1567798560 235589 f356af68bf87173e3961a1a467977db0 ""
@@ -329,14 +326,14 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1480098843 4962 9c1069474ff71dbc47d5006555e352d3 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1568228649 33524 43ee1c7630280d739b15608aaccf584c ""
   "/usr/share/texlive/texmf-var/web2c/pdftex/pdflatex.fmt" 1568228685 4163577 c03f1fbdd450853d66fcccf6b0f184bd ""
-  "cover.aux" 1617299345 699 64353f2e7b9410e7c752bb3770703dbe ""
-  "cover.out" 1617299344 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "cover.tex" 1617299343 6697 616a3f59b402fa963253dad6ce4a6926 ""
-  "custom_defs.tex" 1617298588 2679 e0085d1c3ee2d621f57c6d6169ec32a4 ""
+  "cover.aux" 1622053480 699 64353f2e7b9410e7c752bb3770703dbe ""
+  "cover.out" 1622053479 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "cover.tex" 1622053469 5230 db8ed0aaf2a84c9b31e19b178e837177 ""
+  "custom_defs.tex" 1622053111 2680 9ae2ce5e384936d8119c59a07cddeecd ""
   "preamble.tex" 1594992495 17057 b3e48e562044a61a0e06024739b63858 ""
   (generated)
-  "cover.pdf"
-  "cover.aux"
-  "cover.auxlock"
-  "cover.log"
   "cover.out"
+  "cover.log"
+  "cover.auxlock"
+  "cover.aux"
+  "cover.pdf"
