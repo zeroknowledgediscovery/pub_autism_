@@ -1,15 +1,5 @@
 \begin{thebibliography}{100}
 
-\bibitem{cdc0}
-\textrm{Centers for Disease Control and Prevention}, Data \& statistics on
-  autism spectrum disorder | cdc (2019).
-
-\bibitem{nimh}
-L.~Gilotty, Early screening for autism spectrum (2019).
-
-\bibitem{pmid31562252}
-W.~Guthrie, {\it et~al.\/}, {\it Pediatrics\/} {\bf 144} (2019).
-
 \bibitem{pmid27565363}
 E.~Gordon-Lipkin, J.~Foster, G.~Peacock, {\it Pediatr. Clin. North Am.\/} {\bf
   63}, 851 (2016).
@@ -56,6 +46,9 @@ T.~S. Fenikil{\'e}, K.~Ellerbeck, M.~K. Filippi, C.~M. Daley, {\it Primary
 \bibitem{gordon2016whittling}
 E.~Gordon-Lipkin, J.~Foster, G.~Peacock, {\it Pediatric Clinics\/} {\bf 63},
   851 (2016).
+
+\bibitem{pmid31562252}
+W.~Guthrie, {\it et~al.\/}, {\it Pediatrics\/} {\bf 144} (2019).
 
 \bibitem{robins2014validation}
 D.~L. Robins, {\it et~al.\/}, {\it Pediatrics\/} {\bf 133}, 37 (2014).
@@ -271,6 +264,10 @@ J.~Bondy, U.~Murty, {\it Grad. Texts in Math\/}  (2008).
 \bibitem{breiman}
 L.~Breiman, {\it Mach. Learn.\/} {\bf 45}, 5 (2001).
 
+\bibitem{cdc0}
+\textrm{Centers for Disease Control and Prevention}, Data \& statistics on
+  autism spectrum disorder | cdc (2019).
+
 \bibitem{chattopadhyay2008structural}
 I.~Chattopadhyay, A.~Ray, {\it International Journal of Control\/} {\bf 81},
   820 (2008).
@@ -347,6 +344,9 @@ C.~W.~J. Granger, R.~Joyeux, {\it Journal of Time Series Analysis\/} {\bf 1},
 \bibitem{matthews2016sparse}
 A.~G. d.~G. Matthews, J.~Hensman, R.~Turner, Z.~Ghahramani, {\it Journal of
   Machine Learning Research\/} {\bf 51}, 231 (2016).
+
+\bibitem{nimh}
+L.~Gilotty, Early screening for autism spectrum (2019).
 
 \bibitem{penner2018practice}
 M.~Penner, E.~Anagnostou, W.~J. Ungar, {\it Molecular autism\/} {\bf 9}, 16
