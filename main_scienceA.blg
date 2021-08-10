@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main_scienceA.aux
+The style file: Science.bst
+Database file #1: mergedbib.bib
+I was expecting an "="---line 40 of file mergedbib.bib
+ : @misc{GEMS, title={General Equivalence Mappings}, url={https://www.cms.gov/Medicare/Coding/ICD10/downloads/ICD-10_GEM_fact_sheet.pdf}, publisher={Centers for Medicare \& Medicaid Services}, year 
+ :                                                                                                                                                                                                    accessed={2019}, month={Apr}}
+I'm skipping whatever remains of this entry
+Warning--empty journal in hardy1992divergent
+You've used 100 entries,
+            2300 wiz_defined-function locations,
+            1287 strings with 31961 characters,
+and the built_in function-call counts, 20602 in all, are:
+= -- 1796
+> -- 962
+< -- 3
++ -- 482
+- -- 240
+* -- 1639
+:= -- 3158
+add.period$ -- 100
+call.type$ -- 100
+change.case$ -- 6
+chr.to.int$ -- 0
+cite$ -- 101
+duplicate$ -- 1073
+empty$ -- 1895
+format.name$ -- 321
+if$ -- 4768
+int.to.chr$ -- 0
+int.to.str$ -- 100
+missing$ -- 102
+newline$ -- 303
+num.names$ -- 98
+pop$ -- 439
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 668
+stack$ -- 0
+substring$ -- 871
+swap$ -- 307
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 177
+width$ -- 103
+write$ -- 785
+(There was 1 error message)

@@ -112,7 +112,7 @@ I.~Chattopadhyay, H.~Lipson, {\it Philos Trans A\/} {\bf 371}, 20110543 (2013).
 
 \bibitem{Chattopadhyay20140826}
 I.~Chattopadhyay, H.~Lipson, {\it Journal of The Royal Society Interface\/}
-  {\bf 11} (2014).
+  {\bf 11}, 20140826 (2014).
 
 \bibitem{huang2019data}
 Y.~Huang, I.~Chattopadhyay, {\it arXiv preprint arXiv:1909.12243\/}  (2019).
@@ -252,14 +252,15 @@ M.~Cheng, S.~Nazarian, P.~Bogdan, {\it Frontiers in Artificial Intelligence\/}
 General equivalence mappings.
 
 \bibitem{baio2014prevalence}
-J.~Baio  (2014).
+Autism, D.~D. M. N. S. Y. .~P. Investigators, {\it Morbidity and Mortality
+  Weekly Report: Surveillance Summaries\/} {\bf 63}, 1 (2014).
 
 \bibitem{bolton2012autism}
 P.~F. Bolton, J.~Golding, A.~Emond, C.~D. Steer, {\it Journal of the American
   Academy of Child \& Adolescent Psychiatry\/} {\bf 51}, 249 (2012).
 
 \bibitem{bondy2008graph}
-J.~Bondy, U.~Murty, {\it Grad. Texts in Math\/}  (2008).
+U.~Murty, A.~Bondy, Graph theory (graduate texts in mathematics 244) (2008).
 
 \bibitem{breiman}
 L.~Breiman, {\it Mach. Learn.\/} {\bf 45}, 5 (2001).
@@ -271,10 +272,6 @@ L.~Breiman, {\it Mach. Learn.\/} {\bf 45}, 5 (2001).
 \bibitem{chattopadhyay2008structural}
 I.~Chattopadhyay, A.~Ray, {\it International Journal of Control\/} {\bf 81},
   820 (2008).
-
-\bibitem{chattopadhyay2014data}
-I.~Chattopadhyay, H.~Lipson, {\it Journal of The Royal Society Interface\/}
-  {\bf 11}, 20140826 (2014).
 
 \bibitem{chlebowski2010using}
 C.~Chlebowski, J.~A. Green, M.~L. Barton, D.~Fein, {\it Journal of autism and
@@ -300,7 +297,7 @@ T.~Falkmer, K.~Anderson, M.~Falkmer, C.~Horlin, {\it European child \&
 J.~H. Friedman, {\it Comput. Stat. Data Anal.\/} {\bf 38}, 367 (2002).
 
 \bibitem{hardy1992divergent}
-G.~Hardy, {\it {\'E}ditions Jacques Gabay, Sceaux\/}  (1992).
+G.~H. Hardy {\bf 334} (2000).
 
 \bibitem{hochreiter}
 S.~Hochreiter, J.~Schmidhuber, {\it Neural Comput.\/} {\bf 9}, 1735 (1997).

@@ -29,7 +29,7 @@
 \usepackage{xcite}
 \usepackage{flushend}
 \usepackage{longtable}
-%\makeatletter
+%\makeatletter 
 \setlength{\parskip}{.5pc}
 %\parskip=7pt
 \parindent=0pt
@@ -51,7 +51,7 @@
 \makeatother
 \makeatletter
 \renewcommand{\baselinestretch}{1}
-\renewcommand{\captionN}[1]{\caption{\color{CadetBlue4!80!black} \sffamily \fontsize{9}{10}\selectfont #1  }}
+\renewcommand{\captionN}[1]{\caption{\color{black} \sffamily \fontsize{9}{10}\selectfont #1  }}
 \tikzexternaldisable 
 \def\COLA{black}
 % ###################################
@@ -111,7 +111,7 @@
 \ifFIGS
 \begin{figure*}[!ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{Figures/External/occurv}
+  \includegraphics[width=0.6\textwidth]{Figures/External/occurv}
 
   \captionN{\textbf{ASD Occurrence Patterns}  Panel A illustrates the spatial distribution of ASD insurance claims, and panel B shows the same data after population normalization, illustrating the relatively small demographic skew to ASD prevalence within the general population with access to medical insurance, which is consistent with the suggestion that prevalence variation might be linked to regional and socioeconomic disparities in access to services~\cite{jarquin2011racial}.}\label{figocc}
     \vspace{-5pt}
@@ -234,7 +234,7 @@ Off the shelf algorithms with little or no pre-processing, $i.e.$, using the dia
 %###########################################################
 %###########################################################
 %###########################################################
-\section{Comparison With  Pipeline Variations, Feature Subsets and Neural Network (NN) Post-processing}\label{sec:pipelinevar}
+\section{Pipeline Variations, Feature Subsets and Neural Network (NN) Post-processing}\label{sec:pipelinevar}
 In addition to the naive baseline approaches, we also evaluated the performance achievable  with LSTMs (denoted as LSTMB in SI-Fig.~\ref{EXT-figcompwsoa}) that use identical pre-processing as our pipeline, $i.e.$, representation of diagnostic histories as trinary sequences in 18 categories for each patient, and achieved $\sim$80\% AUC  at 150 weeks for males in the Truven database (compared to $> 85\%$ for our approach). However, the performances drop significantly when the number of positive samples is reduced, yielding an AUC of 66\% on the UCM dataset for males, 60\% for females on the Truven dataset, and a  worse-than-random 40\% on the UCM dataset respectively (See Fig.~\ref{EXT-figcompwsoa}). 
 
   Much better results were obtained when we compared our optimized pipeline to pipelines that use only a subset of our features: namely, the  ones that use only features derived from sequence statistics and exclude the ones derived from learning PFSAs (recall that PFSAs are special HMMs we learn using our novel algorithms)  from the disease categories as described in Methods in the main text, or using only the PFSA-based SLD features, or using simply the density of diagnostic codes (See Fig.~\ref{EXT-figcompsi}, panel D). In all these cases, our pipeline has a clearly demonstrable advantage (See  Fig.~\ref{EXT-figcompsi}, panel D) that is stable across databases,  under reductions in sample sizes, and in balanced re-sampling experiments (See Fig.~\ref{EXT-figcompsi}, panel C).
@@ -461,7 +461,7 @@ Additionally, being functionally independent of the M-CHAT/F, we can take advant
 
 %####################################
 %####################################
-\section{Improving Wait-times For  Diagnostic Evaluations by Reducing False Positives  in Routine Screening}\label{sec:waittime}
+\section{Improving Wait-times For  Diagnostic Evaluations by Reducing False Positives}\label{sec:waittime}
 %####################################
 %####################################
 %####################################
