@@ -1,7 +1,5 @@
 % ##########################################
-\begin{table*}[!ht]
-  \captionN{Patient Numbers, Inclusion-exclusion Criteria and Features Used In Analysis}
-    \begin{subtable}{\textwidth}
+\begin{table*}[t]
   \begin{center}
     \captionN{Patient Counts In De-identified Data \& The Fraction of Datasets Excluded By Our Exclusion Criteria$^\star$}\label{tab2}
     \sffamily\small
@@ -39,12 +37,11 @@
   $^\dag$ Cohort sizes are smaller than the total number of distinct patients due to the following exclusion criteria: 1) At least one code within our complete set of tracked diagnostic codes is present in the patient record, 2) Time-lag between first and last available record for a patient is at least 15 weeks.
 
   $^\star$ Dataset sizes are after the exclusion criteria are applied
-
-\end{subtable}
-\vskip 1em
+\end{table*}
 % ###########################################################
-\begin{subtable}{\textwidth}
-  \captionN{Engineered Features (Total Count: 165)}\label{EXT-tab1}
+
+\begin{table*}[!ht]
+\captionN{Engineered Features (Total Count: 165)}\label{EXT-tab1}
   \vskip .5em
 
   \begin{tabular}{L{2.25in}|L{3in}|C{1in}} \hline
@@ -63,11 +60,10 @@
   \vskip .5em
   \small
   $^\ddag$ Disease categories are described in SI-Table~\ref{SI-tab0} in Supplementary Text.
- \end{subtable}
+% \end{subtable}
 %}
 \end{table*}
 % ###########################################################
-
 % ###########################################################
 \begin{figure*}[!t]
 
@@ -85,7 +81,7 @@
   \includegraphics[width=0.85\textwidth]{perfB.pdf}
  
   \captionN{\textbf{More Details on Standalone Predictive Performance of \acor  and Variation of Inferred Risk.} Panel A illustrates AUC achieved as a function of
-    patient age, for the Truven and UCM datasets. The shaded area outlines the 2 - 2.5  years of age, and  shows that we achieve $>80\%$ AUC for either sex from shortly after 2 years. Panel B illustrates how the average risk changes with time for the control and the positive cohorts. Note that the risk progressions are somewhat monotonic, and the computed confidence bounds suggest that the odds of a child with low risk upto 100 or 150 weeks of age abruptly shifting to a high risk trajectory is low. Panel C shows the distribution of the prediction horizon: the time to a clinical diagnosis after inferred  relative risk crosses $90\%$. Panel D shows that for each new disease code for a low-risk child, ASD risk increases by approximately $2\%$ for either sex. Panel E illustrates the risk progression of a specific, ultimately autistic male child in the Truven database. Abbreviations in the legend: ill defn. (Symptoms, Signs, And Ill-Defined Conditions),   musc. skltl. (Diseases Of The Musculoskeletal System And Connective Tissue), cond. orig. in perintl. (Certain Conditions Originating In The Perinatal Period), immun. (Endocrine, Nutritional And Metabolic Diseases, And Immunity Disorders), nerv. \& sensory (Diseases Of The Nervous System And Sense Organs), respir. (Respiratory Disorders), and digest. (Digestive Disorders). Panel F illustrates  how inferred models differ between the control vs. the \treatment cohorts. On average, models get less complex, implying the exposures get more statistically independent.}\label{fig2}
+    patient age, for the Truven and UCM datasets. The shaded area outlines the 2 - 2.5  years of age, and  shows that we achieve $>80\%$ AUC for either sex from shortly after 2 years. Panel B illustrates  how inferred models differ between the control vs. the \treatment cohorts.   Panel C illustrates how the average risk changes with time for the control and the positive cohorts. Note that the risk progressions are somewhat monotonic, and the computed confidence bounds suggest that the odds of a child with low risk upto 100 or 150 weeks of age abruptly shifting to a high risk trajectory is low. Panel D shows the distribution of the prediction horizon: the time to a clinical diagnosis after inferred  relative risk crosses $90\%$. Panel E shows that for each new disease code for a low-risk child, ASD risk increases by approximately $2\%$ for either sex. Panel F illustrates the risk progression of a specific, ultimately autistic male child in the Truven database. Abbreviations in the legend: ill defn. (Symptoms, Signs, And Ill-Defined Conditions),   musc. skltl. (Diseases Of The Musculoskeletal System And Connective Tissue), cond. orig. in perintl. (Certain Conditions Originating In The Perinatal Period), immun. (Endocrine, Nutritional And Metabolic Diseases, And Immunity Disorders), nerv. \& sensory (Diseases Of The Nervous System And Sense Organs), respir. (Respiratory Disorders), and digest. (Digestive Disorders). On average, models get less complex, implying the exposures get more statistically independent.}\label{fig2}
 \end{figure*}
 % ###########################################################
 \begin{figure}[!ht]
@@ -99,9 +95,7 @@
 \def\PCOL{Tomato!40}
 %#################################### 
 \begin{table*}[!ht]
-  \captionN{Standalone \acor Performance and Boosted Performance Conditioned on M-CHAT/F}
-\begin{subtable}{\textwidth}
-\centering 
+  \centering 
 \captionN{Standalone PPV Achieved at 100, 112 and 150 Weeks For Each Dataset and Gender {\bf (M-CHAT/F:  sensitivity=$38.8\%$, specificity=$95\%$, PPV=$14.6\%$ between 16 and  26 months ($\approx$112 weeks))}}\label{EXT-tabssp}
 
   \vskip .5em
@@ -124,9 +118,11 @@ weeks&specificity&sensitivity&PPV&gender&dataset\\\hline
 150&0.97&0.39&0.26&M&UCM\\\hline
 
   
-\end{tabular}\end{subtable}
-\vskip 1em
-\begin{subtable}{\textwidth}
+\end{tabular}%\end{subtable}
+\end{table*}  
+%#################################### 
+
+\begin{table*}[!ht]
 \centering
 \captionN{Personalized Operation Conditioned on M-CHAT/F Scores at  26 months}\label{EXT-tabboost}
   \vskip .5em
@@ -154,7 +150,7 @@ weeks&specificity&sensitivity&PPV&gender&dataset\\\hline
 
 \flushleft
 $^\star$Prevalence reported by CDC is $1.7\%$, while the CHOP study reports a value of $2.23\%$. The results of our optimization depend on the prevalence estimate.
-\end{subtable}
+%\end{subtable}
 \end{table*}  
 %####################################
 %###########################################################

@@ -1,8 +1,4 @@
-\begin{thebibliography}{100}
-
-\bibitem{pmid27565363}
-E.~Gordon-Lipkin, J.~Foster, G.~Peacock, {\it Pediatr. Clin. North Am.\/} {\bf
-  63}, 851 (2016).
+\begin{thebibliography}{10}
 
 \bibitem{cdc}
 Data \& statistics on autism spectrum disorder | cdc (2019).
@@ -98,7 +94,10 @@ L.~Bishop-Fitzpatrick, {\it et~al.\/}, {\it Autism Research\/} {\bf 11}, 1120
 T.~Lingren, {\it et~al.\/}, {\it PloS one\/} {\bf 11}, e0159621 (2016).
 
 \bibitem{hansen2017truven}
-L.~Hansen, {\it Truven Health Ananlytics IBM Watson Health\/}  (2017).
+T.~H. A. M. C.~C. IBM MarketScan$\textsuperscript{\textregistered}$.~Formerly,
+  E.~Database, Marketscan research data,
+  \url{https://marketscan.truvenhealth.com/marketscanportal/Portal.aspx}.
+  (Accessed on 08/10/2021).
 
 \bibitem{pmid29701730}
 J.~Baio, {\it et~al.\/}, {\it MMWR Surveill Summ\/} {\bf 67}, 1 (2018).
@@ -127,7 +126,7 @@ S.~Kullback, R.~A. Leibler, {\it Ann. Math. Statist.\/} {\bf 22}, 79 (1951).
 
 \bibitem{doob1953stochastic}
 J.~Doob, {\it Stochastic Processes\/}, Wiley Publications in Statistics (John
-  Wiley \& Sons, 1953).
+  Wiley \& Sons, Hoboken, New Jersey, USA, 1953).
 
 \bibitem{althouse2006pediatric}
 L.~A. Althouse, J.~A. Stockman, {\it The Journal of pediatrics\/} {\bf 148},
@@ -140,14 +139,14 @@ O.~Zerbo, {\it et~al.\/}, {\it Brain Behav. Immun.\/} {\bf 46}, 232 (2015).
 H.~Won, W.~Mah, E.~Kim, {\it Front Mol Neurosci\/} {\bf 6}, 19 (2013).
 
 \bibitem{pmid30646068}
-G.~Xu, {\it et~al.\/}, {\it JAMA Netw Open\/} {\bf 1}, e180279 (2018).
+G.~Xu, {\it et~al.\/}, {\it JAMA Network Open\/} {\bf 1}, e180279 (2018).
 
 \bibitem{pmid21651783}
-J.~B. Adams, {\it et~al.\/}, {\it Nutr Metab (Lond)\/} {\bf 8}, 34 (2011).
+A.~Young, {\it et~al.\/} {\bf 58}, E40 (2013).
 
 \bibitem{pmid30823414}
 A.~Fattorusso, L.~Di~Genova, G.~B. Dell'Isola, E.~Mencaroni, S.~Esposito, {\it
-  Nutrients\/} {\bf 11} (2019).
+  Nutrients\/} {\bf 11}, 521 (2019).
 
 \bibitem{pmid21282636}
 R.~Diaz~Heijtz, {\it et~al.\/}, {\it Proc. Natl. Acad. Sci. U.S.A.\/} {\bf
@@ -177,15 +176,15 @@ L.~Shen, {\it et~al.\/}, {\it Front Cell Neurosci\/} {\bf 13}, 105 (2019).
 K.~Ohja, {\it et~al.\/}, {\it Neuromolecular Med.\/} {\bf 20}, 161 (2018).
 
 \bibitem{pmid29307081}
-D.~Gadysz, A.~Krzywdziska, K.~K. Hozyasz, {\it Mol. Neurobiol.\/} {\bf 55},
-  6387 (2018).
+D.~G{\l}adysz, A.~Krzywdzi{\'n}ska, K.~K. Hozyasz, {\it Molecular
+  neurobiology\/} {\bf 55}, 6387 (2018).
 
 \bibitem{pmid27351598}
-T.~C. Theoharides, I.~Tsilioni, A.~B. Patel, R.~Doyle, {\it Transl
-  Psychiatry\/} {\bf 6}, e844 (2016).
+T.~Theoharides, I.~Tsilioni, A.~Patel, R.~Doyle, {\it Translational
+  psychiatry\/} {\bf 6}, e844 (2016).
 
 \bibitem{pmid26793298}
-A.~M. Young, {\it et~al.\/}, {\it Mol Autism\/} {\bf 7}, 9 (2016).
+A.~M. Young, {\it et~al.\/}, {\it Molecular autism\/} {\bf 7}, 1 (2016).
 
 \bibitem{pmid30095240}
 L.~A. Croen, {\it et~al.\/}, {\it Autism Res\/} {\bf 12}, 123 (2019).
@@ -195,10 +194,10 @@ T.~Vargason, D.~L. McGuinness, J.~Hahn, {\it J Autism Dev Disord\/} {\bf 49},
   647 (2019).
 
 \bibitem{pmid27957319}
-M.~Fiorentino, {\it et~al.\/}, {\it Mol Autism\/} {\bf 7}, 49 (2016).
+M.~Fiorentino, {\it et~al.\/}, {\it Molecular autism\/} {\bf 7}, 1 (2016).
 
 \bibitem{Satterstrom484113}
-F.~K. Satterstrom, {\it et~al.\/}, {\it bioRxiv\/}  (2019).
+F.~K. Satterstrom, {\it et~al.\/}, {\it Cell\/} {\bf 180}, 568 (2020).
 
 \bibitem{pmid25038753}
 T.~Gaugler, {\it et~al.\/}, {\it Nat. Genet.\/} {\bf 46}, 881 (2014).
@@ -208,7 +207,7 @@ D.~L. Vargas, C.~Nascimbene, C.~Krishnan, A.~W. Zimmerman, C.~A. Pardo, {\it
   Ann. Neurol.\/} {\bf 57}, 67 (2005).
 
 \bibitem{pmid21595886}
-H.~Wei, {\it et~al.\/}, {\it J Neuroinflammation\/} {\bf 8}, 52 (2011).
+H.~Wei, {\it et~al.\/}, {\it Journal of neuroinflammation\/} {\bf 8}, 1 (2011).
 
 \bibitem{pmid21629840}
 A.~M. Young, E.~Campbell, S.~Lynch, J.~Suckling, S.~J. Powis, {\it Front
@@ -249,7 +248,7 @@ M.~Cheng, S.~Nazarian, P.~Bogdan, {\it Frontiers in Artificial Intelligence\/}
   {\bf 3}, 54 (2020).
 
 \bibitem{GEMS}
-General equivalence mappings.
+R.~R. Butler, {\it Journal of AHIMA\/} {\bf 78}, 84 (2007).
 
 \bibitem{baio2014prevalence}
 Autism, D.~D. M. N. S. Y. .~P. Investigators, {\it Morbidity and Mortality
@@ -260,7 +259,8 @@ P.~F. Bolton, J.~Golding, A.~Emond, C.~D. Steer, {\it Journal of the American
   Academy of Child \& Adolescent Psychiatry\/} {\bf 51}, 249 (2012).
 
 \bibitem{bondy2008graph}
-U.~Murty, A.~Bondy, Graph theory (graduate texts in mathematics 244) (2008).
+J.~A. Bondy, U.~S.~R. Murty, {\it et~al.\/}, {\it Graph theory with
+  applications\/}, vol. 290 (Macmillan London, 1976).
 
 \bibitem{breiman}
 L.~Breiman, {\it Mach. Learn.\/} {\bf 45}, 5 (2001).
@@ -277,13 +277,9 @@ I.~Chattopadhyay, A.~Ray, {\it International Journal of Control\/} {\bf 81},
 C.~Chlebowski, J.~A. Green, M.~L. Barton, D.~Fein, {\it Journal of autism and
   developmental disorders\/} {\bf 40}, 787 (2010).
 
-\bibitem{cover2012elements}
-T.~M. Cover, J.~A. Thomas, {\it Elements of information theory\/} (John Wiley
-  \& Sons, 2012).
-
 \bibitem{doob1990stochastic}
 J.~Doob, {\it Stochastic processes\/}, Wiley publications in statistics (Wiley,
-  1990).
+  Hoboken, New Jersey, USA, 1990).
 
 \bibitem{esler2015autism}
 A.~N. Esler, {\it et~al.\/}, {\it Journal of Autism and Developmental
@@ -346,7 +342,7 @@ A.~G. d.~G. Matthews, J.~Hensman, R.~Turner, Z.~Ghahramani, {\it Journal of
 L.~Gilotty, Early screening for autism spectrum (2019).
 
 \bibitem{penner2018practice}
-M.~Penner, E.~Anagnostou, W.~J. Ungar, {\it Molecular autism\/} {\bf 9}, 16
+M.~Penner, E.~Anagnostou, W.~J. Ungar, {\it Molecular autism\/} {\bf 9}, 1
   (2018).
 
 \bibitem{trahtman2008road}
