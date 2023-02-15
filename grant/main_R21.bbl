@@ -65,6 +65,13 @@
   disorders}} \textbf{\bibinfo{volume}{46}}, \bibinfo{pages}{3667--3677}
   (\bibinfo{year}{2016}).
 
+\bibitem{Onishchenko_2021}
+\bibinfo{author}{Onishchenko, D.} \emph{et~al.}
+\newblock \bibinfo{title}{Reduced false positives in autism screening via
+  digital biomarkers inferred from deep comorbidity patterns}.
+\newblock \emph{\bibinfo{journal}{Science Advances}}
+  \textbf{\bibinfo{volume}{7}} (\bibinfo{year}{2021}).
+
 \bibitem{pmid30733689}
 \bibinfo{author}{Tye, C.}, \bibinfo{author}{Runicles, A.~K.},
   \bibinfo{author}{Whitehouse, A. J.~O.} \& \bibinfo{author}{Alvares, G.~A.}
