@@ -31,7 +31,7 @@
 \tikzexternaldisable
 %\addtolength{\voffset}{.1in}  
 \usepackage{geometry}
-\geometry{letterpaper, left=.5in,right=.5in,top=.5in,bottom=0.5in}
+\geometry{letterpaper, left=.5in,right=.5in,top=.5in,bottom=0.6in}
 
 %\addtolength{\textwidth}{-.1in}    
 %\addtolength{\hoffset}{.05in}    
@@ -292,3 +292,8 @@ major tick length=0pt,yticklabel style={/pgf/number format/fixed,/pgf/number for
  not to be released to third parties except for the explicit purpose of evaluation.}
 }
 \newcommand{\acomment}[1]{\vskip 1em {\color{gray} #1} \vskip 1em}
+
+
+\newcounter{Dcounter}
+\setcounter{Dcounter}{1}
+\newcommand{\DQS}[1]{\marginpar{\tikzexternaldisable \tikz{\node[rounded corners=5pt,draw=none,thick,fill=black!10,font=\sffamily\fontsize{7}{8}\selectfont] {\mnp{.45in} {\color{Red3}\raggedright  \#\theDcounter.~#1}}; }}\stepcounter{Dcounter}\xspace}

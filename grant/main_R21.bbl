@@ -118,7 +118,6 @@
 \bibitem{cdc}
 \bibinfo{title}{Data \& statistics on autism spectrum disorder | cdc}
   (\bibinfo{year}{2019}).
-\newblock \urlprefix\url{https://www.cdc.gov/ncbddd/autism/data.html}.
 
 \bibitem{pmid19737791}
 \bibinfo{author}{King, M.} \& \bibinfo{author}{Bearman, P.}
@@ -182,18 +181,13 @@
 \newblock \bibinfo{title}{Large-scale exome sequencing study implicates both
   developmental and functional changes in the neurobiology of autism}.
 \newblock \emph{\bibinfo{journal}{bioRxiv}}  (\bibinfo{year}{2019}).
-\newblock
-  \eprint{https://www.biorxiv.org/content/early/2019/04/24/484113.full.pdf}.
 
 \bibitem{sandin17}
 \bibinfo{author}{Sandin, S.} \emph{et~al.}
-\newblock \bibinfo{title}{{The Heritability of Autism Spectrum
-  DisorderReassessing the Heritability of Autism Spectrum DisordersLetters}}.
+\newblock \bibinfo{title}{{The Heritability of Autism Spectrum Disorder:
+  Reassessing the Heritability of Autism Spectrum Disorders}}.
 \newblock \emph{\bibinfo{journal}{JAMA}} \textbf{\bibinfo{volume}{318}},
   \bibinfo{pages}{1182--1184} (\bibinfo{year}{2017}).
-\newblock \urlprefix\url{https://doi.org/10.1001/jama.2017.12141}.
-\newblock
-  \eprint{https://jamanetwork.com/journals/jama/articlepdf/2654804/jama\_sandin\_2017\_ld\_170037.pdf}.
 
 \bibitem{pmid29691724}
 \bibinfo{author}{Ohja, K.} \emph{et~al.}
@@ -348,6 +342,32 @@
   \textbf{\bibinfo{volume}{2}}, \bibinfo{pages}{e100--e100}
   (\bibinfo{year}{2012}).
 
+\bibitem{smith2020metabolomics}
+\bibinfo{author}{Smith, A.~M.} \emph{et~al.}
+\newblock \bibinfo{title}{A metabolomics approach to screening for autism risk
+  in the children's autism metabolome project}.
+\newblock \emph{\bibinfo{journal}{Autism Research}}
+  \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{1270--1285}
+  (\bibinfo{year}{2020}).
+
+\bibitem{howsmon2017classification}
+\bibinfo{author}{Howsmon, D.~P.}, \bibinfo{author}{Kruger, U.},
+  \bibinfo{author}{Melnyk, S.}, \bibinfo{author}{James, S.~J.} \&
+  \bibinfo{author}{Hahn, J.}
+\newblock \bibinfo{title}{Classification and adaptive behavior prediction of
+  children with autism spectrum disorder based upon multivariate data analysis
+  of markers of oxidative stress and dna methylation}.
+\newblock \emph{\bibinfo{journal}{PLoS computational biology}}
+  \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{e1005385}
+  (\bibinfo{year}{2017}).
+
+\bibitem{hicks2018validation}
+\bibinfo{author}{Hicks, S.~D.} \emph{et~al.}
+\newblock \bibinfo{title}{Validation of a salivary rna test for childhood
+  autism spectrum disorder}.
+\newblock \emph{\bibinfo{journal}{Frontiers in genetics}}
+  \textbf{\bibinfo{volume}{9}}, \bibinfo{pages}{534} (\bibinfo{year}{2018}).
+
 \bibitem{hansen2017truven}
 \bibinfo{author}{Hansen, L.}
 \newblock \bibinfo{title}{The truven health marketscan databases for life
@@ -376,8 +396,6 @@
 \newblock \bibinfo{title}{Data smashing: uncovering lurking order in data}.
 \newblock \emph{\bibinfo{journal}{Journal of The Royal Society Interface}}
   \textbf{\bibinfo{volume}{11}} (\bibinfo{year}{2014}).
-\newblock
-  \urlprefix\url{http://rsif.royalsocietypublishing.org/content/11/101/20140826}.
 
 \bibitem{huang2019data}
 \bibinfo{author}{Huang, Y.} \& \bibinfo{author}{Chattopadhyay, I.}
