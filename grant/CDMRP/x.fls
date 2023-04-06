@@ -1,0 +1,6 @@
+PWD /home/ishanu/ZED/Research/publications/pub_autism_/grant/CDMRP
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /home/ishanu/.texlive2018/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/x.tex
+OUTPUT x.log
