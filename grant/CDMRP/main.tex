@@ -128,6 +128,8 @@
 
 \input{custom_defs.tex}
 
+\lhead{\itshape \fontsize{7}{7}\selectfont \color{gray} Pre-proposal: Universal AI-Enabled Questionnaire-free Screening For Autism}
+\rhead{\fontsize{7}{7}\selectfont \color{gray} CDMRP: Autism Research Program HT9425-23-ARP-IDA }
 \begin{document}
 %\tableofcontents
 
@@ -189,39 +191,43 @@ Despite  a growing list of suspected risk factors~\cite{kalb2012determinants,bis
 Further, current  screening tools are sensitive to language barriers and cultural issues, and are  particularly ineffective for children with milder symptoms  with average or above-average cognitive abilities until about school age~\cite{jashar2016cognitive,hyman2020identification}, often due to a ``wait and see'' approach adopted at the primary care. The need for better screening tools is thus paramount.
 
 
-\begin{wrapfigure}[26]{l}{2.25in}
+\begin{wrapfigure}[24]{l}{2in}
   \vspace{-40pt}
   
-  \hspace{-10pt}\includegraphics[width=2.75in]{Figures/flowx}
-  \vspace{-30pt}
+  \hspace{-25pt}\includegraphics[width=2.65in]{Figures/flowx}
+  \vspace{-45pt}
   
-  \captionN{Patient processing logic: Note we have parallel pathways through M-CHAT/F and \acor, and
-  a flag in either triggers the ADOS-2 evaluation.}\label{figflow}
+  \captionN{Patient processing: Parallel pathways through M-CHAT/F and \acor screens, and
+  a flag in either triggers ADOS-2 evaluation.}\label{figflow}
 \end{wrapfigure}%
 %
-In this study, we plan to validate the efficacy of our recently reported~\cite{Onishchenko_2021}  machine inferred \textbf{digital biomarkers} for autism, prospectively in a  clinical study, carried out in a
-pediatric primary care clinic at the University of Chicago. The \textbf{ ASD Co-morbid Risk score (\acor)} uses machine learning (ML)-based pattern discovery on diagnostic codes already present in individual patient files, with no questionnaires and no new laboratory tests or blood-work.. We plan to demonstrate stand-alone \acor efficacy, and compare its effectiveness against existing  tools such as the M-CHAT/F, with children between 16-26 months of age . Our rationale is informed by the extensively documented comorbidities of ASD ranging from dysregulation of immune pathways such as eczema, allergies, asthma, as well as ear and respiratory infections, gastrointestinal problems, developmental issues, severe headaches, migraines, and seizures~\cite{pmid30733689,pmid22511918}. While ASD presentation is highly variable, sophisticated pattern recognition on the longitudinal history of  diagnostic codes is expected to reveal uncharted associations that allow precise screening for at-risk patients.
-Orthogonal to  questionnaire based  detection of behavioral signals, the proposed tool potentially reduces socio-economic, ethnic and demographic biases to elicit more  objective and stable results |  with zero  administrative burden on clinicians and parents. With a team comprising machine learning experts, pediatric clinicians and developmental experts with extensive history of research and service in the field (and past collaboration), we hope to demonstrate that \acor can  significantly improve outcomes by either substantially boosting sensitivity  or slashing the false positive rate of the current practice.
+In this study, we plan to prospectively validate the efficacy of our recently reported~\cite{Onishchenko_2021}  machine-inferred \textbf{digital biomarkers} for autism, prospectively in a  clinical study, carried out in a
+pediatric primary care clinic at the University of Chicago. The \textbf{ ASD Co-morbid Risk score (\acor)} uses machine learning (ML)-based pattern discovery on diagnostic codes already present in individual patient files from past medical encounters, with no questionnaires and no new laboratory tests or blood-work.. We plan to demonstrate stand-alone \acor efficacy, and compare its effectiveness against existing  tools such as the M-CHAT/F, with children between 16-26 months of age. Our rationale is informed by the extensively documented comorbidities of ASD ranging from dysregulation of immune pathways such as eczema, allergies, asthma, as well as ear and respiratory infections, gastrointestinal problems, developmental issues, severe headaches, migraines, and seizures~\cite{pmid30733689,pmid22511918}. While ASD presentation is highly variable, sophisticated pattern recognition on the individual longitudinal history of  diagnostic codes is expected to reveal uncharted associations enabling precise screening for at-risk patients.
+
+Orthogonal to  questionnaire based  detection of behavioral signals, the proposed tool can reduce socio-economic, ethnic and demographic biases to elicit more  objective and stable results |  with zero  administrative burden on clinicians and parents. With a team comprising machine learning experts, pediatric clinicians and developmental experts with extensive history of research and service in the field (and past collaboration), we hope to demonstrate that \acor can  significantly improve outcomes by either substantially boosting sensitivity  or slashing the false positive rate of the current practice. 
 %
-Thus, the principal study aims are:
+The  study aims are:
      
- \textit{Aim 1: Reduce false positives in current screening protocols.} The current high false positive rate exacerbates post screen wait-time, increasing diagnostic delay. To evaluate the \textit{\guline{hypothesis: \ZERO reduces up to 50\% of false positives}}, we  will track the  cases in which MCHAT-F triggers a flag, but \ZERO does not. Our aim to evaluate the positive predictive value (PPV) of  \ZERO, under high specificity conditions ($>95\%$). Additionally,  evaluate  if \ZERO  replicates high sensitivity observed in preliminary studies without losing specificity.
+ Aim 1: Reduce false positives in current screening protocols. The current high false positive rate exacerbates post screen wait-time, increasing diagnostic delay. To evaluate the \textit{\guline{hypothesis: \ZERO reduces up to 50\% of false positives}}, we  will track the  cases in which M-CHAT/F triggers a flag, but \ZERO does not.  We will  evaluate the positive predictive value (PPV) of  \ZERO, under high specificity conditions ($>95\%$), and also  evaluate  if \ZERO  replicates high sensitivity observed in preliminary (retrospective) studies without losing specificity (See Fig.~\ref{fig2} for preliminary results, showing AUC close to 85\% under 2 years, and promising early disambiguation between control and positive cohorts).
 
- \textit{Aim 2. Evaluate the statistical relationship between the \ZERO score and M/CHAT-F, and formalize a joint or conditional operational protocol.} We will characterize statistical association, if any,  between the test scores. \textit{\guline{Hypothesis: The uncertainties or errors in the two tests are are statistically independent.}}  Additionally, we will evaluate our  ability to boost performance by  conditioning the sensitivity-specificity trade-offs on the M-CHAT/F score of individual patients. 
+ Aim 2. Evaluate the statistical relationship between  \ZERO  and M/CHAT-F, and estimate a joint or conditional operational protocol. % We will characterize statistical association, if any,  between the test scores.
+ \textit{\guline{Hypothesis: The uncertainties or errors in the two tests are are statistically independent.}}  Thus, we will evaluate our  ability to boost performance by  conditioning the sensitivity-specificity trade-offs on the M-CHAT/F score of individual patients. 
 
- \textit{Aim 3. Evaluate the effectiveness of \ZERO in a demographically diverse population with a range of socio-economic confounders.} \textit{\guline{Hypothesis: A questionnaire-free approach has the potential to mitigate biases that arise from limitation of language, cultural barriers, and demographic diversity,}} $e.g.$ disproportionately failing  to diagnose children with  average to above-average intelligence in diverse populations~\cite{christensen2019prevalence}, and under-reporting of symptoms by parents or primary care-givers due to cultural differences~\cite{burkett2015african}. 
+Aim 3. Evaluate the effectiveness of \ZERO in a demographically diverse population with a range of socio-economic confounders. \textit{\guline{Hypothesis: A questionnaire-free approach has the potential to mitigate biases that arise from limitation of language, cultural barriers, and demographic diversity,}} $e.g.$ disproportionately failing  to diagnose children with  average to above-average intelligence in diverse populations~\cite{christensen2019prevalence}, and under-reporting of symptoms by parents or primary care-givers due to cultural differences~\cite{burkett2015african}. 
 
- \textit{Aim 4. Characterize   heterogeneity of ASD presentation by relating it to patterns in medical history, and predictive co-morbidities.} Heterogeneous presentation  is a key barrier in the mechanistic understanding of ASD pathobiology. \textit{\guline{Hypothesis: We can characterize the distinct classes and/or hierarchies of co-morbidities, by leveraging our ability to disambiguate them  from individual medical histories}}. This will foster new insight  into  intrinsic classes of  the underlying disease processes, and potentially refine/inform intervention design.
+Aim 4. Characterize   heterogeneity  presentation by relating it to patterns in medical history, and predictive co-morbidities. Heterogeneous presentation  is a key barrier in the mechanistic understanding of ASD pathobiology. \textit{\guline{Hypothesis: We can characterize  distinct classes and/or hierarchies of co-morbidities by analyzing medical histories}}. This will foster new insights  into  intrinsic classes of  the underlying disease processes.
 
-    Thus, we are proposing  to exploit observed co-morbidities in children who ultimately meet the criteria for ASD to develop a risk estimation pipeline,  and  predict future clinical  diagnosis  under $2$ years of age. Orthogonal to checklists, we aim to  reduce the median diagnostic age for ASD, by reducing the  long post-screen wait times~\cite{pmid27565363}, by significant boosts in positive predictive value, reduction in false positives, and increased sensitivities at little or no loss of specificity, and \guline{at no additional administrative burden or resource utilization.}
+Thus, we are proposing  to exploit observed co-morbidities in children who ultimately meet the criteria for ASD to develop a risk estimation pipeline,  and  predict future clinical  diagnosis  under $2$ years of age. Orthogonal to checklists, we aim to  reduce the median diagnostic age for ASD, by reducing the  long post-screen wait times~\cite{pmid27565363}, by significant boosts in positive predictive value, reduction in false positives, and increased sensitivities at little or no loss of specificity, and \guline{at no additional administrative burden or resource utilization.}
+
+To achieve the specific aims,  recruited patients (with caregiver consent) will be administretd M-CHAT/F and \acor, and scheduled for the gold standard  ADOS-2 evaluation (Fig.~\ref{figflow}). For all assessments, basic demographic information, recruitment site, medications and diagnoses assigned by the current clinical treatment team, will be obtained from the parent/caregiver and medical record. The feasibility of proposed  design has been validated with the same study team with  a intramural pilot grant, with low sample size (Of 5 \acor flags produced in this pilot, all were diagnosed with ASD by ADOS-2).
 
 % ####################################
-\begin{wrapfigure}[25]{l}{3.65in}
+\begin{wrapfigure}[24]{l}{3.65in}
   \vspace{-12pt}
   
   \centering 
-   \includegraphics[width=0.5\textwidth]{Figures/perf1}
-   \vspace{-15pt}
+   \includegraphics[width=0.49\textwidth]{Figures/perf1}
+   \vspace{-28pt}
 
     \captionN{\acor performance in retrospective studies. Panel A illustrates AUC achieved as a function of
       patient age, for the Truven and UCM datasets: we achieve $>80\%$ AUC for either gender from shortly after 2 years.   Panel B illustrates  risk variation with time for the control and the positive cohorts. % Panel C shows the distribution of the prediction horizon: the time to a clinical diagnosis after inferred  relative risk crosses $90\%$. Panel d illustrates the risk progression of a specific, ultimately autistic male child in the Truven database.
@@ -231,7 +237,7 @@ Thus, the principal study aims are:
 \end{wrapfigure}
 \subsection*{Impact}
 
-A  screening capability  independent of existing tools, deployable as an automated module  of a standard EHR system at the point of care, requiring no behavioral observations or  new blood-work or laboratory tests has considerable  potential to transform ASD care. 
+A  screening capability  independent of existing tools, deployable as an automated module  of a standard EHR system at the point of care, requiring no behavioral observations or  new blood-work or laboratory tests has potential to transform ASD care. 
 
 ASD presentation has significant heterogeneity, with no simple comorbidity  consistently signaling future  diagnosis; our algorithms distill robust actionable signatures under such stochastic scenarios. Thus,  \acor opens the possibility of a new screening modality for  neuropsychiatric diseases beyond ASD.
 \subsection*{Innovation}
@@ -239,10 +245,28 @@ The standardized questionnaires attempt to measure risk by direct observation of
 This has lead to possibility of  under-diagnosis in diverse communities as reflected by the
 lower apparent prevalence among African-American and Hispanic children. Also, children with average or higher-than-average cognitive abilities seem to have been under-diagnosed as reported is large scale population studies~\cite{hyman2020identification}. Borderline cases are typically problematic to screen for due to the possibility  of subjective interpretation that is built into questionnaire based risk assessment. Responses to checklists are clearly confounded by a host of socio-economic (SES) variables, potential interpretive biases, and  cultural differences. The heterogeneity of presentation also causes issues, since a potential plurality of symptom classes makes it harder for clinicians  to recognize borderline cases, or on-the-fly combine observed co-morbidities with scores from  standardized screening tools. 
 
-In this study, we aim to validate a novel screening tool \acor, which operationalizes a documented aspect of ASD symptomology in  that it has   a wide range  of co-morbidities occurring at  higher rates than in the general population~\cite{hyman2020identification}.
+In this study, we aim to validate \acor, which operationalizes a documented aspect of ASD symptomology in  that it has   a wide range  of co-morbidities occurring at  higher rates than in the general population~\cite{hyman2020identification}.
 \acor  can potentially address the aforementioned   challenges of ASD screening, by leveraging predictive signatures of  elevated risk gleaned from past medical history of individual  patients alone which are available at the point-of-care, and using no questionnaires, or additional bloodwork or laboratory tests.
 \subsection*{Personnel}
-
+{\color{Red1} Our research team comprises Ishanu Chattopadhyay (IC, lead-PI, machine learning (ML)), Peter Smith and  Michael Msall (Developmental pediatrics), \&  James Mitchell (pediatric primary care). PS and MM have multi-decade experience in service and research in autism and developmental disorders, and have made substantial contributions to the field. MM is the section chief of UChicago developmental pediatrics. JM is a reputed pediatrician, and IC has a track record of designing high impact predictive analytics in medicine.}
+\clearpage
+\section*{List of Abbreviations}
+\begin{table}[!ht]
+  %\captionN{Abbreviations Used}
+ % \vskip .5em
+  \hspace{-10pt}
+  \begin{tabular}{|R{1.6in}|L{3.55in}|}\hline
+  \rowcolor{lightgray} ASD & Autism Spectrum Disorder\\
+  \rowcolor{lightgray!50}M-CHAT/F & Modified Checklist for Autism in Toddlers with Followup\\
+ \rowcolor{lightgray} ADOS / ADOS-2 & Autism Diagnostic Observation Schedule \\
+  \rowcolor{lightgray}EHR  & Electronic Health Records \\
+  \rowcolor{lightgray!50}ML  & Machine Learning \\
+  \rowcolor{lightgray}AI  & Artificial Intelligence \\
+    \rowcolor{lightgray!50}AUC  & Area under the receiver operator characteristic curve \\
+        \rowcolor{lightgray}PPV  & Positive Predictive Value \\
+ \rowcolor{lightgray!50} {\color{Red3} ACoR} & {\color{Red3} Autism Comorbid Risk score} \\\hline
+  \end{tabular}
+  \end{table}
 \clearpage
  
 {\fontsize{9}{10}\selectfont
