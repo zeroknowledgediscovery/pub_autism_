@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.6.20)  8 APR 2023 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.6.20)  8 APR 2023 19:28
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2672,20 +2672,14 @@ d only with embedded Type1 fonts
 File: Figures/perf1.png Graphic file (type png)
 <use Figures/perf1.png>
 Package pdftex.def Info: Figures/perf1.png  used on input line 229.
-(pdftex.def)             Requested size: 262.58492pt x 256.75452pt.
+(pdftex.def)             Requested size: 241.14507pt x 235.7891pt.
 LaTeX Font Info:    External font `xccex10' loaded for size
 (Font)              <9> on input line 234.
 LaTeX Font Info:    External font `xccex10' loaded for size
 (Font)              <6> on input line 234.
 LaTeX Font Info:    External font `xccex10' loaded for size
 (Font)              <5> on input line 234.
-
-Underfull \hbox (badness 1558) in paragraph at lines 244--247
-[] []\OT1/phv/b/n/11 Innovation: [][] \OT1/phv/m/n/11.04124 The stan-dard-ized 
-ques-tion-naires at-
- []
-
-[2
+ [2
 
 pdfTeX warning: pdflatex: pop empty color page stack 0
  <./Figures/perf1.png (PNG copy)>] [3
@@ -2723,11 +2717,11 @@ Package rerunfilecheck Info: File `preproposal.out' has not changed.
 Here is how much of TeX's memory you used:
  41153 strings out of 478862
  929845 string characters out of 5858945
- 1393621 words of memory out of 8000000
+ 1393525 words of memory out of 8000000
  57927 multiletter control sequences out of 15000+600000
  476014 words of font info for 183 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 89i,12n,86p,1249b,701s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,12n,86p,1230b,701s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/ishanu/.texlive2020/texmf-var/fonts/pk/ljfour/public/concrete/ccr9.60
 0pk> </home/ishanu/.texlive2020/texmf-var/fonts/pk/ljfour/public/concmath-fonts
 /xccmi9.600pk> </home/ishanu/.texlive2020/texmf-var/fonts/pk/ljfour/public/conc
@@ -2736,7 +2730,7 @@ oncmath-fonts/xccmi10.657pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base
 /8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on preproposal.pdf (4 pages, 234343 bytes).
+Output written on preproposal.pdf (4 pages, 234100 bytes).
 PDF statistics:
  196 PDF objects out of 1000 (max. 8388607)
  136 compressed objects within 2 object streams
