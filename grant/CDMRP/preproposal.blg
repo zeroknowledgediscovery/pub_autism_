@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2021)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: preproposal.aux
 The style file: naturemag.bst
 Database file #1: aut.bib
@@ -7,50 +7,62 @@ I was expecting an "="---line 852 of file aut.bib
  : @misc{GEMS, title={General Equivalence Mappings}, url={https://www.cms.gov/Medicare/Coding/ICD10/downloads/ICD-10_GEM_fact_sheet.pdf}, publisher={Centers for Medicare \& Medicaid Services}, year 
  :                                                                                                                                                                                                    accessed={2019}, month={Apr}}
 I'm skipping whatever remains of this entry
+Repeated entry---line 1257 of file aut.bib
+ : @article{pmid23935565
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1325 of file aut.bib
+ : @article{pmid25681541
+ :                      ,
+I'm skipping whatever remains of this entry
 You're missing a field name---line 1367 of file aut.bib
  : abstract = {Abstract. The idea of fractional differencing is introduced in terms of the infinite filter that corresponds to the expansion of (1-B)d. When the filter is applied to white noise, a class of time series is generated with distinctive properties, particularly in the very low frequencies and provides potentially useful long-memory forecasting properties. Such models are shown to possibly arise from aggregation of independent components. Generation and estimation of these models are considered and applications on generated and real data presented.},
  :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 1573 of file aut.bib
+ : @article{volkmar2014practice
+ :                             ,
+I'm skipping whatever remains of this entry
 Database file #2: BibLib1.bib
-You've used 12 entries,
+You've used 23 entries,
             2348 wiz_defined-function locations,
-            1064 strings with 12281 characters,
-and the built_in function-call counts, 4999 in all, are:
-= -- 343
-> -- 152
+            1127 strings with 14868 characters,
+and the built_in function-call counts, 9382 in all, are:
+= -- 660
+> -- 256
 < -- 0
-+ -- 76
-- -- 38
-* -- 646
-:= -- 562
-add.period$ -- 36
-call.type$ -- 12
-change.case$ -- 12
++ -- 128
+- -- 64
+* -- 1203
+:= -- 1053
+add.period$ -- 69
+call.type$ -- 23
+change.case$ -- 23
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 448
-empty$ -- 436
-format.name$ -- 50
-if$ -- 975
+cite$ -- 23
+duplicate$ -- 847
+empty$ -- 840
+format.name$ -- 87
+if$ -- 1842
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 108
-newline$ -- 68
-num.names$ -- 12
-pop$ -- 70
+int.to.str$ -- 23
+missing$ -- 200
+newline$ -- 123
+num.names$ -- 23
+pop$ -- 123
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 73
+skip$ -- 132
 stack$ -- 0
-substring$ -- 211
-swap$ -- 464
+substring$ -- 431
+swap$ -- 865
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 29
-width$ -- 14
-write$ -- 139
-(There were 2 error messages)
+while$ -- 58
+width$ -- 25
+write$ -- 260
+(There were 5 error messages)
